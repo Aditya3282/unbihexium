@@ -123,17 +123,17 @@ unbihexium pipeline run ship_detection -i input.tif -o output.geojson
 
 ## Model Zoo
 
-Unbihexium includes a model zoo with pre-trained models for various tasks:
+Unbihexium includes a [model zoo](docs/model_zoo/catalog.md) with pre-trained models for various tasks:
 
 | Model ID | Task | Source | Description |
 |----------|------|--------|-------------|
-| ship_detector_tiny | Detection | repo | Tiny ship detection for smoke tests |
-| building_detector_tiny | Detection | repo | Tiny building detection |
-| segmentation_tiny | Segmentation | repo | Tiny semantic segmentation |
-| super_resolution_tiny | Super Resolution | repo | Tiny super resolution |
-| change_detector_tiny | Change Detection | repo | Tiny change detection |
+| [ship_detector_tiny](model_zoo/assets/tiny/ship_detector_tiny.pt) | Detection | repo | Tiny ship detection for smoke tests |
+| [building_detector_tiny](model_zoo/assets/tiny/building_detector_tiny.pt) | Detection | repo | Tiny building detection |
+| [segmentation_tiny](model_zoo/assets/tiny/segmentation_tiny.pt) | Segmentation | repo | Tiny semantic segmentation |
+| [super_resolution_tiny](model_zoo/assets/tiny/super_resolution_tiny.pt) | Super Resolution | repo | Tiny super resolution |
+| [change_detector_tiny](model_zoo/assets/tiny/change_detector_tiny.pt) | Change Detection | repo | Tiny change detection |
 
-Full models are available in GitHub Releases with SHA256 verification.
+Full models are available in [GitHub Releases](https://github.com/unbihexium-oss/unbihexium/releases) with SHA256 verification. See [distribution docs](docs/model_zoo/distribution.md) for details.
 
 ## Architecture
 
@@ -163,11 +163,12 @@ $$NDVI = \frac{NIR - RED}{NIR + RED}$$
 
 ## Documentation
 
-- [Getting Started](docs/getting_started/installation.md)
-- [Tutorials](docs/tutorials/)
-- [API Reference](docs/reference/api.md)
-- [CLI Reference](docs/reference/cli.md)
+- [Getting Started](docs/getting_started/installation.md) | [Quickstart](docs/getting_started/quickstart.md)
+- [Tutorials](docs/tutorials/index.md): [Detection](docs/tutorials/detection.md) | [Indices](docs/tutorials/indices.md) | [Geostatistics](docs/tutorials/geostat.md)
+- [API Reference](docs/reference/api.md) | [CLI Reference](docs/reference/cli.md)
 - [Architecture](docs/architecture/overview.md)
+- [Capabilities](docs/capabilities/index.md): [AI](docs/capabilities/01_ai_products.md) | [SAR](docs/capabilities/12_radar_sar.md) | [All 12 domains](docs/toc.md)
+- [Model Zoo](docs/model_zoo/catalog.md) | [Glossary](docs/glossary.md) | [FAQ](docs/faq.md)
 
 ## Security
 
