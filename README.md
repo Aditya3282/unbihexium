@@ -17,7 +17,6 @@ Production-grade Earth Observation, Geospatial, Remote Sensing, and SAR Python l
 [![Downloads](https://img.shields.io/pypi/dm/unbihexium)](https://pypi.org/project/unbihexium/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Checked with pyright](https://img.shields.io/badge/pyright-checked-blue)](https://microsoft.github.io/pyright/)
-[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/0/badge)](https://bestpractices.coreinfrastructure.org/projects/0)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
