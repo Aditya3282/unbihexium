@@ -1,70 +1,54 @@
-# Secrets Audit Report
+# Secrets and Tokens
 
-## Purpose
+This document describes the tokens and secrets used in CI/CD workflows.
 
-This report documents all secrets used in CI/CD workflows.
+## Required Tokens
 
-## Audience
+| Token | Service | Purpose | Required |
+|-------|---------|---------|----------|
+| `CODECOV_TOKEN` | Codecov | Upload coverage reports | Optional |
+| `SCORECARD_TOKEN` | OpenSSF | Security scorecard | Optional |
+| `PYPI_API_TOKEN` | PyPI | Package publishing | For releases |
 
-Repository maintainers from trusted organizations.
+## Configuration
 
-## Secrets Summary
+### Codecov
 
-```mermaid
-graph LR
-    subgraph Secrets
-        CODECOV_TOKEN[CODECOV_TOKEN]
-    end
-    subgraph Workflows
-        ci[ci.yml]
-        codeql[codeql.yml]
-        coverage[coverage.yml]
-        docs[docs.yml]
-        model_assets[model-assets.yml]
-        provenance[provenance.yml]
-        publish[publish.yml]
-        release[release.yml]
-        repo_audit[repo-audit.yml]
-        sbom[sbom.yml]
-        scorecard[scorecard.yml]
-        security[security.yml]
-    end
+1. Visit [codecov.io](https://codecov.io)
+2. Add your repository
+3. Copy the upload token
+4. Add to GitHub Secrets as `CODECOV_TOKEN`
+
+### OpenSSF Scorecard
+
+1. Create a fine-grained PAT with `public_repo` scope
+2. Add to GitHub Secrets as `SCORECARD_TOKEN`
+
+### PyPI Publishing
+
+For trusted publishing (recommended):
+1. Go to PyPI project settings
+2. Add trusted publisher with GitHub repository details
+3. No token needed; OIDC handles authentication
+
+For token-based publishing:
+1. Create API token at pypi.org
+2. Add to GitHub Secrets as `PYPI_API_TOKEN`
+
+## Workflow Guards
+
+All token-dependent workflow steps include guards:
+
+```yaml
+- name: Upload coverage
+  if: ${{ secrets.CODECOV_TOKEN != '' }}
+  uses: codecov/codecov-action@v4
+  with:
+    token: ${{ secrets.CODECOV_TOKEN }}
 ```
 
-## Secrets Reference Table
+This ensures CI does not fail if tokens are not configured.
 
-| Secret Name | Used By | Required | Where to Obtain | Permissions | Storage | Notes |
-|-------------|---------|----------|-----------------|-------------|---------|-------|
-| CODECOV_TOKEN | coverage.yml | No | https://codecov.io/gh/unbihexium-oss/unbihexium/settings | Upload coverage reports | repo | Optional with OIDC; required for private repos |
+## Navigation
 
-## Workflow Resilience
-
-All workflows should be resilient to missing secrets:
-
-$$resilience = \frac{guarded\_steps}{total\_secret\_steps}$$
-
-| Workflow | Secrets Used | Has Conditionals |
-|----------|--------------|------------------|
-| ci.yml | None | No |
-| codeql.yml | None | No |
-| coverage.yml | CODECOV_TOKEN | No |
-| docs.yml | None | No |
-| model-assets.yml | None | No |
-| provenance.yml | None | No |
-| publish.yml | None | No |
-| release.yml | None | No |
-| repo-audit.yml | None | No |
-| sbom.yml | None | No |
-| scorecard.yml | None | No |
-| security.yml | None | No |
-
-## Recommendations
-
-1. Use OIDC-based authentication where possible (Codecov, PyPI)
-2. Guard all secret-dependent steps with conditionals
-3. Never fail CI for missing optional secrets
-
-## References
-
-- [Documentation Index](../index.md)
-- [Table of Contents](../toc.md)
+[Security](../index.md) | [Home](../index.md) | [CI/CD](../development/ci.md)

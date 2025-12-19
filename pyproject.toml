@@ -161,11 +161,18 @@ select = [
 ]
 ignore = [
     "D100",   # Missing docstring in public module
+    "D102",   # Missing docstring in public method
     "D104",   # Missing docstring in public package
     "D107",   # Missing docstring in __init__
-    "ANN101", # Missing type annotation for self
-    "ANN102", # Missing type annotation for cls
+    "D301",   # Use raw docstring for backslashes
     "S101",   # Use of assert detected
+    "ARG001", # Unused function argument
+    "ARG002", # Unused method argument
+    "PTH123", # open() should be Path.open()
+    "SIM102", # Use single if statement
+    "TCH001", # Move application import into type-checking block
+    "TCH002", # Move third-party import into type-checking block
+    "TCH003", # Move standard library import into type-checking block
 ]
 
 [tool.ruff.lint.pydocstyle]

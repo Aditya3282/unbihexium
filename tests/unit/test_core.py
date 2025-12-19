@@ -12,9 +12,7 @@ from numpy.typing import NDArray
 class TestRaster:
     """Tests for Raster class."""
 
-    def test_from_array_creates_raster(
-        self, sample_raster_data: NDArray[np.floating[Any]]
-    ) -> None:
+    def test_from_array_creates_raster(self, sample_raster_data: NDArray[np.floating[Any]]) -> None:
         from unbihexium.core.raster import Raster
 
         raster = Raster.from_array(sample_raster_data)
@@ -34,9 +32,7 @@ class TestRaster:
         assert raster.count == 1
         assert raster.data.shape == (1, 256, 256)
 
-    def test_tiles_iterator(
-        self, sample_raster_data: NDArray[np.floating[Any]]
-    ) -> None:
+    def test_tiles_iterator(self, sample_raster_data: NDArray[np.floating[Any]]) -> None:
         from unbihexium.core.raster import Raster
 
         raster = Raster.from_array(sample_raster_data)
@@ -47,9 +43,7 @@ class TestRaster:
             assert tile_data.shape[1] <= 128
             assert tile_data.shape[2] <= 128
 
-    def test_resample(
-        self, sample_raster_data: NDArray[np.floating[Any]]
-    ) -> None:
+    def test_resample(self, sample_raster_data: NDArray[np.floating[Any]]) -> None:
         from unbihexium.core.raster import Raster
 
         raster = Raster.from_array(sample_raster_data)
@@ -84,9 +78,7 @@ class TestVector:
 class TestTile:
     """Tests for Tile and TileGrid classes."""
 
-    def test_tile_grid_from_raster(
-        self, sample_raster_data: NDArray[np.floating[Any]]
-    ) -> None:
+    def test_tile_grid_from_raster(self, sample_raster_data: NDArray[np.floating[Any]]) -> None:
         from unbihexium.core.raster import Raster
         from unbihexium.core.tile import TileGrid
 
@@ -126,9 +118,7 @@ class TestSpectralIndices:
 
         assert evi.shape == (256, 256)
 
-    def test_unknown_index_raises(
-        self, sample_bands: dict[str, NDArray[np.floating[Any]]]
-    ) -> None:
+    def test_unknown_index_raises(self, sample_bands: dict[str, NDArray[np.floating[Any]]]) -> None:
         from unbihexium.core.index import compute_index
 
         with pytest.raises(ValueError, match="Unknown index"):

@@ -1,0 +1,108 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Python artifacts
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Testing and coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.hypothesis/
+
+# Documentation build
+docs/_build/
+site/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large files
+*.pt
+*.pth
+*.onnx
+*.weights
+*.h5
+*.pkl
+*.joblib
+
+# Data files
+*.tif
+*.tiff
+*.geojson
+*.shp
+*.gpkg
+*.zarr/
+
+# Logs
+*.log
+logs/
+
+# Secrets
+.env.local
+.env.*.local
+secrets/
+*.pem
+*.key
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Development files
+Makefile
+scripts/
+tests/
+examples/
+benchmarks/
+artifacts/
