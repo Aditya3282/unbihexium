@@ -1,0 +1,10 @@
+{
+  "model_id": "environmental_monitor_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 15
+  }
+}

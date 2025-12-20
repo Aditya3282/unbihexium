@@ -1,0 +1,10 @@
+{
+  "model_id": "field_surveyor_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

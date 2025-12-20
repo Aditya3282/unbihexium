@@ -1,0 +1,10 @@
+{
+  "model_id": "sar_phase_displacement_mega",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

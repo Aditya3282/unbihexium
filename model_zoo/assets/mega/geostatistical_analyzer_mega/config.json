@@ -1,0 +1,10 @@
+{
+  "model_id": "geostatistical_analyzer_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

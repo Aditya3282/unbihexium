@@ -1,0 +1,10 @@
+{
+  "model_id": "stereo_processor_mega",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 2
+  }
+}

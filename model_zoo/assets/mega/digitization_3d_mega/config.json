@@ -1,0 +1,10 @@
+{
+  "model_id": "digitization_3d_mega",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

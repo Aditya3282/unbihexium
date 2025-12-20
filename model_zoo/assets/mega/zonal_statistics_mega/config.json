@@ -1,0 +1,10 @@
+{
+  "model_id": "zonal_statistics_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 6
+  }
+}

@@ -12,8 +12,13 @@
       "files": [
         {
           "name": "model.onnx",
-          "sha256": "42dcc0916588e8dcee860bdc4e22cb6f4ea4469d8fbeedeed9679975e8579045",
+          "sha256": "9729829e3c7170fc96abc735a8e0673500cd0a4945d6f0e5ea4c9d7d0a7dcf4a",
           "size_bytes": 3243
+        },
+        {
+          "name": "model.pt",
+          "sha256": "c0b25bead56bf9e0a2846249d710f0487995ea91f6d60e328b359263ea2353b1",
+          "size_bytes": 5117
         },
         {
           "name": "config.json",
@@ -26,8 +31,13 @@
       "files": [
         {
           "name": "model.onnx",
-          "sha256": "e6f7fc7f114c1540e55b87498a5001d5ab5b7a99d0a0d96e86a54d539b2496bd",
+          "sha256": "d8c2ebc0121c1dff53ed39ae6d700682a280f993fd4a79d3a37240a17998f4e1",
           "size_bytes": 23458
+        },
+        {
+          "name": "model.pt",
+          "sha256": "a2fba58729cf92173c9ff7a850fe1a5ec5efd576178e0bc7c6166a6c65e7f4a6",
+          "size_bytes": 25213
         },
         {
           "name": "config.json",
@@ -40,13 +50,37 @@
       "files": [
         {
           "name": "model.onnx",
-          "sha256": "f03f3450ed130ec3321181081438151c06a958171addedf24a6ff6ae9d3345fd",
+          "sha256": "85c710116a3a2455f6fa8ff3051189656bef8f91ac088f0f3fc350227ab9815b",
           "size_bytes": 82664
+        },
+        {
+          "name": "model.pt",
+          "sha256": "69b62aea32b3fb8a060b2f553c199ecdabbd8ede077b51904ba6bba4ad1abebe",
+          "size_bytes": 84413
         },
         {
           "name": "config.json",
           "sha256": "dea71c218bdc462e9987522c8a6141d33f44c7c67835b8608a8b77dce7880664",
           "size_bytes": 429
+        }
+      ]
+    },
+    "mega": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "271b85dd26ad6861cf7b920f7ad82227058cf67207047041c984a88626e3cc50",
+          "size_bytes": 311659
+        },
+        {
+          "name": "model.pt",
+          "sha256": "ed097a5f32bc8a1217426dc6b97ee90f0caf64521e1fda0cfc786b8f54e70b94",
+          "size_bytes": 313405
+        },
+        {
+          "name": "config.json",
+          "sha256": "37a668bc2d348546ab2e3eb243b827aaa0e6b728e63beac03ba9f8670ae71f51",
+          "size_bytes": 427
         }
       ]
     }

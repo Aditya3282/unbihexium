@@ -1,0 +1,10 @@
+{
+  "model_id": "wildfire_risk_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 12
+  }
+}

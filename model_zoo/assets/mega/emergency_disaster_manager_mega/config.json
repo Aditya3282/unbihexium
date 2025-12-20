@@ -1,0 +1,10 @@
+{
+  "model_id": "emergency_disaster_manager_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 20
+  }
+}

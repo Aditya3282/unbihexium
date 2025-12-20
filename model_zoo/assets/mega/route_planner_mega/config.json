@@ -1,0 +1,10 @@
+{
+  "model_id": "route_planner_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

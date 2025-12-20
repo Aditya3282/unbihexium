@@ -201,6 +201,7 @@ VARIANTS = {
     "tiny": {"capacity": 0.25, "resolution": 32},
     "base": {"capacity": 1.0, "resolution": 64},
     "large": {"capacity": 2.0, "resolution": 128},
+    "mega": {"capacity": 4.0, "resolution": 256},  # 10M+ parameters
 }
 
 
@@ -371,6 +372,15 @@ def export_onnx(model: nn.Module, output_path: Path, model_def: dict, variant: s
     )
 
 
+def export_pt(model: nn.Module, output_path: Path) -> None:
+    """Export model to PyTorch format."""
+    model.eval()
+    torch.save({
+        'model_state_dict': model.state_dict(),
+        'model_class': model.__class__.__name__,
+    }, output_path)
+
+
 def create_config(model_def: dict, variant: str) -> dict:
     """Create config.json for a model."""
     var_cfg = VARIANTS[variant]
@@ -537,7 +547,9 @@ def main():
             # Create and export model
             model = create_model(model_def, variant)
             onnx_path = out_dir / "model.onnx"
+            pt_path = out_dir / "model.pt"
             export_onnx(model, onnx_path, model_def, variant)
+            export_pt(model, pt_path)
             
             # Create config
             config = create_config(model_def, variant)
@@ -555,14 +567,17 @@ def main():
                 json.dump(metrics, f, indent=2)
             
             # Compute SHA256
-            sha256 = compute_sha256(onnx_path)
+            sha256_onnx = compute_sha256(onnx_path)
+            sha256_pt = compute_sha256(pt_path)
             with open(out_dir / "model.sha256", "w") as f:
-                f.write(f"{sha256}  model.onnx\n")
+                f.write(f"{sha256_onnx}  model.onnx\n")
+                f.write(f"{sha256_pt}  model.pt\n")
             
             # Store artifact info
             artifacts_all_variants[variant] = {
                 "files": [
-                    {"name": "model.onnx", "sha256": sha256, "size_bytes": onnx_path.stat().st_size},
+                    {"name": "model.onnx", "sha256": sha256_onnx, "size_bytes": onnx_path.stat().st_size},
+                    {"name": "model.pt", "sha256": sha256_pt, "size_bytes": pt_path.stat().st_size},
                     {"name": "config.json", "sha256": compute_sha256(out_dir / "config.json"), "size_bytes": (out_dir / "config.json").stat().st_size},
                 ]
             }

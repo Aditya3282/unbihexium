@@ -1,0 +1,10 @@
+{
+  "model_id": "tree_height_estimator_mega",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

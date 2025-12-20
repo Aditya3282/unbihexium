@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Complete catalog of 130 models with 390 variants in the Unbihexium Model Zoo.
+Complete catalog of 130 models with 520 variants in the Unbihexium Model Zoo.
 
 ## Model Distribution
 
@@ -22,11 +22,12 @@ $$
 \text{Parameters}(v) = \text{Base} \times \text{Capacity}(v)
 $$
 
-| Variant | Resolution | Capacity | Use Case |
-|---------|------------|----------|----------|
-| tiny | 32x32 | 0.25x | Edge, testing |
-| base | 64x64 | 1.0x | Production |
-| large | 128x128 | 2.0x | High accuracy |
+| Variant | Resolution | Capacity | Approx. Params | Use Case |
+|---------|------------|----------|----------------|----------|
+| tiny | 32×32 | 0.25x | ~50K | Edge, testing |
+| base | 64×64 | 1.0x | ~200K | Production |
+| large | 128×128 | 2.0x | ~800K | High accuracy |
+| mega | 256×256 | 4.0x | ~10M+ | Maximum accuracy |
 
 ## Detection Models (19)
 

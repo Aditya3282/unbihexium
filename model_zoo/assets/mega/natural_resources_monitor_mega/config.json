@@ -1,0 +1,10 @@
+{
+  "model_id": "natural_resources_monitor_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

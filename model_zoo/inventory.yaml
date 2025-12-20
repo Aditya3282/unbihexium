@@ -1,9 +1,9 @@
 # Model Zoo Inventory
 # Single source of truth for all 130 models in the Unbihexium Model Zoo
-# Each model has 3 variants: tiny, base, large (390 total)
+# Each model has 4 variants: tiny, base, large, mega (520 total)
 
 version: "1.0.0"
-last_updated: "2025-12-19"
+last_updated: "2025-12-20"
 
 models:
   # Detection (15 models)

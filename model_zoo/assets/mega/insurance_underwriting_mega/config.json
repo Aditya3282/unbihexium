@@ -1,0 +1,10 @@
+{
+  "model_id": "insurance_underwriting_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 20
+  }
+}

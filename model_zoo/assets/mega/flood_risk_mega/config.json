@@ -1,0 +1,10 @@
+{
+  "model_id": "flood_risk_mega",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "mega",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}
