@@ -1,0 +1,29 @@
+# Development dependencies
+-e ".[dev,test,docs,torch]"
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-xdist>=3.5.0
+pytest-asyncio>=0.23.0
+
+# Linting and formatting
+ruff>=0.1.0
+pyright>=1.1.340
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.5.0
+mkdocstrings[python]>=0.24.0
+
+# Build
+build>=1.0.0
+twine>=4.0.0
+hatch>=1.9.0
+
+# Pre-commit
+pre-commit>=3.6.0
+
+# Debug
+ipython>=8.0.0
+ipdb>=0.13.0

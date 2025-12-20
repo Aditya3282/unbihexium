@@ -364,6 +364,248 @@ print(f"Modified infrastructure: {stats['modified_area_km2']:.2f} km^2")
 
 ---
 
+## Grid Integration Analysis
+
+### Transmission Capacity
+
+$$
+P_{max} = \frac{V^2}{X} \sin(\delta)
+$$
+
+Where:
+- $V$ = Voltage magnitude
+- $X$ = Transmission line reactance
+- $\delta$ = Power angle
+
+### Power Flow Equations
+
+Active power:
+$$
+P_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
+$$
+
+Reactive power:
+$$
+Q_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
+$$
+
+### Hosting Capacity
+
+$$
+HC = \min(P_{thermal}, P_{voltage}, P_{protection})
+$$
+
+---
+
+## Energy Storage Assessment
+
+### Battery Sizing
+
+$$
+C_{battery} = \frac{E_{daily} \times DoD}{V_{system} \times \eta}
+$$
+
+Where:
+- $E_{daily}$ = Daily energy requirement (Wh)
+- $DoD$ = Depth of discharge
+- $V_{system}$ = System voltage
+- $\eta$ = Round-trip efficiency
+
+### Levelized Cost of Storage (LCOS)
+
+$$
+\text{LCOS} = \frac{I_0 + \sum_{t=1}^{n}\frac{O\&M_t + R_t}{(1+r)^t}}{\sum_{t=1}^{n}\frac{E_t}{(1+r)^t}}
+$$
+
+---
+
+## Pipeline Route Optimization
+
+### Least Cost Path Analysis
+
+$$
+C_{total} = \sum_{i} C_{terrain,i} + C_{crossing,i} + C_{environmental,i}
+$$
+
+### Route Scoring Factors
+
+| Factor | Weight | Description |
+|--------|--------|-------------|
+| Slope | 0.25 | Terrain difficulty |
+| Land Use | 0.20 | Acquisition cost |
+| Environmental | 0.20 | Protected areas |
+| Crossing | 0.15 | Water/road crossings |
+| Geology | 0.10 | Soil stability |
+| Access | 0.10 | Construction access |
+
+---
+
+## Thermal Anomaly Detection
+
+### Leakage Detection Algorithm
+
+```mermaid
+graph TB
+    A[Thermal Image] --> B[Atmospheric Correction]
+    B --> C[Background Temperature]
+    C --> D[Anomaly Detection]
+    D --> E{T > Threshold?}
+    E -->|Yes| F[Flag as Potential Leak]
+    E -->|No| G[Normal Operation]
+    F --> H[Spatial Clustering]
+    H --> I[Generate Alert]
+```
+
+### Temperature Threshold
+
+$$
+T_{threshold} = \bar{T}_{background} + k \times \sigma_T
+$$
+
+Where $k$ is typically 2-3 standard deviations.
+
+---
+
+## Asset Degradation Modeling
+
+### Failure Rate Function
+
+Weibull failure rate:
+$$
+h(t) = \frac{\beta}{\eta}\left(\frac{t}{\eta}\right)^{\beta-1}
+$$
+
+### Remaining Useful Life
+
+$$
+RUL = t_{failure} - t_{current}
+$$
+
+### Condition-Based Maintenance
+
+$$
+P(failure|condition) = \frac{P(condition|failure) \times P(failure)}{P(condition)}
+$$
+
+---
+
+## GIS Integration
+
+### QGIS Plugin
+
+```python
+from qgis.core import QgsProject
+from unbihexium.integrations.qgis import EnergyPlugin
+
+plugin = EnergyPlugin()
+dem = QgsProject.instance().mapLayersByName("DEM")[0]
+
+solar_potential = plugin.calculate_solar(
+    dem_layer=dem,
+    ghi_raster="ghi_annual.tif",
+    model="mega"
+)
+
+QgsProject.instance().addMapLayer(solar_potential)
+```
+
+### ArcGIS Integration
+
+```python
+import arcpy
+from unbihexium.integrations.arcgis import EnergyAdapter
+
+adapter = EnergyAdapter()
+
+wind_suitability = adapter.wind_site_analysis(
+    wind_raster="wind_100m.tif",
+    exclusion_zones="protected_areas.shp",
+    grid_proximity="transmission_lines.shp"
+)
+
+wind_suitability.save("wind_suitability.tif")
+```
+
+---
+
+## Reporting and Visualization
+
+### Site Assessment Report
+
+| Section | Content |
+|---------|---------|
+| Executive Summary | Key findings, recommended sites |
+| Methodology | Data sources, models, criteria |
+| Resource Assessment | Solar/wind resource maps |
+| Technical Analysis | Capacity, yield, performance |
+| Economic Analysis | LCOE, NPV, payback |
+| Environmental | Impact assessment |
+| Recommendations | Priority sites, next steps |
+
+### Visualization Outputs
+
+| Product | Format | Description |
+|---------|--------|-------------|
+| Suitability Map | GeoTIFF | 0-1 score raster |
+| Exclusion Zones | Vector | Prohibited areas |
+| Resource Map | GeoTIFF | GHI/wind speed |
+| Grid Distance | GeoTIFF | Distance to grid |
+| Final Score | GeoTIFF | Weighted composite |
+
+---
+
+## Economic Analysis
+
+### Levelized Cost of Energy (LCOE)
+
+$$
+\text{LCOE} = \frac{I_0 + \sum_{t=1}^{n}\frac{C_t}{(1+r)^t}}{\sum_{t=1}^{n}\frac{E_t}{(1+r)^t}}
+$$
+
+Where:
+- $I_0$ = Initial investment
+- $C_t$ = Annual costs
+- $E_t$ = Annual energy production
+- $r$ = Discount rate
+- $n$ = Project lifetime
+
+### Net Present Value
+
+$$
+\text{NPV} = -I_0 + \sum_{t=1}^{n}\frac{R_t - C_t}{(1+r)^t}
+$$
+
+### Internal Rate of Return
+
+$$
+0 = -I_0 + \sum_{t=1}^{n}\frac{CF_t}{(1+IRR)^t}
+$$
+
+---
+
+## Regulatory Compliance
+
+### Environmental Impact Assessment
+
+| Category | Requirement | Data Source |
+|----------|-------------|-------------|
+| Protected Areas | Exclusion buffer | WDPA |
+| Bird Migration | Seasonal restriction | eBird |
+| Visual Impact | Viewshed analysis | DEM |
+| Noise | Distance buffer | Turbine specs |
+| Shadow Flicker | Time-based analysis | Sun position |
+
+### Permits and Approvals
+
+| Permit Type | Authority | Timeline |
+|-------------|-----------|----------|
+| Environmental | EPA | 6-12 months |
+| Land Use | Local | 3-6 months |
+| Grid Connection | Utility | 3-12 months |
+| Construction | Building Dept | 1-3 months |
+
+---
+
 ## References
 
 1. Global Wind Atlas 3.0. Technical University of Denmark.
@@ -371,3 +613,244 @@ print(f"Modified infrastructure: {stats['modified_area_km2']:.2f} km^2")
 3. NASA POWER Project. NASA Langley Research Center.
 4. REN21 (2024). Renewables 2024 Global Status Report.
 5. IEA (2024). World Energy Outlook 2024.
+6. IRENA (2024). Renewable Power Generation Costs in 2023.
+7. NREL (2024). Annual Technology Baseline.
+8. EPA (2024). Renewable Energy Fact Sheet.
+
+### Transmission Capacity
+
+$$
+P_{max} = \frac{V^2}{X} \sin(\delta)
+$$
+
+Where:
+- $V$ = Voltage magnitude
+- $X$ = Transmission line reactance
+- $\delta$ = Power angle
+
+### Power Flow Equations
+
+Active power:
+$$
+P_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
+$$
+
+Reactive power:
+$$
+Q_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
+$$
+
+### Hosting Capacity
+
+$$
+HC = \min(P_{thermal}, P_{voltage}, P_{protection})
+$$
+
+---
+
+## Energy Storage Assessment
+
+### Battery Sizing
+
+$$
+C_{battery} = \frac{E_{daily} \times DoD}{V_{system} \times \eta}
+$$
+
+Where:
+- $E_{daily}$ = Daily energy requirement (Wh)
+- $DoD$ = Depth of discharge
+- $V_{system}$ = System voltage
+- $\eta$ = Round-trip efficiency
+
+### Levelized Cost of Storage (LCOS)
+
+$$
+\text{LCOS} = \frac{I_0 + \sum_{t=1}^{n}\frac{O\&M_t + R_t}{(1+r)^t}}{\sum_{t=1}^{n}\frac{E_t}{(1+r)^t}}
+$$
+
+---
+
+## Pipeline Route Optimization
+
+### Least Cost Path Analysis
+
+$$
+C_{total} = \sum_{i} C_{terrain,i} + C_{crossing,i} + C_{environmental,i}
+$$
+
+### Route Scoring Factors
+
+| Factor | Weight | Description |
+|--------|--------|-------------|
+| Slope | 0.25 | Terrain difficulty |
+| Land Use | 0.20 | Acquisition cost |
+| Environmental | 0.20 | Protected areas |
+| Crossing | 0.15 | Water/road crossings |
+| Geology | 0.10 | Soil stability |
+| Access | 0.10 | Construction access |
+
+---
+
+## Thermal Anomaly Detection
+
+### Leakage Detection Algorithm
+
+```mermaid
+graph TB
+    A[Thermal Image] --> B[Atmospheric Correction]
+    B --> C[Background Temperature]
+    C --> D[Anomaly Detection]
+    D --> E{T > Threshold?}
+    E -->|Yes| F[Flag as Potential Leak]
+    E -->|No| G[Normal Operation]
+    F --> H[Spatial Clustering]
+    H --> I[Generate Alert]
+```
+
+### Temperature Threshold
+
+$$
+T_{threshold} = \bar{T}_{background} + k \times \sigma_T
+$$
+
+Where $k$ is typically 2-3 standard deviations.
+
+---
+
+## Asset Degradation Modeling
+
+### Failure Rate Function
+
+Weibull failure rate:
+$$
+h(t) = \frac{\beta}{\eta}\left(\frac{t}{\eta}\right)^{\beta-1}
+$$
+
+### Remaining Useful Life
+
+$$
+RUL = t_{failure} - t_{current}
+$$
+
+### Condition-Based Maintenance
+
+$$
+P(failure|condition) = \frac{P(condition|failure) \times P(failure)}{P(condition)}
+$$
+
+---
+
+## GIS Integration
+
+### QGIS Plugin
+
+```python
+from qgis.core import QgsProject
+from unbihexium.integrations.qgis import EnergyPlugin
+
+plugin = EnergyPlugin()
+dem = QgsProject.instance().mapLayersByName("DEM")[0]
+
+solar_potential = plugin.calculate_solar(
+    dem_layer=dem,
+    ghi_raster="ghi_annual.tif",
+    model="mega"
+)
+
+QgsProject.instance().addMapLayer(solar_potential)
+```
+
+### ArcGIS Integration
+
+```python
+import arcpy
+from unbihexium.integrations.arcgis import EnergyAdapter
+
+adapter = EnergyAdapter()
+
+wind_suitability = adapter.wind_site_analysis(
+    wind_raster="wind_100m.tif",
+    exclusion_zones="protected_areas.shp",
+    grid_proximity="transmission_lines.shp"
+)
+
+wind_suitability.save("wind_suitability.tif")
+```
+
+---
+
+## Reporting and Visualization
+
+### Site Assessment Report
+
+| Section | Content |
+|---------|---------|
+| Executive Summary | Key findings, recommended sites |
+| Methodology | Data sources, models, criteria |
+| Resource Assessment | Solar/wind resource maps |
+| Technical Analysis | Capacity, yield, performance |
+| Economic Analysis | LCOE, NPV, payback |
+| Environmental | Impact assessment |
+| Recommendations | Priority sites, next steps |
+
+### Visualization Outputs
+
+| Product | Format | Description |
+|---------|--------|-------------|
+| Suitability Map | GeoTIFF | 0-1 score raster |
+| Exclusion Zones | Vector | Prohibited areas |
+| Resource Map | GeoTIFF | GHI/wind speed |
+| Grid Distance | GeoTIFF | Distance to grid |
+| Final Score | GeoTIFF | Weighted composite |
+
+---
+
+## Economic Analysis
+
+### Levelized Cost of Energy (LCOE)
+
+$$
+\text{LCOE} = \frac{I_0 + \sum_{t=1}^{n}\frac{C_t}{(1+r)^t}}{\sum_{t=1}^{n}\frac{E_t}{(1+r)^t}}
+$$
+
+Where:
+- $I_0$ = Initial investment
+- $C_t$ = Annual costs
+- $E_t$ = Annual energy production
+- $r$ = Discount rate
+- $n$ = Project lifetime
+
+### Net Present Value
+
+$$
+\text{NPV} = -I_0 + \sum_{t=1}^{n}\frac{R_t - C_t}{(1+r)^t}
+$$
+
+### Internal Rate of Return
+
+$$
+0 = -I_0 + \sum_{t=1}^{n}\frac{CF_t}{(1+IRR)^t}
+$$
+
+---
+
+## Regulatory Compliance
+
+### Environmental Impact Assessment
+
+| Category | Requirement | Data Source |
+|----------|-------------|-------------|
+| Protected Areas | Exclusion buffer | WDPA |
+| Bird Migration | Seasonal restriction | eBird |
+| Visual Impact | Viewshed analysis | DEM |
+| Noise | Distance buffer | Turbine specs |
+| Shadow Flicker | Time-based analysis | Sun position |
+
+### Permits and Approvals
+
+| Permit Type | Authority | Timeline |
+|-------------|-----------|----------|
+| Environmental | EPA | 6-12 months |
+| Land Use | Local | 3-6 months |
+| Grid Connection | Utility | 3-12 months |
+| Construction | Building Dept | 1-3 months |
