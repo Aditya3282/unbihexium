@@ -372,6 +372,259 @@ print(f"Total carbon stock: {np.nansum(carbon)/1e6:.2f} MtC")
 
 ---
 
+## Biodiversity Assessment
+
+### Species Richness Estimation
+
+Using spectral heterogeneity as a proxy for biodiversity:
+
+$$
+\text{Spectral Variability Hypothesis: } H_s \propto H_b
+$$
+
+Where $H_s$ is spectral heterogeneity and $H_b$ is biological diversity.
+
+### Coefficient of Variation
+
+$$
+CV = \frac{\sigma}{\mu} \times 100\%
+$$
+
+Applied to NDVI for habitat heterogeneity assessment.
+
+### Habitat Connectivity
+
+$$
+\text{Connectivity} = \frac{\sum_{i \neq j} a_i \times a_j \times e^{-\alpha d_{ij}}}{\sum_{i \neq j} a_i \times a_j}
+$$
+
+Where $a$ is patch area and $d_{ij}$ is distance between patches.
+
+---
+
+## REDD+ MRV Framework
+
+### Measurement, Reporting, Verification
+
+| Component | Method | Data Source |
+|-----------|--------|-------------|
+| Activity Data | Change detection | Landsat, Sentinel-2 |
+| Emission Factors | Allometric equations | Field plots, GEDI |
+| Uncertainty | Monte Carlo | Multiple data sources |
+
+### Reference Level Calculation
+
+$$
+RL = \frac{1}{T} \sum_{t=1}^{T} E_t
+$$
+
+Where $RL$ is reference level and $E_t$ is emissions in year $t$.
+
+### Emission Reduction
+
+$$
+ER = RL - E_{current}
+$$
+
+### Uncertainty Propagation
+
+$$
+U_{total} = \sqrt{U_{AD}^2 + U_{EF}^2}
+$$
+
+---
+
+## Forest Fire Assessment
+
+### Fire Weather Index Components
+
+| Index | Description | Range |
+|-------|-------------|-------|
+| FFMC | Fine Fuel Moisture Code | 0-101 |
+| DMC | Duff Moisture Code | 0-600+ |
+| DC | Drought Code | 0-800+ |
+| ISI | Initial Spread Index | 0-50+ |
+| BUI | Buildup Index | 0-200+ |
+| FWI | Fire Weather Index | 0-100+ |
+
+### Burn Severity Classification
+
+| dNBR Range | Severity | Description |
+|------------|----------|-------------|
+| < -0.25 | High regrowth | Post-fire recovery |
+| -0.25 to 0.1 | Unburned | No change |
+| 0.1 to 0.27 | Low | Light damage |
+| 0.27 to 0.44 | Moderate-low | Moderate damage |
+| 0.44 to 0.66 | Moderate-high | Significant damage |
+| > 0.66 | High | Severe damage |
+
+---
+
+## Integration with GIS Platforms
+
+### QGIS Plugin Usage
+
+```python
+from qgis.core import QgsProject
+from unbihexium.integrations.qgis import UnbihexiumPlugin
+
+plugin = UnbihexiumPlugin()
+layer = QgsProject.instance().mapLayersByName("forest_2024")[0]
+
+result = plugin.run_model(
+    model="deforestation_detector_mega",
+    input_layer=layer,
+    baseline_layer="forest_2020"
+)
+
+QgsProject.instance().addMapLayer(result)
+```
+
+### ArcGIS Pro Integration
+
+```python
+import arcpy
+from unbihexium.integrations.arcgis import ArcGISAdapter
+
+adapter = ArcGISAdapter()
+raster = arcpy.Raster("forest_imagery.tif")
+
+change_map = adapter.detect_deforestation(
+    current=raster,
+    baseline="baseline.tif",
+    model="mega"
+)
+
+change_map.save("deforestation_result.tif")
+```
+
+### Google Earth Engine Export
+
+```python
+import ee
+from unbihexium.integrations.gee import GEEExporter
+
+ee.Initialize()
+
+collection = ee.ImageCollection("COPERNICUS/S2_SR")
+    .filterDate("2024-01-01", "2024-12-31")
+    .filterBounds(aoi)
+
+exporter = GEEExporter()
+local_images = exporter.download(
+    collection=collection,
+    output_dir="data/sentinel2/",
+    scale=10
+)
+
+# Process with Unbihexium
+for image in local_images:
+    result = pipeline.run(image)
+```
+
+---
+
+## Batch Processing
+
+### Large-Scale Forest Monitoring
+
+```python
+from unbihexium import Pipeline, Config
+from unbihexium.parallel import DaskProcessor
+import dask
+
+# Configure distributed processing
+processor = DaskProcessor(
+    n_workers=8,
+    threads_per_worker=4,
+    memory_limit="8GB"
+)
+
+config = Config(
+    tile_size=512,
+    overlap=64,
+    batch_size=16,
+    device="cuda:0"
+)
+
+pipeline = Pipeline.from_config(
+    capability="forest_change",
+    variant="mega",
+    config=config
+)
+
+# Process multiple scenes
+scenes = glob.glob("data/sentinel2/*.tif")
+
+with processor:
+    results = dask.compute([
+        dask.delayed(pipeline.run)(scene)
+        for scene in scenes
+    ])
+
+# Merge results
+merged = merge_results(results)
+merged.save("forest_change_mosaic.tif")
+```
+
+---
+
+## Reporting Templates
+
+### Forest Inventory Report
+
+| Section | Content |
+|---------|---------|
+| Executive Summary | Key findings, area, change rates |
+| Methodology | Data sources, models, validation |
+| Results | Maps, statistics, trends |
+| Uncertainty | Error analysis, confidence intervals |
+| Recommendations | Management actions |
+
+### Carbon Stock Report
+
+| Component | Formula | Unit |
+|-----------|---------|------|
+| AGB | Allometric | tC/ha |
+| BGB | AGB × 0.26 | tC/ha |
+| Dead Wood | Field sampling | tC/ha |
+| Litter | Field sampling | tC/ha |
+| Soil | Soil sampling | tC/ha |
+| Total | Sum of pools | tC/ha |
+
+---
+
+## Error Analysis
+
+### Confusion Matrix
+
+| | Predicted Forest | Predicted Non-Forest |
+|---|---|---|
+| Actual Forest | TP | FN |
+| Actual Non-Forest | FP | TN |
+
+### Error Metrics
+
+$$
+\text{Overall Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+$$
+
+$$
+\text{Producer's Accuracy} = \frac{TP}{TP + FN}
+$$
+
+$$
+\text{User's Accuracy} = \frac{TP}{TP + FP}
+$$
+
+$$
+\text{Kappa} = \frac{p_o - p_e}{1 - p_e}
+$$
+
+Where $p_o$ is observed accuracy and $p_e$ is expected accuracy.
+
+---
+
 ## References
 
 1. Hansen, M.C. et al. (2013). High-Resolution Global Maps of 21st-Century Forest Cover Change. Science.
