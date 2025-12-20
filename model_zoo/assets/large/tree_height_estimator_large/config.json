@@ -1,0 +1,10 @@
+{
+  "model_id": "tree_height_estimator_large",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

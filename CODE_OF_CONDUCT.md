@@ -1,45 +1,69 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct
 
-## Our Pledge
+## Purpose
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, caste, color, religion, or sexual
-identity and orientation.
-
-## Our Standards
-
-Examples of behavior that contributes to a positive environment:
-
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints and experiences
-- Gracefully accepting constructive criticism
-- Focusing on what is best for the community
-- Showing empathy towards other community members
-
-Examples of unacceptable behavior:
-
-- The use of sexualized language or imagery
-- Trolling, insulting or derogatory comments
-- Public or private harassment
-- Publishing others' private information without permission
-- Other conduct which could reasonably be considered inappropriate
-
-## Enforcement Responsibilities
-
-Community leaders are responsible for clarifying and enforcing our standards.
+This code of conduct establishes expectations for participation in the Unbihexium community.
 
 ## Scope
 
-This Code of Conduct applies within all community spaces.
+Applies to all project spaces including:
+- GitHub repositories
+- Issue trackers
+- Pull requests
+- Community forums
+
+## Community Standards
+
+```mermaid
+mindmap
+  root((Community))
+    Respect
+      Inclusive language
+      Constructive feedback
+    Professionalism
+      Technical focus
+      Evidence-based discussion
+    Collaboration
+      Knowledge sharing
+      Mentorship
+```
+
+## Behavior Expectations
+
+Expected behaviors weighted by importance:
+
+$$
+\text{Community Health} = \sum_{i} w_i \cdot B_i, \quad w_i \in [0,1]
+$$
+
+| Behavior | Weight | Expected |
+|----------|--------|----------|
+| Respectful communication | 1.0 | Required |
+| Constructive feedback | 0.9 | Expected |
+| Inclusive participation | 0.9 | Expected |
+| Technical accuracy | 0.8 | Expected |
+| Mentorship | 0.5 | Encouraged |
+
+## Unacceptable Behavior
+
+- Harassment or discrimination
+- Personal attacks
+- Trolling or inflammatory comments
+- Publishing private information
+- Inappropriate content
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders at opensource@unbihexium.org.
+1. Warning
+2. Temporary ban
+3. Permanent ban
+
+## Reporting
+
+Email: conduct@unbihexium.dev
+
+Reports handled confidentially within 72 hours.
 
 ## Attribution
 
-This Code of Conduct is adapted from the Contributor Covenant, version 2.1.
+Adapted from the Contributor Covenant, version 2.1.

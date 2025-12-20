@@ -1,0 +1,10 @@
+{
+  "model_id": "stereo_processor_large",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 2
+  }
+}

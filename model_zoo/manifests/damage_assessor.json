@@ -1,0 +1,57 @@
+{
+  "model_id": "damage_assessor",
+  "name": "Damage Assessor",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Damage Assessor model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0058247b1766d9254811f94f7f23832488ce676ffc86460094ea83adf1804236",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "de80f3489d2601beb37b51e57aa3eb63ad654a3fc7ad954ce8e0679f5e92b54a",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c4d446b950976ed7cd0d310ed93c470684cefa4390b759a224dcf027daefcee3",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "eeea8dfa728ce142c1238bea3608738b91e49d98c627586265868883746b9364",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "75364e6408836df4aa999c7d3566f3a2af4aeec7f255d7cb6673fd2fba8322d7",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "25ebf16de9ec8cf9c46821785b67aadaea315391dc6d026ec991b4dde91d6b4e",
+          "size_bytes": 401
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "damage_assessor"
+  ]
+}

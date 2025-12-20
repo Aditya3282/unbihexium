@@ -1,0 +1,57 @@
+{
+  "model_id": "asset_condition_change",
+  "name": "Asset Condition Change",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Asset Condition Change model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "20c6e13185611857b3264978561eb7d9e0bc07a73386960c48a88b21653f6e7a",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "a4af991b4e4ed67178097459525a3ab144def4848383e8ffe9483012ae7cf971",
+          "size_bytes": 424
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d196e8aeece0286f4363994f1c642542cccaa962d1c7f75099a46a355d2107f3",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "ec5cc3f43f41ea53790ed2f52aca3056441d6593e3b14d6f758fad1b7fb9a277",
+          "size_bytes": 424
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c6084c72e5c720adead88273a544b69f1e08b92dccc819a3354764d9753712da",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "cc12fdbcfe50daf68a6bf838748a2d64384a8ab1154a4e1263b656268b7467aa",
+          "size_bytes": 428
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "asset_condition_change"
+  ]
+}

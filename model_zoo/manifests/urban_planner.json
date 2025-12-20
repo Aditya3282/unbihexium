@@ -1,0 +1,57 @@
+{
+  "model_id": "urban_planner",
+  "name": "Urban Planner",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Urban Planner model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "062093615433299618d1748b21c6c4cc6512a8bd78b2a7090ce1e7f3327327cb",
+          "size_bytes": 3770
+        },
+        {
+          "name": "config.json",
+          "sha256": "3dd33e09da6b79923eff7a9091568f9b53cffdff1b86a85a81ca8b58e54f17f2",
+          "size_bytes": 449
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "673e9c6d3f5111eabd7b07d77cd212a8988fad6e965c4a6d7f909e8574c628dd",
+          "size_bytes": 30607
+        },
+        {
+          "name": "config.json",
+          "sha256": "bc08f9bab36a88ff4a3e3d09c2dae33dda9e77275a19a66acad17c9de6999225",
+          "size_bytes": 449
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9227148f49dbc84f9fd4929cebb13fafa9c7880ebddf7c7bba8c91789844c0b3",
+          "size_bytes": 112985
+        },
+        {
+          "name": "config.json",
+          "sha256": "0283d86344471159a9f5cd05e27bdf6855bfe52f4fb05567aae375b49642e3f2",
+          "size_bytes": 453
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "urban_planner"
+  ]
+}

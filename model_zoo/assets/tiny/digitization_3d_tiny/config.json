@@ -1,0 +1,10 @@
+{
+  "model_id": "digitization_3d_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

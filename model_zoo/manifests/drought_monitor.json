@@ -1,0 +1,57 @@
+{
+  "model_id": "drought_monitor",
+  "name": "Drought Monitor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Drought Monitor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "638af1eeba706d58cf1339997385f308d1521f0250050828e905f48f5e5f0677",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "2c80c254bf39ffc9ad6409476f6aea833e5f3b6d51d90adfd377ae00ac65fbc0",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ae5bc703fa08564c014a23e21a54c7ab1a0c0234b14697bb1e426274a7dadb5e",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "e9f5c76115019dc92dbc35886afad2e45e99ed96c3a854417e3ed5c6171213b0",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7de99aad626f966a2eb1dd7e732fd0a3dbe3cb69f99ed14e6d18935cd42d5163",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "99e2f6de7e8cda5e319744fddabdfc4479d61ce9215b3132dc738aababb1aa5b",
+          "size_bytes": 180
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "drought_monitor"
+  ]
+}

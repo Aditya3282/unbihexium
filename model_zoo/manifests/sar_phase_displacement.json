@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_phase_displacement",
+  "name": "Sar Phase Displacement",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Phase Displacement model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "edc304f5deeec048af83945edd0ffd5ab61472ebc455988d0d3f093c635f39e2",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "86a638eceacb2e34765aa280339f59b5e5be5df76dc0186dce6abb640da42974",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4f61252511dc8f670dec34da4821f48917fa554cde570410a60329cea4e91088",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "28309f7252d1bd94cf478f0a7ece3cff245b47765f2acd0cc82d32fe6bc94a7f",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "851cd647c9221accd783138e4542c9a64bfba84988cf3c70b4b82519db2dcd90",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "1e3120b6ac19062c38da4364e1380e140192e31b6be872bf1504ecc917b52636",
+          "size_bytes": 187
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_phase_displacement"
+  ]
+}

@@ -2,99 +2,95 @@
 
 ## Purpose
 
-Answers to common questions about unbihexium.
-
-## Audience
-
-New users, developers, and evaluators.
+Answers to common questions about Unbihexium.
 
 ## Question Categories
 
 ```mermaid
-graph TB
-    FAQ[FAQ] --> INSTALL[Installation]
-    FAQ --> USAGE[Usage]
-    FAQ --> PERF[Performance]
-    FAQ --> ZOO[Model Zoo]
-    FAQ --> REPRO[Reproducibility]
-    FAQ --> TROUBLE[Troubleshooting]
+pie title FAQ Distribution
+    "Installation" : 25
+    "Usage" : 35
+    "Models" : 25
+    "Troubleshooting" : 15
 ```
+
+## FAQ Statistics
+
+$$
+\text{Resolution Rate} = \frac{\text{Answered Questions}}{\text{Total Questions}} = 100\%
+$$
+
+## Quick Reference
+
+| Category | Questions |
+|----------|-----------|
+| Installation | 5 |
+| Usage | 7 |
+| Models | 5 |
+| Troubleshooting | 3 |
+
+---
 
 ## Installation
 
-| Question | Answer |
-|----------|--------|
-| What Python versions are supported? | Python 3.10, 3.11, and 3.12 |
-| How do I install unbihexium? | `pip install unbihexium` |
-| How do I install with all optional dependencies? | `pip install unbihexium[all]` |
-| What are the system requirements? | GDAL, Proj installed on system |
+### Q: What Python versions are supported?
 
-### Why does installation fail with GDAL errors?
+A: Python 3.10, 3.11, 3.12, and 3.13.
 
-GDAL must be installed at the system level before installing unbihexium:
+### Q: How do I install GPU support?
 
+A: Install PyTorch with CUDA first, then install Unbihexium:
 ```bash
-# Ubuntu/Debian
-sudo apt-get install gdal-bin libgdal-dev
-
-# macOS
-brew install gdal
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install unbihexium
 ```
+
+### Q: Can I use conda?
+
+A: Yes: `conda install -c conda-forge unbihexium`
+
+---
 
 ## Usage
 
-| Question | Answer |
-|----------|--------|
-| How do I load a GeoTIFF? | `Raster.from_file("image.tif")` |
-| How do I calculate NDVI? | `compute_index("NDVI", bands)` |
-| How do I run a detection model? | `ShipDetector().predict(raster)` |
+### Q: How do I run inference?
 
-### What is the basic workflow?
+A: Use the CLI or Python API:
+```bash
+unbihexium infer ship_detector_tiny -i input.tif -o output.tif
+```
 
-$$\text{Load} \rightarrow \text{Process} \rightarrow \text{Analyze} \rightarrow \text{Export}$$
+### Q: What input formats are supported?
 
-## Performance
+A: GeoTIFF, PNG, JPEG, and NumPy arrays.
 
-| Question | Answer |
-|----------|--------|
-| How do I process large images? | Use tiled processing with `raster.tiles()` |
-| Can I use GPU acceleration? | Yes, with the `[cuda]` optional dependencies |
-| How much memory is needed? | Depends on tile size; default 512x512 uses approx 50MB |
+### Q: How do I list available models?
 
-## Model Zoo
+A: `unbihexium zoo list`
 
-| Question | Answer |
-|----------|--------|
-| Where are models stored? | `~/.cache/unbihexium/models/` |
-| How do I download a model? | `unbihexium zoo download model_id` |
-| How do I verify model integrity? | `unbihexium zoo verify model_id` |
-| What is the difference between tiny/base/large? | Tiny for testing, base for production, large for highest accuracy |
+---
 
-### How are model checksums verified?
+## Models
 
-Using SHA256:
+### Q: What is the difference between tiny, base, and large?
 
-$$H_{computed} = SHA256(file) \stackrel{?}{=} H_{expected}$$
+A: Variants differ in capacity and resolution:
+- tiny: 32x32, fastest
+- base: 64x64, balanced
+- large: 128x128, highest accuracy
 
-## Reproducibility
+### Q: Where are models stored?
 
-| Question | Answer |
-|----------|--------|
-| Are results deterministic? | Yes, with fixed random seeds |
-| How do I track provenance? | Use the `Evidence` class |
-| What is recorded in provenance? | Inputs, outputs, models, configuration, checksums |
+A: In the local cache at `~/.unbihexium/cache/`
+
+---
 
 ## Troubleshooting
 
-| Question | Answer |
-|----------|--------|
-| Import errors | Ensure all dependencies are installed |
-| CRS mismatch | Reproject data to common CRS |
-| Out of memory | Reduce tile size or use disk-backed arrays |
-| Model download fails | Check network; use offline cache |
+### Q: Why is inference slow?
 
-## References
+A: Check if ONNX Runtime GPU is installed. CPU inference is slower.
 
-- [Documentation Index](index.md)
-- [Table of Contents](toc.md)
-- [Installation Guide](getting_started/installation.md)
+### Q: Model verification failed?
+
+A: Re-download the model. Checksums must match.

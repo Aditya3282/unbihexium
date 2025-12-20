@@ -1,0 +1,57 @@
+{
+  "model_id": "geostatistical_analyzer",
+  "name": "Geostatistical Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Geostatistical Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1775b82e065d6771ca7dbb5636d906b20ac1942d450583a80d40a99f3af20fe6",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "7c5764288a5788fccf5e922207d6aad8df6d52167dbefb0300e1cfa0d5a7b600",
+          "size_bytes": 187
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "517eaf0bd0074947768757ccb5a9e4b08c9c60426d22e6074d6fc006679a087f",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "f70b03ec446176aed332357eb1b10091ca0262a525e54750db4558df6f453f73",
+          "size_bytes": 187
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e638dc8d5b0dd30f57ef05a3e5ee5be757ef828ca011f53a6802ee339e3b33c2",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "97cd264598942936259bbfbd24c5b13808c7b4b3a79490e3fd6fe98c347f557b",
+          "size_bytes": 189
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "geostatistical_analyzer"
+  ]
+}

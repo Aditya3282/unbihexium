@@ -1,0 +1,10 @@
+{
+  "model_id": "land_surface_temperature_large",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

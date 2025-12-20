@@ -1,0 +1,57 @@
+{
+  "model_id": "military_objects_detector",
+  "name": "Military Objects Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Military Objects Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dd02167ad71e721d3943bafe13c78119909631673782da825da9fb1e9ae3fdae",
+          "size_bytes": 3732
+        },
+        {
+          "name": "config.json",
+          "sha256": "57963aefcaacd274f26266a0c8a96deea0b3a549c84ecf1be7eb076ec4cbf3c8",
+          "size_bytes": 444
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "63641a31a865f3c723d089fc09dd5e8fdfec8583fb3283f182a2b1d44bb11f80",
+          "size_bytes": 30475
+        },
+        {
+          "name": "config.json",
+          "sha256": "48752c4c4b2ec177023073003502c733e12bd10f8f5db87bae5ae47505fb67a4",
+          "size_bytes": 444
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "175169cbaa7e4e3f8e630b54e7787a1ee78dec8a755ea86b60be782eb7baf5b2",
+          "size_bytes": 112725
+        },
+        {
+          "name": "config.json",
+          "sha256": "3a2630dd0c9871e3d218e18939e3d0f38d25609f760b34a7f41ff15df5194d00",
+          "size_bytes": 448
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "military_objects_detector"
+  ]
+}

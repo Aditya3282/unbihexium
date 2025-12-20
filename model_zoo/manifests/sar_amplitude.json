@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_amplitude",
+  "name": "Sar Amplitude",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Amplitude model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8a9cede6b957ac8f338e977471089202ea5b1386c2ad978e307138564a807bcc",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "0397679c9bc560aff32cd763083ae3070c33f44bd9d8ca89acfbfeb06d4647e0",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0806c1804471f6e06bdeba220c98846551ee2f2fbb2c24395e5c3dd843ce5d89",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "04d4915f34ef764220905e75a66f7d37388068a38ca183a08117ee5850170cc5",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d191299a47fdca42e0e8f9f45d550d341f7d5f33e8a347fb009968cb5aa71234",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "bfd32cb1f70a8a1e49a56a74ff8ef72aa6d9de167516bd076b9a48e8626b5fca",
+          "size_bytes": 178
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_amplitude"
+  ]
+}

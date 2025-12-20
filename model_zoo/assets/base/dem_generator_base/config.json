@@ -1,0 +1,10 @@
+{
+  "model_id": "dem_generator_base",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

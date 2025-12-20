@@ -1,0 +1,57 @@
+{
+  "model_id": "viewshed_analyzer",
+  "name": "Viewshed Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Viewshed Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fd785a80e7872416803ca4dc5a61dbfc7847f18643b0cce50bdcfc45ae45156e",
+          "size_bytes": 1195
+        },
+        {
+          "name": "config.json",
+          "sha256": "900e9e52a92cd78fb0fe4f9952ffcf4a380a7b7855431b4241e64fbb320eca24",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "90becfbe02a11abd69deed5d11e0afa53ae817573ec836dbbb7ee42007a0d7bb",
+          "size_bytes": 3885
+        },
+        {
+          "name": "config.json",
+          "sha256": "88df6adb7ca0dce1bbb71246a1958a77741ed971b9a20b41e568db080dbb203a",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b1d5c149db690431323c83da542cb7eb37788175a26f523db95be880023c1230",
+          "size_bytes": 11057
+        },
+        {
+          "name": "config.json",
+          "sha256": "ece39cf4b8bf06f913e4330ad3b19bb43597471da83905aec7cae0ab779f7bde",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "viewshed_analyzer"
+  ]
+}

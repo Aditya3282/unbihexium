@@ -1,0 +1,10 @@
+{
+  "model_id": "flood_risk_assessor_tiny",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 15
+  }
+}

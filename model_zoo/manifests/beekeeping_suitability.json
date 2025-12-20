@@ -1,0 +1,57 @@
+{
+  "model_id": "beekeeping_suitability",
+  "name": "Beekeeping Suitability",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Beekeeping Suitability model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f400ad71b782d8f3453450ace5a787810f527fd45e5c12401cd5954e08a6ad21",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "b5ca6f4497d9339d9e5752a32ef37974f9f13018769648dbc41a451149507a44",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "603802ee052808bc1ae30a4497b4e1a61ffb87946626261a3580a1b858c13844",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "2610dce310e9d5d9debbe7711091661e1acddd79184ef4127758f2a9784b5f2e",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "93dcdd0cbc0f3ee4042745211582903f9300a1400db493d2d7570fdd3610270a",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "78ca71b50404983101e63eb50640c77e63842a99b4701d32c92b780543ce1fe3",
+          "size_bytes": 187
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "beekeeping_suitability"
+  ]
+}

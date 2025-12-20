@@ -1,0 +1,10 @@
+{
+  "model_id": "flood_risk_assessor_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 15
+  }
+}

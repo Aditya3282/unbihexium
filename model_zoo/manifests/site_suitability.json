@@ -1,0 +1,57 @@
+{
+  "model_id": "site_suitability",
+  "name": "Site Suitability",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Site Suitability model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a5c02d326c0ac8801a6b68714bd3d1235394d8c65a34fe9f5a55788b0343f566",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "01c128f28bab03b2907ec10f4829082297e69371158a064a10f37548da27b684",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a399c5c8aff98bb49539f66c7cafc75d8c880b0d97fd5befe1ee14fb7921818e",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "02be35c23449a553b6171dcd00de15b1de0fd99639ba633ed23e3636c6b3db3a",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4404ee21b0f70055c424cbed7facc5c8a03f8579139c1c6969cba05d34132021",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "bf991b6b4d84ae02ce611d103df95190f01fd3e60a9545467a3f594372ed4477",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "site_suitability"
+  ]
+}

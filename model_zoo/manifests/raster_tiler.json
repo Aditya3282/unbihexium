@@ -1,0 +1,57 @@
+{
+  "model_id": "raster_tiler",
+  "name": "Raster Tiler",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Raster Tiler model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d562f56d723bd8ee42a619798c9c6377cc32788e85ffc27e7b0586d738ecfd23",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "d8353cbdd590cc54c46a8269a8f802f51c351023dc37a678abd09df09255994b",
+          "size_bytes": 353
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "54de36f2fc4e5867fe4ef3f16eb1ef6e4f5090752a0904c2f2a54f55f2532351",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "2e064c74825e7fd01c030c5e4c032c968d6ba4245ad49babc663fb1e4082c571",
+          "size_bytes": 353
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "15e8894d173321d118d98832306aa917618dc0b605fe9f263f105d9463eefaaf",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "2995baeac094eaf7d3c09865ccb0a609d31224bf544eb70ce2e4c104d5b27e2e",
+          "size_bytes": 357
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "raster_tiler"
+  ]
+}

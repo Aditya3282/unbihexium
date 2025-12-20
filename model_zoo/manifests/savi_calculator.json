@@ -1,0 +1,57 @@
+{
+  "model_id": "savi_calculator",
+  "name": "Savi Calculator",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Savi Calculator model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a3a41bf59604056588d92667dc8d4171668405ce407b745901b0aa3460a90cad",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "a1fd462bc3dd18209b4fe323a4605d38c1c61e3dffad90977d015740c51c88bd",
+          "size_bytes": 350
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b31c02705bac54948fe96d3f5e6f509670e1b7363c7757c3a0d597f8626a533f",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "8ab00980a5bfa53dc4553002a67b47c8bc9b2cea8f410743f05512d36065da71",
+          "size_bytes": 350
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "01841c6a3264d2fd0508ebeaf1170211a1da5f0a5e9c0f582c559cdfc683b9ac",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "520160b434f9c4f4d39d27c0e36b9fbd7b5c1b3966c7091545fa9ba5b2edfeca",
+          "size_bytes": 354
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "savi_calculator"
+  ]
+}

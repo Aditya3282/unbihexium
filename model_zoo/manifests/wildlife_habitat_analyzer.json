@@ -1,0 +1,57 @@
+{
+  "model_id": "wildlife_habitat_analyzer",
+  "name": "Wildlife Habitat Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Wildlife Habitat Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bc8e3f714d3fc076eaa87d985d624d054fb4228c9d8486700362d1c7ba4ec53b",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "ba2a55789c1ad7397b53ed8574b09ddb7a00adbcadb59866e0082c8384b86603",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6c47a9ea2613fd710d7eeb940061991bba61be48e9c17940476f45f1681c360b",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "8125d0dc275f211e23f466ca7dea5e4801e3f1ebaddcdbedc999bb0aa6c4f164",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dc42243ec5d3fef89801064735a3ac494ec7d26152b94a4806ab227e2d50ad44",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "761cf1644194694b4eb2a74ecbd0cfc5013dde1bcded0153449b9c4b46522eb3",
+          "size_bytes": 191
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "wildlife_habitat_analyzer"
+  ]
+}

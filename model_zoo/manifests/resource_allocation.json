@@ -1,0 +1,57 @@
+{
+  "model_id": "resource_allocation",
+  "name": "Resource Allocation",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Resource Allocation model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f459a393d057a566a9f3113235c28eb07522ecb4a38180ca2c2beccb7f4c9348",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "6f133357a37b9346a79a85d2ae420b56fba0463bfcdb735fb2b0fe058fa9fda2",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a2a7dc73451fbd28b4b2a6bcd45eb322d2b906d0355d6d85ea8633f6ed3d8d60",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "48a7fed8ce6a895a27caa3083aec41febb8c9b07969d8c3d945ab28e015a8530",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a6c43999254b95f677a81cb1868c159928fc33e5170262074949446a78fb1137",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "face8646a330e87a60ea6350267dc832c2e77573b4ce1084f432d7ed9e08ac79",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "resource_allocation"
+  ]
+}

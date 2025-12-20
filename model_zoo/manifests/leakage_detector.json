@@ -1,0 +1,57 @@
+{
+  "model_id": "leakage_detector",
+  "name": "Leakage Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Leakage Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ac54ae5717950107312462ff9711d1e0583f81ace74272eb25b786908c79d564",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "1c785fba494445bb90ab9e333d615a1935a3af35b0adf708c60e78753605790d",
+          "size_bytes": 399
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "988c639ccdbed5df61f5b6a4e00a4ded1e0067e01cf8570cbd7c1ff8c06a83f7",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "bcdc037f03cfc3a68c7b7062fc0133e05980846f69c2372a52a426b5af33709a",
+          "size_bytes": 399
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "93e8b1a20a58d0ab0637196446a99face5da6267acd7726a035edad9e15024ff",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "9e9dcb08a25d31e804facc2aada74a8e1ea5fd8be71e321e7a40c30ccf7acb8d",
+          "size_bytes": 403
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "leakage_detector"
+  ]
+}

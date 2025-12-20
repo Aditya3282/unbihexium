@@ -1,0 +1,57 @@
+{
+  "model_id": "digitization_3d",
+  "name": "Digitization 3D",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Digitization 3D model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6a5a4acc0abdc40acf9ba02da61e6668fb50a87d4a00dbdde6358519c4749958",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "87a1165751bbef83f0cf6aee0f522778dc83855c7120139fa106816a75ff932b",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6e0a3b5eabaeebfe44129e19b5f9becd472988bfcd8e68ed0ad4d3b8479fe360",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "e9fe569cad14166013a9da24838b36c146929927cf3570d55753beb1898357c7",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b1d506475b813da7201c8071e2d441cbb144cdcd5e4601a94085337956c26a99",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "347a66eca9655f9334528470fdccfbff9e2e69dcbfe11d8268bdd7985259cd9c",
+          "size_bytes": 180
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "digitization_3d"
+  ]
+}

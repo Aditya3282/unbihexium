@@ -1,0 +1,10 @@
+{
+  "model_id": "network_analyzer_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 12
+  }
+}

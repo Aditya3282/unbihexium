@@ -1,0 +1,57 @@
+{
+  "model_id": "water_surface_detector",
+  "name": "Water Surface Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Water Surface Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "45baadae11cfbd414535f9cb600948679e2937144c91e3273a9e8a02e7ce5b7d",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "97cc617cca5e58a0031d0d9e76d6984222c23ab71873ae08c96df55e164fa6a1",
+          "size_bytes": 413
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f956cb548dfb4f59bc0c192fc21070dacc2117d1652b08fdd152ca7a35f441b9",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "9f31cb83f4570338847c5f920749ca470a9a77146e55343e83909b859e60aa89",
+          "size_bytes": 413
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5d3c1bbb36819e6607e4a2cc79d415dfba67d59652c0f1dfcc7207c1a88d5731",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "11e4ec1de9f8c9d1568d6acf019caa45d512cc7b183951ba971d0f6be3183e10",
+          "size_bytes": 417
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "water_surface_detector"
+  ]
+}

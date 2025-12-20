@@ -1,0 +1,57 @@
+{
+  "model_id": "change_detector",
+  "name": "Change Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Change Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "28b31eaafcd314893b239c3ccaeb8cf56881be52dfcea199f73b5aa911ed89ad",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "9464c2b7e7e78814f9244c7894a9ed418a5c2fa2150c6f5cac778f05bf7be195",
+          "size_bytes": 420
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5628cce37c72f9bd52c55017949dc550aaeebdba865b96258d5152c235b6986d",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "6010913c51a7f3b311ae60fb64288bdf710b7c4c3cc60bb2727e89a561562e4b",
+          "size_bytes": 420
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cda3b05e1ac244ccebb4ef1b3677adaa23967db573519cc27be0c2f8cb524479",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "5bba43edf9e8a4f430f1ac61aa00d356ac683a9d333a5adbae302f1f33c533b7",
+          "size_bytes": 424
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "change_detector"
+  ]
+}

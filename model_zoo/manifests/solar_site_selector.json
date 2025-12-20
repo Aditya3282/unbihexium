@@ -1,0 +1,57 @@
+{
+  "model_id": "solar_site_selector",
+  "name": "Solar Site Selector",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Solar Site Selector model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f1de356736e2560b521222913a7c0d16aceef1cb2b255326c07948ce998dc0b3",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "a27a327f46fe94001bb218afea7d334f417707784045919bb46a1177d58ab475",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "23fcd5f0c21910a26b5c7f9b9f889272c143f89b14b9b7ac08826fc5c7b8746d",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "a547e1c67313536fb2fd288da52d5547ac1ac29270d1e48490e4def0c36f5a61",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "812d8edbead54c86d35a73d33d923ee5246b98d4a3b9765ea7312b20b4c70d8d",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "cbefe398744d8863e07f306e8601be554a9f2dc84d30cda26192d0ae929605b0",
+          "size_bytes": 185
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "solar_site_selector"
+  ]
+}

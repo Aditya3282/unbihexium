@@ -1,0 +1,57 @@
+{
+  "model_id": "economic_spatial_assessor",
+  "name": "Economic Spatial Assessor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Economic Spatial Assessor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ef39e8de8920162fbab67d83e4ed5614e4950acbaf464eeebc689333741b9eb1",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "a6ec356d968ae19b12eabe8731b9323ea2a04e4eea613981f1c76a88a9ec5fcd",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9416b7a32bbe5ae0ab663d101fc030ce79cbc0885a1caff130089105aa35a72e",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "395f521d2e5d51a705401d620fbcb9e0e99bc3b5e9a8b7c43aca1580b4b61b8b",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4ba3ba50c5f53ca1281c0b3ec0104da74092bbaebfa42a3d1b9df9ffab34885d",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "30d03f3d9601b43c7556aa544ddaf45383eb183226e3b17ec4d6e9c5115cab34",
+          "size_bytes": 191
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "economic_spatial_assessor"
+  ]
+}

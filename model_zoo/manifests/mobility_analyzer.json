@@ -1,0 +1,57 @@
+{
+  "model_id": "mobility_analyzer",
+  "name": "Mobility Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Mobility Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fade634077c48da595778fd6067b5818583d980acf5f560798de7a6bd5f92b8e",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "17a49dbe644466c2975b3e8f4a96e52b03964ee4f3d80030c21a5134f80a2189",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bd7b102d426c6f4bc794a1e69aef14d1339f7f44ad7051a9e79490bf9cf3866e",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "82a303ea618a3a79566009da59395bf136f2b5899f0e19247cf09bfc75076fb2",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7094ce52699666cbf7474f3b755a85af827b5c87c8bbdc51a75d9701d9b7ce60",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "4a253f66ac7cfca39bf9bab6d38dfc87da20a7d8c89f671614b6f074635d6ca0",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "mobility_analyzer"
+  ]
+}

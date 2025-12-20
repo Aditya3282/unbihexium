@@ -1,0 +1,10 @@
+{
+  "model_id": "tree_height_estimator_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "accessibility_analyzer",
+  "name": "Accessibility Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Accessibility Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d8595b3c5375af40f1912bbb02d5a041edb990b19a8f059496a5daa77a36980a",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "d2d7da551ec1a719cd99bb345278e9c2e23b2c5c89a426bb34dbec256fb68846",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ddc4197ca38df986fb5ec972a41b43c6b7609ee4bcdab9790386e51b5437c8d7",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "ac2d10abf8486fbd61b8166241b2d348082e4e37690afbfe9fbe28dc4a240def",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d5fb81ffe63a6e8f6715c42c87080b600e7f45a09a94f2967f8bb4d793f7b910",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "d7d3c94ef4d2794afcc42cc2755ea9f0db2a949ed03f025c67ca96008399cdd7",
+          "size_bytes": 188
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "accessibility_analyzer"
+  ]
+}

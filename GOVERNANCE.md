@@ -2,60 +2,63 @@
 
 ## Purpose
 
-This document describes the governance model for the unbihexium project.
+This document defines the governance structure and decision-making processes for Unbihexium.
 
-## Audience
-
-Contributors, maintainers, and community members.
-
-## Governance Structure
+## Governance Model
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph Leadership
-        LEAD[Project Lead]
-        CORE[Core Maintainers]
+        A[Maintainers]
+        B[Core Team]
     end
-
+    
+    subgraph Contributors
+        C[Regular Contributors]
+        D[Occasional Contributors]
+    end
+    
     subgraph Community
-        CONTRIB[Contributors]
-        USERS[Users]
+        E[Users]
+        F[Reporters]
     end
-
-    LEAD --> CORE
-    CORE --> CONTRIB
-    CONTRIB --> USERS
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
+
+## Decision Framework
+
+Decisions weighted by impact and reversibility:
+
+$$
+\text{Decision Level} = f(\text{Impact}, \text{Reversibility})
+$$
+
+| Decision Type | Impact | Approval Required |
+|---------------|--------|-------------------|
+| Bug fixes | Low | 1 maintainer |
+| Features | Medium | 2 maintainers |
+| Breaking changes | High | Core team consensus |
+| Governance | Critical | Full team vote |
 
 ## Roles
 
-| Role | Responsibilities | Decision Authority |
-|------|------------------|-------------------|
-| Project Lead | Strategic direction, final decisions | Full |
-| Core Maintainer | Review, merge, release | Commit access |
-| Contributor | Code, docs, issues | Pull requests |
-| User | Feedback, issues | Issue reporting |
+| Role | Responsibilities | Requirements |
+|------|-----------------|--------------|
+| Maintainer | Review, merge, release | Sustained contribution |
+| Core Team | Strategy, architecture | Maintainer + experience |
+| Contributor | Features, fixes | Signed CLA |
 
-## Decision Making
+## Processes
 
-Decision weight formula:
+1. **Proposals**: Via GitHub Discussions
+2. **Voting**: Lazy consensus (72h silence = approval)
+3. **Appeals**: Core team review
 
-$$W_{decision} = \sum_{i} role_i \times vote_i$$
+## Succession
 
-Where $role_i$ is the role weight and $vote_i \in \{-1, 0, 1\}$.
-
-## Becoming a Maintainer
-
-1. Sustained quality contributions
-2. Demonstrated understanding of codebase
-3. Nomination by existing maintainer
-4. Approval by project lead
-
-## Code of Conduct
-
-All participants must follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
-
-## References
-
-- [Contributing](CONTRIBUTING.md)
-- [Security](SECURITY.md)
+Inactive maintainers (6 months) may be moved to emeritus status.

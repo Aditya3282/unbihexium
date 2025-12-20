@@ -1,0 +1,10 @@
+{
+  "model_id": "field_surveyor_tiny",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

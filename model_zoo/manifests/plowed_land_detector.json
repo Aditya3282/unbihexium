@@ -1,0 +1,57 @@
+{
+  "model_id": "plowed_land_detector",
+  "name": "Plowed Land Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Plowed Land Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bdbb5c2c422941fff2fb4929fdde49fbdb04cbbe5d2617587a208b29f624e6ca",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "ad423a7aed7d5997d72e78917d51c3aa9d9cc1ec314cc541754015a8d9880fd6",
+          "size_bytes": 416
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9318ecef3fa6008db8bec9829118f5b10ae80fa0304c684b44e70b78827a84d4",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "5c42526bfb9cf368c095f007bc08d8f6196ed945596d0c906ca646af4a7c79a9",
+          "size_bytes": 416
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d3ae3b09360e8c5d8343179b2ffd8f1b75e478fbdc90fc56f7ffb27352b44298",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "83ab24c4b10a926275224760288d6bab87b9b6414149646651d9fd51d0a69ce0",
+          "size_bytes": 420
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "plowed_land_detector"
+  ]
+}

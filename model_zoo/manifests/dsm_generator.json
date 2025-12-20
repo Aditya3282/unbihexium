@@ -1,0 +1,57 @@
+{
+  "model_id": "dsm_generator",
+  "name": "Dsm Generator",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Dsm Generator model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ebc8379e170760423952bd07315fcab1befd0205b3cfb064e7bfac28b7de665b",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "cadac0a2455d4265d7e97c215db0e6b523967100752004aa46b02819ec77e349",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f96a6813cdd1dfc04af9c79f7b27db6f2824dc57f00006ea9628777c3f4d2d5a",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "e81c2bcf96d7bb01b66532d70663e001857ce2228a7361558bc23db1f11f5356",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cf3f9c2daaa48fc19e9d1549c5a096cd465861d2e9ba0294fda509d54ee10258",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "c8e34a4a8ed81afcf8c5cb0e589f815ace8ecf1b5727ba4ab6092df877895d4e",
+          "size_bytes": 178
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "dsm_generator"
+  ]
+}

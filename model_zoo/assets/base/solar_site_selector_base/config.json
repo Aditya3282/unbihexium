@@ -1,0 +1,10 @@
+{
+  "model_id": "solar_site_selector_base",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 12
+  }
+}

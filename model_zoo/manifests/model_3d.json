@@ -1,0 +1,57 @@
+{
+  "model_id": "model_3d",
+  "name": "Model 3D",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Model 3D model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "352009fbb11791322b746640317ca5973a1f90671d2da3f4585ca00c3a49b886",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "f85174db45491555dc1d4b7dd1fc8fee4edd4fad0be77f2a970fc3c9d207f559",
+          "size_bytes": 171
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "00d026fe6dc3071414cd63921ec1f9605d8f354b0d9cb5633989b704d5b7dea3",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "209942f437535a3d2f958a32d49a447d3530a07397a96ce12b8d8eacb632efd7",
+          "size_bytes": 171
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4f552c27b943d47fd310d907808d60fbe8a63be8d2d97503f3d2f0ee4d74260a",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "ddb77a3656eba8979da54ea26f203d985deade4360574ac214319818c4be611b",
+          "size_bytes": 173
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "model_3d"
+  ]
+}

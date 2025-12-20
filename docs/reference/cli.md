@@ -1,102 +1,75 @@
 # CLI Reference
 
-Command-line interface reference for unbihexium.
+## Purpose
+
+Complete reference for the Unbihexium command-line interface.
+
+## Command Structure
+
+```mermaid
+graph TB
+    A[unbihexium] --> B[zoo]
+    A --> C[infer]
+    A --> D[pipeline]
+    A --> E[data]
+    
+    B --> B1[list]
+    B --> B2[download]
+    B --> B3[info]
+    
+    D --> D1[run]
+    D --> D2[validate]
+```
+
+## Command Reference
+
+$$
+\text{Command} = \text{Group} + \text{Subcommand} + \text{Arguments} + \text{Options}
+$$
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `unbihexium --version` | Show version | `unbihexium --version` |
+| `unbihexium zoo list` | List models | `unbihexium zoo list` |
+| `unbihexium zoo download` | Download model | `unbihexium zoo download ship_detector_base` |
+| `unbihexium infer` | Run inference | `unbihexium infer model_id -i in.tif -o out.tif` |
+| `unbihexium pipeline run` | Run pipeline | `unbihexium pipeline run detection -c config.yaml` |
 
 ## Global Options
 
 | Option | Description |
 |--------|-------------|
 | `--version` | Show version |
-| `-v, --verbose` | Verbose output |
 | `--help` | Show help |
-
-## Commands
-
-```mermaid
-graph TD
-    CLI[unbihexium] --> info[info]
-    CLI --> zoo[zoo]
-    CLI --> pipeline[pipeline]
-    CLI --> index[index]
-
-    zoo --> list[list]
-    zoo --> download[download]
-    zoo --> verify[verify]
-
-    pipeline --> plist[list]
-    pipeline --> run[run]
-```
-
-## unbihexium info
-
-Display library information.
-
-```bash
-unbihexium info
-```
+| `--verbose` | Verbose output |
+| `--quiet` | Suppress output |
 
 ## Zoo Commands
 
-### unbihexium zoo list
-
-List available models:
-
 ```bash
+# List all models
 unbihexium zoo list
+
+# Filter by task
 unbihexium zoo list --task detection
-unbihexium zoo list --json
+
+# Download model
+unbihexium zoo download ship_detector_base
+
+# Model info
+unbihexium zoo info ship_detector_base
 ```
 
-| Option | Description |
-|--------|-------------|
-| `-t, --task` | Filter by task type |
-| `--json` | Output as JSON |
-
-### unbihexium zoo download
-
-Download a model:
+## Inference Commands
 
 ```bash
-unbihexium zoo download ship_detector_tiny
-unbihexium zoo download ship_detector_v1 --version 1.0.0
+# Basic inference
+unbihexium infer ship_detector_base -i input.tif -o output.tif
+
+# With options
+unbihexium infer ship_detector_base \
+  -i input.tif \
+  -o output.tif \
+  --device cuda \
+  --batch-size 4
 ```
-
-### unbihexium zoo verify
-
-Verify model integrity:
-
-```bash
-unbihexium zoo verify ship_detector_tiny
-```
-
-Uses SHA256 verification:
-
-$$H = SHA256(model\_file)$$
-
-## Pipeline Commands
-
-### unbihexium pipeline list
-
-```bash
-unbihexium pipeline list
-unbihexium pipeline list --domain ai
-```
-
-### unbihexium pipeline run
-
-```bash
-unbihexium pipeline run ship_detection -i input.tif -o output.geojson
-```
-
-## Index Command
-
-```bash
-unbihexium index NDVI -i input.tif -o output.tif
-```
-
-| Option | Description |
-|--------|-------------|
-| `-i, --input` | Input raster file |
-| `-o, --output` | Output file |
-| `--red` | Red band name |
-| `--nir` | NIR band name |

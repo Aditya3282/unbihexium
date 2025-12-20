@@ -1,0 +1,57 @@
+{
+  "model_id": "flood_risk",
+  "name": "Flood Risk",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Flood Risk model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1ec57be7b19ba523a2be03f598ee182168323adf0a7ccaf25be0a78bfbba1669",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "6a516043e86cf4ec48c646294c9599eb634a0515c40dfeb790b1b42461033f55",
+          "size_bytes": 174
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "397c3ff8d3ab5bbbf910eb424faacf1deac851735ded1af6edd1810541269984",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "523767ed452f0229dfa2af32f479636fe3ca40c38052d1ab2b4fa349e806031f",
+          "size_bytes": 174
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "53c900bef24f9b4d131ff3e51b7afde97d7cc31443b0183bfcc3397bf4f95919",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "cbe8b436bee1bb6521e33432243cbd5643ee74c17c3fdc527bb05341feb1c6b0",
+          "size_bytes": 176
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "flood_risk"
+  ]
+}

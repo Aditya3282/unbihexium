@@ -1,0 +1,57 @@
+{
+  "model_id": "object_detector",
+  "name": "Object Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Object Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bbeca24ad1aa6fffd8ba45c33845a2ae68106a804e9b81249ce5e92dcb80c2dd",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "d3c1500c1114a99527359b9031b425863449fafd856049bd428a50efc28962e9",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1f53f6b4df511854d3ca10b7423c7ce3b08280a0c39794d36d574a09d38c02cf",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "8e6a22055933f9722979714f70c736b2ed4d8d78fba7e5785dcfd5ad0dbe90d6",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b8fb1b3427dd7712e4a38dc8d36dc25257f1f6ada1f6b5e5c6874420e881066e",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "1168db436727d2ad18a5bb0a4c83a728a4b8627e252d5ef12edcabf66828fc95",
+          "size_bytes": 401
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "object_detector"
+  ]
+}

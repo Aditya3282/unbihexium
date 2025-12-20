@@ -1,0 +1,57 @@
+{
+  "model_id": "msi_calculator",
+  "name": "Msi Calculator",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Msi Calculator model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "efcc568863a0c4e627c67f7cf190d51cc2b7d5212f68347ad17a0304f10bb270",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "a3cf393aad85287582c79d41739c04b45322d2d47c5239cb51ca2c47bb1e187e",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "501bea8022aebcc40dd7307fa8b1175aef54c8250b7897d081b2896b22010a06",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "cb3f2624fe39587a47e49a3eb00c2bcdba3bddbc44f263b1ae48da59b14bfd26",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4876a8bec9231dd02787c38910225116456df79904a6bd18da070fba7cf5f2b7",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "b2e293fa400bae26bfe9347b220c2e463245f1cd6a7f11808c95e49cf2ba97d7",
+          "size_bytes": 353
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "msi_calculator"
+  ]
+}

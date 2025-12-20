@@ -1,164 +1,129 @@
-# 12 - Radar Imaging (SAR)
+# Capability 12: Radar and SAR
 
 ## Purpose
 
-Synthetic Aperture Radar (SAR) processing, analysis, and applications.
+Synthetic Aperture Radar (SAR) processing, amplitude analytics, and interferometric workflows.
 
-## Audience
+## Scope
 
-SAR specialists, radar engineers, remote sensing scientists, geophysicists.
+Research-grade SAR capabilities with documented limitations.
 
-## Prerequisites
-
-- Python 3.10+
-- SAR data (Sentinel-1, RADARSAT, ICEYE, etc.)
-- Understanding of SAR principles
-
-## Non-Goals
-
-This documentation does not overclaim detection capabilities. SAR-based observations are constrained to scientifically validated techniques.
-
-## Inputs/Outputs
-
-| Input | Format | Output | Format |
-|-------|--------|--------|--------|
-| SLC data | SAFE, TIFF | Calibrated amplitude | GeoTIFF |
-| InSAR pairs | SLC | Displacement maps | GeoTIFF |
-| Multi-temporal stack | SLC | Time series | Zarr |
-
-## SAR Processing Pipeline
+## Architecture
 
 ```mermaid
-flowchart TB
-    RAW[Raw SAR Data] --> CAL[Radiometric Calibration]
-    CAL --> GEO[Geometric Correction]
-    GEO --> FILT[Speckle Filtering]
-
-    subgraph Amplitude
-        FILT --> AMP[Amplitude Analysis]
-        AMP --> DETECT[Detection]
+graph TB
+    subgraph "SAR Input"
+        A1[SLC Data]
+        A2[GRD Data]
     end
-
-    subgraph InSAR
-        COREG[Co-registration]
-        IFG[Interferogram]
-        COH[Coherence]
-        UNW[Phase Unwrapping]
-        DISP[Displacement]
-
-        FILT --> COREG
-        COREG --> IFG
-        IFG --> COH
-        IFG --> UNW
-        UNW --> DISP
+    
+    subgraph "Processing"
+        B1[Amplitude]
+        B2[Phase]
+        B3[Coherence]
     end
+    
+    subgraph "Products"
+        C1[Backscatter Maps]
+        C2[Displacement]
+        C3[Change Detection]
+    end
+    
+    A1 --> B1
+    A1 --> B2
+    B2 --> B3
+    B1 --> C1
+    B2 --> C2
+    B3 --> C3
 ```
 
-## Algorithms
+## Required Capabilities (Verbatim Specification)
 
-### Sigma0 Calibration
+- SAR IO/preprocessing scaffolding
+- Amplitude analytics
+- Phase component displacement demo (InSAR-style; research-grade if not validated)
+- Severe weather/night narrative with constraints
+- "Hidden object" wording must be scientifically constrained; no overclaim
+- Mapping/monitoring workflows
 
-$$\sigma^0 = \frac{|DN|^2 \sin(\theta)}{K}$$
+## Mathematical Foundations
+
+### SAR Backscatter
+
+$$
+\sigma^0 = \frac{4\pi}{A} \cdot |S|^2
+$$
+
+### Interferometric Phase
+
+$$
+\Delta\phi = \phi_1 - \phi_2 = \frac{4\pi}{\lambda} \cdot d_{\text{LOS}}
+$$
 
 ### Coherence
 
-$$\gamma = \frac{|E[s_1 \cdot s_2^*]|}{\sqrt{E[|s_1|^2] \cdot E[|s_2|^2]}}$$
+$$
+\gamma = \frac{|\langle s_1 \cdot s_2^* \rangle|}{\sqrt{\langle |s_1|^2 \rangle \langle |s_2|^2 \rangle}}
+$$
 
-### Phase to Displacement (Research-Grade)
+### Line-of-Sight Displacement
 
-$$d = \frac{\lambda \cdot \phi_{unwrapped}}{4\pi}$$
-
-Note: Phase unwrapping is research-grade; not validated for production.
+$$
+d_{\text{LOS}} = \frac{\lambda \cdot \Delta\phi}{4\pi}
+$$
 
 ## SAR Advantages
 
-| Feature | Benefit | Constraint |
-|---------|---------|------------|
-| All-weather | Cloud penetration | Not for optical analysis |
-| Day/night | 24-hour capability | Different interpretation |
-| Surface sensitivity | Moisture/roughness | Complex scattering |
-
-## Mandatory Mapping Table
-
-| Bullet Item | capability_id | Module Path | Pipeline ID | CLI Example | Example Script | Test Path | Model ID(s) | Maturity |
-|-------------|---------------|-------------|-------------|-------------|----------------|-----------|-------------|----------|
-| SAR IO/preprocessing scaffolding | sar_io | `unbihexium.sar.amplitude` | sar_cal | `unbihexium pipeline run sar_cal -i raw.tif -o sigma0.tif` | `examples/sar_preprocessing.py` | `tests/unit/test_sar.py` | sar_amplitude_tiny, sar_amplitude_base, sar_amplitude_large | production |
-| Amplitude analytics | amplitude | `unbihexium.sar.amplitude` | amplitude | `unbihexium pipeline run amplitude -i sar.tif -o amplitude.tif` | `examples/amplitude.py` | `tests/unit/test_sar.py` | sar_amplitude_tiny, sar_amplitude_base, sar_amplitude_large | production |
-| Phase component displacement demo (InSAR-style; research-grade if not validated) | insar_disp | `unbihexium.sar.interferometry` | insar | `unbihexium pipeline run insar -i master.slc -i slave.slc -o disp.tif` | `examples/insar.py` | `tests/unit/test_sar.py` | sar_phase_displacement_tiny, sar_phase_displacement_base, sar_phase_displacement_large | research |
-| Severe weather/night narrative with constraints | weather_mode | `unbihexium.sar` | sar_detect | `unbihexium pipeline run sar_detect -i sar.tif -o detections.geojson` | `examples/sar_detection.py` | `tests/unit/test_sar.py` | sar_ship_detector_tiny, sar_ship_detector_base, sar_ship_detector_large | production |
-| Hidden object wording must be scientifically constrained; no overclaim | surface_scatter | `unbihexium.sar.amplitude` | scatter | `unbihexium pipeline run scatter -i sar.tif -o scatter.tif` | `examples/scattering.py` | `tests/unit/test_sar.py` | classical/no-weights | production |
-| Mapping/monitoring workflows | sar_mapping | `unbihexium.sar` | sar_map | `unbihexium pipeline run sar_map -i timeseries/ -o changes.tif` | `examples/sar_mapping.py` | `tests/unit/test_sar.py` | sar_mapping_workflow_tiny, sar_mapping_workflow_base, sar_mapping_workflow_large | production |
-
-## SAR Applications
-
-| Application | Method | Model IDs |
-|-------------|--------|-----------|
-| Ship detection | CFAR + CNN | sar_ship_detector_* |
-| Oil spill detection | Amplitude anomaly | sar_oil_spill_detector_* |
-| Flood mapping | Thresholding + ML | sar_flood_detector_* |
-| Subsidence monitoring | InSAR time series | sar_subsidence_monitor_* |
+| Feature | Optical | SAR |
+|---------|---------|-----|
+| Cloud penetration | No | Yes |
+| Night operation | No | Yes |
+| All-weather | No | Yes |
+| Subsurface | No | Limited |
 
 ## Scientific Constraints
 
-The following constraints apply to SAR-based observations:
+SAR capabilities have important limitations:
 
-1. **"Hidden object" detection** is limited to surface scattering properties. SAR does not "see through" solid structures.
-2. **Phase unwrapping** is in research-grade status and may produce ambiguous results in areas of rapid deformation.
-3. **Displacement measurements** require coherent image pairs and are affected by atmospheric delays.
+| Claim | Reality | Constraint |
+|-------|---------|------------|
+| "Hidden object detection" | Subsurface penetration limited | Depends on wavelength, moisture |
+| Phase displacement | Requires atmospheric correction | Research-grade accuracy |
+| Coherence | Temporal decorrelation | Short temporal baseline needed |
 
-## Severe Weather/Night Capability
+## Mandatory Mapping Table
 
-SAR enables imaging in conditions where optical sensors fail:
+| Bullet Item | capability_id | Module Path | Model ID(s) | Maturity |
+|-------------|---------------|-------------|-------------|----------|
+| SAR I/O | cap.sar_io | `unbihexium.sar.io` | N/A | production |
+| Amplitude analytics | cap.sar_amp | `unbihexium.sar.amplitude` | sar_amplitude_{t,b,l} | production |
+| Phase displacement | cap.sar_phase | `unbihexium.sar.phase` | sar_phase_displacement_{t,b,l} | research |
+| Subsidence | cap.sar_subs | `unbihexium.sar.subsidence` | sar_subsidence_monitor_{t,b,l} | research |
+| SAR flood detection | cap.sar_flood | `unbihexium.sar.flood` | sar_flood_detector_{t,b,l} | production |
+| SAR oil spill | cap.sar_oil | `unbihexium.sar.oil` | sar_oil_spill_detector_{t,b,l} | production |
+| SAR ship detection | cap.sar_ship | `unbihexium.sar.ship` | sar_ship_detector_{t,b,l} | production |
+| SAR mapping workflow | cap.sar_map | `unbihexium.sar.mapping` | sar_mapping_workflow_{t,b,l} | production |
 
-| Condition | SAR Capability | Constraint |
-|-----------|----------------|------------|
-| Cloud cover | Full penetration | N/A |
-| Night | Active illumination | N/A |
-| Rain | Reduced for X-band | C-band preferred |
-| Fog | Full penetration | N/A |
+## Weather/Night Narrative
+
+SAR sensors can operate in:
+- **Severe weather**: Cloud, rain (C-band and longer)
+- **Night conditions**: Active illumination
+
+However:
+- Heavy precipitation affects C-band
+- X-band sensitive to rain
+- Quality depends on incidence angle
 
 ## Limitations
 
-- InSAR requires coherent image pairs
-- Speckle noise requires filtering
-- Geometric distortions (foreshortening, layover, shadow)
-- Phase unwrapping may fail in complex terrain
-
-## Examples (CLI)
-
-```bash
-# SAR calibration
-unbihexium pipeline run sar_cal -i sentinel1.tif -o sigma0.tif
-
-# Ship detection
-unbihexium pipeline run sar_detect -i sar.tif -o ships.geojson
-
-# InSAR displacement (research-grade)
-unbihexium pipeline run insar -i master.slc -i slave.slc -o displacement.tif
-```
-
-## API Entry Points
-
-```python
-from unbihexium.sar.amplitude import calibrate_amplitude, speckle_filter
-from unbihexium.sar.polarimetry import pauli_decomposition
-from unbihexium.sar.interferometry import compute_coherence, compute_displacement
-```
-
-## Tests
-
-- Unit tests: `tests/unit/test_sar.py`
+1. InSAR requires SLC data pairs
+2. Atmospheric effects require correction
+3. Phase unwrapping is research-grade
+4. Subsurface detection highly constrained
+5. Temporal decorrelation limits revisit intervals
 
 ## References
 
-- [Documentation Index](../index.md)
-- [Table of Contents](../toc.md)
-- [Glossary](../glossary.md)
-
----
-
-## Quick Navigation
-
-| Prev | Home | Next |
-|------|------|------|
-
+1. Rosen, P.A. et al. (2000). Synthetic Aperture Radar Interferometry. Proc. IEEE.
+2. Ferretti, A. et al. (2001). Permanent scatterers in SAR interferometry. IEEE TGRS.

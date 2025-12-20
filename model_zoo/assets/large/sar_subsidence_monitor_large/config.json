@@ -1,0 +1,10 @@
+{
+  "model_id": "sar_subsidence_monitor_large",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

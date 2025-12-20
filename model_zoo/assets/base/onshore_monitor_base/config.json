@@ -1,0 +1,10 @@
+{
+  "model_id": "onshore_monitor_base",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

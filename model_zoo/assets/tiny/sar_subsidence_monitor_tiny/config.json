@@ -1,0 +1,10 @@
+{
+  "model_id": "sar_subsidence_monitor_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

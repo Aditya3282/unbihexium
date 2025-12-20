@@ -1,0 +1,57 @@
+{
+  "model_id": "forest_monitor",
+  "name": "Forest Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Forest Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "39b27f4d3837bded6268755250f01ae76be69f2f753aecd857e1658b991dd3d8",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "ed4a23dd720df4768ab5298dcaa87fe05c52e941a89763f18ebeeef01fad9bf1",
+          "size_bytes": 412
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c43512309e629aeb3327c441db7ae563c893d4e22982655b151aa371bd51746e",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "fd72f86677fa19137d896ff4858471246c0cd5584ba95295a0b89f6247085493",
+          "size_bytes": 412
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c15f409cc491e4f3178de95e1c40200bda8228abc44a1990331f9a3964a6f03b",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "7375127ec254f36b06bcf4fb2d8987e2a8efd29ed4d7374c16e65867d39b2ae4",
+          "size_bytes": 416
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "forest_monitor"
+  ]
+}

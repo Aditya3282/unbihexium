@@ -1,0 +1,57 @@
+{
+  "model_id": "vehicle_detector",
+  "name": "Vehicle Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Vehicle Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a5604d12cd295225dfae8b8c8aa05704c4aa0a1140bdf5aed97e1be644ea8be7",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "a92822f17568cb164445f3d2468e257b8a2cbbd4337213171e0c8b46961ac76c",
+          "size_bytes": 399
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5312c5afbd26b6a13f6ca1ee7b7b94c7a6c38fad5a8016eefdf5cca6538ee6ac",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "3d0d4097eccb850572d4e0bfb967fac47bef0a0e4eb351331fd6b7a41ebce705",
+          "size_bytes": 399
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "86634a01d0c2d2141428310c948fd5bc674c7211eb53a68a03d564eb502369c3",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "f6586c829db2e6b08ef8b1afc0b5d971f17cde3c8e4d0fbad8f9645dc3038239",
+          "size_bytes": 403
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "vehicle_detector"
+  ]
+}

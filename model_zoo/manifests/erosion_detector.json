@@ -1,0 +1,57 @@
+{
+  "model_id": "erosion_detector",
+  "name": "Erosion Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Erosion Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "27d02fd67152f948978ef96575c6c3fc994afaeb5f1f85074493d89a8f898524",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "15bce2c71c79449a2f650477f70b4064d478effbb662e3aec6d842e7df709cef",
+          "size_bytes": 410
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "32c95008364bea491599aaabf8101c355b725714bacd18f6e3585a21fb30d8c5",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "87772e26442cffd10484fafb99b0f09e3865e6d900241208194ced52a6660d4c",
+          "size_bytes": 410
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "587a41ef2741be3d1a122c162b0facae8484c526fc32a775a0635dbad9efcf17",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "a9a6848c053a812914baacccfc72c2c83dcb2d33b1679a52ffdc15b426acb51b",
+          "size_bytes": 414
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "erosion_detector"
+  ]
+}

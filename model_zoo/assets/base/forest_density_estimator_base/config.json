@@ -1,0 +1,10 @@
+{
+  "model_id": "forest_density_estimator_base",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

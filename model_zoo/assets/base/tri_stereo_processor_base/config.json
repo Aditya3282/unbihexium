@@ -1,0 +1,10 @@
+{
+  "model_id": "tri_stereo_processor_base",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 3
+  }
+}

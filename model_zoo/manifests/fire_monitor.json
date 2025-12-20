@@ -1,0 +1,57 @@
+{
+  "model_id": "fire_monitor",
+  "name": "Fire Monitor",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Fire Monitor model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9c7839c978e721e23f1b7c60fa2cdd4db8256cab0c78e228542d367610c1228b",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "50dd17988186a88cfd5fef81c00a7edc04d167082567246313a2786d03f70997",
+          "size_bytes": 392
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "09f1ecf79ebbfbc643ce1c87315fa764383f0d7030577df2bbe5ff2748457556",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "81bc917757e08b6765dc8c10eb6381ad1a071c9021605088bf65b83836848edd",
+          "size_bytes": 392
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fef125bbe0d060e10e11ff199486fdb1161d6174971f6759876ee9e42e0768a1",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "605277544965c90d17e44171fcc8387764aa6cdf9b24157dededba88bba71322",
+          "size_bytes": 396
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "fire_monitor"
+  ]
+}

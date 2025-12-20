@@ -1,0 +1,57 @@
+{
+  "model_id": "multispectral_processor",
+  "name": "Multispectral Processor",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Multispectral Processor model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "35c4f5761e09d7ed6066a0735cb38306a441e38bcb9696fd87e573cefc462a29",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "ce7aa65f702d58ed0c8ab495edfcd655e3124c4d70fb75a2938840a4670e43d1",
+          "size_bytes": 364
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d658efb2a5ba1bded4f9733c67e363e04e08655166ca05fcdc5eb58a4ad3652b",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "37565fe4e77cc3860e911603a5c18061b59345fb07de6c012088a2f76a006c90",
+          "size_bytes": 364
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "df0508ff28c1ccbef25364d83d7d5f73a118ce388c5d1ef408261a265749c72e",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "0e2a754ac870e2fab023e34d9f949802e51287a1706de133844bc735f821a09b",
+          "size_bytes": 368
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "multispectral_processor"
+  ]
+}

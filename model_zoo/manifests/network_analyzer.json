@@ -1,0 +1,57 @@
+{
+  "model_id": "network_analyzer",
+  "name": "Network Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Network Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "eec78cae06957b75ccfd0eea9485c330e8f53aa4504a757475efb44cce5c1fff",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "98fd504d77ced7f5255a766db43f01c83b45b644950aeb517fd7546c5109050e",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "453e2e52e9dde82e9d6c870850273a8b7ba50424f115edd4e35bcebc4407508f",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "306f635b63692696d375a11418996dbe518e1b7e09989f3c69c29de6612431f9",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6c58b499294f8c0fd5e6ee469ae8cba9df70a73efabd45cee4e8938c8c9d2cca",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "9a0d8fcf1b27c8636c689c61d2b766b16871eafbc5e5494f01568ed7c185278b",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "network_analyzer"
+  ]
+}

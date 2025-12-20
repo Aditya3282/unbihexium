@@ -1,0 +1,57 @@
+{
+  "model_id": "panchromatic_processor",
+  "name": "Panchromatic Processor",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Panchromatic Processor model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "43acddcc02a225e18c520a5f364d63d21e00e453aa9f3812ef6cfdad2977bf11",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "f55ea012b0ced163ed4fcb13c17acb4c688e4cd97e80eba3c4b6858c4158d49c",
+          "size_bytes": 363
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "aeb438165bef7b869f5c394d60191694ea9b28e8c0cad7a7e2211bdf062c283e",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "52eda95e181c649073667827448954a2c7c41ce98c2eb711b034ff5bdd348f11",
+          "size_bytes": 363
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "eeb54b5ae61df4a4c375d995d82551b7bb4ae8bc182fd2c774abfabb09de45a0",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "d3f9aa83a062aad66a4d5c185aa2e97a36008c2e91ae86b60316aad6113485fb",
+          "size_bytes": 367
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "panchromatic_processor"
+  ]
+}

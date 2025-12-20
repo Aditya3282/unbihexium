@@ -1,153 +1,123 @@
-# 03 - Indices, Flood and Water
+# Capability 03: Vegetation Indices and Flood/Water
 
 ## Purpose
 
-Spectral index calculation and water/flood management capabilities.
+Spectral vegetation indices calculation and flood/water body analysis capabilities.
 
-## Audience
-
-Remote sensing analysts, hydrologists, environmental scientists.
-
-## Prerequisites
-
-- Python 3.10+
-- Multispectral imagery with appropriate bands
-- DEM for watershed analysis
-
-## Inputs/Outputs
-
-| Input | Format | Output | Format |
-|-------|--------|--------|--------|
-| Multispectral bands | GeoTIFF | Index rasters | GeoTIFF |
-| DEM | GeoTIFF | Watershed delineation | GeoJSON |
-| Time series | Zarr | Trend analysis | JSON |
-
-## Pipeline Architecture
+## Architecture
 
 ```mermaid
-flowchart TB
-    subgraph Indices
-        NDVI[NDVI]
-        NBR[NBR]
-        EVI[EVI]
-        MSI[MSI]
-        NDWI[NDWI]
-        SAVI[SAVI]
+graph TB
+    subgraph "Spectral Indices"
+        A1[NDVI]
+        A2[NBR]
+        A3[EVI]
+        A4[MSI]
+        A5[NDWI]
+        A6[SAVI]
     end
-
-    subgraph Water Management
-        WS[Watershed Management]
-        FR[Flood Risk]
-        WQ[Water Quality]
-        WD[Water Detection]
-        RM[Reservoir Monitoring]
-        TS[Timeseries Analysis]
+    
+    subgraph "Flood/Water Analysis"
+        B1[Watershed Management]
+        B2[Flood Risk Assessment]
+        B3[Water Quality]
+        B4[Water Detection]
+        B5[Reservoir Monitoring]
+        B6[Timeseries Analysis]
     end
-
-    BANDS[Spectral Bands] --> Indices
-    DEM[DEM] --> Water Management
-    Indices --> WD
+    
+    A1 --> C[Health Metrics]
+    A5 --> D[Water Metrics]
+    B1 --> D
+    B2 --> E[Risk Maps]
 ```
 
-## Algorithms
+## Required Capabilities (Verbatim Specification)
 
-### NDVI (Normalized Difference Vegetation Index)
+### Vegetation and Environmental Indices
+- NDVI
+- NBR
+- EVI
+- MSI
+- NDWI
+- SAVI
 
-$$NDVI = \frac{NIR - RED}{NIR + RED}$$
+### Flood and Water
+- River/watershed management
+- Flood risk assessment
+- Water quality assessment
+- Water surface detection
+- Reservoir/water bodies monitoring
+- Timeseries mapping and analysis
 
-### NBR (Normalized Burn Ratio)
+## Mathematical Foundations
 
-$$NBR = \frac{NIR - SWIR2}{NIR + SWIR2}$$
+### Normalized Difference Vegetation Index (NDVI)
 
-### EVI (Enhanced Vegetation Index)
+$$
+\text{NDVI} = \frac{\rho_{\text{NIR}} - \rho_{\text{Red}}}{\rho_{\text{NIR}} + \rho_{\text{Red}}}
+$$
 
-$$EVI = G \times \frac{NIR - RED}{NIR + C_1 \times RED - C_2 \times BLUE + L}$$
+### Normalized Burn Ratio (NBR)
 
-Where: $G = 2.5$, $C_1 = 6$, $C_2 = 7.5$, $L = 1$
+$$
+\text{NBR} = \frac{\rho_{\text{NIR}} - \rho_{\text{SWIR}}}{\rho_{\text{NIR}} + \rho_{\text{SWIR}}}
+$$
 
-### NDWI (Normalized Difference Water Index)
+### Enhanced Vegetation Index (EVI)
 
-$$NDWI = \frac{GREEN - NIR}{GREEN + NIR}$$
+$$
+\text{EVI} = G \cdot \frac{\rho_{\text{NIR}} - \rho_{\text{Red}}}{\rho_{\text{NIR}} + C_1 \cdot \rho_{\text{Red}} - C_2 \cdot \rho_{\text{Blue}} + L}
+$$
 
-### SAVI (Soil-Adjusted Vegetation Index)
+Where $G = 2.5$, $C_1 = 6$, $C_2 = 7.5$, $L = 1$.
 
-$$SAVI = \frac{(NIR - RED)}{(NIR + RED + L)} \times (1 + L)$$
+### Normalized Difference Water Index (NDWI)
 
-### MSI (Moisture Stress Index)
+$$
+\text{NDWI} = \frac{\rho_{\text{Green}} - \rho_{\text{NIR}}}{\rho_{\text{Green}} + \rho_{\text{NIR}}}
+$$
 
-$$MSI = \frac{SWIR1}{NIR}$$
+### Soil-Adjusted Vegetation Index (SAVI)
 
-## Metrics
+$$
+\text{SAVI} = \frac{(\rho_{\text{NIR}} - \rho_{\text{Red}}) \cdot (1 + L)}{\rho_{\text{NIR}} + \rho_{\text{Red}} + L}
+$$
 
-| Index | Range | Water Threshold | Vegetation Threshold |
-|-------|-------|-----------------|----------------------|
-| NDVI | -1 to 1 | < 0.1 | > 0.3 |
-| NDWI | -1 to 1 | > 0.3 | < 0 |
-| NBR | -1 to 1 | N/A | N/A |
+### Flood Risk Assessment
+
+$$
+R_{\text{flood}} = P_{\text{hazard}} \times V_{\text{exposure}} \times C_{\text{vulnerability}}
+$$
+
+## Index Ranges
+
+| Index | Min | Max | Water | Vegetation | Bare Soil |
+|-------|-----|-----|-------|------------|-----------|
+| NDVI | -1.0 | 1.0 | < -0.2 | > 0.3 | -0.1 to 0.2 |
+| NDWI | -1.0 | 1.0 | > 0.3 | < 0 | -0.3 to 0 |
+| NBR | -1.0 | 1.0 | < 0 | > 0.3 | 0 to 0.2 |
+| EVI | -1.0 | 1.0 | < 0 | 0.2 to 0.8 | < 0.2 |
+| SAVI | -1.0 | 1.0 | < 0 | > 0.3 | -0.1 to 0.2 |
 
 ## Mandatory Mapping Table
 
-| Bullet Item | capability_id | Module Path | Pipeline ID | CLI Example | Example Script | Test Path | Model ID(s) | Maturity |
-|-------------|---------------|-------------|-------------|-------------|----------------|-----------|-------------|----------|
-| NDVI | ndvi | `unbihexium.core.index.compute_index` | ndvi | `unbihexium index NDVI -i input.tif -o ndvi.tif` | `examples/indices.py` | `tests/unit/test_core.py` | ndvi_calculator_tiny, ndvi_calculator_base, ndvi_calculator_large | production |
-| NBR | nbr | `unbihexium.core.index.compute_index` | nbr | `unbihexium index NBR -i input.tif -o nbr.tif` | `examples/indices.py` | `tests/unit/test_core.py` | nbr_calculator_tiny, nbr_calculator_base, nbr_calculator_large | production |
-| EVI | evi | `unbihexium.core.index.compute_index` | evi | `unbihexium index EVI -i input.tif -o evi.tif` | `examples/indices.py` | `tests/unit/test_core.py` | evi_calculator_tiny, evi_calculator_base, evi_calculator_large | production |
-| MSI | msi | `unbihexium.core.index.compute_index` | msi | `unbihexium index MSI -i input.tif -o msi.tif` | `examples/indices.py` | `tests/unit/test_core.py` | msi_calculator_tiny, msi_calculator_base, msi_calculator_large | production |
-| NDWI | ndwi | `unbihexium.core.index.compute_index` | ndwi | `unbihexium index NDWI -i input.tif -o ndwi.tif` | `examples/indices.py` | `tests/unit/test_core.py` | ndwi_calculator_tiny, ndwi_calculator_base, ndwi_calculator_large | production |
-| SAVI | savi | `unbihexium.core.index.compute_index` | savi | `unbihexium index SAVI -i input.tif -o savi.tif` | `examples/indices.py` | `tests/unit/test_core.py` | savi_calculator_tiny, savi_calculator_base, savi_calculator_large | production |
-| River/watershed management | watershed | `unbihexium.analysis.watershed` | watershed | `unbihexium pipeline run watershed -i dem.tif -o basins.geojson` | `examples/watershed.py` | `tests/unit/test_analysis.py` | watershed_manager_tiny, watershed_manager_base, watershed_manager_large | production |
-| Flood risk assessment | flood_risk | `unbihexium.analysis.suitability.FloodRisk` | flood_risk | `unbihexium pipeline run flood_risk -i dem.tif -i rainfall.tif -o risk.tif` | `examples/flood_risk.py` | `tests/unit/test_analysis.py` | flood_risk_assessor_tiny, flood_risk_assessor_base, flood_risk_assessor_large | production |
-| Water quality assessment | water_quality | `unbihexium.analysis.water.WaterQuality` | water_qual | `unbihexium pipeline run water_qual -i multispectral.tif -o quality.tif` | `examples/water_quality.py` | `tests/unit/test_analysis.py` | water_quality_assessor_tiny, water_quality_assessor_base, water_quality_assessor_large | production |
-| Water surface detection | water_surface | `unbihexium.ai.segmentation.WaterDetector` | water_detect | `unbihexium pipeline run water_detect -i input.tif -o water.tif` | `examples/water_detection.py` | `tests/unit/test_ai.py` | water_surface_detector_tiny, water_surface_detector_base, water_surface_detector_large | production |
-| Reservoir/water bodies monitoring | reservoir_monitor | `unbihexium.analysis.water.ReservoirMonitor` | reservoir | `unbihexium pipeline run reservoir -i timeseries/ -o level.json` | `examples/reservoir.py` | `tests/unit/test_analysis.py` | reservoir_monitor_tiny, reservoir_monitor_base, reservoir_monitor_large | production |
-| Timeseries mapping and analysis | timeseries | `unbihexium.analysis.timeseries` | ts_analysis | `unbihexium pipeline run ts_analysis -i stack.zarr -o trends.json` | `examples/timeseries.py` | `tests/unit/test_analysis.py` | timeseries_analyzer_tiny, timeseries_analyzer_base, timeseries_analyzer_large | production |
-
-## Limitations
-
-- Index accuracy depends on atmospheric correction
-- Water quality estimation requires calibration data
-- Flood risk models require validation with historical events
-
-## Examples (CLI)
-
-```bash
-# Calculate NDVI
-unbihexium index NDVI -i sentinel2.tif -o ndvi.tif --red B04 --nir B08
-
-# Flood risk assessment
-unbihexium pipeline run flood_risk -i dem.tif -i rainfall.tif -o flood_risk.tif
-
-# Watershed delineation
-unbihexium pipeline run watershed -i dem.tif -o watersheds.geojson
-```
-
-## API Entry Points
-
-```python
-from unbihexium.core.index import compute_index, IndexRegistry
-from unbihexium.analysis.water import WaterQuality, ReservoirMonitor
-from unbihexium.ai.segmentation import WaterDetector
-```
-
-## Tests
-
-- Unit tests: `tests/unit/test_core.py`
-- Index tests: `tests/unit/test_indices.py`
-
-## Models
-
-Index calculators and water detection models in all tiers.
+| Bullet Item | capability_id | Module Path | Pipeline ID | CLI Example | Model ID(s) | Maturity |
+|-------------|---------------|-------------|-------------|-------------|-------------|----------|
+| NDVI | cap.ndvi | `unbihexium.indices.vegetation` | pl_ndvi | `unbihexium infer ndvi_calculator_base` | ndvi_calculator_{tiny,base,large} | production |
+| NBR | cap.nbr | `unbihexium.indices.fire` | pl_nbr | `unbihexium infer nbr_calculator_base` | nbr_calculator_{tiny,base,large} | production |
+| EVI | cap.evi | `unbihexium.indices.vegetation` | pl_evi | `unbihexium infer evi_calculator_base` | evi_calculator_{tiny,base,large} | production |
+| MSI | cap.msi | `unbihexium.indices.moisture` | pl_msi | `unbihexium infer msi_calculator_base` | msi_calculator_{tiny,base,large} | production |
+| NDWI | cap.ndwi | `unbihexium.indices.water` | pl_ndwi | `unbihexium infer ndwi_calculator_base` | ndwi_calculator_{tiny,base,large} | production |
+| SAVI | cap.savi | `unbihexium.indices.vegetation` | pl_savi | `unbihexium infer savi_calculator_base` | savi_calculator_{tiny,base,large} | production |
+| Watershed management | cap.watershed | `unbihexium.hydro.watershed` | pl_watershed | `unbihexium infer watershed_manager_base` | watershed_manager_{tiny,base,large} | production |
+| Flood risk assessment | cap.flood | `unbihexium.risk.flood` | pl_flood_risk | `unbihexium infer flood_risk_assessor_base` | flood_risk_assessor_{tiny,base,large} | production |
+| Water quality | cap.water_qual | `unbihexium.hydro.quality` | pl_water_quality | `unbihexium infer water_quality_assessor_base` | water_quality_assessor_{tiny,base,large} | production |
+| Water detection | cap.water_det | `unbihexium.ai.segmentation` | pl_water | `unbihexium infer water_surface_detector_base` | water_surface_detector_{tiny,base,large} | production |
+| Reservoir monitoring | cap.reservoir | `unbihexium.hydro.reservoir` | pl_reservoir | `unbihexium infer reservoir_monitor_base` | reservoir_monitor_{tiny,base,large} | production |
+| Timeseries analysis | cap.timeseries | `unbihexium.analytics.timeseries` | pl_ts | `unbihexium infer timeseries_analyzer_base` | timeseries_analyzer_{tiny,base,large} | production |
 
 ## References
 
-- [Documentation Index](../index.md)
-- [Table of Contents](../toc.md)
-- [Indices Tutorial](../tutorials/indices.md)
-
----
-
-## Quick Navigation
-
-| Prev | Home | Next |
-|------|------|------|
-
+1. Rouse, J.W. et al. (1974). Monitoring vegetation systems in the Great Plains with ERTS.
+2. McFeeters, S.K. (1996). The use of the Normalized Difference Water Index (NDWI).

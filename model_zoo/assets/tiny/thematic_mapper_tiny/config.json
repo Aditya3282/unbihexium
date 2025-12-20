@@ -1,0 +1,29 @@
+{
+  "model_id": "thematic_mapper_tiny",
+  "task": "segmentation",
+  "architecture": "unet",
+  "variant": "tiny",
+  "input": {
+    "type": "image",
+    "channels": 3,
+    "height": 32,
+    "width": 32
+  },
+  "normalization": {
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "classes": [
+    "theme1",
+    "theme2",
+    "theme3"
+  ]
+}

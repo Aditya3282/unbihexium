@@ -1,0 +1,57 @@
+{
+  "model_id": "salinity_detector",
+  "name": "Salinity Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Salinity Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f7674014ba73a0fe834cac1304882515d4242cbec2fcb18965000b656fe8fa2c",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "bb1afee29c23aa62cb9ed581c1c7b3c0052f934b5b5f6839759d02539cf6f5af",
+          "size_bytes": 411
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "2806c1dfd648130f3fa0877df957631385ffae38fd5b9b81c32af92f64d29671",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "f780040f54c4ea6705a753d8f01e6a9c8be7d3443328cdd2fd7d4b4962003bed",
+          "size_bytes": 411
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "164b5b0dc35f4495da2672fab3384bb86e8ab387d857b11dc47088795393a3bf",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "9cd0528018f772d73e4094bb1317caee8eb06efd94759f0e37ecf541b0157f20",
+          "size_bytes": 415
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "salinity_detector"
+  ]
+}

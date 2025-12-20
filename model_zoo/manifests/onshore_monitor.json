@@ -1,0 +1,57 @@
+{
+  "model_id": "onshore_monitor",
+  "name": "Onshore Monitor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Onshore Monitor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ecb90a825630ef96dd262a9a6c1727a7edaa89f4093f27ae41b88478a2d25377",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "3deae50078e2d64a74140d08c3b3bfe08cde28353d8b5d17b8170724f029bfea",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7ba47acf0c652da7846d0b4dda3cefad5120f5818757c862b8efd7fe61ed583a",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "9fa17d63f08cefea34676dce91ad215a21de29ab713bfaab6ec0e13c621f551b",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4204b7db3b5c97f591f0c9ecfd86531e659149998b82994ac9c85c35428494e7",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "749c45ed3c58c28f39be646a542e2af8c5c6e1f5617c2f4ddf65ad28cc2d9e27",
+          "size_bytes": 181
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "onshore_monitor"
+  ]
+}

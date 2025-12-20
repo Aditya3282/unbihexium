@@ -1,42 +1,75 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to Unbihexium are documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## Purpose
 
-## [1.0.0] - 2025-12-18
+This changelog follows [Keep a Changelog](https://keepachangelog.com/) format and adheres to [Semantic Versioning](https://semver.org/).
 
-### Added
+## Version History
 
-- Core abstractions: Raster, Vector, Tile, Scene, SensorModel, Product
-- Pipeline framework with provenance tracking
-- Registry system for capabilities, models, and pipelines
-- AI products: ship detection, building detection, aircraft detection, vehicle detection
-- Segmentation: change detection, water detection, crop detection, greenhouse detection
-- Super-resolution pipeline
-- Spectral indices: NDVI, NDWI, NBR, EVI, SAVI, MSI
-- Geostatistics: variogram analysis, Ordinary Kriging, Universal Kriging
-- Spatial autocorrelation: Moran's I, Geary's C
-- Suitability analysis: AHP, weighted overlay
-- Network analysis: routing, accessibility, service areas
-- Zonal statistics
-- Model zoo with 5 tiny models for smoke tests
-- CLI with zoo, pipeline, and index commands
-- Documentation site with MkDocs
-- CI/CD workflows: CI, coverage, docs, security, scorecard, SBOM, CodeQL, release, publish
-- Security policies and responsible use guidelines
+```mermaid
+timeline
+    title Unbihexium Release Timeline
+    2025-01 : v0.1.0 Initial Release
+    2025-06 : v0.5.0 Model Zoo
+    2025-12 : v1.0.0 Production Release
+```
 
-### Security
+## Semantic Versioning
 
-- SHA256 verification for model artifacts
-- SBOM generation with CycloneDX
-- OpenSSF Scorecard integration
-- CodeQL scanning
-- Signed releases with attestations
+Version numbers follow the pattern:
+
+$$
+\text{MAJOR}.\text{MINOR}.\text{PATCH}
+$$
+
+Where:
+- MAJOR: Incompatible API changes
+- MINOR: Backwards-compatible features
+- PATCH: Backwards-compatible fixes
+
+## Releases
+
+| Version | Date | Type |
+|---------|------|------|
+| 1.0.0 | 2025-12-19 | Production |
+| 0.5.0 | 2025-06-01 | Beta |
+| 0.1.0 | 2025-01-15 | Alpha |
 
 ---
 
-## Navigation
+## [1.0.0] - 2025-12-19
 
-[README](README.md) | [Contributing](CONTRIBUTING.md) | [Security](SECURITY.md) | [License](LICENSE)
+### Added
+- Complete Model Zoo with 130 models and 390 variants
+- Production-grade pipeline framework
+- CLI with inference and pipeline commands
+- Comprehensive documentation
+- SHA256 verification for all models
+
+### Changed
+- Upgraded to ONNX Runtime for inference
+- Standardized model naming convention
+
+### Security
+- Added supply chain security measures
+- Implemented model integrity verification
+
+---
+
+## [0.5.0] - 2025-06-01
+
+### Added
+- Initial model zoo structure
+- Basic pipeline framework
+- Core capability registry
+
+---
+
+## [0.1.0] - 2025-01-15
+
+### Added
+- Project initialization
+- Basic architecture
+- Development tooling

@@ -1,0 +1,57 @@
+{
+  "model_id": "nbr_calculator",
+  "name": "Nbr Calculator",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Nbr Calculator model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "455dbb66bca43e0c271fa184f5171a523090de1d470a4f0aafb27ce9787fa9c3",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "26debe97fe5d581f0e600687d46d0f3f43933514945655cff513e1ba2e050f52",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "225bf4d22f409e3aad53f8413dde6ba467b59c173c0a03ae0edec6edf2402811",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "066e6e846f682570f4b9f514f291bd5fdb596e547e3063e324bcb1340738713e",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "761e23acf92f18c20a0baabebe9d5110ff38db181d4a199e6c0361f5250dda73",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "e99b5830bd34c1c040c98fae07140c826cbb466999177ed74229523523c58375",
+          "size_bytes": 353
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "nbr_calculator"
+  ]
+}

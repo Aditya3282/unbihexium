@@ -1,0 +1,10 @@
+{
+  "model_id": "site_suitability_tiny",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

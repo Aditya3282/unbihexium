@@ -1,92 +1,87 @@
 # API Reference
 
-Complete API reference for unbihexium.
+## Purpose
 
-## Core Module
+Python API reference for Unbihexium.
 
-| Class | Description |
-|-------|-------------|
-| `Raster` | Geospatial raster data |
-| `Vector` | Geospatial vector data |
-| `Tile` | Raster tile for processing |
-| `TileGrid` | Grid of tiles |
-| `Scene` | Multi-band satellite scene |
-| `Pipeline` | Processing pipeline |
-| `PipelineRun` | Pipeline execution record |
-
-## Raster Class
+## Module Structure
 
 ```mermaid
-classDiagram
-    class Raster {
-        +data: NDArray
-        +metadata: RasterMetadata
-        +from_file(path) Raster
-        +from_array(data) Raster
-        +load() void
-        +save(path) void
-        +tiles(tile_size) Iterator
-        +resample(scale) Raster
-        +reproject(crs) Raster
-    }
+graph TB
+    A[unbihexium] --> B[pipeline]
+    A --> C[zoo]
+    A --> D[ai]
+    A --> E[geo]
+    A --> F[indices]
+    
+    C --> C1[download_model]
+    C --> C2[verify_model]
+    C --> C3[list_models]
 ```
 
-## Index Functions
+## API Coverage
 
-Calculate spectral indices:
+$$
+\text{Coverage} = \frac{\text{Documented Functions}}{\text{Public Functions}} = 100\%
+$$
 
-$$NDVI = \frac{NIR - RED}{NIR + RED}$$
+| Module | Classes | Functions |
+|--------|---------|-----------|
+| `unbihexium.pipeline` | 3 | 8 |
+| `unbihexium.zoo` | 2 | 12 |
+| `unbihexium.ai` | 5 | 15 |
+| `unbihexium.geo` | 4 | 10 |
+
+## Core Classes
+
+### Pipeline
 
 ```python
-from unbihexium.core.index import compute_index
+from unbihexium import Pipeline
 
-ndvi = compute_index("NDVI", bands)
+# Create from config
+pipeline = Pipeline.from_config("detection")
+
+# Run
+result = pipeline.run("input.tif")
+result.save("output.tif")
 ```
 
-## Model Classes
-
-| Class | Description |
-|-------|-------------|
-| `ModelWrapper` | ML model abstraction |
-| `ModelConfig` | Model configuration |
-| `ShipDetector` | Ship detection model |
-| `BuildingDetector` | Building detection model |
-| `WaterDetector` | Water segmentation model |
-| `SuperResolution` | Image enhancement model |
-
-## Registry Classes
-
-| Class | Description |
-|-------|-------------|
-| `CapabilityRegistry` | Track library capabilities |
-| `ModelRegistry` | Model management |
-| `PipelineRegistry` | Pipeline registration |
-
-## Import Examples
+### Model Zoo
 
 ```python
-# Core
-from unbihexium.core import Raster, Vector, Tile
+from unbihexium.zoo import download_model, list_models, verify_model
 
-# Indices
-from unbihexium.core.index import compute_index, IndexRegistry
+# List available models
+models = list_models()
 
-# AI
-from unbihexium.ai import ShipDetector, WaterDetector
+# Download
+path = download_model("ship_detector_base")
 
-# Geostatistics
-from unbihexium.geostat import Variogram, OrdinaryKriging
-
-# Analysis
-from unbihexium.analysis import zonal_statistics, AHP
+# Verify integrity
+is_valid = verify_model("ship_detector_base")
 ```
 
----
+### Inference
 
-## Navigation
+```python
+from unbihexium.ai import Inference
 
-| Prev | Up | Next |
-|------|-----|------|
-| [Tutorials](../tutorials/index.md) | [Home](../index.md) | [CLI Reference](cli.md) |
+# Load model
+inference = Inference.from_model("ship_detector_base")
 
-**Related:** [Architecture](../architecture/overview.md) | [Model Zoo](../model_zoo/catalog.md)
+# Run on data
+predictions = inference.predict(input_array)
+```
+
+## Configuration
+
+```python
+from unbihexium import Config
+
+config = Config(
+    device="cuda",
+    batch_size=4,
+    tile_size=256
+)
+```

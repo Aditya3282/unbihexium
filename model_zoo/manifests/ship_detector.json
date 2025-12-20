@@ -1,0 +1,57 @@
+{
+  "model_id": "ship_detector",
+  "name": "Ship Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Ship Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "10f12002ef4a79e4b3ddd8a91501b39243212d81e39a4181aa5596622baf9883",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "0fe202df4b57a46d4c6bf24626e25dfbe5819d8a4974b6a457c3b73a92a5dddd",
+          "size_bytes": 393
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9272c180146f2c60b98167f9fcd4d76ac2520d6814ea476340b9bb49d5155534",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "14b53ccd34dd10364e9a3cdddecb37c86cf51cb51e5cd61c06e71ddd62672937",
+          "size_bytes": 393
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "118eaa39b0ad6345bb79d56820f494c9618ae9bea6fc8babba7272ece71b432e",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "8745dd6f84804d33a504d00f202e8df9df064ddb531428bee3dffa4a95f3b137",
+          "size_bytes": 397
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "ship_detector"
+  ]
+}

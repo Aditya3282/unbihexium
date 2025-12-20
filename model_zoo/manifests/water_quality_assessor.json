@@ -1,0 +1,57 @@
+{
+  "model_id": "water_quality_assessor",
+  "name": "Water Quality Assessor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Water Quality Assessor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3435399b068fb644b0d903f05e34843a09fe15de1d097a6e9d1797345f834b52",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "b0ff001e4ea46e9bec0ded2c207735913b9888781fa7aeadbffbf6e5c946e7d7",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a90112ec45b848c69b2331c3617dc844e059e6c8d9d7a5d610346c887199722e",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "d0f37eb061a918c75a4b6b652306107c5162a45b31614736ffc816f7d2cd566c",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "42c5381de168ad0023ef8b7040c2bb94e96b26f29f9cda560965f241184a4ea7",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "a68d7fd950b63141610737808001792546229aa75c4e764e720edbef9959fe9b",
+          "size_bytes": 188
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "water_quality_assessor"
+  ]
+}

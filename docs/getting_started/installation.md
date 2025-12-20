@@ -1,34 +1,62 @@
 # Installation
 
-## Requirements
+## Purpose
+
+Install Unbihexium and its dependencies.
+
+## Prerequisites
 
 - Python 3.10 or higher
-- pip 21.0 or higher
+- pip or conda package manager
+- 8GB RAM minimum (16GB recommended)
+- Optional: NVIDIA GPU with CUDA
 
-Compatibility range: $Python \geq 3.10 \land pip \geq 21.0$
+## Installation Methods
 
-## Standard Installation
+```mermaid
+flowchart LR
+    A[Choose Method] --> B{Environment}
+    B -->|pip| C[pip install]
+    B -->|conda| D[conda install]
+    B -->|source| E[git clone + pip -e]
+```
+
+## System Requirements
+
+$$
+\text{Memory} \geq 8\text{GB} + N_{\text{models}} \times 50\text{MB}
+$$
+
+| Component | Minimum | Recommended |
+|-----------|---------|-------------|
+| Python | 3.10 | 3.12 |
+| RAM | 8GB | 16GB |
+| Disk | 5GB | 20GB |
+| GPU | None | CUDA 11.8+ |
+
+## Quick Install
 
 ```bash
 pip install unbihexium
 ```
 
-## Installation with Optional Dependencies
+## Install with GPU Support
 
-| Extra | Description | Command |
-|-------|-------------|---------|
-| gpu | GPU support with PyTorch and CuPy | `pip install unbihexium[gpu]` |
-| dask | Dask for parallel processing | `pip install unbihexium[dask]` |
-| ray | Ray for distributed computing | `pip install unbihexium[ray]` |
-| zarr | Zarr array support | `pip install unbihexium[zarr]` |
-| stac | STAC catalog support | `pip install unbihexium[stac]` |
-| docs | Documentation dependencies | `pip install unbihexium[docs]` |
-| dev | Development dependencies | `pip install unbihexium[dev]` |
-| all | All optional dependencies | `pip install unbihexium[all]` |
+```bash
+# Install PyTorch with CUDA first
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+# Then install Unbihexium
+pip install unbihexium
+```
+
+## Conda Installation
+
+```bash
+conda install -c conda-forge unbihexium
+```
 
 ## Development Installation
-
-For development, clone the repository and install in editable mode:
 
 ```bash
 git clone https://github.com/unbihexium-oss/unbihexium.git
@@ -36,33 +64,26 @@ cd unbihexium
 pip install -e ".[dev]"
 ```
 
-## Verification
-
-Verify the installation:
+## Verify Installation
 
 ```bash
 unbihexium --version
-unbihexium info
 ```
 
-## System Dependencies
-
-Some features require system-level dependencies. The following diagram shows the dependency structure:
-
-```mermaid
-graph TD
-    A[unbihexium] --> B[rasterio]
-    A --> C[geopandas]
-    A --> D[shapely]
-    B --> E[GDAL]
-    C --> F[fiona]
-    F --> E
+```python
+import unbihexium
+print(unbihexium.__version__)
 ```
 
-For GDAL installation:
+## Troubleshooting
 
-| Platform | Command |
-|----------|---------|
-| Ubuntu/Debian | `sudo apt install gdal-bin libgdal-dev` |
-| macOS | `brew install gdal` |
-| Windows | Use conda: `conda install gdal` |
+| Issue | Solution |
+|-------|----------|
+| Import error | Reinstall package |
+| CUDA not found | Install PyTorch with CUDA |
+| Memory error | Reduce batch size |
+
+## Next Steps
+
+- [Quickstart](quickstart.md)
+- [Configuration](configuration.md)

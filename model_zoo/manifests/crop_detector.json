@@ -1,0 +1,57 @@
+{
+  "model_id": "crop_detector",
+  "name": "Crop Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Crop Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d1f8f891734d63e3d7fed966e328ba1ebf17c639de966f5fdb4befc57842c1da",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "28829107640461ff8b704d3296acbc549fd2231f997eb3318d49e00b02731795",
+          "size_bytes": 393
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e8c1e7fd5cdebab1b6fdcbe048d1fd9c758420bca67e92c07dd09aeb2a065b41",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "2df783b9864a2344ad08c5bb029a63f88b1d91e65852b893b13adfa5b8672584",
+          "size_bytes": 393
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e6df79c278af6dd034a473c82c4202a087b9d5d109e43af19d82ad8392459c31",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "3e0d847fc8a2c6895b9047fdfb71fb7d127d82c422fe414d062cee775a59950e",
+          "size_bytes": 397
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "crop_detector"
+  ]
+}

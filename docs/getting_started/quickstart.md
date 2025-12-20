@@ -1,80 +1,14 @@
-# Quick Start
+# Quickstart
 
-## Prerequisites
+## Purpose
 
-Ensure unbihexium is installed:
+Get started with Unbihexium in 5 minutes.
 
-```bash
-pip install unbihexium
-```
+## Audience
 
-## Basic Usage
+New users wanting to run their first pipeline.
 
-### Loading Rasters
-
-```python
-from unbihexium.core.raster import Raster
-
-# From file
-raster = Raster.from_file("satellite.tif")
-
-# From array
-import numpy as np
-data = np.random.rand(3, 256, 256)
-raster = Raster.from_array(data, crs="EPSG:4326")
-```
-
-### Computing Spectral Indices
-
-```python
-from unbihexium.core.index import compute_index
-
-bands = {
-    "NIR": raster.data[3],  # Near-infrared band
-    "RED": raster.data[2],  # Red band
-}
-
-ndvi = compute_index("NDVI", bands)
-```
-
-The available indices are:
-
-| Index | Formula | Use Case |
-|-------|---------|----------|
-| NDVI | $(NIR - RED) / (NIR + RED)$ | Vegetation health |
-| NDWI | $(GREEN - NIR) / (GREEN + NIR)$ | Water bodies |
-| NBR | $(NIR - SWIR2) / (NIR + SWIR2)$ | Burn areas |
-| EVI | $G \times (NIR - RED) / (NIR + C_1 \times RED - C_2 \times BLUE + L)$ | Enhanced vegetation |
-| SAVI | $((NIR - RED) / (NIR + RED + L)) \times (1 + L)$ | Soil-adjusted vegetation |
-| MSI | $SWIR1 / NIR$ | Moisture stress |
-
-### Object Detection
-
-```python
-from unbihexium.ai.detection import ShipDetector
-
-detector = ShipDetector(threshold=0.5)
-result = detector.predict(raster)
-
-print(f"Found {result.count} ships")
-for detection in result.detections:
-    print(f"  {detection.class_name}: {detection.confidence:.2f}")
-```
-
-### CLI Usage
-
-```bash
-# List models
-unbihexium zoo list
-
-# Compute index
-unbihexium index NDVI -i input.tif -o output.tif
-
-# Run pipeline
-unbihexium pipeline run ship_detection -i input.tif -o output.geojson
-```
-
-## Workflow Diagram
+## Workflow Overview
 
 ```mermaid
 sequenceDiagram
@@ -82,21 +16,79 @@ sequenceDiagram
     participant CLI
     participant Pipeline
     participant Model
-
-    User->>CLI: unbihexium pipeline run
-    CLI->>Pipeline: Create and execute
-    Pipeline->>Model: Load and predict
-    Model-->>Pipeline: Results
-    Pipeline-->>CLI: Output file
-    CLI-->>User: Success
+    
+    User->>CLI: unbihexium infer
+    CLI->>Pipeline: Load config
+    Pipeline->>Model: Load ONNX
+    Model->>Pipeline: Inference
+    Pipeline->>CLI: Results
+    CLI->>User: Output file
 ```
 
----
+## Processing Time
 
-## Navigation
+$$
+T_{\text{total}} = T_{\text{load}} + N_{\text{tiles}} \times T_{\text{inference}}
+$$
 
-| Prev | Up | Next |
-|------|-----|------|
-| [Installation](installation.md) | [Home](../index.md) | [Tutorials](../tutorials/index.md) |
+## Steps Summary
 
-**Related:** [API Reference](../reference/api.md) | [CLI Reference](../reference/cli.md) | [Model Zoo](../model_zoo/catalog.md)
+| Step | Command | Time |
+|------|---------|------|
+| 1. Install | `pip install unbihexium` | 1 min |
+| 2. List models | `unbihexium zoo list` | 1 sec |
+| 3. Run inference | `unbihexium infer ...` | varies |
+
+## Step 1: Install
+
+```bash
+pip install unbihexium
+```
+
+## Step 2: List Available Models
+
+```bash
+unbihexium zoo list
+```
+
+Output shows 130 models with 3 variants each.
+
+## Step 3: Run Inference
+
+```bash
+# Detect ships in an image
+unbihexium infer ship_detector_tiny -i input.tif -o output.tif
+```
+
+## Python API
+
+```python
+from unbihexium import Pipeline
+
+# Load pipeline
+pipeline = Pipeline.from_config("detection")
+
+# Run on image
+results = pipeline.run("input.tif")
+
+# Save results
+results.save("output.tif")
+```
+
+## Example with Model Zoo
+
+```python
+from unbihexium.zoo import get_model
+
+# Get model path
+model = get_model("ship_detector_tiny")
+
+# Use with ONNX Runtime
+import onnxruntime as ort
+session = ort.InferenceSession(model.path)
+```
+
+## Next Steps
+
+- [Configuration](configuration.md)
+- [Tutorials](../tutorials/index.md)

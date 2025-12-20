@@ -1,0 +1,57 @@
+{
+  "model_id": "spatial_analyzer",
+  "name": "Spatial Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Spatial Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "2ce1678254778bf9b1a39410e8ef9cee158d3359d342bcea395542b2e953fabd",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "1577ebfa98d56ab2d79e9fd5aafb816a57469fa138366629b8b92aa27634401f",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e3cc4ffa944f21869a52ae0de6094d6b07fa9e228dcc487fc131fce9cf9d92d6",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "c6e08de3655976e9ba8ee3d47187c9ea640d9346ed29224807ea434387a76209",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f8c415a8d5c2c35d0cfba01172cfa37d6d4347a96763e77b3d6f9883b3361d47",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "6865aad51332cd6160de30a03e5d6aa9a27852f8bfa91daa392f925f98ce48dd",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "spatial_analyzer"
+  ]
+}

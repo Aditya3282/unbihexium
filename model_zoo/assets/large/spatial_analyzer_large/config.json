@@ -1,0 +1,10 @@
+{
+  "model_id": "spatial_analyzer_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

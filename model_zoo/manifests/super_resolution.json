@@ -1,0 +1,57 @@
+{
+  "model_id": "super_resolution",
+  "name": "Super Resolution",
+  "version": "1.0.0",
+  "task": "super_resolution",
+  "architecture": "srcnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Super Resolution model for super_resolution.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e2b797b84d338476ac6c633434294635eefc96deab51ec1ee8c8640dd0647bfc",
+          "size_bytes": 7436
+        },
+        {
+          "name": "config.json",
+          "sha256": "407341ea7a7cbd5039768f108f35c52faf2f7dfa37910abc8e0cbaa34087b2c3",
+          "size_bytes": 364
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "842eca846d13ca0d5beab09b2e61121106b7ac715f8ccb18d185779954fda2ad",
+          "size_bytes": 26857
+        },
+        {
+          "name": "config.json",
+          "sha256": "98b549c473a16c0d396953e7e60149fed5ecb81b3f5176c108fa19003c9559d9",
+          "size_bytes": 364
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "111a3b9c2d5b82088abbac85c9f617d49865c0745dbc38aec4065e984c07d443",
+          "size_bytes": 53649
+        },
+        {
+          "name": "config.json",
+          "sha256": "af74a835cc6d3e3989797a9ba50ad7b145cc8233b67a722f48469f93390118a4",
+          "size_bytes": 368
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "super_resolution"
+  ]
+}

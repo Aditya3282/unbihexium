@@ -1,0 +1,57 @@
+{
+  "model_id": "pivot_inventory",
+  "name": "Pivot Inventory",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Pivot Inventory model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e26030ca0b0e00dffa508b8cec533ea755e992535b01e8170ba97bfa69608ff6",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "49780bd5b3df9ff2c4877ad73b27aebc34efb3566a791f89ccb1185807d1375b",
+          "size_bytes": 396
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "79fcc071dd4bc3d48b6a86b066632f03471d89a903197fe2ea376d15ccdc53ed",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "c75205f31cb891f592a2624af3281ab1ee6422fe64b252f42ad27860e5a2f0cd",
+          "size_bytes": 396
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c832dcc1858026d808a1f93baf293cce33b781244eba6a404bf0c95b16079ef3",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "d46ccc13f8bf79e399c4e04cb383062ff8eda010b84b0f6bd4d76f929d6dfd98",
+          "size_bytes": 400
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "pivot_inventory"
+  ]
+}

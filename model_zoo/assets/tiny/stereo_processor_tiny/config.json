@@ -1,0 +1,10 @@
+{
+  "model_id": "stereo_processor_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 2
+  }
+}

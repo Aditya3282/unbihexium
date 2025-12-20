@@ -1,0 +1,57 @@
+{
+  "model_id": "landslide_risk",
+  "name": "Landslide Risk",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Landslide Risk model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cba0ce4e196264b7670c0b751a9591973ad2c1b0b05c124257c75dc6ae4b365b",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "1e70fc85f158ba642b2da0cb4fe612717c57fc3bddc5fdb802312d348a867622",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "da51b81ae901e05428e48db3e4af9282979615d8e37256ad1daf6a4146f7850a",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "84859aa5f311b7a3f0e036e69006158c3dda3ed4c12e629add14d46f51c2350e",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9361d53bf0748360a27272110d1839e82d9f0c3f0c022249da1fdb71abd2523e",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "f6bf2f4da6bae872a2cb05b30a553cef74b21f8f3ded703d0260674feb706abb",
+          "size_bytes": 180
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "landslide_risk"
+  ]
+}

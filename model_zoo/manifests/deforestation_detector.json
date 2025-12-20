@@ -1,0 +1,57 @@
+{
+  "model_id": "deforestation_detector",
+  "name": "Deforestation Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Deforestation Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d49ffdbc0c3bb0d9b0f723d7d6246a63d9901ceca187708700bc9f737dff5e11",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "16a873048f027ee8046d664d7a8842d162db3f09fb64a6e7ef98029a93fb69dd",
+          "size_bytes": 428
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b9d7a085fa128a390b761a24aab85e8eca655a8a393ff7d5e41f778ee0a3e0d2",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "8a63bee83d3ab8e38783cee13635a263b75e40eade346e0a3594e155ec43f86c",
+          "size_bytes": 428
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5bdf79803b5864f06a3564c21bf63c1e8afb32dd4badbc2028272a35c7cf8f61",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "b40847821ac85b927cdb8b05e50016ae9ac314ddc7bf43942ed57b4872ad7f0c",
+          "size_bytes": 432
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "deforestation_detector"
+  ]
+}

@@ -1,54 +1,83 @@
-# Secrets and Tokens
+# Secrets and Tokens Management
 
-This document describes the tokens and secrets used in CI/CD workflows.
+## Purpose
 
-## Required Tokens
+Documentation of secrets, tokens, and API keys used in CI/CD workflows.
 
-| Token | Service | Purpose | Required |
-|-------|---------|---------|----------|
-| `CODECOV_TOKEN` | Codecov | Upload coverage reports | Optional |
-| `SCORECARD_TOKEN` | OpenSSF | Security scorecard | Optional |
-| `PYPI_API_TOKEN` | PyPI | Package publishing | For releases |
+## Token Inventory
 
-## Configuration
-
-### Codecov
-
-1. Visit [codecov.io](https://codecov.io)
-2. Add your repository
-3. Copy the upload token
-4. Add to GitHub Secrets as `CODECOV_TOKEN`
-
-### OpenSSF Scorecard
-
-1. Create a fine-grained PAT with `public_repo` scope
-2. Add to GitHub Secrets as `SCORECARD_TOKEN`
-
-### PyPI Publishing
-
-For trusted publishing (recommended):
-1. Go to PyPI project settings
-2. Add trusted publisher with GitHub repository details
-3. No token needed; OIDC handles authentication
-
-For token-based publishing:
-1. Create API token at pypi.org
-2. Add to GitHub Secrets as `PYPI_API_TOKEN`
-
-## Workflow Guards
-
-All token-dependent workflow steps include guards:
-
-```yaml
-- name: Upload coverage
-  if: ${{ secrets.CODECOV_TOKEN != '' }}
-  uses: codecov/codecov-action@v4
-  with:
-    token: ${{ secrets.CODECOV_TOKEN }}
+```mermaid
+graph TB
+    A[GitHub Actions] --> B[Required Secrets]
+    B --> C[PYPI_API_TOKEN]
+    B --> D[CODECOV_TOKEN]
+    B --> E[GH_TOKEN]
+    B --> F[DOCKER_TOKEN]
 ```
 
-This ensures CI does not fail if tokens are not configured.
+## Risk Classification
 
-## Navigation
+$$
+\text{Exposure Risk} = \text{Scope} \times \text{Permissions} \times \text{Rotation Frequency}^{-1}
+$$
 
-[Security](../index.md) | [Home](../index.md) | [CI/CD](../development/ci.md)
+| Secret | Required For | Risk | Rotation |
+|--------|-------------|------|----------|
+| PYPI_API_TOKEN | Package publishing | High | Quarterly |
+| CODECOV_TOKEN | Coverage upload | Low | Yearly |
+| GH_TOKEN | Releases | Medium | On demand |
+| DOCKER_TOKEN | Image push | Medium | Quarterly |
+
+## Secret Details
+
+### PYPI_API_TOKEN
+
+| Property | Value |
+|----------|-------|
+| Obtain from | https://pypi.org/manage/account/token/ |
+| Scope | unbihexium package only |
+| Permissions | Upload |
+| CI Usage | `if: secrets.PYPI_API_TOKEN != ''` |
+
+### CODECOV_TOKEN
+
+| Property | Value |
+|----------|-------|
+| Obtain from | https://codecov.io/github/unbihexium-oss/unbihexium |
+| Scope | Repository |
+| Permissions | Upload |
+| CI Usage | Optional |
+
+### GH_TOKEN
+
+| Property | Value |
+|----------|-------|
+| Obtain from | Auto-provided by GitHub Actions |
+| Scope | Repository |
+| Permissions | contents: write |
+| CI Usage | Automatic |
+
+## Adding Secrets
+
+1. Navigate to repository Settings
+2. Select Secrets and Variables > Actions
+3. Click "New repository secret"
+4. Enter name and value
+5. Save
+
+## CI Workflow Guards
+
+All workflows guard against missing secrets:
+
+```yaml
+- name: Publish to PyPI
+  if: ${{ secrets.PYPI_API_TOKEN != '' }}
+  run: twine upload dist/*
+```
+
+## Best Practices
+
+1. Never commit secrets to source
+2. Use minimal permissions
+3. Rotate regularly
+4. Audit access logs

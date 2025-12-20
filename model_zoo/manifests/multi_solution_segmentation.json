@@ -1,0 +1,57 @@
+{
+  "model_id": "multi_solution_segmentation",
+  "name": "Multi Solution Segmentation",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Multi Solution Segmentation model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8ff50a2ebc26160d7d4707135e213cc6a620052377b4edd94a971ba71491d0c1",
+          "size_bytes": 3770
+        },
+        {
+          "name": "config.json",
+          "sha256": "d88cc6d226d39bdbbfaf487407a2977d736b0d9938c7927a108c54ff6d3ec166",
+          "size_bytes": 455
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9aaf7dd476786ac5be4e19d30d1804a8f205ce9440faca148cdc5dfb4f11931a",
+          "size_bytes": 30607
+        },
+        {
+          "name": "config.json",
+          "sha256": "524502ce34afbceaa74b3152f8fff165c05ef447f07e4fe795558898c7414d7e",
+          "size_bytes": 455
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a120dfa979a24653055a93f8a2cdf0ad837e674e39349a128218c262ffd5d6ef",
+          "size_bytes": 112985
+        },
+        {
+          "name": "config.json",
+          "sha256": "7736fe29e0145460789d6c07a7156411d8e2e63b23efd6d45cd9efed23e5b875",
+          "size_bytes": 459
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "multi_solution_segmentation"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "watershed_manager",
+  "name": "Watershed Manager",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Watershed Manager model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8891b5c384894b4d006abb1c8c9665811d9356349d8a38b4659df39c4a5dd472",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "961ea7a78d4b2f8f2c7dac6bcef655b5d6e9f4ff3d9307c16da2b3302acaa6bd",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c0c515c92e5974652ff14d266fdd92baf531b17ad7923ec80d6e26f85715c155",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "14ff65442b922f3f9f815c8a5062a77cf0d265c7319e1010db391f6dd597f4ef",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7c5dd40ca5bdd0d34bc5558c8a9b4628fbd30b009adef8509bcece5bcfeec79d",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "600d10dda665f1f65315552ac530e1e8f9d88563aaabfd25e1363c7e35ad2615",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "watershed_manager"
+  ]
+}

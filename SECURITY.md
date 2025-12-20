@@ -2,76 +2,80 @@
 
 ## Purpose
 
-This document outlines the security policy for the unbihexium project.
+This document defines security practices and vulnerability reporting procedures for Unbihexium.
 
-## Audience
+## Scope
 
-Security researchers, contributors, and users.
+Covers:
+- Source code vulnerabilities
+- Dependency security
+- Model integrity
+- Supply chain security
+
+## Security Model
+
+```mermaid
+flowchart TB
+    subgraph Prevention
+        A[Code Review]
+        B[Static Analysis]
+        C[Dependency Scanning]
+    end
+    
+    subgraph Detection
+        D[Runtime Monitoring]
+        E[Vulnerability Reports]
+    end
+    
+    subgraph Response
+        F[Triage]
+        G[Patch]
+        H[Disclosure]
+    end
+    
+    Prevention --> Detection
+    Detection --> Response
+```
+
+## Risk Assessment
+
+Vulnerability severity follows CVSS scoring:
+
+$$
+\text{CVSS} = \text{Base} + \text{Temporal} + \text{Environmental}
+$$
+
+| Severity | CVSS Range | Response Time |
+|----------|------------|---------------|
+| Critical | 9.0-10.0 | 24 hours |
+| High | 7.0-8.9 | 7 days |
+| Medium | 4.0-6.9 | 30 days |
+| Low | 0.1-3.9 | 90 days |
 
 ## Supported Versions
 
 | Version | Supported |
 |---------|-----------|
-| 1.0.x   | Yes       |
-| < 1.0   | No        |
+| 1.x | Yes |
+| 0.x | No |
 
-## Security Architecture
+## Reporting Vulnerabilities
 
-```mermaid
-graph TB
-    subgraph Security Layers
-        INPUT[Input Validation]
-        MODEL[Model Integrity]
-        SUPPLY[Supply Chain]
-        RUNTIME[Runtime Security]
-    end
+1. Do NOT create public issues for security vulnerabilities
+2. Email: security@unbihexium.dev
+3. Include: description, reproduction steps, impact assessment
+4. Response within 48 hours
 
-    INPUT --> MODEL
-    MODEL --> SUPPLY
-    SUPPLY --> RUNTIME
-```
+## Security Practices
 
-## Reporting a Vulnerability
-
-Please report security vulnerabilities to: **security@unbihexium.org**
-
-### Disclosure Timeline
-
-$$T_{disclosure} = T_{report} + 90 \text{ days}$$
-
-Where:
-- $T_{report}$ = Date of initial report
-- 90 days = Coordinated disclosure window
-
-| Step | Timeline | Action |
-|------|----------|--------|
-| Report received | Day 0 | Acknowledgment within 48 hours |
-| Initial assessment | Day 1-7 | Severity evaluation |
-| Fix development | Day 7-60 | Patch development |
-| Release | Day 60-90 | Coordinated disclosure |
-
-## What to Include
-
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-- Suggested fix (if available)
-
-## Model Integrity
-
-All models include SHA256 checksums. Verification is mandatory:
-
-```bash
-unbihexium zoo verify model_id
-```
-
-## Supply Chain Security
-
+- All dependencies pinned with hashes
 - SBOM generated for each release
-- Dependencies scanned with pip-audit
-- SLSA Level 3 provenance attestations
+- Container images scanned
+- Secrets never committed
+- Model checksums verified
 
-## References
+## Disclosure Policy
 
-- [Responsible Use Policy](RESPONSIBLE_USE.md)
-- [Privacy Policy](PRIVACY.md)
+- Coordinated disclosure (90 days)
+- CVE assignment for confirmed vulnerabilities
+- Public advisory after patch release

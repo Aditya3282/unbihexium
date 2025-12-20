@@ -1,0 +1,57 @@
+{
+  "model_id": "emergency_disaster_manager",
+  "name": "Emergency Disaster Manager",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Emergency Disaster Manager model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d1f22d5cdb8ae8f6d073c244c92d9aee98ae29c64789bc273937b0532edb6cd7",
+          "size_bytes": 1643
+        },
+        {
+          "name": "config.json",
+          "sha256": "a336f2fff66e33240a9cd566a5f7d74bf6bc22fd709a055290055fae34e5944d",
+          "size_bytes": 190
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0615dc3a381cc65d2e746173b3161aca9f83972806046b863f8fa954616e9988",
+          "size_bytes": 5677
+        },
+        {
+          "name": "config.json",
+          "sha256": "83f43f103c27541cf85502ab9d7ad6d1b761f1440511e42dcb6f7d28aa2a05d1",
+          "size_bytes": 190
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6e8347d56cd3a6418f73a5ed991ef795a3bebae0506f03209b14983845fee58a",
+          "size_bytes": 14641
+        },
+        {
+          "name": "config.json",
+          "sha256": "a1490dbf4a5385df06ac5400c48a6cc12864bd1388465cf784f5268242b8fbf9",
+          "size_bytes": 192
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "emergency_disaster_manager"
+  ]
+}

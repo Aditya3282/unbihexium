@@ -1,0 +1,57 @@
+{
+  "model_id": "corridor_monitor",
+  "name": "Corridor Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Corridor Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "85a98c4addc46ee1f935a2e2d3cf4f758e368a599ccbf6111e2002b595033fc6",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "49362ea519720f1e7a97071e0e6c7c0a0b4a6bc2ea6c2f52bda15cf16104873d",
+          "size_bytes": 419
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9f512ed62813aae3f713287e1f445f39d14b6b3f57efed8a61225fb201da7f83",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "3e6b7cc1820a90783de6db9408c0c488a1dec332a1c8f2af713041ae9b61ad51",
+          "size_bytes": 419
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "25fc2c7aabba1ffd83984180c5215427efc77e05bc8bfcdfd9b038a65d852aec",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "d5d32075448220c07851134461ecd51c3434e683416bd00cd9df06cd144d01d1",
+          "size_bytes": 423
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "corridor_monitor"
+  ]
+}

@@ -1,112 +1,88 @@
-# Documentation Style Guide
+# Style Guide
 
 ## Purpose
 
-This document defines the standards for all documentation in the unbihexium repository.
-
-## Audience
-
-Technical writers, contributors, and maintainers.
-
-## Prerequisites
-
-Familiarity with Markdown, Mermaid diagrams, and LaTeX math notation.
-
-## Information Architecture
-
-Every documentation page must follow this structure:
-
-| Section | Required | Description |
-|---------|----------|-------------|
-| Title (H1) | Yes | Single H1 at top |
-| Purpose | Yes | What this document covers |
-| Audience | Yes | Who should read this |
-| Prerequisites | Conditional | Required knowledge |
-| Scope | Conditional | What is covered |
-| Non-goals | Conditional | What is not covered |
-| Content | Yes | Main content |
-| References | Conditional | Links to related docs |
+Writing standards for Unbihexium documentation.
 
 ## Document Structure
 
 ```mermaid
 graph TB
-    H1[H1 Title] --> P[Purpose]
-    P --> A[Audience]
-    A --> PRE[Prerequisites]
-    PRE --> SCOPE[Scope]
-    SCOPE --> CONTENT[Content Sections]
-    CONTENT --> REF[References]
+    A[Document] --> B[Title]
+    B --> C[Purpose]
+    C --> D[Audience]
+    D --> E[Content]
+    E --> F[Diagrams]
+    F --> G[Tables]
+    G --> H[References]
 ```
+
+## Readability Target
+
+$$
+\text{Flesch-Kincaid} \leq 12, \quad \text{Sentence Length} \leq 25 \text{ words}
+$$
+
+## Required Elements
+
+| Element | Major Docs | Minor Docs |
+|---------|------------|------------|
+| Mermaid diagram | Required | Optional |
+| LaTeX formula | Required | Optional |
+| Table | Required | Optional |
+| Code examples | Recommended | Optional |
 
 ## Writing Rules
 
-1. **Short paragraphs**: Maximum 4-5 sentences per paragraph
-2. **Defined terms**: Define technical terms on first use
-3. **Consistent terminology**: Use the same term for the same concept
-4. **Explicit assumptions**: State all assumptions clearly
-5. **No emoji**: Never use emoji characters anywhere
-6. **No slang**: Use formal, professional language
+1. **No emojis** in any documentation
+2. **Active voice** preferred
+3. **Present tense** for instructions
+4. **Technical accuracy** over brevity
+5. **Professional tone** throughout
 
-## Formatting Rules
+## Headers
 
-### Tables
+Use hierarchical headers:
+- H1: Document title (one per file)
+- H2: Major sections
+- H3: Subsections
+- H4: Details (sparingly)
 
-All tables must use GitHub-flavored Markdown:
+## Code Blocks
 
-```markdown
-| Header 1 | Header 2 |
-|----------|----------|
-| Cell 1   | Cell 2   |
-```
-
-### Diagrams
-
-All diagrams must use Mermaid in fenced code blocks:
-
+Always specify language:
 ````markdown
-```mermaid
-graph LR
-    A --> B
+```python
+from unbihexium import Pipeline
 ```
 ````
 
-### Mathematics
+## Tables
 
-Use LaTeX syntax for mathematical expressions:
+Align columns and use headers:
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Value 1  | Value 2  |
+```
 
-- Inline: `$E = mc^2$` renders as $E = mc^2$
-- Block: `$$\int_0^\infty e^{-x} dx = 1$$`
+## Mermaid Diagrams
 
-## Legal and Security Rules
+Use for:
+- Architecture diagrams
+- Workflows
+- Hierarchies
+- Data flows
 
-Policy documents must include:
+## LaTeX Formulas
 
-- "This document does not constitute legal advice" disclaimer
-- Responsible use guidance where applicable
-- Clear scope limitations
+Use for:
+- Mathematical expressions
+- Metrics definitions
+- Algorithm descriptions
 
-## Cross-Linking Rules
+## Links
 
-Every page should link to:
-
-1. [Documentation Index](index.md)
-2. [Table of Contents](toc.md)
-
-## Quality Gate Formula
-
-Documentation quality score:
-
-$$Q = \frac{M + L + T}{3} \times C$$
-
-Where:
-- $M$ = Mermaid diagram present (0 or 1)
-- $L$ = LaTeX formula present (0 or 1)
-- $T$ = Table present (0 or 1)
-- $C$ = Cross-link compliance (0 to 1)
-
-## References
-
-- [Documentation Index](index.md)
-- [Table of Contents](toc.md)
-- [Glossary](glossary.md)
+- Use relative paths within docs
+- Verify all links work
+- No broken references

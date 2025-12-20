@@ -1,0 +1,57 @@
+{
+  "model_id": "mosaicking",
+  "name": "Mosaicking",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Mosaicking model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "63a3c67c9e7cac56419fe0b407db32b82de083afc6004ffbf536f8d09d4860c6",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "8fd4fdbd86d9bb496d464002640cbae4445be78fe0c5a110443645fdbe0d5e2f",
+          "size_bytes": 351
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e38a9dddb06ce5dab2c23b65e61911b592e0de166ecec242ccc2e2b4a4e7719a",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "de7186ff5c544e9a8ec602d137c69473da7a405712725f36ae08eb483959a08b",
+          "size_bytes": 351
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "aaff819691cbb0710f91072c9070778b4588387dae18d92b9d1c58a8c623439b",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "98597dc8a3e703d3d2c69b83e767c3d5ed30ae0207e512820f79591d2566ff7b",
+          "size_bytes": 355
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "mosaicking"
+  ]
+}

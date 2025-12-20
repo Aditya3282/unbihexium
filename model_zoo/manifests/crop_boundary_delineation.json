@@ -1,0 +1,57 @@
+{
+  "model_id": "crop_boundary_delineation",
+  "name": "Crop Boundary Delineation",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Crop Boundary Delineation model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "20a1551f80a693e4582f5f8083ddf43d09a55648136fad28d957435f13fa3447",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "4a700ce7f32114da7d123d5de3bd8145e18c188a479a53558c4007db81dd35af",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "73fd4353a8653252f7149c51bca9877d097dd19576e025c3e3419b69805cfaad",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "521c2233629b01a5657f32fb911848a617d6991c7c7b99d56493bcd378e3e67f",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "11e16925f4bc458024aa0b56d0c4d060efcc4d3b7235aff271fd532c7c1703fd",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "e108b91dc6b0c6a11dd91aed04bfef376786a48a30a7c9dbb51aa990ac353945",
+          "size_bytes": 429
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "crop_boundary_delineation"
+  ]
+}

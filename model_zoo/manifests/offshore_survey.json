@@ -1,0 +1,57 @@
+{
+  "model_id": "offshore_survey",
+  "name": "Offshore Survey",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Offshore Survey model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b300edf573f4ceb8450275d6468e92f6625a26c2ad05e7d6a8be163c5dd21b7d",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "859637c2c8b2986f906236f33a287237cfd75b4572b9e3f368eebca3a94d56d2",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8a8745426db02abb61090afdff54e3fc2956687b354a50adf55cb1d2028eebda",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "1ad4b314f2e8cec1672bdeb568ac1d42bfec6d462e451c9ec6e541400d777e42",
+          "size_bytes": 178
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6ca00d8d584d767780d669f2e4e0c4b8f2d4df80820f61dc77e1fbe55efd1453",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "e955d4637e99dedd12330aaeb1d1514a8f6e89eb9ab336ed29b2bbc510e17941",
+          "size_bytes": 180
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "offshore_survey"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "model_id": "perennial_garden_suitability_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

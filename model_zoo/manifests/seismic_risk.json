@@ -1,0 +1,57 @@
+{
+  "model_id": "seismic_risk",
+  "name": "Seismic Risk",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Seismic Risk model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1228321b849e847541aa4d5acf3b5ad2f007a85ccc431739ccbf1be8c3c2d201",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "004e1202088e5593bf45aac38e05e3627fe747eb4f6447aea2634e089f20ebb6",
+          "size_bytes": 175
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fdcc2fadf645b74f882fa76bae375599d87c5e231f456978c2029c97fc46f84b",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "92d9dca1d1c3819ccae01f0a9db07ffe8fce497b7db55ce69d4261228be92da0",
+          "size_bytes": 175
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9a1d09bd27fb96660c308ec8df97f48ea9a29e4d7da7e17743f8a88e3f348302",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "34cd27c4196da912a47f16c9786a0b23f656e7b84f0f3edcab70727ed5d75f92",
+          "size_bytes": 177
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "seismic_risk"
+  ]
+}

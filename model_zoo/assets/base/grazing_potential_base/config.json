@@ -1,0 +1,10 @@
+{
+  "model_id": "grazing_potential_base",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 6
+  }
+}

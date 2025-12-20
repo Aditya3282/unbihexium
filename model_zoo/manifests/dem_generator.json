@@ -1,0 +1,57 @@
+{
+  "model_id": "dem_generator",
+  "name": "Dem Generator",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Dem Generator model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0b89cc448e9fede44cbb744aa13a5f4123f64d742df2bf42b6d07a07e3429ed7",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "d15dafd7ea54076e57d2128d98172a7182fa6221664c36c9b36447cbd3585a7d",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "df74d5e78c1655ba3faa8b9f4b69dd9a4d0a974931c1b1fd13f058557587e93b",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "4c73f67fe00eaba50fe4b11460562fa19ce4a522518c0847fde5812120c32014",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "be8f428b85fcf158eca356659df34501bf4c74ed153089c079aec9c8c968aada",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "5f36a3c497af0aabd26b6bfb00af8f60545ad4aa64b0bddc4f9f90f9a68d63ea",
+          "size_bytes": 178
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "dem_generator"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "wind_site_selector",
+  "name": "Wind Site Selector",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Wind Site Selector model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ef6fb732c9831133893754c793f6d22846d896ebea14252f97dc0502f4b802e3",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "7ab845284bd66adad3b50614d5028eb9de27e4839723e775aa085ec2de975a6b",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3df1bf11a2df64ef10c96a2c932660b99ddf8d1df94e39215f545911236ec483",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "55dab914a098411fe7753924842ae304cae3220358f8b8e72649f34e82d766cb",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b4c5abc72c17f24bcd77e5057a81aa4d020cddf7a8d08c228bd163195cda2884",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "db7e2405ec8edeea7360a3d7d652991949f9cccaad5597d5d4ba2936795d025c",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "wind_site_selector"
+  ]
+}

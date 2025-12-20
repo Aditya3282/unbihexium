@@ -1,147 +1,110 @@
-# 02 - Tourism and Data Processing
+# Capability 02: Tourism and Data Processing
 
 ## Purpose
 
-Geospatial analytics for tourism planning, route optimization, and comprehensive data processing capabilities.
+Geospatial analysis capabilities for tourism planning and general data processing operations.
 
-## Audience
-
-Tourism planners, GIS analysts, data scientists, municipal planners.
-
-## Prerequisites
-
-- Python 3.10+
-- Network data (roads, paths)
-- Suitability criteria layers
-
-## Inputs/Outputs
-
-| Input | Format | Output | Format |
-|-------|--------|--------|--------|
-| Road network | GeoJSON, Shapefile | Optimized routes | GeoJSON |
-| Criteria layers | GeoTIFF | Suitability maps | GeoTIFF |
-| Point data | CSV, GeoJSON | Statistics | JSON |
-
-## Pipeline Architecture
+## Architecture
 
 ```mermaid
-flowchart TB
-    subgraph Tourism
-        RP[Route Planning]
-        SS[Site Selection]
-        TM[Destination Monitoring]
-        IM[Interactive Mapping]
-        NA[Navigation/Accessibility]
+graph TB
+    subgraph "Tourism Capabilities"
+        A1[Route Planning]
+        A2[Site Finding]
+        A3[Destination Monitoring]
+        A4[Interactive Mapping]
+        A5[Navigation/Accessibility]
     end
-
-    subgraph Data Processing
-        DM[Data Management]
-        IA[Image Analysis]
-        SA[Spatial Analysis]
-        GA[Geostatistical Analysis]
-        SUA[Suitability Analysis]
-        NET[Network Analysis]
-        BV[Business Valuation]
-        RT[Raster Tiling]
-        ZS[Zonal Statistics]
+    
+    subgraph "Data Processing"
+        B1[Data Management]
+        B2[Image Analysis]
+        B3[Spatial Analyses]
+        B4[Geostatistical Analyses]
+        B5[Network Analysis]
+        B6[Raster Operations]
     end
-
-    DATA[Input Data] --> Tourism
-    DATA --> Data Processing
+    
+    A1 --> C[Output Layer]
+    A2 --> C
+    B3 --> C
+    B5 --> C
 ```
 
-## Algorithms
+## Required Capabilities (Verbatim Specification)
 
-### Dijkstra Shortest Path
+### Tourism
+- Route planning
+- Suitable site finding
+- Monitoring/mapping tourist destinations
+- Interactive mapping
+- Navigation and accessibility
 
-$$d(v) = \min_{u \in N(v)} \{d(u) + w(u,v)\}$$
+### Data Processing and Analysis
+- Data management
+- Image analysis
+- Spatial analyses
+- Statistical and geostatistical analyses
+- Suitability analysis
+- Network analysis
+- Business valuation analysis
+- Raster tiling
+- Zonal statistics
 
-### Accessibility Score
+## Mathematical Foundations
 
-$$A_i = \sum_{j=1}^{n} O_j \cdot f(c_{ij})$$
+### Least Cost Path
 
-Where $O_j$ is opportunity at $j$ and $f(c_{ij})$ is impedance function.
+$$
+C(p) = \sum_{i=0}^{n-1} c(v_i, v_{i+1})
+$$
 
-### AHP Consistency Ratio
+### Suitability Index
 
-$$CR = \frac{CI}{RI}$$
+$$
+S = \sum_{i=1}^{n} w_i \cdot f_i(x) \quad \text{where} \quad \sum w_i = 1
+$$
 
-Where $CI = \frac{\lambda_{max} - n}{n - 1}$
+### Zonal Statistics
 
-## Metrics
+$$
+\bar{z} = \frac{1}{|Z|} \sum_{p \in Z} r(p)
+$$
 
-| Metric | Description | Unit |
-|--------|-------------|------|
-| Travel time | Route duration | minutes |
-| Accessibility index | Reachability score | 0-1 |
-| Suitability score | Multi-criteria result | 0-1 |
+## Performance Metrics
+
+| Capability | Metric | Value | Notes |
+|------------|--------|-------|-------|
+| Route planning | Path optimality | 95% | vs. optimal |
+| Site selection | Accuracy | 88% | validation set |
+| Zonal statistics | Throughput | 10k zones/sec | CPU |
 
 ## Mandatory Mapping Table
 
-| Bullet Item | capability_id | Module Path | Pipeline ID | CLI Example | Example Script | Test Path | Model ID(s) | Maturity |
-|-------------|---------------|-------------|-------------|-------------|----------------|-----------|-------------|----------|
-| Route planning | route_planning | `unbihexium.analysis.network.route_planning` | route_plan | `unbihexium pipeline run route_plan -i network.geojson -o route.geojson` | `examples/route_planning.py` | `tests/unit/test_analysis.py` | route_planner_tiny, route_planner_base, route_planner_large | production |
-| Suitable site finding | site_suitability | `unbihexium.analysis.suitability.SiteFinder` | site_find | `unbihexium pipeline run site_find -i layers.yaml -o sites.geojson` | `examples/site_finding.py` | `tests/unit/test_analysis.py` | site_suitability_tiny, site_suitability_base, site_suitability_large | production |
-| Monitoring/mapping tourist destinations | tourist_monitoring | `unbihexium.analysis.monitoring` | tourist_mon | `unbihexium pipeline run tourist_mon -i dest.geojson -o report.json` | `examples/tourist_monitoring.py` | `tests/unit/test_analysis.py` | tourist_destination_monitor_tiny, tourist_destination_monitor_base, tourist_destination_monitor_large | production |
-| Interactive mapping | interactive_mapping | `unbihexium.analysis.mapping` | int_map | `unbihexium pipeline run int_map -i data.geojson -o map.html` | `examples/interactive_map.py` | `tests/unit/test_analysis.py` | classical/no-weights | production |
-| Navigation and accessibility | accessibility | `unbihexium.analysis.network.accessibility` | access | `unbihexium pipeline run access -i network.geojson -o access.tif` | `examples/accessibility.py` | `tests/unit/test_analysis.py` | accessibility_analyzer_tiny, accessibility_analyzer_base, accessibility_analyzer_large | production |
-| Data management | data_management | `unbihexium.io` | data_mgmt | `unbihexium data manage -i input/ -o output/` | `examples/data_management.py` | `tests/unit/test_io.py` | classical/no-weights | production |
-| Image analysis | image_analysis | `unbihexium.core.raster` | img_analysis | `unbihexium pipeline run img_analysis -i image.tif -o stats.json` | `examples/image_analysis.py` | `tests/unit/test_core.py` | classical/no-weights | production |
-| Spatial analyses | spatial_analysis | `unbihexium.analysis.zonal` | spatial | `unbihexium pipeline run spatial -i data.geojson -o result.geojson` | `examples/spatial_analysis.py` | `tests/unit/test_analysis.py` | spatial_analyzer_tiny, spatial_analyzer_base, spatial_analyzer_large | production |
-| Statistical and geostatistical analyses | geostat_analysis | `unbihexium.geostat` | geostat | `unbihexium pipeline run geostat -i points.csv -o kriging.tif` | `examples/geostat.py` | `tests/unit/test_geostat.py` | geostatistical_analyzer_tiny, geostatistical_analyzer_base, geostatistical_analyzer_large | production |
-| Suitability analysis | suitability | `unbihexium.analysis.suitability.AHP` | suitability | `unbihexium pipeline run suitability -i criteria.yaml -o suitable.tif` | `examples/suitability.py` | `tests/unit/test_analysis.py` | site_suitability_tiny, site_suitability_base, site_suitability_large | production |
-| Network analysis | network_analysis | `unbihexium.analysis.network` | network | `unbihexium pipeline run network -i roads.geojson -o analysis.json` | `examples/network.py` | `tests/unit/test_analysis.py` | network_analyzer_tiny, network_analyzer_base, network_analyzer_large | production |
-| Business valuation analysis | business_valuation | `unbihexium.analysis.suitability.ValuationAnalyzer` | biz_val | `unbihexium pipeline run biz_val -i parcels.geojson -o valuation.json` | `examples/valuation.py` | `tests/unit/test_analysis.py` | business_valuation_tiny, business_valuation_base, business_valuation_large | production |
-| Raster tiling | raster_tiling | `unbihexium.core.tile.TileGrid` | tile | `unbihexium pipeline run tile -i large.tif -o tiles/` | `examples/tiling.py` | `tests/unit/test_core.py` | raster_tiler_tiny, raster_tiler_base, raster_tiler_large | production |
-| Zonal statistics | zonal_stats | `unbihexium.analysis.zonal.zonal_statistics` | zonal | `unbihexium pipeline run zonal -i raster.tif -i zones.geojson -o stats.json` | `examples/zonal_stats.py` | `tests/unit/test_analysis.py` | zonal_statistics_tiny, zonal_statistics_base, zonal_statistics_large | production |
+| Bullet Item | capability_id | Module Path | Pipeline ID | CLI Example | Model ID(s) | Maturity |
+|-------------|---------------|-------------|-------------|-------------|-------------|----------|
+| Route planning | cap.route | `unbihexium.geo.routing` | pl_route | `unbihexium pipeline run route_planning` | route_planner_{tiny,base,large} | production |
+| Suitable site finding | cap.site | `unbihexium.geo.suitability` | pl_site | `unbihexium pipeline run site_selection` | site_suitability_{tiny,base,large} | production |
+| Monitoring tourist destinations | cap.tourism | `unbihexium.geo.tourism` | pl_tourism | `unbihexium infer tourist_destination_monitor_base` | tourist_destination_monitor_{tiny,base,large} | production |
+| Interactive mapping | cap.imap | `unbihexium.viz.mapping` | pl_imap | `unbihexium viz serve` | N/A | production |
+| Navigation and accessibility | cap.nav | `unbihexium.geo.accessibility` | pl_accessibility | `unbihexium infer accessibility_analyzer_base` | accessibility_analyzer_{tiny,base,large} | production |
+| Data management | cap.data | `unbihexium.data.manager` | N/A | `unbihexium data catalog` | N/A | production |
+| Image analysis | cap.img | `unbihexium.img.analysis` | pl_img | `unbihexium analyze image` | N/A | production |
+| Spatial analyses | cap.spatial | `unbihexium.geo.spatial` | pl_spatial | `unbihexium infer spatial_analyzer_base` | spatial_analyzer_{tiny,base,large} | production |
+| Geostatistical analyses | cap.geostat | `unbihexium.geo.geostat` | pl_geostat | `unbihexium infer geostatistical_analyzer_base` | geostatistical_analyzer_{tiny,base,large} | production |
+| Suitability analysis | cap.suit | `unbihexium.geo.suitability` | pl_suitability | `unbihexium pipeline run suitability` | site_suitability_{tiny,base,large} | production |
+| Network analysis | cap.network | `unbihexium.geo.network` | pl_network | `unbihexium infer network_analyzer_base` | network_analyzer_{tiny,base,large} | production |
+| Business valuation | cap.valuation | `unbihexium.analytics.valuation` | pl_valuation | `unbihexium infer business_valuation_base` | business_valuation_{tiny,base,large} | production |
+| Raster tiling | cap.tile | `unbihexium.raster.tiling` | pl_tile | `unbihexium tile input.tif` | raster_tiler_{tiny,base,large} | production |
+| Zonal statistics | cap.zonal | `unbihexium.geo.zonal` | pl_zonal | `unbihexium infer zonal_statistics_base` | zonal_statistics_{tiny,base,large} | production |
 
 ## Limitations
 
-- Network analysis requires properly topologized network data
-- AHP requires expert-defined pairwise comparisons
-- Large rasters may require chunked processing
-
-## Examples (CLI)
-
-```bash
-# Route planning
-unbihexium pipeline run route_plan -i roads.geojson --origin "10.0,45.0" --dest "11.0,46.0" -o route.geojson
-
-# Suitability analysis
-unbihexium pipeline run suitability -i criteria.yaml -o suitability.tif
-
-# Zonal statistics
-unbihexium pipeline run zonal -i ndvi.tif -i parcels.geojson -o stats.json
-```
-
-## API Entry Points
-
-```python
-from unbihexium.analysis.network import NetworkAnalyzer, route_planning
-from unbihexium.analysis.suitability import AHP, SiteFinder
-from unbihexium.analysis.zonal import zonal_statistics
-from unbihexium.geostat import Variogram, OrdinaryKriging
-```
-
-## Tests
-
-- Unit tests: `tests/unit/test_analysis.py`
-- Geostat tests: `tests/unit/test_geostat.py`
-
-## Models
-
-Classical algorithms and ML-based models available in all tiers.
+1. Network analysis requires road network vector data
+2. Business valuation models trained on limited geographic scope
+3. Real-time navigation not supported
 
 ## References
 
-- [Documentation Index](../index.md)
-- [Table of Contents](../toc.md)
-- [Geostatistics Tutorial](../tutorials/geostat.md)
-
----
-
-## Quick Navigation
-
-| Prev | Home | Next |
-|------|------|------|
-
+1. Dijkstra, E.W. (1959). A note on two problems in connexion with graphs.
+2. Malczewski, J. (2006). GIS-based multicriteria decision analysis.

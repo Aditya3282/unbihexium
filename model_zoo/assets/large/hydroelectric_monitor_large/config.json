@@ -1,0 +1,10 @@
+{
+  "model_id": "hydroelectric_monitor_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

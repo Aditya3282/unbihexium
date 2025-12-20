@@ -1,0 +1,57 @@
+{
+  "model_id": "crop_classifier",
+  "name": "Crop Classifier",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Crop Classifier model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6ef849bfd1632ea4540a520f768efff5aef94a79087af88048033f21b2ef7ad4",
+          "size_bytes": 3806
+        },
+        {
+          "name": "config.json",
+          "sha256": "8df8abe49bc243b7b9be7c7f4150e38ab43c07275dcae2f54eccc3b90fd37420",
+          "size_bytes": 450
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "552f579ea6c38b0597acf07128a25c4e26db2bc95ab7f02dfde03a7904979b40",
+          "size_bytes": 30739
+        },
+        {
+          "name": "config.json",
+          "sha256": "b75c502b4914f7085ec327c6d12fd2c54c104d189a1d960868e00c2359f7c66b",
+          "size_bytes": 450
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cf5a4d490fd68e0a69f16b34f6eaa9809050d24c74945661aac6875c88bd6116",
+          "size_bytes": 113245
+        },
+        {
+          "name": "config.json",
+          "sha256": "f530b14a6f71b252733305a194222fa0795dc85a2c9ed3e42ea1f1231918448b",
+          "size_bytes": 454
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "crop_classifier"
+  ]
+}

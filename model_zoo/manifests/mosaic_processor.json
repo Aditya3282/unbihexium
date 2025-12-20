@@ -1,0 +1,57 @@
+{
+  "model_id": "mosaic_processor",
+  "name": "Mosaic Processor",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Mosaic Processor model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d1914fb42ddb2ac1029dbb74e9fc738a33bb0c7b23dac4eda188de8ecb5302b1",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "74e5630dac0e8b643f5ff724d39d4edd7274e4c1f45c32b3b1542586095c6cd9",
+          "size_bytes": 357
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "05da1d15ce92d2e495637e1033da258206982c6e9e9dc5f1c796785381d40528",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "75f968a26cc413bd675377aae9e996402930d27c94353d8694174ea14d808996",
+          "size_bytes": 357
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e539d81c261a605416ad2e9b04a32e0d19eb7beeeef2aab882a5f7d089893d18",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "f1c6e5e207e0bac245b5d081166f31e5bf2360ce99408dd1a4121040c68d2ed5",
+          "size_bytes": 361
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "mosaic_processor"
+  ]
+}

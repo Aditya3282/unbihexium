@@ -1,0 +1,57 @@
+{
+  "model_id": "land_surface_temperature",
+  "name": "Land Surface Temperature",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Land Surface Temperature model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1aad599f959d8429eb876248cf740e5bb19c613d1c2ce045c57b4c82d78099c9",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "b2d018341e17be042e4f1129032643cf4684dab265ce818106d7179b11fcaafb",
+          "size_bytes": 187
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7b73a341ae8e830036365e944409127deb5aa108faf5643aa6302c4af42fcfb9",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "b8b85d979c355824cc6054ead87e9a7c42bb910b9f2fb57aa64df6d5325cb7ae",
+          "size_bytes": 187
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b7cdde5ca5d2a6adb2ce90732d9a2792424e34de5c2c45f60fe98a894b10196f",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "e9bbad50a96266b27c7484576b577ff5fd2d1cf5703a3c7765aeae3cd61b1a36",
+          "size_bytes": 189
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "land_surface_temperature"
+  ]
+}

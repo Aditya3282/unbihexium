@@ -1,0 +1,57 @@
+{
+  "model_id": "natural_resources_monitor",
+  "name": "Natural Resources Monitor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Natural Resources Monitor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "2b78ec109f92859685a2b20e8491e1b064ee4717ce1cecdb33f73a50288ef269",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "9d8a673ac6b8f529d833210f7d572288ba0311311af720111e56f1b8c8794b4b",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dc0cb32f04adc21bdf7087ab29f26a2cdcbd79ec35065b554676786304a7d696",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "3208c120cbd585d07ed3fcef176bca4a431d4cae27e8fde8b947b8243f5e3b3f",
+          "size_bytes": 189
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4f99684f7bb5b9054044b9efb7d08b7bfed2e61beee6c2d4d2d6f1c61983262a",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "fcd1aac91d80aea91c94f49a7f3df1e2131740104cbda8d2ad0baec24d921509",
+          "size_bytes": 191
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "natural_resources_monitor"
+  ]
+}

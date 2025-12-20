@@ -2,65 +2,57 @@
 
 ## Purpose
 
-This document describes how to get help with unbihexium.
-
-## Audience
-
-Users seeking assistance and support.
+This document describes how to get help with Unbihexium.
 
 ## Support Channels
 
 ```mermaid
-graph LR
-    USER[User] --> DOCS[Documentation]
-    USER --> ISSUES[GitHub Issues]
-    USER --> DISC[Discussions]
-
-    DOCS --> FAQ[FAQ]
-    ISSUES --> BUG[Bug Reports]
-    DISC --> QUESTIONS[Questions]
+flowchart LR
+    A[Question] --> B{Type?}
+    B -->|Usage| C[Discussions]
+    B -->|Bug| D[Issues]
+    B -->|Security| E[Email]
+    B -->|Commercial| F[Enterprise]
 ```
 
-## Support Options
+## Response Time Expectation
 
-| Channel | Use Case | Response Time |
-|---------|----------|---------------|
-| Documentation | Self-service | Immediate |
-| GitHub Issues | Bug reports | 1-5 days |
-| Discussions | Questions | Community-driven |
-| Security | Vulnerabilities | 48 hours |
+$$
+T_{\text{response}} \approx \begin{cases}
+24h & \text{Critical issues} \\
+72h & \text{Bug reports} \\
+1\text{week} & \text{Feature requests}
+\end{cases}
+$$
 
-## Issue Prioritization
+| Channel | Use Case | SLA |
+|---------|----------|-----|
+| GitHub Issues | Bug reports | 72h |
+| GitHub Discussions | Questions | Best effort |
+| Email | Security issues | 48h |
+| Enterprise | Commercial support | Contractual |
 
-$$P = severity \times impact \times urgency$$
+## Before Asking
 
-Where each factor is rated 1-5.
-
-## Before Opening an Issue
-
-1. Check [FAQ](docs/faq.md)
+1. Check documentation
 2. Search existing issues
-3. Verify with latest version
+3. Review FAQ
 4. Prepare minimal reproduction
 
-## Bug Reports
+## Issue Templates
 
-Include:
-- Version information
-- Steps to reproduce
-- Expected vs actual behavior
-- Error messages
+Use provided templates for:
+- Bug reports
+- Feature requests
+- Documentation issues
 
-## Feature Requests
+## Commercial Support
 
-Open a discussion first to gauge interest.
+Enterprise support available. Contact: enterprise@unbihexium.dev
 
-## Security Issues
+## Community Guidelines
 
-Report to security@unbihexium.org (not public issues).
-
-## References
-
-- [FAQ](docs/faq.md)
-- [Documentation](docs/index.md)
-- [Contributing](CONTRIBUTING.md)
+- Be specific
+- Include versions
+- Provide context
+- Follow up on resolutions

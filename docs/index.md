@@ -1,58 +1,73 @@
 # Unbihexium Documentation
 
-Welcome to the Unbihexium documentation. Unbihexium is a production-grade Python library for Earth Observation, Geospatial, Remote Sensing, and SAR applications.
+## Purpose
 
-## Quick Navigation
+Central hub for Unbihexium documentation covering installation, usage, API reference, and capabilities.
 
-| Section | Description |
-|---------|-------------|
-| [Getting Started](getting_started/installation.md) | Installation and setup |
-| [Tutorials](tutorials/index.md) | Step-by-step guides |
-| [Capabilities](capabilities/index.md) | 12 domain capabilities |
-| [API Reference](reference/api.md) | Python API docs |
-| [CLI Reference](reference/cli.md) | Command-line interface |
-| [Model Zoo](model_zoo/catalog.md) | Pre-trained models |
-| [Architecture](architecture/overview.md) | System design |
+## Audience
 
-## Features
+- Data scientists
+- Geospatial engineers
+- Remote sensing analysts
+- Software developers
 
-| Domain | Capabilities | Documentation |
-|--------|-------------|---------------|
-| AI Products | Detection, segmentation, super-resolution | [01_ai_products](capabilities/01_ai_products.md) |
-| Tourism/Data | Route planning, analytics, zonal | [02_tourism](capabilities/02_tourism_data_processing.md) |
-| Indices/Water | NDVI, NDWI, flood risk | [03_indices](capabilities/03_indices_flood_water.md) |
-| Environment | Monitoring, deforestation | [04_environment](capabilities/04_environment_forestry_image_processing.md) |
-| Asset/Energy | Damage, utilities, solar | [05_asset](capabilities/05_asset_management_energy.md) |
-| Urban/Agri | Planning, crops, yield | [06_urban](capabilities/06_urban_agriculture.md) |
-| Risk/Defense | Hazard, security | [07_risk](capabilities/07_risk_defense_neutral.md) |
-| Value-Added | DSM, DEM, ortho | [08_value](capabilities/08_value_added_imagery.md) |
-| Benefits | Delivery, coverage | [09_benefits](capabilities/09_benefits_narrative.md) |
-| Satellite | Stereo, scales | [10_satellite](capabilities/10_satellite_imagery_features.md) |
-| Resolution | 0.3m-1.5m QA | [11_resolution](capabilities/11_resolution_metadata_qa.md) |
-| SAR/Radar | Amplitude, InSAR | [12_sar](capabilities/12_radar_sar.md) |
-
-## Architecture
+## Documentation Structure
 
 ```mermaid
 graph TB
-    CLI[CLI] --> Pipeline[Pipeline Framework]
-    Pipeline --> Core[Core Abstractions]
-    Core --> Raster[Raster]
-    Core --> Vector[Vector]
-    Pipeline --> Registry[Registry]
-    Registry --> Models[Model Registry]
-    Registry --> Capabilities[Capability Registry]
+    A[Documentation] --> B[Getting Started]
+    A --> C[Tutorials]
+    A --> D[Reference]
+    A --> E[Architecture]
+    A --> F[Capabilities]
+    A --> G[Model Zoo]
+    A --> H[Security]
+    A --> I[Operations]
+    
+    B --> B1[Installation]
+    B --> B2[Quickstart]
+    B --> B3[Configuration]
+    
+    C --> C1[Detection]
+    C --> C2[Indices]
+    C --> C3[Geostatistics]
+    
+    D --> D1[CLI]
+    D --> D2[API]
+    D --> D3[Config Schema]
 ```
 
-## Mathematical Foundation
+## Documentation Metrics
 
-$$NDVI = \frac{NIR - RED}{NIR + RED}$$
+$$
+\text{Coverage} = \frac{\text{Documented APIs}}{\text{Total APIs}} \times 100\%
+$$
 
 ## Quick Links
 
-- [Table of Contents](toc.md) | [Glossary](glossary.md) | [FAQ](faq.md) | [Style Guide](style_guide.md)
-- [Security](security/responsible_use.md) | [Secrets/Tokens](security/secrets_and_tokens.md)
+| Section | Description |
+|---------|-------------|
+| [Installation](getting_started/installation.md) | Install the library |
+| [Quickstart](getting_started/quickstart.md) | First steps |
+| [CLI Reference](reference/cli.md) | Command-line interface |
+| [API Reference](reference/api.md) | Python API |
+| [Model Zoo](model_zoo/model_catalog.md) | Available models |
+| [Capabilities](capabilities/index.md) | Domain capabilities |
 
----
+## Prerequisites
 
-**Next:** [Installation](getting_started/installation.md) | [Quickstart](getting_started/quickstart.md)
+- Python 3.10+
+- pip or conda
+- 8GB RAM (recommended)
+
+## Non-Goals
+
+- Real-time processing
+- Mobile deployment
+- GUI applications
+
+## Version
+
+Documentation version: 1.0.0
+
+Matches library version in pyproject.toml.

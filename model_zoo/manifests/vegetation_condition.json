@@ -1,0 +1,57 @@
+{
+  "model_id": "vegetation_condition",
+  "name": "Vegetation Condition",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Vegetation Condition model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a68de412e1a0364825ac65c55e6d4f47ee857bd0a6dcdda035a33f323ab30545",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "2173aa8dff00bbd39ea62f0b3a2d6513d3e1f7f9a044de1e7241a018a51aa664",
+          "size_bytes": 355
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8a11c7a6db1b0a7c92fb674b526e507e949a7050ea719637a30787f001ca2a1a",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "3fc2947db4b9ee7117d0ceb7df5171d8f08e5939379e71d242ed635dba4bc68d",
+          "size_bytes": 355
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "204dc4a769d4ca64c8dc475c36322ce821c1e2291806481a784c72c0fedb51d3",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "e8fd66c955014d14a14e9d90a53daeac2cc6626d7916fc43834984144741faf2",
+          "size_bytes": 359
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "vegetation_condition"
+  ]
+}

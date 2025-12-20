@@ -1,0 +1,10 @@
+{
+  "model_id": "land_surface_temperature_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

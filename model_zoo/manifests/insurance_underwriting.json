@@ -1,0 +1,57 @@
+{
+  "model_id": "insurance_underwriting",
+  "name": "Insurance Underwriting",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Insurance Underwriting model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ce7bbdf84b0dddcb35a873c04bd0965b75523c4524177c9eeafcecc7b8f34b9d",
+          "size_bytes": 1643
+        },
+        {
+          "name": "config.json",
+          "sha256": "e2610fe9c35f8935280ebcea341a2bf0fe2d39673ee1eef61c8484320fbd407d",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d5032075f0bc931a6b1f370e1c2dae19ddc592b5595af4e53e9a0ded301f2e96",
+          "size_bytes": 5677
+        },
+        {
+          "name": "config.json",
+          "sha256": "c2588fef90321397bb0b7cb98b7a5b4dba086f51d288ba9b3c3c6a95ce54cbec",
+          "size_bytes": 186
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c55650d5d6febd8ce8ccc95bf470f57c5b3d4ceaf2990577ae8be45f62636302",
+          "size_bytes": 14641
+        },
+        {
+          "name": "config.json",
+          "sha256": "7a5793923b50aaaf6f12a4472af407af83eb81b3b01048cd7a638c05d56601ae",
+          "size_bytes": 188
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "insurance_underwriting"
+  ]
+}

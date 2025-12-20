@@ -1,0 +1,57 @@
+{
+  "model_id": "stereo_processor",
+  "name": "Stereo Processor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Stereo Processor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0efd9ad4932ca2e4a0c636b8103aa678cf83956fb42445a13201f8fdbee5687c",
+          "size_bytes": 1065
+        },
+        {
+          "name": "config.json",
+          "sha256": "83dbcfa47be1ecb6464e3601a707f9816940306540ece716903ec80a03e00a99",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0c5478d75511d7b60c6583c3bbb911a53e51c0e1d419e3088fb70708eca9c1d0",
+          "size_bytes": 3373
+        },
+        {
+          "name": "config.json",
+          "sha256": "36183562a29f5c2c5f380a1a025254d9b3d832fc1e8c9ab3a76d382555877a27",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a1b2e481a4fa16e0797d0ffd8b1542262dc5e08560b2e0f1a39625d0619d6e40",
+          "size_bytes": 10033
+        },
+        {
+          "name": "config.json",
+          "sha256": "0c1cd9997136ab7b83826adf7af14322c5319784213006438a86f7f63c6ca798",
+          "size_bytes": 181
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "stereo_processor"
+  ]
+}

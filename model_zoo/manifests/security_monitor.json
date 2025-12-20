@@ -1,0 +1,57 @@
+{
+  "model_id": "security_monitor",
+  "name": "Security Monitor",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Security Monitor model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c0687e724ce2df9a9319baa2746fc1479bb53fa08c0b6f7110f372d0e11e1562",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "ddd41e16695028f716de6f1443886624d37734d52fb8af3ffe3e705a9f74c8f7",
+          "size_bytes": 414
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f766da1a7466b0e339ffe9d18daee52c8849260af1d8287fc99bdcdaa135cc57",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "30f773201d9910c837c5e4ccf8b7e9cb0fee0402ccb2d807c9614fa9671fd4b8",
+          "size_bytes": 414
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d9772642e1528c1770e95b1e12238cb0c68044ffbd50a878c1a978f78816d2d1",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "05a468891947e71cfaa91fe8dc076db8fa26c5a90b4222787b1d7ed97a8422b2",
+          "size_bytes": 418
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "security_monitor"
+  ]
+}

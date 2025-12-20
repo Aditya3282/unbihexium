@@ -1,0 +1,57 @@
+{
+  "model_id": "grazing_potential",
+  "name": "Grazing Potential",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Grazing Potential model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "76458b33f25bacdc3e254c00ebd640316ded67f6b5e941083d4d3f9e526ac695",
+          "size_bytes": 1195
+        },
+        {
+          "name": "config.json",
+          "sha256": "1b7f99cea866f5577a03297238a5cb5f06562a1ff5167d9ce0837a96a054d9d9",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6e18ad647757306ffca80100f95a4bfa5a066a9bf23fe92dade2de4dcd116983",
+          "size_bytes": 3885
+        },
+        {
+          "name": "config.json",
+          "sha256": "967329b476b8a81580d5fa8c0d70a94e04296e48c95560a5e04d0e23ef0919a5",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4b28eeb7e39d002e78e2a7de3302a7c0b284c6025a80c9bb2bdeb8b2f491738f",
+          "size_bytes": 11057
+        },
+        {
+          "name": "config.json",
+          "sha256": "a9b1d882e948f2965f4b8812e741efb241944062a756653ffe96a4373c04ab36",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "grazing_potential"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "building_detector",
+  "name": "Building Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Building Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "986c5130a767c958e62e6c5c049b70bcfc25e04512664cd32603a9896fbc5c66",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "b154dbbbbdc1ffdfde4c3f3008d4461b873eb304d6740b73550abdf1f5b646ee",
+          "size_bytes": 401
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fbcd051422fe67ca89da45e26ec7814823879aa497ddbc44da40ad196ff0fde7",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "081bc2d20076c9c7d96416e66c20cf43eccd774f973903417b42c594988e8954",
+          "size_bytes": 401
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a1373990a4a548d6b91ece0ae251ce97cf739e232a022cf891e0b922978836ea",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "e8fae8a3af8249bc9b84451d4d10781f383298b96dd150b375acb99c8956fda3",
+          "size_bytes": 405
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "building_detector"
+  ]
+}

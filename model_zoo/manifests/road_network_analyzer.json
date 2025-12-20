@@ -1,0 +1,57 @@
+{
+  "model_id": "road_network_analyzer",
+  "name": "Road Network Analyzer",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Road Network Analyzer model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fd98da24aa6c99afe7f1a39b220019f63a3ed26339a66a846f4c75e111e6fe46",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "66c414e60a4cb0fc6db0790de4255bbec6a3327a4338bcf81d01987a70a6af30",
+          "size_bytes": 417
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5caf2376b774a4bbd977fe44bb6b077ac023e4a4752a1dfa2936c1b33681b8b4",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "a874b829d453b81ff7c5a17f7f8f2271e03ad9ba1291a58fbe0c9467e4875821",
+          "size_bytes": 417
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e49cc9c1ff11bed97ee875af068dcbce37abf4a9dc29d9a1d413a6d4dbfa99f2",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "8947f274b3e976c2509e38ff6681eabd86888eda0e700398a3039bf6dd2c4821",
+          "size_bytes": 421
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "road_network_analyzer"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "model_id": "wildfire_risk_tiny",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 12
+  }
+}

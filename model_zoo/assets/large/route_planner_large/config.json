@@ -1,0 +1,10 @@
+{
+  "model_id": "route_planner_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

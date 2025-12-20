@@ -1,0 +1,57 @@
+{
+  "model_id": "spatial_relationship",
+  "name": "Spatial Relationship",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Spatial Relationship model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "80329ab55bc5d62b7a869e70c7a0717fedaeca16def6f459bf3eaf5c65bee53b",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "38ac42ceb151b119165b07ee9bbf5838182dd033f447fe5ff5c7d18ee9450b99",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "02a91982eafd353baf9867404c93df6352953a7ff612cf065cd28857c43fb898",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "ab793cc682c9d78c3741a5fde4435f60c036906cd1590c6b00cc0a9551030a5b",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "340e58fea679bcaffef0c0ead3283ac85a5069b610b163dc7b58f8260ca7d725",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "1c62714c08107d804eaf8a3f825e71d26c046cf8761fea96b2704fff4cef82c7",
+          "size_bytes": 185
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "spatial_relationship"
+  ]
+}

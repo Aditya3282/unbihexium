@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_flood_detector",
+  "name": "Sar Flood Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Flood Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "ee23b6f59661c0b13148db64dd2242ed49b5a0f73e302abae4e332a00dfb5b1a",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "4b88e93fabb722c924c54cb1b2a32ceefb354767095ce20700b87c17a2ce5cc9",
+          "size_bytes": 410
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c25f408c9f36f0a5adfaf11d450abb7323f64547288a1c303ec61a5f8c966280",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "887caad68ba414d948f5d43dc5f0be32f17d6601a68a69fec505a42617fd93f6",
+          "size_bytes": 410
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c1e64eed45195e9a4acc393c4f0027d89f4a31a7f4b0594e1f1637c28529efd9",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "5d351f5e453bc09154f0931d54766a93cb14dc6e002deab90250e61c57261467",
+          "size_bytes": 414
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_flood_detector"
+  ]
+}

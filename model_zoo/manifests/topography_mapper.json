@@ -1,0 +1,57 @@
+{
+  "model_id": "topography_mapper",
+  "name": "Topography Mapper",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Topography Mapper model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a6c2775ddba7b4b0bc936a242a813894d89104104e82c1a5390626e39203cd59",
+          "size_bytes": 3770
+        },
+        {
+          "name": "config.json",
+          "sha256": "ce349791dbba1829fb1aa5219304dcfaca5471e4d60db856f57278e2d0491110",
+          "size_bytes": 439
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3e87044ed5c2a8040955e11f9bbf1bc0e0a55ea69b5bed28b44027dc1bb50a28",
+          "size_bytes": 30607
+        },
+        {
+          "name": "config.json",
+          "sha256": "4a611b9805abff783046b8bbb214f7a3fed173397ed0966da0d66a5381cacc77",
+          "size_bytes": 439
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1c40b86ada6979c4434711b27467096c1cd26a729ff12abd5994b04eb5a2b477",
+          "size_bytes": 112985
+        },
+        {
+          "name": "config.json",
+          "sha256": "4664106a7bb45b3fd03aa0c6004a074a2dbf2cc8ea8f5990b33ce7110c728c1f",
+          "size_bytes": 443
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "topography_mapper"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "yield_predictor",
+  "name": "Yield Predictor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Yield Predictor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d42246ca6a2553d6702a6afaa5005d6bb3fe5814c01416ec8a73b29995ef58c1",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "48d5721e36576927d78e3e08b49b11620a6f77a80c8702e48c3faa3470d5e4fd",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6a189435cc6c60f935665fcce5f81be6f7f6c424b6f2f782c66f57053bcd6019",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "0530bda832f9a9d5218b4020dd25cd3acd4d41bd88ac421a9fd29d9a37e242d1",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7e3cbf4d7398cb5cee5708ff8dcefd9aab8197c1744f2489b71a7955674de512",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "89226356e83df707bf6a6e5a46615b9721f9c4db9c6e7127a7f38d8a37ecaf94",
+          "size_bytes": 181
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "yield_predictor"
+  ]
+}

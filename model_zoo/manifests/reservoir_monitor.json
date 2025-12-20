@@ -1,0 +1,57 @@
+{
+  "model_id": "reservoir_monitor",
+  "name": "Reservoir Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Reservoir Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "10aff7291fd4bda2c4bf2e7e891fad6c892e2058b897b1cf5744bd6ab2b38911",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "ac958a169fa620db8942cc6bddb645ca9794468eff0f54a6f4f5f06306f5c4d0",
+          "size_bytes": 408
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5e141d5ed3007ff959958204ad6504e0f9c2f531cb54e1c97b43ae82dd969e1f",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "198db4f08f6b2da0a5a11490165dc10f8a100be3f6bc62e488f7ac18398584f3",
+          "size_bytes": 408
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "465c1f7399f8d1c736d2d93903d1ef60be0ab9daa551a237094f57f3641741a8",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "7f05304923411be5d85561366fab5592666d3b565e1edd09494566134c831cf7",
+          "size_bytes": 412
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "reservoir_monitor"
+  ]
+}

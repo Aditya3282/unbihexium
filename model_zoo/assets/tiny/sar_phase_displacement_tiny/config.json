@@ -1,0 +1,10 @@
+{
+  "model_id": "sar_phase_displacement_tiny",
+  "task": "regression",
+  "architecture": "cnn",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 1
+  }
+}

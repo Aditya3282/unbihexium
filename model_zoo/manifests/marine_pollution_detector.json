@@ -1,0 +1,57 @@
+{
+  "model_id": "marine_pollution_detector",
+  "name": "Marine Pollution Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Marine Pollution Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "91f98caf5cd59de99bbe47976d30e0de311e985a082abb3fb13cce12fb5d9c46",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "2a5ab4546c9679c9b78c45f47266708b2f567470fd0eaa33b106a40f52cbceac",
+          "size_bytes": 420
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7e81dc12f8b3c7ed53bc6f635f5cb4c0b042490638c1dea85bff0af03e59e2d6",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "687d90c05cc04e0b72b55cd92b3ae6b724a47a6fcdc4ac1eaca1123dca5f5948",
+          "size_bytes": 420
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c4204cec39d1b5088959a0c883a5732e9dbb82d09133aa120061a8f06cc03163",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "f179dd4354ed972288ce08f38b7c476c0185563bf62248bdf033e9f24e5c5401",
+          "size_bytes": 424
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "marine_pollution_detector"
+  ]
+}

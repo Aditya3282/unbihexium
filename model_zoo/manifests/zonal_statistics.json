@@ -1,0 +1,57 @@
+{
+  "model_id": "zonal_statistics",
+  "name": "Zonal Statistics",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Zonal Statistics model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "23c94581afa577499677df788d0d07c55278a990886b1c7836b7cf84bb0a8195",
+          "size_bytes": 1195
+        },
+        {
+          "name": "config.json",
+          "sha256": "21ce7d57d90629d83a85608cbb290557f4c5bee6c621db39649951727341b19a",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5ee1def606e351de1c9684cd30966f42dfc3e2194f990ef1c03e3964a632760a",
+          "size_bytes": 3885
+        },
+        {
+          "name": "config.json",
+          "sha256": "b122358f49e8629600614258693ef17f8de92b0d5bfdac446c104e09465dd388",
+          "size_bytes": 179
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "63932c21d83557fe89439a5ff234aee68657329fa561583c05488ce8bf402a2f",
+          "size_bytes": 11057
+        },
+        {
+          "name": "config.json",
+          "sha256": "7999eb4a202b22c180ba8faa2b4af169dab84a43b25271d1da558dec2e3953dd",
+          "size_bytes": 181
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "zonal_statistics"
+  ]
+}

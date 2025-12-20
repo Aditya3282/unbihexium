@@ -1,0 +1,57 @@
+{
+  "model_id": "hydroelectric_monitor",
+  "name": "Hydroelectric Monitor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Hydroelectric Monitor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "208e9dd2ca7344cfbbfbc742b2f20901958ce851993632285022ff423efa2cec",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "adb9091653b37c56b9b0990b7553326eaa40c0b600518fc056ae896122527649",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "87576691a146003f035640ad841baf34a0e56b09873ce5f24698f7f7e71276f9",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "27563675a82ab264607375065e3d1fb1d4fdde6a76322e6253a3c77878199b82",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "58dc5ba78c4c94676f8674c744207441711b75805a7f1934161f076e3df59efc",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "6bff8d72c807202efdcfd3d8f3af2e3f9ffff36a6e6d75a5e8115e4248179c27",
+          "size_bytes": 186
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "hydroelectric_monitor"
+  ]
+}

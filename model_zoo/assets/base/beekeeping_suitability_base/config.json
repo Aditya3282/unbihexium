@@ -1,0 +1,10 @@
+{
+  "model_id": "beekeeping_suitability_base",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

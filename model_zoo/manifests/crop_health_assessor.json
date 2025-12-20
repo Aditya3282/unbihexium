@@ -1,0 +1,57 @@
+{
+  "model_id": "crop_health_assessor",
+  "name": "Crop Health Assessor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Crop Health Assessor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "be5616fb1a7ea6f98b6638def74d1b4990b6d1404fdb58963e3794c44d16b87d",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "6d419fa6cf430dc0c18a24e4931ca0e85a164f53084ee09e86dfab30f74c664a",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0bbfba207baed83baa46740f00b07d7b3788b71fd3084502cf1290a59852fb66",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "8790a0f666de8409dd941ddde1449e1a1dbd0a7d3689535108ea4c60cc5a8f4d",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c06794d0546b6a822d83d2ef61bafd8d58ac907cc439aba4e97ff981a3f3af62",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "a82ffe2dd17b516611d6c2afcc11097938d69bb34bfc1bb54ed0c69ac7447777",
+          "size_bytes": 186
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "crop_health_assessor"
+  ]
+}

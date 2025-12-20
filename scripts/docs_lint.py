@@ -1,71 +1,98 @@
 #!/usr/bin/env python3
-"""Documentation linting script.
-
-Enforces:
-- At least 1 Mermaid diagram per major page
-- At least 1 LaTeX formula per major page
-- At least 1 table per major page
-"""
-
-from __future__ import annotations
+"""Documentation linter - verifies major .md files have required elements."""
 
 import re
 import sys
 from pathlib import Path
 
+MAJOR_PATHS = [
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
+    "GOVERNANCE.md",
+    "SUPPORT.md",
+    "PRIVACY.md",
+    "COMPLIANCE.md",
+    "NOTICE.md",
+    "THIRD_PARTY_NOTICES.md",
+    "CITATION.md",
+    "docs/**/*.md",
+]
 
-def check_doc(path: Path) -> list[str]:
-    """Check a documentation file for required elements."""
+MINOR_PATHS = [
+    ".github/*.md",
+    "examples/**/*.md",
+    "model_zoo/cards/*.md",
+    "docs/figures/*.md",
+]
+
+
+def find_major_docs(root: Path) -> list[Path]:
+    """Find all major documentation files."""
+    major = []
+    for pattern in MAJOR_PATHS:
+        if "**" in pattern:
+            major.extend(root.glob(pattern))
+        else:
+            p = root / pattern
+            if p.exists():
+                major.append(p)
+    return major
+
+
+def check_mermaid(content: str) -> bool:
+    """Check for Mermaid diagram."""
+    return "```mermaid" in content
+
+
+def check_latex(content: str) -> bool:
+    """Check for LaTeX formula."""
+    return bool(re.search(r"\$[^$]+\$|\$\$[^$]+\$\$", content))
+
+
+def check_table(content: str) -> bool:
+    """Check for Markdown table."""
+    return bool(re.search(r"\|.*\|.*\n\|[-:| ]+\|", content))
+
+
+def lint_file(path: Path) -> list[str]:
+    """Lint a single file and return issues."""
     issues = []
     content = path.read_text(encoding="utf-8")
-
-    # Check for Mermaid
-    if "```mermaid" not in content:
-        issues.append(f"{path.name}: missing Mermaid diagram")
-
-    # Check for LaTeX formula
-    if not re.search(r"\$[^$]+\$|\$\$[^$]+\$\$", content):
-        issues.append(f"{path.name}: missing LaTeX formula")
-
-    # Check for table
-    if not re.search(r"^\|.+\|$", content, re.MULTILINE):
-        issues.append(f"{path.name}: missing table")
-
+    
+    if not check_mermaid(content):
+        issues.append(f"{path}: Missing Mermaid diagram")
+    
+    if not check_latex(content):
+        issues.append(f"{path}: Missing LaTeX formula")
+    
+    if not check_table(content):
+        issues.append(f"{path}: Missing Markdown table")
+    
     return issues
 
 
 def main() -> int:
-    """Run docs linting."""
-    repo_root = Path(__file__).parent.parent
-    docs_dir = repo_root / "docs"
-
-    if not docs_dir.exists():
-        print("docs/ directory not found")
-        return 1
-
-    # Major pages that must have all elements
-    major_pages = [
-        "index.md",
-        "getting_started/quickstart.md",
-        "getting_started/installation.md",
-    ]
-
+    """Run docs lint."""
+    root = Path(__file__).parent.parent
+    major_docs = find_major_docs(root)
+    
+    print(f"Checking {len(major_docs)} major documentation files...")
+    
     all_issues = []
-
-    for page in major_pages:
-        page_path = docs_dir / page
-        if page_path.exists():
-            issues = check_doc(page_path)
-            all_issues.extend(issues)
-
+    for doc in major_docs:
+        issues = lint_file(doc)
+        all_issues.extend(issues)
+    
     if all_issues:
-        print("Docs Lint Issues:")
+        print("\nIssues found:")
         for issue in all_issues:
             print(f"  - {issue}")
-        if "--check" in sys.argv:
-            return 1
-
-    print(f"Docs lint: checked {len(major_pages)} pages, {len(all_issues)} issues")
+        return 1
+    
+    print("All docs pass lint checks!")
     return 0
 
 

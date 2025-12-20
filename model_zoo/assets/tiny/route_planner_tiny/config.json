@@ -1,0 +1,10 @@
+{
+  "model_id": "route_planner_tiny",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "tiny",
+  "input": {
+    "type": "tabular",
+    "features": 8
+  }
+}

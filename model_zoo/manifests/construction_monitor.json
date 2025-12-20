@@ -1,0 +1,57 @@
+{
+  "model_id": "construction_monitor",
+  "name": "Construction Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Construction Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "12edadfd72491c2ee36176151b541b3111f0d7851a3cf1d7215d7513834a4463",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "07c335a359c46f41707398762200abc45ac6d6af1dcd5e84cbca54bb1711c40a",
+          "size_bytes": 431
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "04ece9b6c477bda721d0e3d52ba0cf049599989176c84e61d0f70c1f1ebe92e1",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "829ab2a394dc33d087c333bcaf25d5bba945f7a3634093153c85c2428d1aceb8",
+          "size_bytes": 431
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bdf71a14a07288170789cb72ccc86d74f44b220039686d779e870d26233db6ca",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "276228977eb5684f0885450badfe433d53bb6e00205047e5688eed09c18ead94",
+          "size_bytes": 435
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "construction_monitor"
+  ]
+}

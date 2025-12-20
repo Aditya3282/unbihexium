@@ -1,0 +1,57 @@
+{
+  "model_id": "infrastructure_monitor",
+  "name": "Infrastructure Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Infrastructure Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "42dcc0916588e8dcee860bdc4e22cb6f4ea4469d8fbeedeed9679975e8579045",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "b9206096301dae27b88222f0da933c4bd89b5baa69da2d0a6fd0b4df1588d3be",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e6f7fc7f114c1540e55b87498a5001d5ab5b7a99d0a0d96e86a54d539b2496bd",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "bf31b772eef8fa8d8675dd87fd717e718b9ecf72f4511f05cee6e8a80a8b119e",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f03f3450ed130ec3321181081438151c06a958171addedf24a6ff6ae9d3345fd",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "dea71c218bdc462e9987522c8a6141d33f44c7c67835b8608a8b77dce7880664",
+          "size_bytes": 429
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "infrastructure_monitor"
+  ]
+}

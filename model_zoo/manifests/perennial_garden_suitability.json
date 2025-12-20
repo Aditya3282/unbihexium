@@ -1,0 +1,57 @@
+{
+  "model_id": "perennial_garden_suitability",
+  "name": "Perennial Garden Suitability",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Perennial Garden Suitability model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "55778c2f466a5ecca9cf76f6137d3d30be062988ff5164762bbb831568f70712",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "3335528b1241a5a7a2143a87b88a822b4d9a7e317025d9b1f545c0c1a42cde96",
+          "size_bytes": 192
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "f36f5aaff5cf4141b7a1adfc6c345e5b2a3de51cec515440073b84f5ed37fc2f",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "c2eab67f9acbcbc74c16d72860703fb1381b35ace8a119ae03850d6c2c7995dd",
+          "size_bytes": 192
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "94933005855f8a521f2da4cf0a2e5f5903f9ef919001e3d69ec7ad766b8f6565",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "e1f708ab2ae1f863d0a6356353089eb62642dcd2bb376d903c912c933bbf952e",
+          "size_bytes": 194
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "perennial_garden_suitability"
+  ]
+}

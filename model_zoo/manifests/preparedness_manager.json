@@ -1,0 +1,57 @@
+{
+  "model_id": "preparedness_manager",
+  "name": "Preparedness Manager",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Preparedness Manager model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5c7cd061fc33e1343d6ad0ea7a2a72cbe1b52bd425ed74554c16566520141274",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "5ca0cc42462d214966d5b0de917cab83b26357884126f9bc580e419e97ab3f0a",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "57db5038f1234d002ee21ececf7edb503b2c3597aaeb8d583f8ac84ac9ae8987",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "4859be0f063fa33ce1df90fd543bb0b743770d0a05ac954bd2d613324c8fa02d",
+          "size_bytes": 184
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7c54a18b5d567eab56f60b512bc89f88bb31f6214dbb2f6a8333e7077a63155a",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "09bacc7b4d68fc7d7d521581e6060ceb5c394e45cd8d371e1061e24dff7cb03b",
+          "size_bytes": 186
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "preparedness_manager"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "tri_stereo_processor",
+  "name": "Tri Stereo Processor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Tri Stereo Processor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "199e0f9905258b99bc39004796a05c965eccaa583e522e64895eecf4b26d56d0",
+          "size_bytes": 1097
+        },
+        {
+          "name": "config.json",
+          "sha256": "89549ee89a5aecf439229a535657b6bd0a3c7b0b6e5f12004779f1422a099546",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "de57ad243978e7945f7bfab6403db046d2ef3faea275d6a7af81c15f371566d5",
+          "size_bytes": 3501
+        },
+        {
+          "name": "config.json",
+          "sha256": "c2dfd5efb14d13218691723dd5a7a8d37eb683460c25f478e2b79febe168f737",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "2369d0eb886ec3957f0c1ee2b7099aaadc9a0d41c263a6a61ac4d297527a05ab",
+          "size_bytes": 10289
+        },
+        {
+          "name": "config.json",
+          "sha256": "0af940e67320299ade909fad38babde27ab9c0affd8daa4b791369d05382bfa5",
+          "size_bytes": 185
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "tri_stereo_processor"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "pansharpening",
+  "name": "Pansharpening",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "srcnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Pansharpening model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5f68d7362ef7e5096a57a7acf33c546bfcc223be0c0015292cd9c9e11a055542",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "57be6a7468899323c64e03405c0175dd074f691898f28754407ad79be8f4de9f",
+          "size_bytes": 356
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bcd50d55c6fb3f486e6883cca9b3b970e5fe144db5d5ea391d6fd4939a7553fc",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "1ff06749877a76d4a11042397ceb2bd8624719a07e77e8d3b5589bc05fd87006",
+          "size_bytes": 356
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cb5795fa486bf4d5f6bcecbdca258fa0e40f8ea9c4df98394856e64c5fd0ec29",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "099ddb44d363ce0d85f4543c8b6c3a95a5bbbaca416ab44b195babe5cc376154",
+          "size_bytes": 360
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "pansharpening"
+  ]
+}

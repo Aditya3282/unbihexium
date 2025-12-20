@@ -1,0 +1,57 @@
+{
+  "model_id": "disaster_management",
+  "name": "Disaster Management",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Disaster Management model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6c4501456dc5eeac473c716a4ee51b0ca421eb85c74cfb807781551ea4bd1971",
+          "size_bytes": 1483
+        },
+        {
+          "name": "config.json",
+          "sha256": "9cc698bc31a084097bb7df4c84a5712013adecddc766fdfe654440c465ff06af",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1cdbd0dd79fb2119539652c13bbeac3f46ce431a7b00601db1efdc3e98b17f3e",
+          "size_bytes": 5037
+        },
+        {
+          "name": "config.json",
+          "sha256": "c0bc915b731f350fec0c137eb9d456547d320f5fbf47f5d75e4cfa2c1858631f",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "748c3b82c937f7054d9777181eac1f4acb836535fb8255889c9ce337963ff0de",
+          "size_bytes": 13361
+        },
+        {
+          "name": "config.json",
+          "sha256": "41eb02192f71d2f89c6ea72dc63e5092cfbbef926668e2a75183d544709cef01",
+          "size_bytes": 185
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "disaster_management"
+  ]
+}

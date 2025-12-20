@@ -1,0 +1,57 @@
+{
+  "model_id": "transportation_mapper",
+  "name": "Transportation Mapper",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Transportation Mapper model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "996bf4fc31c743c39e334aa3db591118f6446b3896f330d119a8aaeef9b9ed30",
+          "size_bytes": 3732
+        },
+        {
+          "name": "config.json",
+          "sha256": "817e6c5af9e9f0e5d9323c4d2b1fb70f9d4f39a7ebe02e555b526d6e6614e140",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d9b69aabe2bb266298fe4a8342d6de0f90cef67c5f390b3c61938128ada9d556",
+          "size_bytes": 30475
+        },
+        {
+          "name": "config.json",
+          "sha256": "2d8f9a3a979811778cf121a65063f1299014b5df9101416a9ad6cbafd7949791",
+          "size_bytes": 425
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "67fc6bccc9a41bad101d590191976890af7c7805c9b564242519e1ffb1398ffc",
+          "size_bytes": 112725
+        },
+        {
+          "name": "config.json",
+          "sha256": "0fc7b7ed153920de009e5b0fa19da565361fad5668cd636b10222dc7ee1a5c51",
+          "size_bytes": 429
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "transportation_mapper"
+  ]
+}

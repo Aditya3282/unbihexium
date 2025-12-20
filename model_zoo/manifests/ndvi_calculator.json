@@ -1,0 +1,57 @@
+{
+  "model_id": "ndvi_calculator",
+  "name": "Ndvi Calculator",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Ndvi Calculator model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "736eb8893f1f76f017ab14a3a87719a0a757750ff1ec6b5c2d5c90c231261f54",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "0e888f554d8fda83d7003438c33f12e6731556c4d5d2de8035195651048e59bf",
+          "size_bytes": 350
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "461e36e7ec4c20399ce06da200bf16f6f452c76137480397abe616da87fa1cf9",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "e3b253141e29a6d1dd4b0bd164f76d6fabab029eb1d6abf9e68ca0ac0b610aa1",
+          "size_bytes": 350
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e3778ae521e8b818979d935a113bb053ba566dd121b77297fa30a0d20f941099",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "7845fb108def97827f55f4d214e4c6becddadb19eb2843e3b028d71a25044fbe",
+          "size_bytes": 354
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "ndvi_calculator"
+  ]
+}

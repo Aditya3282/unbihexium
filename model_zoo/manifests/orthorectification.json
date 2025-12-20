@@ -1,0 +1,57 @@
+{
+  "model_id": "orthorectification",
+  "name": "Orthorectification",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Orthorectification model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cf89c4fc9b8957a294f78c3e7394118104da986f17d3b257ef699d3260978d5b",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "7e6bed73fb8ac42b274971469c4af88f30a5dbfb7f71b2dc2b47e9465f8ae970",
+          "size_bytes": 359
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "72a56d959934a9fc17f0af6fa6b5c639dd778840776b8468e98a12b28ab3d772",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "71812fcdb0d6eec1abdb727ecd504591e83864ee1afb53d7a462df9873aaf23c",
+          "size_bytes": 359
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "053895f4639c67bf27c591aaebe5306e9e916417aa0986491446025616909106",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "3fdde40fdb8c7031ada9bca76620e7ab1ed703836c3dbe266bf9a4af1d8f644a",
+          "size_bytes": 363
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "orthorectification"
+  ]
+}

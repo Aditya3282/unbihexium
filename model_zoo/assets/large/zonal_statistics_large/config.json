@@ -1,0 +1,10 @@
+{
+  "model_id": "zonal_statistics_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 6
+  }
+}

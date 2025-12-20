@@ -1,0 +1,57 @@
+{
+  "model_id": "desertification_monitor",
+  "name": "Desertification Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Desertification Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0d8135f885378c073f940fe56b736b71f6a30f04036c09131aa85e0efcf44d17",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "971c4e854bdfb5b2f45cec6ee9dfd408308596f552e40f487e3fcf4d4d55450a",
+          "size_bytes": 421
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "48c755798a249973e2ae07548344e68a23c6c9832f0019af14d9d10d67362ee4",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "5dc8e3688ce43b27db0f55a899d27ab596b723616280bf45ef3d3ae477108159",
+          "size_bytes": 421
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8f43ba3b58b662a653572d4bfbb269d4b0fbac6a513f3e8347aa70c5e525f944",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "4216bc7f7cfe69cc8418765bec920bf368d8852764ee52d55cf5c516cff6ba7d",
+          "size_bytes": 425
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "desertification_monitor"
+  ]
+}

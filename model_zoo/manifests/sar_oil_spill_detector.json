@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_oil_spill_detector",
+  "name": "Sar Oil Spill Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Oil Spill Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d62374304c1dab069d2d0c7d28e70250ca7a23065c7a5b9fd3f07671bc2bca4f",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "8fc25a4d4a62551f29ed929bc6ad09f268d7f9b7aeb67f31e1cc2f52c8e20ea1",
+          "size_bytes": 412
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "facd93ddb894db7e437b07fcfbf9d76eadd1fc43fd5eb71461abc880e615149e",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "a9d8734dbfe33a679a0a2d3310b63b5059ab2968d766fc0820b2ce298c8f9559",
+          "size_bytes": 412
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dd5fb62a1b3feca0189da19a21d98824c6fa4805ce9510c343e652d86d1fea52",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "db86a06f6d4e838a8eb04ebe5c7900eef2cdbc75e184f320684cb0c4ffa922be",
+          "size_bytes": 416
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_oil_spill_detector"
+  ]
+}

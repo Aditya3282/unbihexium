@@ -1,0 +1,57 @@
+{
+  "model_id": "environmental_risk",
+  "name": "Environmental Risk",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Environmental Risk model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e86130c811a91145751b68dd9114595957441deebfd5dc91ec855ae660b59e01",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "2f405b66d94240f238aafe1a56f2bfb1fa5a5c9e99408324a0764f87fbdcaac5",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1b674eee1cb73fd4c1a693541feef4b6a4e0a5f295dbadfb1828921d5704f04b",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "e5dee81b7aaba8f8d22c1e6dcee7c38803cbae14b794d7ef7b014210d5301a90",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d9101f527a61e29c3b412705012be8192b5e62733e7d917c65ab49226c707071",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "c5d3d05fbae264d04a13f2befa7584bc0bce800c97351d0656e4175bec7af214",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "environmental_risk"
+  ]
+}

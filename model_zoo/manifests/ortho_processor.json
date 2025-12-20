@@ -1,0 +1,57 @@
+{
+  "model_id": "ortho_processor",
+  "name": "Ortho Processor",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Ortho Processor model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "fb21305158d6ffa93499e639d95b898b106710a39556aaa5f83d62c11b5fa767",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "421657534d7d97b0b3790f2903d6c7c05191b57239c54fc51b74c5a1b9a53913",
+          "size_bytes": 356
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "38915ac504286b08fe105b5d98fc9fc3b94326521189cd1e2b861aa541cab957",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "a97dc2be1068b80a0cb62fbeaa9c620276c3f063dfdabde88b9cc00943bf015a",
+          "size_bytes": 356
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "94e8b7d1754a78d6f56c9d4a4f1d93c6ef899161d2590f2719817a9dc0d35d50",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "cddd554149ab688e45b06d4474c6449405f7f8e1951c4a54e86dcdb5c452d4ec",
+          "size_bytes": 360
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "ortho_processor"
+  ]
+}

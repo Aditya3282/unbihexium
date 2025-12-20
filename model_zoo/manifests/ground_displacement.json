@@ -1,0 +1,57 @@
+{
+  "model_id": "ground_displacement",
+  "name": "Ground Displacement",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Ground Displacement model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4412fd759857ae24f83b09c3e206fe979a4ca76aaf8eb3af578abcaa2ed1db1a",
+          "size_bytes": 1033
+        },
+        {
+          "name": "config.json",
+          "sha256": "aa222092e351433ed4a67a1710b479682208167c8b207e15c9c2632bae40a827",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "b089d83959a3c87f185af60172b14fa6442f427c6b15dc2c8b5a96b2323981a9",
+          "size_bytes": 3245
+        },
+        {
+          "name": "config.json",
+          "sha256": "85df284abf2a15f4140cfbe771ede654a5b971222f410cc44ca2f2e5255d33bc",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "02d45834864ee355b7c6699b9becfe17c51dec8a6ec2d51b495dd9f1ed1a4336",
+          "size_bytes": 9777
+        },
+        {
+          "name": "config.json",
+          "sha256": "7f791f53815225dab9874f27e903d134eab2861f13c9a506aa2a28013bc01405",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "ground_displacement"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "greenhouse_detector",
+  "name": "Greenhouse Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Greenhouse Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "10b4d68d99906ad816ef1bc51c3fe7987174398f8c0db52639a9cbb84c774dbf",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "009c7e15c1df8719bd448124671a0905c4ea2a92bfb1b236fddd4315ae30e7bd",
+          "size_bytes": 405
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "75f2f616f44b26e507d10ce5e1cf28a714b1c00409185ecb4ecdcfe153935dab",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "55905f299caabb3fb5d3e786e35943bfd77567e2be1930792340e1569179eaf0",
+          "size_bytes": 405
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d2afe2c461d55d5f4b8e76b4da4ea8b1b9776fd284295c79081914484b27d2dc",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "7af9f08ec6c31072f9f539a74820e081457ec074eb6ce5ef2096fff233f5bc9a",
+          "size_bytes": 409
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "greenhouse_detector"
+  ]
+}

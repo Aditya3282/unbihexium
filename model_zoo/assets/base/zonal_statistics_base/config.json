@@ -1,0 +1,10 @@
+{
+  "model_id": "zonal_statistics_base",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "base",
+  "input": {
+    "type": "tabular",
+    "features": 6
+  }
+}

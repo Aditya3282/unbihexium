@@ -1,0 +1,57 @@
+{
+  "model_id": "business_valuation",
+  "name": "Business Valuation",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Business Valuation model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9d1d809fbcd79100e03a458a2eb79192c8eef2139ea0bc133513f005df690a48",
+          "size_bytes": 1483
+        },
+        {
+          "name": "config.json",
+          "sha256": "c2e3cd48066069e3cd8992eb45d70e5a90612e517c8eb55ad1f0508728813c26",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "56e318077208a79ec52dfab95a154cbeedaf22f3ea78624f7ea085f1d0a66149",
+          "size_bytes": 5037
+        },
+        {
+          "name": "config.json",
+          "sha256": "4c37a54f4731f38f3a42fdb6a0f2879808f59de4bf4c47c7033216f7f98975af",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a73865393a34ab6075617f63b30d318a51559f26136624823275124f1f262987",
+          "size_bytes": 13361
+        },
+        {
+          "name": "config.json",
+          "sha256": "a1a4ed0e17ea609aa18256e306a2ec87b1ae00769567b734e4cad6448f776c99",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "business_valuation"
+  ]
+}

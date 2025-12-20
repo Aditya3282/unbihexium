@@ -2,76 +2,55 @@
 
 ## Purpose
 
-This document outlines data licensing, legal disclaimers, and compliance requirements.
+This document outlines legal and regulatory compliance for Unbihexium.
 
-## Audience
-
-Users, legal teams, and compliance officers.
-
-## Scope
-
-This policy applies to all users of the unbihexium library.
-
-## Compliance Overview
+## Compliance Framework
 
 ```mermaid
-graph LR
-    subgraph Requirements
-        LICENSE[Licensing]
-        EXPORT[Export Control]
-        DATA[Data Handling]
-        REPRO[Reproducibility]
-    end
-
-    USER[User] --> Requirements
-    Requirements --> COMPLIANT[Compliant Use]
+flowchart TB
+    A[Unbihexium] --> B[Open Source]
+    A --> C[Export Control]
+    A --> D[Data Protection]
+    
+    B --> E[Apache-2.0]
+    C --> F[EAR Review]
+    D --> G[GDPR Alignment]
 ```
-
-## Licensing
-
-| Component | License | Obligations |
-|-----------|---------|-------------|
-| Library code | Apache-2.0 | Attribution, notice |
-| Models (tiny) | Apache-2.0 | Attribution |
-| Models (base/large) | Apache-2.0 | Attribution |
-| Documentation | CC-BY-4.0 | Attribution |
 
 ## Compliance Score
 
-$$C = \frac{\sum_{i=1}^{n} w_i \times c_i}{\sum_{i=1}^{n} w_i}$$
+$$
+C_{\text{score}} = \frac{\text{Controls Implemented}}{\text{Controls Required}} \times 100\%
+$$
 
-Where $c_i \in \{0,1\}$ indicates compliance for requirement $i$ with weight $w_i$.
+## Regulatory Matrix
 
-## Export Control
+| Regulation | Applicability | Status |
+|------------|---------------|--------|
+| Apache-2.0 | License | Compliant |
+| GDPR | Data privacy | Aligned |
+| EAR | Export control | Under review |
+| SOC 2 | Security | Not applicable |
 
-This software is subject to export control regulations. Users are responsible for compliance with:
+## License Compliance
 
-- U.S. Export Administration Regulations (EAR)
-- EU Dual-Use Regulation
-- Applicable local laws
+- Apache-2.0 license
+- NOTICE file maintained
+- Third-party licenses tracked
+- SBOM generated per release
 
-## Data Handling
+## Export Control Statement
 
-This library processes:
-- Satellite imagery (user-provided)
-- Model weights (pre-trained)
-- Geospatial data (user-provided)
+This software may be subject to export control regulations. Users are responsible for compliance with applicable laws.
 
-No user data is transmitted to external services by default.
+Certain capabilities (defense-related analytics) are provided as neutral frameworks only. No specific military targeting or weapons guidance is provided.
 
-## Reproducibility
+## Data Protection
 
-All processing pipelines support reproducibility through:
-- Fixed random seeds
-- Provenance tracking
-- Deterministic algorithms
+- No personal data collected by default
+- Local-first processing
+- Opt-in telemetry only
 
-## Legal Disclaimer
+## Audit Trail
 
-This document does not constitute legal advice. Users should consult qualified legal counsel for specific compliance requirements.
-
-## References
-
-- [Security Policy](SECURITY.md)
-- [Privacy Policy](PRIVACY.md)
-- [Responsible Use](RESPONSIBLE_USE.md)
+Compliance activities documented in CHANGELOG.md.

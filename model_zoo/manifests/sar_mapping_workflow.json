@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_mapping_workflow",
+  "name": "Sar Mapping Workflow",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Mapping Workflow model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e95d6756e89e7b0f5bffc9f5bbc07be4bc2a65ed23d7ab74a42919eb9877e422",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "c9fcd6a037e118694e8aa16c094a778f8acb6be347eca6769541a60dafcfecdf",
+          "size_bytes": 361
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "092ad25591f2880adb99f4772054bd32c7d1566f75370b8926f6cd03e185b39b",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "abd6db30c2eb9a1fbbae34d9c8c4268f3e9832a056c64a43c3065bfae3ad9593",
+          "size_bytes": 361
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dfb107d9495b31a3535636313a8fc15a188ba92038a1fae0dac5e4bb6c7c27a1",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "baf325905621db000572a49d464d2e0452967abeb9f0f76c1ace6d7a892c6c43",
+          "size_bytes": 365
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_mapping_workflow"
+  ]
+}

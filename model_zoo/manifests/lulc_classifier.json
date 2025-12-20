@@ -1,0 +1,57 @@
+{
+  "model_id": "lulc_classifier",
+  "name": "Lulc Classifier",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Lulc Classifier model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e98f39f11f14afc217d1ed9d7af79a15ecb0ce97d98b94b3182212da47b6c6c0",
+          "size_bytes": 3806
+        },
+        {
+          "name": "config.json",
+          "sha256": "75cec11e6fda1dc881043efc30fbc7fbabd406072d664ed80b2b464e80f6cf71",
+          "size_bytes": 457
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4021fb30e8e54aa0a9a85e955a739f14cf8ab30b136cc2b89a7b84c33cfbf336",
+          "size_bytes": 30739
+        },
+        {
+          "name": "config.json",
+          "sha256": "b2031a8889003a51b66eeda1da969a4fedfff6f845a03e384b7464b8c5d0d008",
+          "size_bytes": 457
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1af94999c6e7a8cfaac480ac28c5de42f080ae2d5b7a2d32f9c80a64962ceffc",
+          "size_bytes": 113245
+        },
+        {
+          "name": "config.json",
+          "sha256": "66c61678207cee97f323fd54fbb5ed726acc7cde5f92b1b154c4088a40d32ce2",
+          "size_bytes": 461
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "lulc_classifier"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "encroachment_detector",
+  "name": "Encroachment Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Encroachment Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "215ca7790edd696ba8070cb48ba99e57b36500cb7f18c0cd7abb3762b3330ce7",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "4decab63e938f6bbc5ff313e9737a8dc0f0ca604b617b5cf63421ea886633810",
+          "size_bytes": 409
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "03db5420e8ce2a90986a61aa1c9440d5d2439bc912fd4be159dea078cf77717d",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "1f3686b69044bc262dea81775179a81cd2c6c15a5d1a02ffe59aac11296efdfa",
+          "size_bytes": 409
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "013b478b05b35024ca62d52f9901c6129be2e800bec5c869c07460e0fe802bc8",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "3542ff0bd7f06acfb9220e2437a98d05ba64ab201d0ba9466ef4ba4b42363c15",
+          "size_bytes": 413
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "encroachment_detector"
+  ]
+}

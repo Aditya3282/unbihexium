@@ -1,0 +1,57 @@
+{
+  "model_id": "urban_growth_assessor",
+  "name": "Urban Growth Assessor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Urban Growth Assessor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "a27ef660fbc4494527ee71becfd43701104cac40e363abcd29797f084c709e46",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "ab090ad16ba1cb77b9da8ec1ef1ad8e07bb3670f0ea82b48fe1a585e44e5a6cb",
+          "size_bytes": 426
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6710362c00a7427ca3f7e0879045b886d5c2ebbe6237dabfb8e8c0f41afafb7c",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "971b4b986d9ae04a734f5b005300d0be8bf9cdc12e6023c78d9c0e3d4dea5ad1",
+          "size_bytes": 426
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "2f181888c44ecc647d3d2f906597502d2306e9f73ae25ab07421f429df6919d4",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "42568bcf6f9d64aab023c8e9a8f89956dd44790d10b848d2d1d1df4597db65ee",
+          "size_bytes": 430
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "urban_growth_assessor"
+  ]
+}

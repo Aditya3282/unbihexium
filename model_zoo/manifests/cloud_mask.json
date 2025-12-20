@@ -1,0 +1,57 @@
+{
+  "model_id": "cloud_mask",
+  "name": "Cloud Mask",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Cloud Mask model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5cf2e17e42515cf72f023b6708aa89b5cfbfc010045e392265f8819fa4b78d17",
+          "size_bytes": 3732
+        },
+        {
+          "name": "config.json",
+          "sha256": "761e83a4e3c52c3195c1a80df2ea30e32d03e1627df556553ad7c44e9e171a1c",
+          "size_bytes": 417
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "8b7cda8d9433ad5086b6802c8cd36b32848ae35ccf78e0a2946380e18d049b98",
+          "size_bytes": 30475
+        },
+        {
+          "name": "config.json",
+          "sha256": "6dcb2e23321c40c7552e8acc1c6c17a629eaa468fedde4d0b46af92c71b95b3d",
+          "size_bytes": 417
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "69f1fc5e0dd64a20fdaa83c9e65ec0c176ed7cbbec0288859b7ff149550f0fa0",
+          "size_bytes": 112725
+        },
+        {
+          "name": "config.json",
+          "sha256": "6de4ba35f400f49d080fc599ec7a237580e8806e371446d63de4304c152cf6ea",
+          "size_bytes": 421
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "cloud_mask"
+  ]
+}

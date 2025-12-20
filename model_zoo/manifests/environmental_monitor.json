@@ -1,0 +1,57 @@
+{
+  "model_id": "environmental_monitor",
+  "name": "Environmental Monitor",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Environmental Monitor model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "01ea005d5288c9e72a7889cd540b5fb144652edfe408765c7cd9fdc62087bd93",
+          "size_bytes": 1483
+        },
+        {
+          "name": "config.json",
+          "sha256": "3d170cf1d0da9d8c215ac9508795d94aec0b6fabcf475978a47d04d24ee99f3b",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "bcfacf136c7515fa3ca070b0e3c1ae80aa47ce891a60e72946ae268b2e36a3ce",
+          "size_bytes": 5037
+        },
+        {
+          "name": "config.json",
+          "sha256": "36fbaa5d01beb6daae2621df9ded6aabb104696f75fcaea4efda9fd64f32f03a",
+          "size_bytes": 185
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c488cda004e8fda7da72dc0f7f658e8e0e5c61a2991f8dd781ca9b179d376544",
+          "size_bytes": 13361
+        },
+        {
+          "name": "config.json",
+          "sha256": "00a542e6256c8cbf2ef289408a0adef8c24eea24fe73fb13fa42d44cac7c59e4",
+          "size_bytes": 187
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "environmental_monitor"
+  ]
+}

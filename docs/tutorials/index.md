@@ -1,47 +1,45 @@
-# Tutorials
+# Tutorials Index
 
-This section provides hands-on tutorials for using unbihexium.
+## Purpose
 
-## Available Tutorials
+Step-by-step tutorials for common workflows.
 
-| Tutorial | Description | Difficulty |
-|----------|-------------|------------|
-| [Object Detection](detection.md) | Detect objects in satellite imagery | Intermediate |
-| [Spectral Indices](indices.md) | Calculate vegetation and water indices | Beginner |
-| [Geostatistics](geostat.md) | Variogram analysis and Kriging | Advanced |
-
-## Prerequisites
-
-Before starting, ensure you have:
-
-1. Installed unbihexium: `pip install unbihexium`
-2. Basic familiarity with Python and NumPy
-3. Sample data (provided in tutorials)
-
-## Workflow Diagram
+## Learning Path
 
 ```mermaid
 graph LR
-    A[Load Data] --> B[Preprocess]
-    B --> C[Analysis/Model]
-    C --> D[Visualize]
-    D --> E[Export]
+    A[Installation] --> B[Quickstart]
+    B --> C[Detection]
+    C --> D[Indices]
+    D --> E[End-to-End]
+    E --> F[Advanced]
 ```
 
-## Formula Reference
+## Time Investment
 
-Common formulas used across tutorials:
+$$
+T_{\text{total}} \approx \sum_{t \in \text{Tutorials}} T_t \approx 4 \text{ hours}
+$$
 
-**NDVI**: $$NDVI = \frac{NIR - RED}{NIR + RED}$$
+| Tutorial | Duration | Difficulty |
+|----------|----------|------------|
+| [Detection](detection.md) | 30 min | Beginner |
+| [Indices](indices.md) | 20 min | Beginner |
+| [Geostatistics](geostat.md) | 45 min | Intermediate |
+| [End-to-End](end_to_end.md) | 60 min | Intermediate |
+| [Notebooks](notebooks.md) | 30 min | Beginner |
 
-**Semivariance**: $$\gamma(h) = \frac{1}{2N(h)} \sum_{i=1}^{N(h)} [z(x_i) - z(x_i + h)]^2$$
+## Prerequisites
 
----
+- Python 3.10+ installed
+- Unbihexium installed
+- Sample data downloaded
 
-## Navigation
+## Tutorial Format
 
-| Prev | Up | Next |
-|------|-----|------|
-| [Quickstart](../getting_started/quickstart.md) | [Home](../index.md) | [Detection Tutorial](detection.md) |
-
-**Related:** [Capabilities](../capabilities/index.md) | [API Reference](../reference/api.md)
+Each tutorial includes:
+1. Objective statement
+2. Step-by-step instructions
+3. Code examples
+4. Expected outputs
+5. Troubleshooting tips

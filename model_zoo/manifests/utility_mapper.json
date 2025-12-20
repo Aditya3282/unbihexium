@@ -1,0 +1,57 @@
+{
+  "model_id": "utility_mapper",
+  "name": "Utility Mapper",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Utility Mapper model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "793557cb7c37feb8d6901efd4eb0dc80691716ccf84ac57d9290382cd01e59a9",
+          "size_bytes": 3770
+        },
+        {
+          "name": "config.json",
+          "sha256": "d0609a9638b228fe409307f87baf0ad7ad4520247c3422a2d1d758682882b6d8",
+          "size_bytes": 434
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c90577423b7f1a8fcfb28ab0a46219c67227946cbf8fcfa236b95146f2798704",
+          "size_bytes": 30607
+        },
+        {
+          "name": "config.json",
+          "sha256": "2883846c316e8ffce1c5b5f533af90690eb25a905cc434cff801abebbb69944d",
+          "size_bytes": 434
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "72f21b713d79f854b76cf5e3ac7f73149f5ee5f3cb9c653eaac6740ec67beb89",
+          "size_bytes": 112985
+        },
+        {
+          "name": "config.json",
+          "sha256": "66dc69447acf3b5b3d9dfdd50add1592ae74aff44dc7b16bad109d76d3e9ada7",
+          "size_bytes": 438
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "utility_mapper"
+  ]
+}

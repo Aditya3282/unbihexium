@@ -1,0 +1,57 @@
+{
+  "model_id": "protected_area_change_detector",
+  "name": "Protected Area Change Detector",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Protected Area Change Detector model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "d88a0c4abe898bd459748ae2a57aa8064909ef7412b16d438e8698f1ec27dd13",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "e5275a53400d508fd58b9fd1bbd1effc595a6b1d024128e55d86fb3f77dee978",
+          "size_bytes": 435
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "41581cd2dc846d21680cb65ceb16122586453ede522cf19282f14d1ae634b7be",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "6f716770623770fb50e21c5f276f2033bf2e5de4de5b560d6234b6866f9322f5",
+          "size_bytes": 435
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7268568c6a4777cd8cba17bd11a87f7cbe2e3b1794fc506a5c67b509dcf01aa4",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "ef3674866ceff61b3749595e0966ade9e17428039827c5f490de1f0235c1f65a",
+          "size_bytes": 439
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "protected_area_change_detector"
+  ]
+}

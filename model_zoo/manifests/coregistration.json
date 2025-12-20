@@ -1,0 +1,57 @@
+{
+  "model_id": "coregistration",
+  "name": "Coregistration",
+  "version": "1.0.0",
+  "task": "enhancement",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Coregistration model for enhancement.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "dffcb6da899a2c6a8e72d3714ab9280f66877f53e8ff8c5932b7c87263b06429",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "f03ed5906eefdd02f7a03b13f3e675007ac90d80181e1ed185f361fdfa7d4380",
+          "size_bytes": 355
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "0013f84cd43f3c75be79f9e4118582e65b3adecacbb70e63f23ae7d4f0626c27",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "9a081813f58c6b63347e1c3c4b883d00c24ed283fc22efd7f338055fccab66e1",
+          "size_bytes": 355
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "eeea172b9a48e63e71fa6fb9d3e78babaa6e85dc4f61d12370bb619e7c86b3a0",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "60c1dd8b4efc91b78786f1e7ad45eae2f358644ec855aa68260552b3a4493f14",
+          "size_bytes": 359
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "coregistration"
+  ]
+}

@@ -1,57 +1,64 @@
-# Responsible Use
+# Responsible Use Policy
 
-Guidelines for responsible use of unbihexium.
+## Purpose
 
-## Intended Applications
+Guidelines for responsible use of Unbihexium capabilities.
 
-| Use Case | Status | Notes |
-|----------|--------|-------|
-| Environmental monitoring | Encouraged | Primary use case |
-| Agricultural analysis | Encouraged | Crop and yield analysis |
-| Urban planning | Encouraged | Infrastructure assessment |
-| Scientific research | Encouraged | Academic applications |
-| Disaster response | Encouraged | Humanitarian applications |
-| Commercial applications | Allowed | Subject to license |
+## Ethical Framework
+
+```mermaid
+mindmap
+  root((Responsible Use))
+    Transparency
+      Model documentation
+      Limitation disclosure
+    Accountability
+      Audit trails
+      Human oversight
+    Fairness
+      Bias monitoring
+      Equal access
+    Safety
+      Risk assessment
+      Harm prevention
+```
+
+## Use Case Classification
+
+$$
+\text{Approval Level} = f(\text{Sensitivity}, \text{Impact}, \text{Reversibility})
+$$
+
+| Use Case | Classification | Guidance |
+|----------|---------------|----------|
+| Environmental monitoring | Low risk | General use |
+| Agricultural analytics | Low risk | General use |
+| Urban planning | Medium risk | Review recommended |
+| Insurance underwriting | Medium risk | Human oversight |
+| Security/defense | High risk | Restricted, neutral only |
+| Humanitarian | Approved | Priority support |
 
 ## Prohibited Uses
 
-- Development of weapons or military systems
-- Illegal surveillance
-- Human rights violations
-- Privacy violations
+This library MUST NOT be used for:
+- Weapons development or targeting
+- Mass surveillance without legal basis
+- Discrimination or profiling
+- Environmental damage facilitation
 
-## Detection Capabilities
+## Defense/Intelligence Guidance
 
-```mermaid
-graph TB
-    DET[Detection Framework] --> SHIP[Ship Detection]
-    DET --> BUILDING[Building Detection]
-    DET --> VEHICLE[Vehicle Detection]
-    DET --> CUSTOM[Custom Objects]
+Capabilities marked as "neutral analytics" are provided for:
+- Research and academic study
+- Humanitarian applications
+- Historical analysis
+- Situational awareness
 
-    SHIP --> |Civilian| OKS[Maritime Safety]
-    BUILDING --> |Civilian| OKB[Urban Planning]
-    VEHICLE --> |Civilian| OKV[Traffic Analysis]
-```
+They do NOT provide:
+- Targeting guidance
+- Weapons integration
+- Real-time tactical support
 
-## Risk Assessment
+## Human Oversight
 
-For any detection application:
-
-$$Risk = P(misuse) \times Impact$$
-
-Users must conduct their own risk assessments.
-
-## Export Controls
-
-Some capabilities may be subject to export regulations:
-
-| Capability | ECCN | Notes |
-|------------|------|-------|
-| Core library | EAR99 | Generally unrestricted |
-| SAR processing | Review required | Contact for guidance |
-
-## Contact
-
-- Questions: opensource@unbihexium.org
-- Security concerns: security@unbihexium.org
+All high-impact decisions must include human review.

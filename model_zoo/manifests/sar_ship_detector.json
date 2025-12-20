@@ -1,0 +1,57 @@
+{
+  "model_id": "sar_ship_detector",
+  "name": "Sar Ship Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Sar Ship Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "be612e8b28940af292eb62782db6df3024e4c793778ffa7daad868c319f0ac9f",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "0aafa491536d0d03fc346ab37c6ebca89a4278c5ab704903c934ebd5f6fd384c",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3e253e01d06f2bc2a5d28ba4e9165e7d1ac4e4584db2bd41f04a082be0e6b600",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "e38513035a913e8d9167b23861c5abf42ee2a6bb034c353662b6757a966ba4b8",
+          "size_bytes": 397
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4dc2955f7d7729bc1d8771b8b6b7f9658a102fbe2bd701cbe7edee215213c723",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "032ef69939b477ff70827841fd6602e4b1b41095f9b3ee15bb6d301983100713",
+          "size_bytes": 401
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "sar_ship_detector"
+  ]
+}

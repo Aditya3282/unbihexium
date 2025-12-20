@@ -1,0 +1,57 @@
+{
+  "model_id": "evi_calculator",
+  "name": "Evi Calculator",
+  "version": "1.0.0",
+  "task": "index",
+  "architecture": "cnn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Evi Calculator model for index.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "582ab9486a8ae437b36cdd1f710785c8eaa0f53fa69e2aee6bcf6630f38e5317",
+          "size_bytes": 3431
+        },
+        {
+          "name": "config.json",
+          "sha256": "0b40fe501d3a3bb9af41e59c0ce4ef45b52c0731ea5ebe5fb1fde3de40f0bf6e",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "cb2ead5a650caf35c52a3209f9f00bb80c4ce1a5d5e2135296244b01f164bffb",
+          "size_bytes": 24748
+        },
+        {
+          "name": "config.json",
+          "sha256": "00dee586bc4c8bfcde276f4fc6fb2dea0203dc99ae4e1a7da8691461a72f871c",
+          "size_bytes": 349
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "36539d9a2f4d4cfcef4eb3982f9eda9e3ab4f346458733cdb6d8ed75d617111a",
+          "size_bytes": 85426
+        },
+        {
+          "name": "config.json",
+          "sha256": "293f4e5afffa0848add9f4e69ba31ad2aa8145430bdff253d9c22738531a62de",
+          "size_bytes": 353
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "evi_calculator"
+  ]
+}

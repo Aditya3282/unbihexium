@@ -1,0 +1,57 @@
+{
+  "model_id": "energy_potential",
+  "name": "Energy Potential",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Energy Potential model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "5ad546ce200aee646dd141a8860d1e19c84d03e967ba4f8c07c19861c78de65a",
+          "size_bytes": 1323
+        },
+        {
+          "name": "config.json",
+          "sha256": "3769ea71ac78e8cb053c879aa7dedd9af8a7c21c08fc7906575601cc9bbee3c4",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "086ef75fd5d18cae75043ce988a7c7d79a94bcd4286e85d63e122e89330c93a7",
+          "size_bytes": 4397
+        },
+        {
+          "name": "config.json",
+          "sha256": "e04c6933ca0837295a43b7eee3b854a381d34cf465bf820f299847fae7ecd5e7",
+          "size_bytes": 180
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "20929bcb733200b8ac82d4930de093a2cd62fbbd9b1333b6a22b9a953217bd14",
+          "size_bytes": 12081
+        },
+        {
+          "name": "config.json",
+          "sha256": "cfb7a5231dcf2e917d9f24ef317046bca39f34124b47e22e6841ec3fec5ccb35",
+          "size_bytes": 182
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "energy_potential"
+  ]
+}

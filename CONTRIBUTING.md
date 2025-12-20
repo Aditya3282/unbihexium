@@ -1,79 +1,81 @@
-# Contributing Guide
+# Contributing to Unbihexium
 
 ## Purpose
 
-This document provides guidelines for contributing to unbihexium.
+This document provides guidelines for contributing to the Unbihexium project.
 
 ## Audience
 
-Contributors, maintainers, and community members.
+- Open source contributors
+- Internal developers
+- Documentation writers
 
 ## Contribution Workflow
 
 ```mermaid
-graph LR
-    FORK[Fork Repo] --> BRANCH[Create Branch]
-    BRANCH --> CODE[Write Code]
-    CODE --> TEST[Run Tests]
-    TEST --> PR[Open PR]
-    PR --> REVIEW[Code Review]
-    REVIEW --> MERGE[Merge]
+flowchart LR
+    A[Fork] --> B[Branch]
+    B --> C[Develop]
+    C --> D[Test]
+    D --> E[PR]
+    E --> F[Review]
+    F --> G[Merge]
 ```
+
+## Code Quality Metrics
+
+Contributions must meet quality thresholds:
+
+$$
+\text{Coverage} \geq 80\%, \quad \text{Complexity} \leq 10
+$$
+
+## Contribution Types
+
+| Type | Description | Branch Prefix |
+|------|-------------|---------------|
+| Feature | New functionality | `feat/` |
+| Fix | Bug correction | `fix/` |
+| Docs | Documentation | `docs/` |
+| Refactor | Code improvement | `refactor/` |
+| Test | Test additions | `test/` |
 
 ## Getting Started
 
-| Step | Command | Description |
-|------|---------|-------------|
-| 1 | `git clone` | Clone your fork |
-| 2 | `pip install -e ".[dev]"` | Install dev dependencies |
-| 3 | `pre-commit install` | Setup hooks |
-| 4 | `pytest tests/` | Run tests |
-
-## Code Quality
-
-Quality score calculation:
-
-$$Q = \frac{tests + lint + types}{3}$$
-
-Where each component is 0-1 based on pass rate.
-
-## Coding Standards
-
-- Use type hints for all functions
-- Follow PEP 8 and ruff formatting
-- Write docstrings (Google style)
-- Add tests for new features
-
-## Pull Request Process
-
 1. Fork the repository
 2. Create a feature branch
-3. Make changes with tests
-4. Run `ruff check src/` and `pyright src/`
-5. Open a pull request
-6. Address review feedback
+3. Make changes
+4. Run tests: `pytest tests/`
+5. Run linting: `ruff check src/`
+6. Submit pull request
+
+## Code Standards
+
+- Python 3.10+
+- Type hints required
+- Docstrings for public APIs
+- No emojis in code or commits
 
 ## Commit Messages
 
-- No emojis in commit messages
-- Use conventional commits format
-- Examples: `feat:`, `fix:`, `docs:`, `test:`
+Format: `type(scope): description`
 
-## Testing
+Examples:
+- `feat(models): add ship detector`
+- `fix(pipeline): correct tiling logic`
+- `docs(api): update reference docs`
 
-```bash
-# Run all tests
-pytest tests/
+## Review Process
 
-# Run with coverage
-pytest tests/ --cov=unbihexium
-```
+All PRs require:
+- Passing CI checks
+- Code review approval
+- Documentation updates (if applicable)
 
-## Code of Conduct
+## Security
 
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Report security issues via [SECURITY.md](SECURITY.md), not public issues.
 
-## References
+## License
 
-- [Documentation](docs/index.md)
-- [Architecture](docs/architecture/overview.md)
+Contributions are licensed under Apache-2.0.

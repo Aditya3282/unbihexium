@@ -1,0 +1,57 @@
+{
+  "model_id": "digitization_2d",
+  "name": "Digitization 2D",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Digitization 2D model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "c32d03e08533c1eb28c7b431a31182b6174e72a4885a7509c5504ebdd63a3cfc",
+          "size_bytes": 3696
+        },
+        {
+          "name": "config.json",
+          "sha256": "e7f94a831a773304ce5b3f18198f89bada0e6940508760ed136038e2045f633b",
+          "size_bytes": 414
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e9bc2648d40193fcfb1fc04e739b37dcdbc7cb1f8a4d936141a17c3a6ce9d243",
+          "size_bytes": 30343
+        },
+        {
+          "name": "config.json",
+          "sha256": "8abc6dc82fcfe8d28abdbcfcc00705ae99343be3ad823f507d4b21187c0d39e5",
+          "size_bytes": 414
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "1df7af27316fcd8f9fc941e976f85cb513cac8867f08322cade34a4128bcf074",
+          "size_bytes": 112465
+        },
+        {
+          "name": "config.json",
+          "sha256": "d342ffad600ecfde02f5b6a2bfde50f2e7303b7cdb03cfdd8d3d259ed766eaf4",
+          "size_bytes": 418
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "digitization_2d"
+  ]
+}

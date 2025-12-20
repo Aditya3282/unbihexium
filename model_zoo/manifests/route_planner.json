@@ -1,0 +1,57 @@
+{
+  "model_id": "route_planner",
+  "name": "Route Planner",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Route Planner model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9594f9b952e6ce2d2db44bf80abcefbb48ba54acb6bb1e6b32697e10f6279fd4",
+          "size_bytes": 1259
+        },
+        {
+          "name": "config.json",
+          "sha256": "75989fe5327dcbf77a6cb9d8d9b19ea4664b2affa67ed489e8d7984fea79ed20",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7ee69c581e75827a79190460d065685d7fe389ed5437b92489239e55bb6f81f5",
+          "size_bytes": 4141
+        },
+        {
+          "name": "config.json",
+          "sha256": "ceb60deeb7f37d820f136f819c1dd2e8022605badfba648a608736b5a54b7aa6",
+          "size_bytes": 176
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "06d46223de0ece94b3eb209e55a85e40127f00f835025f2ca434084767bc3128",
+          "size_bytes": 11569
+        },
+        {
+          "name": "config.json",
+          "sha256": "64757dbafaa6e206d4f22fcad986fe1df268ef5a096eaaad84234b82466c3dcb",
+          "size_bytes": 178
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "route_planner"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "model_id": "aircraft_detector",
+  "name": "Aircraft Detector",
+  "version": "1.0.0",
+  "task": "detection",
+  "architecture": "resnet_fpn",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Aircraft Detector model for detection.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "7550bebb90e4df5d93a333176e46543202b2ecde21181c9ab141ce31e79251dc",
+          "size_bytes": 3660
+        },
+        {
+          "name": "config.json",
+          "sha256": "433a53cfb5aeb2692c92200479afab6e9117221066fd2aafb1d69985346d3c37",
+          "size_bytes": 401
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e79e9aed7d47365f478a9855a21ffeb7e50db3830eef89770f7250309a7a92ce",
+          "size_bytes": 30211
+        },
+        {
+          "name": "config.json",
+          "sha256": "74dca9d676957364ab491d8e92f28494a69000451ab64917f88b23ba281c598b",
+          "size_bytes": 401
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "290df60c92afb9e7f3ccd1b6bcc1d5af29b8d13291d57696d810c5ba4147dac9",
+          "size_bytes": 112205
+        },
+        {
+          "name": "config.json",
+          "sha256": "b2f3a4922e07cd159d8b1896c466780031713dba7d67ec6db0752c2347c08f9b",
+          "size_bytes": 405
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "aircraft_detector"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "model_id": "crop_health_assessor_large",
+  "task": "regression",
+  "architecture": "mlp",
+  "variant": "large",
+  "input": {
+    "type": "tabular",
+    "features": 10
+  }
+}

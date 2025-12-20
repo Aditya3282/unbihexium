@@ -1,0 +1,57 @@
+{
+  "model_id": "tourist_destination_monitor",
+  "name": "Tourist Destination Monitor",
+  "version": "1.0.0",
+  "task": "segmentation",
+  "architecture": "siamese_unet",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Tourist Destination Monitor model for segmentation.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "55312e28da66d8ff110c25c34313277bb257d91155fc2007bb1fabaae1af03fe",
+          "size_bytes": 3243
+        },
+        {
+          "name": "config.json",
+          "sha256": "4a9cfc3a5675145d4cd50be0361924d8f87776d698307994a81c8d12008e8da1",
+          "size_bytes": 429
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3664dc281bbd7c6b5b39b5df30810cd5df268ef6af8dd55a4111d30f9da80064",
+          "size_bytes": 23458
+        },
+        {
+          "name": "config.json",
+          "sha256": "789f05759abcee2ba3767fd0c18a2d9d430ffa0302e5af1d8049ed7da0452568",
+          "size_bytes": 429
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "52d23fd3fc89cfe0ca76fa401151bd0aae992da2c3d49ef7141f7bdf44f7e2fd",
+          "size_bytes": 82664
+        },
+        {
+          "name": "config.json",
+          "sha256": "c7f6c214b81087976d6fd7b37e76696de4e782614fab35ed3cb8d5db080c13d5",
+          "size_bytes": 433
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "tourist_destination_monitor"
+  ]
+}

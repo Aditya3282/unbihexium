@@ -1,0 +1,57 @@
+{
+  "model_id": "timeseries_analyzer",
+  "name": "Timeseries Analyzer",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Timeseries Analyzer model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "4a08f39702b8843ec6943d1207e664dbcd579a0bccc8c9b763414b0a5fd6c1ac",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "09a294c49d3593d1b1e29924d7b9fa97d6983b96aec32a816debf1054871bfab",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "91806cfa2e84821f702129561e7ede6ea6e8146cabf9e915ae62fdace56325bc",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "707938c62dc1b66c450c7fdcd9cbca15befeb1899fc914fb401f7c03ba80d8cf",
+          "size_bytes": 183
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "9fc134ff6d2a368467e0ae455a96ed483728b53110db53b21e75d5e63cffe16e",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "25372e6995adf0360dc62ee8b77a01503ef0b7121ec173d24f784e3558824173",
+          "size_bytes": 185
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "timeseries_analyzer"
+  ]
+}

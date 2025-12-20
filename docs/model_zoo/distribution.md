@@ -2,98 +2,55 @@
 
 ## Purpose
 
-How to download, cache, and manage unbihexium models.
-
-## Audience
-
-Users downloading models, DevOps engineers, offline deployment teams.
+Strategy for distributing model artifacts.
 
 ## Distribution Architecture
 
 ```mermaid
-graph LR
-    subgraph Sources
-        REPO[GitHub Repo]
-        RELEASE[GitHub Releases]
-        CACHE[Local Cache]
-    end
-
-    CLI[CLI] --> ZOO[Model Zoo]
-    ZOO --> REPO
-    ZOO --> RELEASE
-    ZOO --> CACHE
-
-    REPO --> |tiny models| TINY[Smoke Test]
-    RELEASE --> |base/large| PROD[Production]
-    CACHE --> |offline| OFFLINE[Air-gapped]
+graph TB
+    A[Model Artifacts] --> B[GitHub Releases]
+    A --> C[PyPI Package]
+    A --> D[Docker Images]
+    
+    B --> E[Large models]
+    C --> F[Tiny models only]
+    D --> G[All variants]
 ```
 
-## Model Sources
+## Size Analysis
 
-| Source | Models | Size | Use Case |
-|--------|--------|------|----------|
-| Repository | Tiny | ~100-200 bytes | CI/CD smoke tests |
-| Release Assets | Base | ~500 bytes (placeholder) | Production |
-| Release Assets | Large | ~1 KB (placeholder) | High accuracy |
-| Local Cache | All | Varies | Offline deployment |
+$$
+\text{Total Size} = \sum_{m \in M} \sum_{v \in V} \text{Size}(m, v)
+$$
 
-## Cache Location
+| Variant | Avg Size | Count | Total |
+|---------|----------|-------|-------|
+| tiny | 15 KB | 130 | 2 MB |
+| base | 60 KB | 130 | 8 MB |
+| large | 200 KB | 130 | 26 MB |
 
-Models are cached in:
+## Distribution Channels
 
-$$cache\_path = \text{HOME} / \text{.cache} / \text{unbihexium} / \text{models}$$
+| Channel | Content | Size Limit |
+|---------|---------|------------|
+| PyPI | tiny only | < 50 MB |
+| GitHub Releases | all | 2 GB/release |
+| Docker Hub | all | No limit |
+| Manual download | all | N/A |
 
-On Windows: `%USERPROFILE%\.cache\unbihexium\models`
+## GitHub Release Structure
 
-## Download Methods
+```
+v1.0.0/
+  unbihexium-models-tiny.zip
+  unbihexium-models-base.zip
+  unbihexium-models-large.zip
+  checksums.sha256
+```
 
-### CLI Download
+## Docker Images
 
 ```bash
-# Download specific model
-unbihexium zoo download ship_detector_base
-
-# Download with version
-unbihexium zoo download ship_detector_base --version 1.0.0
-
-# List available models
-unbihexium zoo list
+docker pull ghcr.io/unbihexium-oss/unbihexium:latest
+docker pull ghcr.io/unbihexium-oss/unbihexium:1.0.0-models
 ```
-
-### Python API
-
-```python
-from unbihexium.zoo import download_model, list_models
-
-# List models
-models = list_models(task="detection")
-
-# Download
-path = download_model("ship_detector_base")
-```
-
-## Offline Deployment
-
-For air-gapped environments:
-
-1. Download models on connected machine
-2. Copy cache directory to target
-3. Set `UNBIHEXIUM_CACHE_DIR` environment variable
-
-```bash
-export UNBIHEXIUM_CACHE_DIR=/path/to/offline/cache
-```
-
-## Configuration
-
-| Environment Variable | Default | Description |
-|---------------------|---------|-------------|
-| `UNBIHEXIUM_CACHE_DIR` | `~/.cache/unbihexium` | Cache location |
-| `UNBIHEXIUM_OFFLINE` | `false` | Offline mode |
-| `UNBIHEXIUM_VERIFY` | `true` | Verify checksums |
-
-## References
-
-- [Documentation Index](../index.md)
-- [Model Zoo Catalog](catalog.md)
-- [Model Integrity](integrity.md)

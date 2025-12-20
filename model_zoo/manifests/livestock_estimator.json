@@ -1,0 +1,57 @@
+{
+  "model_id": "livestock_estimator",
+  "name": "Livestock Estimator",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Livestock Estimator model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "79439e057cff6208d834ddc7cffd97b344b5e398681871483648ab57e4598e8e",
+          "size_bytes": 1195
+        },
+        {
+          "name": "config.json",
+          "sha256": "857bf2e49f361e56cb9d2d271ead155b55d73f2ca19a036b5262d39c0c72237e",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "75ecd1df850de1336f10c0a483288e8c2f41a7ff86c00623d208a552e36d220b",
+          "size_bytes": 3885
+        },
+        {
+          "name": "config.json",
+          "sha256": "4b3f4b32d1f40d85894ab81175779b959f5eb06caac0e6816138d5047c35ec97",
+          "size_bytes": 182
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3267dd498370cff1a15d35713abe0c981e9b32bd08344143afc68bb3c379b3b0",
+          "size_bytes": 11057
+        },
+        {
+          "name": "config.json",
+          "sha256": "e802b5c6f0ea6aa3edcfa39cff05ec726863b07c8d7f780744aec2a9c762aa2d",
+          "size_bytes": 184
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "livestock_estimator"
+  ]
+}

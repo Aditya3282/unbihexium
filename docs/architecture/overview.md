@@ -1,93 +1,101 @@
 # Architecture Overview
 
-High-level architecture of the unbihexium library.
+## Purpose
 
-## Module Structure
+System architecture documentation for Unbihexium.
+
+## High-Level Architecture
 
 ```mermaid
 graph TB
     subgraph "User Interface"
-        CLI[CLI]
-        API[Python API]
+        A1[CLI]
+        A2[Python API]
+        A3[REST API]
     end
-
-    subgraph "Core Layer"
-        Core[Core Abstractions]
-        Registry[Registry System]
-        Pipeline[Pipeline Framework]
+    
+    subgraph "Application Layer"
+        B1[Pipeline Orchestrator]
+        B2[Capability Registry]
+        B3[Configuration Manager]
     end
-
-    subgraph "Domain Modules"
-        AI[AI Products]
-        Geostat[Geostatistics]
-        Analysis[Analysis]
-        Indices[Indices]
+    
+    subgraph "Core Services"
+        C1[Model Zoo Manager]
+        C2[Inference Engine]
+        C3[Tile Processor]
+        C4[Georeferencer]
     end
-
-    subgraph "Foundation"
-        IO[IO Adapters]
-        Model[Model Zoo]
-        Evidence[Provenance]
+    
+    subgraph "Data Layer"
+        D1[Model Cache]
+        D2[Tile Store]
+        D3[Result Store]
     end
-
-    CLI --> Pipeline
-    API --> Pipeline
-    Pipeline --> Core
-    Pipeline --> Registry
-    Core --> IO
-    Core --> Model
-    AI --> Core
-    Geostat --> Core
-    Analysis --> Core
-    Indices --> Core
-    Pipeline --> Evidence
+    
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    B1 --> B2
+    B2 --> C1
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 --> D3
+    C1 --> D1
+    C3 --> D2
 ```
 
-## Core Abstractions
+## Component Responsibilities
 
-| Abstraction | Purpose | Key Methods |
-|-------------|---------|-------------|
-| `Raster` | Geospatial raster data | `from_file`, `tiles`, `reproject` |
-| `Vector` | Geospatial vector data | `from_wkt`, `buffer`, `intersects` |
-| `Tile` | Processing unit | `data`, `offset` |
-| `Pipeline` | Workflow orchestration | `add_step`, `run` |
-| `Evidence` | Provenance tracking | `add_input`, `to_json` |
+$$
+\text{System} = \bigcup_{i=1}^{n} \text{Component}_i \quad \text{where} \quad \bigcap_{i \neq j} \text{Component}_i \cap \text{Component}_j = \emptyset
+$$
+
+| Component | Responsibility | Dependencies |
+|-----------|---------------|--------------|
+| Pipeline Orchestrator | Workflow execution | Registry, Config |
+| Capability Registry | Capability lookup | Model Zoo |
+| Model Zoo Manager | Model lifecycle | Cache |
+| Inference Engine | ONNX execution | Tile Processor |
+| Tile Processor | Image tiling | Georeferencer |
+| Georeferencer | CRS handling | GDAL/Rasterio |
 
 ## Data Flow
 
-$$\text{Input} \xrightarrow{\text{Load}} \text{Raster} \xrightarrow{\text{Tile}} \text{Process} \xrightarrow{\text{Mosaic}} \text{Output}$$
+```mermaid
+sequenceDiagram
+    participant User
+    participant Pipeline
+    participant TileProcessor
+    participant InferenceEngine
+    participant Output
+    
+    User->>Pipeline: Execute
+    Pipeline->>TileProcessor: Tile image
+    loop Each tile
+        TileProcessor->>InferenceEngine: Process tile
+        InferenceEngine-->>TileProcessor: Predictions
+    end
+    TileProcessor->>Output: Merge and save
+    Output-->>User: Result
+```
 
-## Plugin Architecture
+## Design Principles
 
-Extensibility through registries:
+1. **Modularity**: Independent components
+2. **Extensibility**: Plugin architecture
+3. **Consistency**: Uniform interfaces
+4. **Observability**: Logging and metrics
+5. **Resilience**: Error handling
 
-1. **Capability Registry**: Track all library features
-2. **Model Registry**: Manage ML models
-3. **Pipeline Registry**: Register processing pipelines
+## Technology Stack
 
-## Memory Management
-
-Lazy loading and tiled processing for large datasets:
-
-$$Memory_{peak} \approx n_{tiles} \times S^2 \times B \times dtype$$
-
-Where:
-- $n_{tiles}$ = concurrent tiles
-- $S$ = tile size
-- $B$ = bands
-- $dtype$ = data type size
-
-## Reproducibility
-
-Every pipeline run produces:
-
-- Configuration snapshot
-- Input checksums
-- Output checksums
-- Provenance record
-
-## Security
-
-- SHA256 verification for models
-- No telemetry by default
-- SBOM for dependencies
+| Layer | Technology |
+|-------|------------|
+| Language | Python 3.10+ |
+| Inference | ONNX Runtime |
+| Geospatial | GDAL, Rasterio, Shapely |
+| CLI | Click, Rich |
+| Testing | PyTest |
+| Linting | Ruff, Pyright |

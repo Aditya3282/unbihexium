@@ -1,0 +1,57 @@
+{
+  "model_id": "wildfire_risk",
+  "name": "Wildfire Risk",
+  "version": "1.0.0",
+  "task": "regression",
+  "architecture": "mlp",
+  "license": "Apache-2.0",
+  "status": "production",
+  "description": "Wildfire Risk model for regression.",
+  "artifacts": {
+    "tiny": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "6fddec742e119a82be18d27fa7bb8699e4a2391423813ebb99636e44c067f3ab",
+          "size_bytes": 1387
+        },
+        {
+          "name": "config.json",
+          "sha256": "70d00650bf683e44bb9d7f58432c0f609905e94b20978de164937bd81b6c9eb5",
+          "size_bytes": 177
+        }
+      ]
+    },
+    "base": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "3b3c98e0bc869327348ea72b47933820f859b610f58c997424a1ea81637b6aff",
+          "size_bytes": 4653
+        },
+        {
+          "name": "config.json",
+          "sha256": "f2ee97af55435874e725644c4eaeb12f91c8814b313aec72863fb3b25d6bcb98",
+          "size_bytes": 177
+        }
+      ]
+    },
+    "large": {
+      "files": [
+        {
+          "name": "model.onnx",
+          "sha256": "e6106bf8e6bb4d820b1530c154b9732ea00a732759565129e3f36fe36403f1be",
+          "size_bytes": 12593
+        },
+        {
+          "name": "config.json",
+          "sha256": "2b566d760e51d3864d065e3dbc8ab2ba0140a9cf53df9adef5ab9a3fdbf345d2",
+          "size_bytes": 179
+        }
+      ]
+    }
+  },
+  "capabilities": [
+    "wildfire_risk"
+  ]
+}
