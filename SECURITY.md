@@ -7,6 +7,7 @@ This document defines security practices and vulnerability reporting procedures 
 ## Scope
 
 Covers:
+
 - Source code vulnerabilities
 - Dependency security
 - Model integrity
@@ -46,7 +47,7 @@ $$
 $$
 
 | Severity | CVSS Range | Response Time |
-|----------|------------|---------------|
+| ---------- | ------------ | --------------- |
 | Critical | 9.0-10.0 | 24 hours |
 | High | 7.0-8.9 | 7 days |
 | Medium | 4.0-6.9 | 30 days |
@@ -55,14 +56,14 @@ $$
 ## Supported Versions
 
 | Version | Supported |
-|---------|-----------|
+| --------- | ----------- |
 | 1.x | Yes |
 | 0.x | No |
 
 ## Reporting Vulnerabilities
 
 1. Do NOT create public issues for security vulnerabilities
-2. Email: security@unbihexium.dev
+2. Email: <security@unbihexium.dev>
 3. Include: description, reproduction steps, impact assessment
 4. Response within 48 hours
 

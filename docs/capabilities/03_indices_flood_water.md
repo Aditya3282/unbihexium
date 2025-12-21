@@ -27,7 +27,7 @@ The Vegetation Indices and Flood/Water Analysis capability domain addresses the 
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 12 |
 | Total Model Variants | 48 |
 | Minimum Parameters (tiny) | 68,481 |
@@ -42,7 +42,7 @@ The Vegetation Indices and Flood/Water Analysis capability domain addresses the 
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Formula/Classes | Variants | Parameter Range |
-|----------|------|--------------|-----------------|----------|-----------------|
+| ---------- | ------ | -------------- | ----------------- | ---------- | ----------------- |
 | ndvi_calculator | Index | CNN | (NIR-Red)/(NIR+Red) | 4 | 186,243 - 2,956,803 |
 | ndwi_calculator | Index | CNN | (Green-NIR)/(Green+NIR) | 4 | 186,243 - 2,956,803 |
 | evi_calculator | Index | CNN | Enhanced VI | 4 | 186,243 - 2,956,803 |
@@ -69,11 +69,12 @@ $$
 $$
 
 Where:
+
 - $\rho_{NIR}$ = Reflectance in Near-Infrared band (typically 750-900 nm)
 - $\rho_{Red}$ = Reflectance in Red band (typically 630-690 nm)
 
 | NDVI Range | Interpretation |
-|------------|----------------|
+| ------------ | ---------------- |
 | -1.0 to 0.0 | Water, snow, clouds |
 | 0.0 to 0.1 | Bare soil, rock |
 | 0.1 to 0.2 | Sparse vegetation |
@@ -90,6 +91,7 @@ $$
 $$
 
 Where:
+
 - $G$ = Gain factor = 2.5
 - $C_1$ = Coefficient for atmospheric resistance = 6.0
 - $C_2$ = Coefficient for atmospheric resistance = 7.5
@@ -118,6 +120,7 @@ $$
 $$
 
 Where $L$ is the soil brightness correction factor:
+
 - $L = 0.5$ for intermediate vegetation cover
 - $L = 0.25$ for high vegetation cover
 - $L = 1.0$ for low vegetation cover
@@ -137,7 +140,7 @@ $$
 $$
 
 | dNBR Range | Burn Severity |
-|------------|---------------|
+| ------------ | --------------- |
 | < -0.25 | High post-fire regrowth |
 | -0.25 to -0.1 | Low post-fire regrowth |
 | -0.1 to 0.1 | Unburned |
@@ -191,7 +194,7 @@ Where $\alpha$ is typically 0.5.
 ### Index Computation Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Reference |
-|-------|--------|------|------|-------|------|-----------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ----------- |
 | ndvi_calculator | MAE | 0.08 | 0.05 | 0.03 | 0.02 | Landsat-SR |
 | ndvi_calculator | RMSE | 0.12 | 0.08 | 0.05 | 0.03 | Landsat-SR |
 | evi_calculator | MAE | 0.10 | 0.06 | 0.04 | 0.02 | MODIS-EVI |
@@ -201,7 +204,7 @@ Where $\alpha$ is typically 0.5.
 ### Water Detection Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | water_surface_detector | IoU | 0.78 | 0.85 | 0.91 | 0.94 | Global-Water |
 | water_surface_detector | F1 | 0.82 | 0.88 | 0.93 | 0.96 | Global-Water |
 | sar_flood_detector | IoU | 0.75 | 0.82 | 0.88 | 0.92 | SAR-Floods |
@@ -210,7 +213,7 @@ Where $\alpha$ is typically 0.5.
 ### Flood Risk Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | flood_risk | R-squared | 0.72 | 0.79 | 0.85 | 0.90 | Flood-Risk |
 | flood_risk | RMSE | 0.18 | 0.14 | 0.10 | 0.07 | Flood-Risk |
 | flood_risk_assessor | R-squared | 0.75 | 0.82 | 0.88 | 0.92 | Flood-Risk |
@@ -224,7 +227,7 @@ Where $\alpha$ is typically 0.5.
 The flood risk regression model uses the following features:
 
 | Feature | Description | Unit | Range |
-|---------|-------------|------|-------|
+| --------- | ------------- | ------ | ------- |
 | elevation | Terrain elevation above sea level | meters | 0 - 8848 |
 | slope | Terrain slope angle | degrees | 0 - 90 |
 | distance_water | Distance to nearest water body | meters | 0 - 50000 |
@@ -466,7 +469,7 @@ with rasterio.open("flood_risk_map.tif", 'w', **profile) as dst:
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 32 GB |
 | GPU | None | RTX 3060 | A100 |
@@ -475,7 +478,7 @@ with rasterio.open("flood_risk_map.tif", 'w', **profile) as dst:
 ### Spectral Band Requirements
 
 | Index | Required Bands | Sentinel-2 Bands | Landsat-8/9 Bands |
-|-------|----------------|------------------|-------------------|
+| ------- | ---------------- | ------------------ | ------------------- |
 | NDVI | Red, NIR | B4, B8 | B4, B5 |
 | EVI | Blue, Red, NIR | B2, B4, B8 | B2, B4, B5 |
 | NDWI | Green, NIR | B3, B8 | B3, B5 |
@@ -491,7 +494,7 @@ with rasterio.open("flood_risk_map.tif", 'w', **profile) as dst:
 ### Validation Datasets
 
 | Dataset | Source | Size | Purpose |
-|---------|--------|------|---------|
+| --------- | -------- | ------ | --------- |
 | Global Surface Water | JRC | 35 years | Water detection |
 | MODIS-NDVI | NASA | 20+ years | Index validation |
 | Copernicus GloFAS | ECMWF | 40 years | Flood modeling |
@@ -500,7 +503,7 @@ with rasterio.open("flood_risk_map.tif", 'w', **profile) as dst:
 ### Accuracy Assessment
 
 | Index/Model | MAE | RMSE | Correlation |
-|-------------|-----|------|-------------|
+| ------------- | ----- | ------ | ------------- |
 | NDVI (mega) | 0.02 | 0.03 | 0.98 |
 | EVI (mega) | 0.02 | 0.04 | 0.97 |
 | Water (mega) | - | - | IoU 0.94 |

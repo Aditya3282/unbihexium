@@ -25,7 +25,7 @@ $$
 ## Citation Formats
 
 | Format | Use Case |
-|--------|----------|
+| ------- | ---------------- |
 | BibTeX | LaTeX documents |
 | APA | Academic papers |
 | Chicago | Humanities |
@@ -46,7 +46,7 @@ $$
 
 ## APA
 
-Unbihexium OSS Foundation. (2025). Unbihexium: Geospatial AI Library (Version 1.0.0) [Computer software]. https://github.com/unbihexium-oss/unbihexium
+Unbihexium OSS Foundation. (2025). Unbihexium: Geospatial AI Library (Version 1.0.0) [Computer software]. Available from <https://github.com/unbihexium-oss/unbihexium>
 
 ## CITATION.cff
 

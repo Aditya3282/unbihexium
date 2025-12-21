@@ -30,7 +30,7 @@ $$
 $$
 
 | Use Case | Classification | Guidance |
-|----------|---------------|----------|
+| ---------- | --------------- | ---------- |
 | Environmental monitoring | Low risk | General use |
 | Agricultural analytics | Low risk | General use |
 | Urban planning | Medium risk | Review recommended |
@@ -41,6 +41,7 @@ $$
 ## Prohibited Uses
 
 This library MUST NOT be used for:
+
 - Weapons development or targeting
 - Mass surveillance without legal basis
 - Discrimination or profiling
@@ -49,12 +50,14 @@ This library MUST NOT be used for:
 ## Defense/Intelligence Guidance
 
 Capabilities marked as "neutral analytics" are provided for:
+
 - Research and academic study
 - Humanitarian applications
 - Historical analysis
 - Situational awareness
 
 They do NOT provide:
+
 - Targeting guidance
 - Weapons integration
 - Real-time tactical support

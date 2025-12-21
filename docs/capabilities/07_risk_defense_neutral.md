@@ -35,7 +35,7 @@ These models are NOT intended for offensive military applications, surveillance 
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 15 |
 | Total Model Variants | 60 |
 | Minimum Parameters (tiny) | 68,225 |
@@ -50,7 +50,7 @@ These models are NOT intended for offensive military applications, surveillance 
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | flood_risk | Regression | MLP | continuous | 4 | 68,481 - 1,060,353 |
 | flood_risk_assessor | Regression | MLP | continuous | 4 | 69,121 - 1,062,913 |
 | hazard_vulnerability | Regression | MLP | continuous | 4 | 68,737 - 1,061,377 |
@@ -74,7 +74,7 @@ These models are NOT intended for offensive military applications, surveillance 
 ### Risk Assessment Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Validation |
-|-------|--------|------|------|-------|------|------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ------------ |
 | flood_risk | R-squared | 0.75 | 0.82 | 0.88 | 0.93 | FEMA Flood |
 | wildfire_risk | R-squared | 0.73 | 0.80 | 0.86 | 0.91 | USFS Fire |
 | landslide_risk | R-squared | 0.70 | 0.78 | 0.84 | 0.89 | NASA Landslide |
@@ -83,7 +83,7 @@ These models are NOT intended for offensive military applications, surveillance 
 ### Detection Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Validation |
-|-------|--------|------|------|-------|------|------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ------------ |
 | damage_assessor | mAP@0.5 | 0.68 | 0.77 | 0.84 | 0.90 | xBD |
 | maritime_awareness | mAP@0.5 | 0.72 | 0.81 | 0.88 | 0.93 | xView-Maritime |
 | fire_monitor | mAP@0.5 | 0.75 | 0.83 | 0.89 | 0.94 | FIRMS |
@@ -99,6 +99,7 @@ R = H \times V \times E
 $$
 
 Where:
+
 - $R$ = Total risk level
 - $H$ = Hazard probability (0-1)
 - $V$ = Vulnerability coefficient (0-1)
@@ -113,6 +114,7 @@ R_{flood} = \sigma\left(\beta_0 + \beta_E \cdot E + \beta_S \cdot S + \beta_D \c
 $$
 
 Where:
+
 - $E$ = Elevation (m)
 - $S$ = Slope (degrees)
 - $D_w$ = Distance to water body (m)
@@ -126,6 +128,7 @@ R_{fire} = \sigma\left(\beta_0 + \beta_V \cdot V + \beta_T \cdot T + \beta_H \cd
 $$
 
 Where:
+
 - $V$ = Vegetation density (NDVI)
 - $T$ = Temperature anomaly (°C)
 - $H$ = Relative humidity (%)
@@ -139,6 +142,7 @@ R_{landslide} = \sigma\left(\beta_0 + \beta_S \cdot S + \beta_C \cdot C + \beta_
 $$
 
 Where:
+
 - $S$ = Slope (degrees)
 - $C$ = Curvature
 - $L$ = Lithology factor
@@ -166,7 +170,7 @@ Where $M$ is magnitude and $R$ is distance.
 ### Building Damage Classification
 
 | Level | Description | Damage % | Visual Indicators |
-|-------|-------------|----------|-------------------|
+| ------- | ------------- | ---------- | ------------------- |
 | 0 | No damage | 0% | No visible change |
 | 1 | Minor damage | 1-10% | Roof/wall cracks |
 | 2 | Major damage | 10-50% | Partial collapse |
@@ -195,7 +199,7 @@ Where $V_i$ is asset value and $DR_i$ is damage ratio.
 ### Vessel Detection Metrics
 
 | Metric | Definition |
-|--------|------------|
+| -------- | ------------ |
 | Detection Rate | TP / (TP + FN) |
 | False Alarm Rate | FP / (FP + TN) |
 | Classification Accuracy | Correct class / Total detections |
@@ -209,6 +213,7 @@ $$
 ### Dark Vessel Detection
 
 Vessels without AIS transponders detected via:
+
 - SAR imagery (all-weather)
 - Optical imagery (daytime, clear)
 - Thermal imagery (night capable)
@@ -372,7 +377,7 @@ print(f"Potential dark vessels: {len(dark_vessels)}")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 32 GB |
 | GPU | None | RTX 3060 | A100 |
@@ -381,7 +386,7 @@ print(f"Potential dark vessels: {len(dark_vessels)}")
 ### Input Data Requirements
 
 | Data Type | Source | Resolution | Application |
-|-----------|--------|------------|-------------|
+| ----------- | -------- | ------------ | ------------- |
 | DEM | SRTM, ALOS | 30m | Terrain analysis |
 | Optical | Sentinel-2 | 10m | Damage/detection |
 | SAR | Sentinel-1 | 10m | All-weather |
@@ -395,7 +400,7 @@ print(f"Potential dark vessels: {len(dark_vessels)}")
 ### Alert Levels
 
 | Level | Description | Response |
-|-------|-------------|----------|
+| ------- | ------------- | ---------- |
 | 1 | Watch | Monitoring |
 | 2 | Advisory | Preparation |
 | 3 | Warning | Action required |
@@ -404,7 +409,7 @@ print(f"Potential dark vessels: {len(dark_vessels)}")
 ### Response Time Targets
 
 | Operation | Target | Actual |
-|-----------|--------|--------|
+| ----------- | -------- | -------- |
 | Initial assessment | < 4 hours | 2 hours |
 | Detailed analysis | < 24 hours | 12 hours |
 | Full damage report | < 72 hours | 48 hours |

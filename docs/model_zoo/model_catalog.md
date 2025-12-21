@@ -11,7 +11,7 @@ This document provides a comprehensive catalog of all 520 production-ready model
 ### Aggregate Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Total Models | 520 |
 | Base Architectures | 130 |
 | Variant Tiers | 4 (tiny, base, large, mega) |
@@ -28,7 +28,7 @@ $$
 ### Variant Specifications
 
 | Variant | Count | Resolution | Base Channels | Min Params | Max Params | Avg Params | Total Params |
-|---------|-------|------------|---------------|------------|------------|------------|--------------|
+| --------- | ------- | ------------ | --------------- | ------------ | ------------ | ------------ | -------------- |
 | tiny | 130 | 64 x 64 | 32 | 49,667 | 258,754 | 133,755 | 17,388,189 |
 | base | 130 | 128 x 128 | 64 | 191,491 | 1,029,506 | 530,267 | 68,934,749 |
 | large | 130 | 256 x 256 | 96 | 425,475 | 2,312,258 | 1,189,538 | 154,639,901 |
@@ -68,7 +68,7 @@ pie title Model Distribution by Task (520 Total)
 ### Detailed Task Statistics
 
 | Task | Models/Variant | Total | Min Params | Max Params | Avg Params | Primary Architecture |
-|------|---------------|-------|------------|------------|------------|---------------------|
+| ------ | --------------- | ------- | ------------ | ------------ | ------------ | --------------------- |
 | Regression | 47 | 188 | 67,329 | 1,065,473 | 498,942 | MLP |
 | Segmentation | 32 | 128 | 143,266 | 4,107,010 | 1,307,290 | UNet, Siamese |
 | Detection | 19 | 76 | 143,201 | 2,269,059 | 1,064,595 | UNet |
@@ -92,8 +92,8 @@ graph TB
         U4 --> U5[Decoder Block 1]
         U5 --> U6[Decoder Block 2]
         U6 --> U7[Output Conv]
-        U2 -.->|Skip| U6
-        U3 -.->|Skip| U5
+        U2 -.->| Skip | U6
+        U3 -.->| Skip | U5
     end
     
     subgraph "Siamese Architecture"
@@ -119,7 +119,7 @@ The UNet architecture is used for spatial prediction tasks requiring pixel-level
 #### Layer Configuration
 
 | Layer | Operation | Input Channels | Output Channels | Kernel | Stride | Parameters |
-|-------|-----------|----------------|-----------------|--------|--------|------------|
+| ------- | ----------- | ---------------- | ----------------- | -------- | -------- | ------------ |
 | E1 | Conv2d + BN + ReLU | 3 | base | 3x3 | 1 | 27*base + 2*base |
 | E2 | Conv2d + BN + ReLU | base | 2*base | 3x3 | 2 | 18*base^2 + 4*base |
 | E3 | Conv2d + BN + ReLU | 2*base | 4*base | 3x3 | 2 | 72*base^2 + 8*base |
@@ -144,7 +144,7 @@ Where $C$ is the base channel count.
 #### Variant-Specific Parameters
 
 | Variant | Base Channels | Output Classes | Total Parameters |
-|---------|---------------|----------------|------------------|
+| --------- | --------------- | ---------------- | ------------------ |
 | tiny | 32 | 1 | ~143,201 |
 | base | 64 | 1 | ~568,961 |
 | large | 96 | 1 | ~1,277,281 |
@@ -180,7 +180,7 @@ graph LR
 #### Layer Configuration
 
 | Layer | Operation | Input | Output | Stride | Parameters |
-|-------|-----------|-------|--------|--------|------------|
+| ------- | ----------- | ------- | -------- | -------- | ------------ |
 | Enc1 | Conv2d + BN + ReLU | 6 | base | 1 | 54*base + 2*base |
 | Enc2 | Conv2d + BN + ReLU | base | 2*base | 2 | 18*base^2 + 4*base |
 | Enc3 | Conv2d + BN + ReLU | 2*base | 4*base | 2 | 72*base^2 + 8*base |
@@ -207,7 +207,7 @@ Fully-connected network for tabular data and risk assessment tasks.
 #### Layer Configuration
 
 | Layer | Input | Output | Activation | Dropout | Parameters |
-|-------|-------|--------|------------|---------|------------|
+| ------- | ------- | -------- | ------------ | --------- | ------------ |
 | FC1 | N_features | hidden | ReLU | 0.2 | N_features * hidden + hidden |
 | BN1 | hidden | hidden | - | - | 2 * hidden |
 | FC2 | hidden | 2*hidden | ReLU | 0.2 | hidden * 2*hidden + 2*hidden |
@@ -237,7 +237,7 @@ Convolutional network for image-to-image transformation tasks.
 #### Layer Configuration
 
 | Layer | Input | Output | Kernel | Activation | Parameters |
-|-------|-------|--------|--------|------------|------------|
+| ------- | ------- | -------- | -------- | ------------ | ------------ |
 | Conv1 | 3 | base | 3x3 | ReLU | 27*base + 2*base |
 | Conv2 | base | 2*base | 3x3 | ReLU | 18*base^2 + 4*base |
 | Conv3 | 2*base | 4*base | 3x3 | ReLU | 72*base^2 + 8*base |
@@ -270,7 +270,7 @@ graph LR
 #### Layer Configuration
 
 | Layer | Input | Output | Kernel | Activation | Parameters |
-|-------|-------|--------|--------|------------|------------|
+| ------- | ------- | -------- | -------- | ------------ | ------------ |
 | Feat1 | 3 | base | 5x5 | ReLU | 75*base + 2*base |
 | Feat2 | base | base | 3x3 | ReLU | 9*base^2 + 2*base |
 | Up | base | base*scale^2 | 3x3 | - | 9*base^2*scale^2 |
@@ -284,7 +284,7 @@ graph LR
 ### Model Registry
 
 | Model ID | Description | Classes | Architecture | Tiny Params | Mega Params |
-|----------|-------------|---------|--------------|-------------|-------------|
+| ---------- | ------------- | --------- | -------------- | ------------- | ------------- |
 | aircraft_detector | Aircraft detection in satellite imagery | 1 | UNet | 143,201 | 2,268,545 |
 | building_detector | Building footprint extraction | 1 | UNet | 143,201 | 2,268,545 |
 | builtup_detector | Built-up area classification | 1 | UNet | 143,201 | 2,268,545 |
@@ -308,7 +308,7 @@ graph LR
 ### Performance Benchmarks
 
 | Model | Metric | Tiny | Base | Large | Mega |
-|-------|--------|------|------|-------|------|
+| ------- | -------- | ------ | ------ | ------- | ------ |
 | ship_detector | mAP@0.5 | 0.72 | 0.81 | 0.88 | 0.92 |
 | building_detector | mAP@0.5 | 0.70 | 0.79 | 0.86 | 0.91 |
 | vehicle_detector | mAP@0.5 | 0.68 | 0.77 | 0.84 | 0.89 |
@@ -321,7 +321,7 @@ graph LR
 ### Model Registry
 
 | Model ID | Architecture | Classes | Description | Tiny Params | Mega Params |
-|----------|--------------|---------|-------------|-------------|-------------|
+| ---------- | -------------- | --------- | ------------- | ------------- | ------------- |
 | change_detector | Siamese | 2 | Bi-temporal change detection | 258,754 | 4,107,010 |
 | cloud_mask | UNet | 3 | Cloud and shadow masking | 143,587 | 2,269,059 |
 | crop_classifier | UNet | 5 | Multi-class crop classification | 143,973 | 2,269,573 |
@@ -358,7 +358,7 @@ graph LR
 ### Performance Benchmarks
 
 | Model | Metric | Tiny | Base | Large | Mega |
-|-------|--------|------|------|-------|------|
+| ------- | -------- | ------ | ------ | ------- | ------ |
 | lulc_classifier | mIoU | 0.65 | 0.74 | 0.82 | 0.88 |
 | change_detector | F1 | 0.68 | 0.77 | 0.84 | 0.90 |
 | water_surface_detector | IoU | 0.78 | 0.85 | 0.91 | 0.94 |
@@ -371,7 +371,7 @@ graph LR
 ### Model Registry
 
 | Model ID | Input Features | Domain | Tiny Params | Mega Params |
-|----------|----------------|--------|-------------|-------------|
+| ---------- | ---------------- | -------- | ------------- | ------------- |
 | flood_risk | 10 | Risk | 68,481 | 1,060,353 |
 | flood_risk_assessor | 15 | Risk | 69,121 | 1,062,913 |
 | hazard_vulnerability | 12 | Risk | 68,737 | 1,061,377 |
@@ -423,7 +423,7 @@ graph LR
 ### Performance Benchmarks
 
 | Model | Metric | Tiny | Base | Large | Mega |
-|-------|--------|------|------|-------|------|
+| ------- | -------- | ------ | ------ | ------- | ------ |
 | flood_risk | R-squared | 0.72 | 0.79 | 0.85 | 0.90 |
 | yield_predictor | R-squared | 0.75 | 0.82 | 0.88 | 0.93 |
 | solar_site_selector | R-squared | 0.78 | 0.85 | 0.90 | 0.94 |
@@ -435,7 +435,7 @@ graph LR
 ### Index Calculators (7 base, 28 total)
 
 | Model ID | Formula | Bands Required | Tiny Params | Mega Params |
-|----------|---------|----------------|-------------|-------------|
+| ---------- | --------- | ---------------- | ------------- | ------------- |
 | ndvi_calculator | (NIR-Red)/(NIR+Red) | NIR, Red | 186,243 | 2,956,803 |
 | ndwi_calculator | (Green-NIR)/(Green+NIR) | Green, NIR | 186,243 | 2,956,803 |
 | evi_calculator | 2.5*(NIR-Red)/(NIR+6*Red-7.5*Blue+1) | NIR, Red, Blue | 186,243 | 2,956,803 |
@@ -447,7 +447,7 @@ graph LR
 ### Enhancement Models (11 base, 44 total)
 
 | Model ID | Description | Input | Output | Tiny Params | Mega Params |
-|----------|-------------|-------|--------|-------------|-------------|
+| ---------- | ------------- | ------- | -------- | ------------- | ------------- |
 | super_resolution | 2x spatial upscaling | LR image | HR image | 49,667 | 751,619 |
 | pansharpening | Pan + MS fusion | Pan, MS | Sharpened | 186,243 | 2,956,803 |
 | orthorectification | Geometric correction | Raw | Ortho | 186,243 | 2,956,803 |
@@ -465,7 +465,7 @@ graph LR
 ## Terrain Models (13 base, 52 total)
 
 | Model ID | Output Product | Accuracy (mega) | Tiny Params | Mega Params |
-|----------|---------------|-----------------|-------------|-------------|
+| ---------- | --------------- | ----------------- | ------------- | ------------- |
 | dem_generator | Digital Elevation Model | RMSE 0.8m | 186,177 | 2,956,545 |
 | dsm_generator | Digital Surface Model | RMSE 0.6m | 186,177 | 2,956,545 |
 | dtm_generator | Digital Terrain Model | RMSE 1.0m | 186,177 | 2,956,545 |
@@ -489,7 +489,7 @@ graph LR
 Mean Average Precision at IoU threshold 0.5:
 
 $$
-\text{mAP@0.5} = \frac{1}{|C|} \sum_{c \in C} \text{AP}_{0.5}(c)
+\text{mAP@0.5} = \frac{1}{| C |} \sum_{c \in C} \text{AP}_{0.5}(c)
 $$
 
 Where Average Precision for class $c$ is:
@@ -503,13 +503,13 @@ $$
 Intersection over Union:
 
 $$
-\text{IoU} = \frac{|A \cap B|}{|A \cup B|} = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
+\text{IoU} = \frac{| A \cap B | }{ | A \cup B |} = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
 $$
 
 Mean IoU across classes:
 
 $$
-\text{mIoU} = \frac{1}{|C|} \sum_{c=1}^{|C|} \text{IoU}_c
+\text{mIoU} = \frac{1}{| C | } \sum_{c=1}^{ | C |} \text{IoU}_c
 $$
 
 F1 Score:

@@ -38,7 +38,7 @@ $$
 ## Download Methods
 
 | Method | Command | Notes |
-|--------|---------|-------|
+| -------- | --------- | ------- |
 | CLI | `unbihexium zoo download model_id` | Recommended |
 | Python | `zoo.download_model("model_id")` | Programmatic |
 | Manual | Download from releases | Advanced |
@@ -72,7 +72,7 @@ assert is_valid
 ## Cache Location
 
 | OS | Path |
-|----|------|
+| ---- | ------ |
 | Linux | `~/.unbihexium/cache/` |
 | Windows | `%USERPROFILE%/.unbihexium/cache/` |
 | macOS | `~/.unbihexium/cache/` |
@@ -80,7 +80,7 @@ assert is_valid
 ## Verification Failures
 
 | Issue | Resolution |
-|-------|------------|
+| ------- | ------------ |
 | Hash mismatch | Re-download model |
 | Missing .sha256 | Report issue |
 | Corrupted file | Clear cache, retry |

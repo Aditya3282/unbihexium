@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | protected_area_change_detector_large |
 | Task | Segmentation |
 | Architecture | SIAMESE_UNET |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | IOU | 0.68 |
 | DICE | 0.76 |
 | ACCURACY | 0.85 |

@@ -33,7 +33,7 @@ $$
 ## Contribution Types
 
 | Type | Description | Branch Prefix |
-|------|-------------|---------------|
+| -------- | ----------------- | ------------- |
 | Feature | New functionality | `feat/` |
 | Fix | Bug correction | `fix/` |
 | Docs | Documentation | `docs/` |
@@ -61,6 +61,7 @@ $$
 Format: `type(scope): description`
 
 Examples:
+
 - `feat(models): add ship detector`
 - `fix(pipeline): correct tiling logic`
 - `docs(api): update reference docs`
@@ -68,6 +69,7 @@ Examples:
 ## Review Process
 
 All PRs require:
+
 - Passing CI checks
 - Code review approval
 - Documentation updates (if applicable)

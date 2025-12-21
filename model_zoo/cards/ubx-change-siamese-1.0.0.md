@@ -3,7 +3,7 @@
 ## Model Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | ubx-change-siamese-1.0.0 |
 | Task | Change Detection |
 | Architecture | Siamese Network |
@@ -38,13 +38,14 @@ graph TB
 ## Input Format
 
 The model expects a concatenated tensor of shape [B, 6, H, W]:
+
 - Channels 0-2: Image at time T1
 - Channels 3-5: Image at time T2
 
 ## Performance Metrics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | IoU | 0.68 |
 | F1 Score | 0.75 |
 | Precision | 0.78 |

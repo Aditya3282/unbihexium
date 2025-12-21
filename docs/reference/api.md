@@ -26,7 +26,7 @@ $$
 $$
 
 | Module | Classes | Functions |
-|--------|---------|-----------|
+| -------- | --------- | ----------- |
 | `unbihexium.pipeline` | 3 | 8 |
 | `unbihexium.zoo` | 2 | 12 |
 | `unbihexium.ai` | 5 | 15 |

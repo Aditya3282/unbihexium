@@ -39,7 +39,7 @@ $$
 $$
 
 | Decision Type | Impact | Approval Required |
-|---------------|--------|-------------------|
+| --------------- | -------- | ------------------- |
 | Bug fixes | Low | 1 maintainer |
 | Features | Medium | 2 maintainers |
 | Breaking changes | High | Core team consensus |
@@ -48,7 +48,7 @@ $$
 ## Roles
 
 | Role | Responsibilities | Requirements |
-|------|-----------------|--------------|
+| ------ | ----------------- | -------------- |
 | Maintainer | Review, merge, release | Sustained contribution |
 | Core Team | Strategy, architecture | Maintainer + experience |
 | Contributor | Features, fixes | Signed CLA |

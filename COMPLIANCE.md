@@ -26,7 +26,7 @@ $$
 ## Regulatory Matrix
 
 | Regulation | Applicability | Status |
-|------------|---------------|--------|
+| ------------ | --------------- | -------- |
 | Apache-2.0 | License | Compliant |
 | GDPR | Data privacy | Aligned |
 | EAR | Export control | Under review |

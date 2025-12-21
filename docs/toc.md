@@ -27,7 +27,7 @@ $$
 ## Contents
 
 | Section | Pages | Description |
-|---------|-------|-------------|
+| --------- | ------- | ------------- |
 | Getting Started | 3 | Installation, quickstart, config |
 | Tutorials | 5 | Hands-on guides |
 | Reference | 5 | API, CLI, schemas |

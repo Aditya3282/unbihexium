@@ -13,7 +13,7 @@ This document provides comprehensive documentation of the value propositions, us
 The Unbihexium framework delivers value across five primary dimensions:
 
 | Dimension | Description | Key Metrics |
-|-----------|-------------|-------------|
+| ----------- | ------------- | ------------- |
 | **Efficiency** | Reduced processing time and manual effort | 10x faster analysis |
 | **Accuracy** | Improved detection and classification | 90%+ accuracy |
 | **Scale** | Global coverage without proportional cost increase | Unlimited area |
@@ -49,7 +49,7 @@ Where $r$ is the discount rate and $t$ is the time period.
 ### Typical ROI by Sector
 
 | Sector | Year 1 ROI | Year 3 ROI | Payback Period |
-|--------|------------|------------|----------------|
+| -------- | ------------ | ------------ | ---------------- |
 | Agriculture | 150% | 400% | 8 months |
 | Insurance | 200% | 500% | 6 months |
 | Utilities | 175% | 450% | 10 months |
@@ -63,7 +63,7 @@ Where $r$ is the discount rate and $t$ is the time period.
 ### Agriculture
 
 | Application | Benefit | Quantified Impact |
-|-------------|---------|-------------------|
+| ------------- | --------- | ------------------- |
 | Crop monitoring | Early stress detection | 15-25% yield recovery |
 | Precision irrigation | Water savings | 20-30% reduction |
 | Harvest timing | Quality optimization | 10-20% value increase |
@@ -75,7 +75,7 @@ Where $r$ is the discount rate and $t$ is the time period.
 A 10,000-hectare farming operation implemented crop health monitoring:
 
 | Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
+| -------- | -------- | ------- | ------------- |
 | Yield (bu/acre) | 180 | 205 | +14% |
 | Water usage | 100% | 72% | -28% |
 | Fertilizer cost | $100/acre | $78/acre | -22% |
@@ -84,7 +84,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Insurance
 
 | Application | Benefit | Quantified Impact |
-|-------------|---------|-------------------|
+| ------------- | --------- | ------------------- |
 | Underwriting | Risk accuracy | 25% premium optimization |
 | Claims verification | Fraud detection | 40% reduction |
 | Catastrophe modeling | Loss prediction | 15% reserve accuracy |
@@ -93,7 +93,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Utilities
 
 | Application | Benefit | Quantified Impact |
-|-------------|---------|-------------------|
+| ------------- | --------- | ------------------- |
 | Vegetation management | Outage prevention | 30% reduction |
 | Asset inspection | Maintenance optimization | 25% cost reduction |
 | Right-of-way monitoring | Encroachment detection | 90% detection rate |
@@ -102,7 +102,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Urban Planning
 
 | Application | Benefit | Quantified Impact |
-|-------------|---------|-------------------|
+| ------------- | --------- | ------------------- |
 | Change detection | Unauthorized development | 90% detection |
 | Infrastructure planning | Data-driven decisions | 40% efficiency gain |
 | Population estimation | Service planning | 15% accuracy improvement |
@@ -111,7 +111,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Environmental Protection
 
 | Application | Benefit | Quantified Impact |
-|-------------|---------|-------------------|
+| ------------- | --------- | ------------------- |
 | Deforestation monitoring | Enforcement support | 60% faster response |
 | Protected area management | Encroachment detection | 95% coverage |
 | Carbon stock estimation | MRV compliance | 10% accuracy gain |
@@ -124,7 +124,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Comparison Matrix
 
 | Feature | Unbihexium | Cloud AI | Traditional GIS | Manual Analysis |
-|---------|------------|----------|-----------------|-----------------|
+| --------- | ------------ | ---------- | ----------------- | ----------------- |
 | Model Count | 520 | 10-50 | 0 | 0 |
 | Offline Capable | Yes | No | Yes | Yes |
 | Self-Hosted | Yes | No | Yes | N/A |
@@ -138,7 +138,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Total Cost Comparison (5-year)
 
 | Solution | Year 1 | Year 5 | 5-Year Total |
-|----------|--------|--------|--------------|
+| ---------- | -------- | -------- | -------------- |
 | Unbihexium | $50K | $10K | $90K |
 | Cloud AI | $200K | $300K | $1.2M |
 | Traditional GIS | $100K | $100K | $500K |
@@ -159,7 +159,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Risk Factors
 
 | Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
+| ------ | ------------- | -------- | ------------ |
 | Data availability | Medium | High | Multi-source strategy |
 | Model accuracy | Low | High | Validation protocols |
 | Integration complexity | Medium | Medium | Phased rollout |
@@ -169,7 +169,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Implementation Timeline
 
 | Phase | Duration | Activities |
-|-------|----------|------------|
+| ------- | ---------- | ------------ |
 | Discovery | 2-4 weeks | Requirements, use cases |
 | Pilot | 4-8 weeks | Proof of concept |
 | Integration | 4-12 weeks | API, workflow integration |
@@ -183,7 +183,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Efficiency Gains
 
 | Operation | Traditional | Automated | Improvement |
-|-----------|-------------|-----------|-------------|
+| ----------- | ------------- | ----------- | ------------- |
 | Image analysis | 8 hours | 30 minutes | 16x faster |
 | Report generation | 4 hours | 5 minutes | 48x faster |
 | Change detection | 2 days | 2 hours | 12x faster |
@@ -192,7 +192,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Resource Optimization
 
 | Resource | Before | After | Savings |
-|----------|--------|-------|---------|
+| ---------- | -------- | ------- | --------- |
 | Analyst FTEs | 10 | 4 | 60% |
 | Compute time | 100 hours | 10 hours | 90% |
 | Storage | 10 TB | 2 TB | 80% |
@@ -205,7 +205,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### UN Sustainable Development Goals
 
 | SDG | Relevant Capabilities |
-|-----|----------------------|
+| ----- | ---------------------- |
 | SDG 2: Zero Hunger | Crop monitoring, yield prediction |
 | SDG 6: Clean Water | Water quality, reservoir monitoring |
 | SDG 11: Sustainable Cities | Urban planning, infrastructure |
@@ -216,7 +216,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### ESG Reporting
 
 | Metric | Data Source | Capability |
-|--------|-------------|------------|
+| -------- | ------------- | ------------ |
 | Carbon footprint | Forest cover change | Deforestation detector |
 | Water usage | Reservoir levels | Reservoir monitor |
 | Land use | LULC classification | LULC classifier |
@@ -229,7 +229,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Accuracy Standards
 
 | Application | Metric | Standard | Typical |
-|-------------|--------|----------|---------|
+| ------------- | -------- | ---------- | --------- |
 | Object detection | mAP@0.5 | > 0.80 | 0.92 |
 | Segmentation | mIoU | > 0.75 | 0.88 |
 | Regression | R-squared | > 0.80 | 0.93 |
@@ -238,7 +238,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Validation Requirements
 
 | Level | Frequency | Method |
-|-------|-----------|--------|
+| ------- | ----------- | -------- |
 | Unit testing | Continuous | Automated |
 | Integration testing | Weekly | Automated |
 | Accuracy validation | Monthly | Ground truth |
@@ -251,7 +251,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Data Governance
 
 | Requirement | Implementation |
-|-------------|----------------|
+| ------------- | ---------------- |
 | Data lineage | Full provenance tracking |
 | Access control | Role-based permissions |
 | Audit logging | Complete activity logs |
@@ -260,7 +260,7 @@ A 10,000-hectare farming operation implemented crop health monitoring:
 ### Regulatory Compliance
 
 | Regulation | Scope | Compliance |
-|------------|-------|------------|
+| ------------ | ------- | ------------ |
 | GDPR | EU personal data | No PII collected |
 | CCPA | California data | No PII collected |
 | EAR | Export control | Reviewed, non-controlled |

@@ -16,9 +16,9 @@ Install Unbihexium and its dependencies.
 ```mermaid
 flowchart LR
     A[Choose Method] --> B{Environment}
-    B -->|pip| C[pip install]
-    B -->|conda| D[conda install]
-    B -->|source| E[git clone + pip -e]
+    B -->| pip | C[pip install]
+    B -->| conda | D[conda install]
+    B -->| source | E[git clone + pip -e]
 ```
 
 ## System Requirements
@@ -28,7 +28,7 @@ $$
 $$
 
 | Component | Minimum | Recommended |
-|-----------|---------|-------------|
+| ----------- | --------- | ------------- |
 | Python | 3.10 | 3.12 |
 | RAM | 8GB | 16GB |
 | Disk | 5GB | 20GB |
@@ -78,7 +78,7 @@ print(unbihexium.__version__)
 ## Troubleshooting
 
 | Issue | Solution |
-|-------|----------|
+| ------- | ---------- |
 | Import error | Reinstall package |
 | CUDA not found | Install PyTorch with CUDA |
 | Memory error | Reduce batch size |

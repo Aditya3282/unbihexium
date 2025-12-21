@@ -9,10 +9,10 @@ This document describes how to get help with Unbihexium.
 ```mermaid
 flowchart LR
     A[Question] --> B{Type?}
-    B -->|Usage| C[Discussions]
-    B -->|Bug| D[Issues]
-    B -->|Security| E[Email]
-    B -->|Commercial| F[Enterprise]
+    B -->| Usage | C[Discussions]
+    B -->| Bug | D[Issues]
+    B -->| Security | E[Email]
+    B -->| Commercial | F[Enterprise]
 ```
 
 ## Response Time Expectation
@@ -26,7 +26,7 @@ T_{\text{response}} \approx \begin{cases}
 $$
 
 | Channel | Use Case | SLA |
-|---------|----------|-----|
+| --------- | ---------- | ----- |
 | GitHub Issues | Bug reports | 72h |
 | GitHub Discussions | Questions | Best effort |
 | Email | Security issues | 48h |
@@ -42,13 +42,14 @@ $$
 ## Issue Templates
 
 Use provided templates for:
+
 - Bug reports
 - Feature requests
 - Documentation issues
 
 ## Commercial Support
 
-Enterprise support available. Contact: enterprise@unbihexium.dev
+Enterprise support available. Contact: <enterprise@unbihexium.dev>
 
 ## Community Guidelines
 

@@ -9,7 +9,7 @@ The Unbihexium library provides 520 production-ready models organized into 12 ca
 ## Domain Summary
 
 | ID | Domain | Models | Tasks | Status |
-|----|--------|--------|-------|--------|
+| ---- | -------- | -------- | ------- | -------- |
 | [01](01_ai_products.md) | AI Products | 13 | Detection, Segmentation, Enhancement | Production |
 | [02](02_tourism_data_processing.md) | Tourism and Data Processing | 10 | Regression, Spatial Analysis | Production |
 | [03](03_indices_flood_water.md) | Vegetation Indices and Flood/Water | 12 | Index, Segmentation, Regression | Production |
@@ -40,7 +40,7 @@ xychart-beta
 ## Task Distribution
 
 | Task Type | Total Models | Domains |
-|-----------|--------------|---------|
+| ----------- | -------------- | --------- |
 | Regression | 47 | D02, D03, D04, D05, D06, D07 |
 | Segmentation | 32 | D01, D03, D04, D05, D06, D11, D12 |
 | Detection | 19 | D01, D05, D06, D07, D12 |
@@ -56,7 +56,7 @@ xychart-beta
 All 130 base models are available in 4 variant tiers:
 
 | Variant | Resolution | Parameters | Use Case |
-|---------|------------|------------|----------|
+| --------- | ------------ | ------------ | ---------- |
 | tiny | 64 x 64 | 50K - 259K | Edge devices, real-time |
 | base | 128 x 128 | 191K - 1M | Standard production |
 | large | 256 x 256 | 425K - 2.3M | High accuracy |

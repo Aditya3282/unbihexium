@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | tri_stereo_processor_base |
 | Task | Regression |
 | Architecture | CNN |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | RMSE | 0.15 |
 | R2 | 0.82 |
 | MAE | 0.12 |

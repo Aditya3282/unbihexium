@@ -46,7 +46,7 @@ $$
 ## Quick Links
 
 | Section | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Installation](getting_started/installation.md) | Install the library |
 | [Quickstart](getting_started/quickstart.md) | First steps |
 | [Notebooks](tutorials/notebooks.md) | 130 comprehensive Jupyter notebooks |
@@ -54,7 +54,6 @@ $$
 | [API Reference](reference/api.md) | Python API |
 | [Model Zoo](model_zoo/model_catalog.md) | 520 available models |
 | [Capabilities](capabilities/index.md) | 12 domain capabilities |
-
 
 ## Prerequisites
 

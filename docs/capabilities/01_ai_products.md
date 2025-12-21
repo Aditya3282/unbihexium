@@ -25,7 +25,7 @@ The AI Products capability domain addresses the following primary objectives:
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 13 |
 | Total Model Variants | 52 |
 | Minimum Parameters (tiny) | 49,667 |
@@ -40,7 +40,7 @@ The AI Products capability domain addresses the following primary objectives:
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Classes | Variants | Parameter Range |
-|----------|------|--------------|---------|----------|-----------------|
+| ---------- | ------ | -------------- | --------- | ---------- | ----------------- |
 | super_resolution | Enhancement | SRCNN | - | 4 | 49,667 - 751,619 |
 | ship_detector | Detection | UNet | 1 | 4 | 143,201 - 2,268,545 |
 | building_detector | Detection | UNet | 1 | 4 | 143,201 - 2,268,545 |
@@ -58,7 +58,7 @@ The AI Products capability domain addresses the following primary objectives:
 ### Variant Specifications
 
 | Variant | Resolution | Base Channels | Use Case | Latency Target |
-|---------|------------|---------------|----------|----------------|
+| --------- | ------------ | --------------- | ---------- | ---------------- |
 | tiny | 64 x 64 px | 32 | Edge devices, embedded systems, real-time processing | < 10 ms |
 | base | 128 x 128 px | 64 | Standard production workloads, balanced performance | < 50 ms |
 | large | 256 x 256 px | 96 | High-accuracy requirements, detailed analysis | < 200 ms |
@@ -73,13 +73,13 @@ The AI Products capability domain addresses the following primary objectives:
 Detection models are evaluated using mean Average Precision at IoU threshold 0.5 (mAP@0.5):
 
 $$
-\text{mAP@0.5} = \frac{1}{|C|} \sum_{c \in C} \int_0^1 P(R) \, dR
+\text{mAP@0.5} = \frac{1}{| C |} \sum_{c \in C} \int_0^1 P(R) \, dR
 $$
 
 Where $P(R)$ is the precision at recall level $R$ for class $c$.
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | ship_detector | mAP@0.5 | 0.72 | 0.81 | 0.88 | 0.92 | xView-Ships |
 | building_detector | mAP@0.5 | 0.70 | 0.79 | 0.86 | 0.91 | SpaceNet-Buildings |
 | aircraft_detector | mAP@0.5 | 0.75 | 0.83 | 0.89 | 0.93 | DOTA-Aircraft |
@@ -89,11 +89,11 @@ Where $P(R)$ is the precision at recall level $R$ for class $c$.
 Segmentation models are evaluated using mean Intersection over Union (mIoU):
 
 $$
-\text{mIoU} = \frac{1}{|C|} \sum_{c=1}^{|C|} \frac{\text{TP}_c}{\text{TP}_c + \text{FP}_c + \text{FN}_c}
+\text{mIoU} = \frac{1}{| C | } \sum_{c=1}^{ | C |} \frac{\text{TP}_c}{\text{TP}_c + \text{FP}_c + \text{FN}_c}
 $$
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | lulc_classifier | mIoU | 0.65 | 0.74 | 0.82 | 0.88 | LandCover.ai |
 | cloud_mask | mIoU | 0.78 | 0.85 | 0.91 | 0.94 | 95-Cloud |
 | change_detector | F1 | 0.68 | 0.77 | 0.84 | 0.90 | OSCD |
@@ -111,7 +111,7 @@ $$
 $$
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | super_resolution | PSNR | 28.5 dB | 30.2 dB | 32.1 dB | 34.5 dB | DIV2K |
 | super_resolution | SSIM | 0.82 | 0.87 | 0.91 | 0.94 | DIV2K |
 | pansharpening | PSNR | 32.0 dB | 35.5 dB | 38.2 dB | 40.8 dB | GaoFen-2 |
@@ -137,7 +137,7 @@ graph LR
 #### Layer Configuration
 
 | Layer | Operation | Input Shape | Output Shape | Parameters | Activation |
-|-------|-----------|-------------|--------------|------------|------------|
+| ------- | ----------- | ------------- | -------------- | ------------ | ------------ |
 | Feat1 | Conv2d 5x5 | B x 3 x H x W | B x base x H x W | 75*base + base | ReLU |
 | BN1 | BatchNorm2d | B x base x H x W | B x base x H x W | 2*base | - |
 | Feat2 | Conv2d 3x3 | B x base x H x W | B x base x H x W | 9*base^2 + base | ReLU |
@@ -159,7 +159,7 @@ Where $r$ is the upscaling factor (2 in our implementation) and $T$ is the input
 #### Parameter Count by Variant
 
 | Variant | Base Channels | Total Parameters | Model Size (MB) |
-|---------|---------------|------------------|-----------------|
+| --------- | --------------- | ------------------ | ----------------- |
 | tiny | 32 | 49,667 | 0.19 |
 | base | 64 | 191,491 | 0.73 |
 | large | 96 | 425,475 | 1.62 |
@@ -183,8 +183,8 @@ graph TB
         D2 --> D3[Output Conv: C_out ch]
     end
     
-    E2 -.->|Skip Connection| D2
-    E3 -.->|Skip Connection| D1
+    E2 -.->| Skip Connection | D2
+    E3 -.->| Skip Connection | D1
 ```
 
 #### Encoder Block Structure
@@ -407,7 +407,7 @@ print(f"Change percentage: {change_map.change_percentage:.2f}%")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 32 GB |
 | GPU | None | RTX 3060 (12 GB) | A100 (40 GB) |
@@ -422,7 +422,7 @@ M_{total} = M_{base} + M_{model} + N_{batch} \times M_{tile}
 $$
 
 | Variant | Model Memory | Per-Tile Memory | Batch 1 | Batch 8 | Batch 16 |
-|---------|--------------|-----------------|---------|---------|----------|
+| --------- | -------------- | ----------------- | --------- | --------- | ---------- |
 | tiny | 2 MB | 0.5 MB | 50 MB | 100 MB | 150 MB |
 | base | 8 MB | 2 MB | 100 MB | 300 MB | 500 MB |
 | large | 20 MB | 8 MB | 200 MB | 800 MB | 1.5 GB |
@@ -433,7 +433,7 @@ $$
 Inference throughput in tiles per second:
 
 | Variant | CPU (8 cores) | RTX 3060 | RTX 3080 | A100 |
-|---------|---------------|----------|----------|------|
+| --------- | --------------- | ---------- | ---------- | ------ |
 | tiny | 100 | 500 | 600 | 1000 |
 | base | 25 | 150 | 200 | 400 |
 | large | 6 | 40 | 60 | 120 |
@@ -446,7 +446,7 @@ Inference throughput in tiles per second:
 ### Input Requirements
 
 | Parameter | Specification |
-|-----------|---------------|
+| ----------- | --------------- |
 | File Format | GeoTIFF, JPEG, PNG, JPEG2000 |
 | Bit Depth | 8-bit, 16-bit, 32-bit float |
 | Color Space | RGB, RGBN, Multispectral |
@@ -456,7 +456,7 @@ Inference throughput in tiles per second:
 ### Output Specifications
 
 | Product | Format | Georeferencing | Metadata |
-|---------|--------|----------------|----------|
+| --------- | -------- | ---------------- | ---------- |
 | Enhanced Images | GeoTIFF | Preserved | EXIF, XMP |
 | Detections | GeoJSON, Shapefile | WGS84 | Confidence, Class |
 | Segmentation | GeoTIFF, COG | Preserved | Class Legend |
@@ -465,7 +465,7 @@ Inference throughput in tiles per second:
 ### Data Quality Requirements
 
 | Metric | Threshold | Notes |
-|--------|-----------|-------|
+| -------- | ----------- | ------- |
 | Cloud Cover | < 10% | For optical imagery |
 | Radiometric Quality | DN > 100 | Avoid saturated pixels |
 | Geometric Accuracy | RMSE < 2 pixels | For change detection |
@@ -552,7 +552,7 @@ All models undergo rigorous validation including:
 ### Quality Metrics Thresholds
 
 | Task | Metric | Minimum | Target | Actual |
-|------|--------|---------|--------|--------|
+| ------ | -------- | --------- | -------- | -------- |
 | Detection | mAP@0.5 | 0.65 | 0.85 | 0.92 |
 | Segmentation | mIoU | 0.60 | 0.80 | 0.88 |
 | Super Resolution | PSNR | 28 dB | 32 dB | 34.5 dB |
@@ -563,7 +563,7 @@ All models undergo rigorous validation including:
 Production deployments should implement:
 
 | Monitor | Threshold | Action |
-|---------|-----------|--------|
+| --------- | ----------- | -------- |
 | Inference Latency | > 2x baseline | Alert |
 | Memory Usage | > 80% capacity | Scale |
 | Error Rate | > 1% | Investigate |
@@ -591,7 +591,7 @@ Production deployments should implement:
 ### Bias and Fairness Considerations
 
 | Consideration | Mitigation |
-|---------------|------------|
+| --------------- | ------------ |
 | Geographic Bias | Training data from 6 continents |
 | Temporal Bias | Data spans 2015-2024 |
 | Sensor Bias | Multi-sensor training (optical, SAR) |
@@ -602,7 +602,7 @@ Production deployments should implement:
 ## Version History
 
 | Version | Date | Changes |
-|---------|------|---------|
+| --------- | ------ | --------- |
 | 1.0.0 | 2025-01-01 | Initial release with 13 models |
 | 1.1.0 | 2025-03-01 | Added mega variants |
 | 1.2.0 | 2025-06-01 | Performance improvements |

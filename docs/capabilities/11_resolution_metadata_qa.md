@@ -20,7 +20,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 4 |
 | Total Model Variants | 16 |
 | Minimum Parameters (tiny) | 143,266 |
@@ -35,7 +35,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | raster_tiler | Enhancement | CNN | Tiles | 4 | 186,243 - 2,956,803 |
 | mosaic_processor | Enhancement | CNN | Mosaic | 4 | 186,243 - 2,956,803 |
 | ortho_processor | Enhancement | CNN | Ortho | 4 | 186,243 - 2,956,803 |
@@ -46,7 +46,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ## Performance Metrics
 
 | Model | Metric | Tiny | Base | Large | Mega | Reference |
-|-------|--------|------|------|-------|------|-----------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ----------- |
 | raster_tiler | Accuracy | 99.5% | 99.8% | 99.9% | 99.99% | Tile QA |
 | mosaic_processor | Seam Quality | Good | Very Good | Excellent | Superior | Visual |
 | ortho_processor | RMSE | 1.0m | 0.5m | 0.3m | 0.1m | GCP |
@@ -65,6 +65,7 @@ $$
 $$
 
 Where:
+
 - $H$ = Flight/satellite altitude (m)
 - $p$ = Pixel size on sensor (m)
 - $f$ = Focal length (m)
@@ -148,7 +149,7 @@ $$
 ### Ground Sample Distance Classification
 
 | Class | GSD Range | Typical Source | Applications |
-|-------|-----------|----------------|--------------|
+| ------- | ----------- | ---------------- | -------------- |
 | Very High Resolution | < 0.5m | WorldView, Pleiades | Urban mapping, asset inventory |
 | High Resolution | 0.5-2m | SPOT, SkySat | Medium-scale mapping |
 | Medium Resolution | 2-10m | Sentinel-2, Landsat | Regional monitoring |
@@ -180,7 +181,7 @@ For reliable feature extraction, features should span at least 3x3 pixels.
 Required elements:
 
 | Element | XPath | Required |
-|---------|-------|----------|
+| --------- | ------- | ---------- |
 | Title | identificationInfo/title | Yes |
 | Date | identificationInfo/date | Yes |
 | Abstract | identificationInfo/abstract | Yes |
@@ -217,7 +218,7 @@ Spatio-Temporal Asset Catalog (STAC) specification:
 Requirements:
 
 | Requirement | Specification |
-|-------------|---------------|
+| ------------- | --------------- |
 | Tiling | 256x256 or 512x512 |
 | Compression | DEFLATE, LZW, or ZSTD |
 | Overviews | Power of 2 reductions |
@@ -238,17 +239,17 @@ graph TB
     D --> E[Geometric QA]
     E --> F[Resolution Verification]
     F --> G{Pass All?}
-    G -->|Yes| H[Accept]
-    G -->|No| I[Flag for Review]
+    G -->| Yes | H[Accept]
+    G -->| No | I[Flag for Review]
     I --> J{Manual Override?}
-    J -->|Yes| H
-    J -->|No| K[Reject]
+    J -->| Yes | H
+    J -->| No | K[Reject]
 ```
 
 ### QC Checks
 
 | Check | Threshold | Action |
-|-------|-----------|--------|
+| ------- | ----------- | -------- |
 | File integrity | MD5/SHA256 match | Reject if fail |
 | Metadata completeness | 100% required | Reject if incomplete |
 | Cloud cover | < specified % | Flag if exceeded |
@@ -429,7 +430,7 @@ print(f"Seam visibility: {mosaic_qa['seam_score']:.2f}/10")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 16 GB | 32 GB | 64 GB |
 | GPU | None | RTX 3070 | A100 |
@@ -438,7 +439,7 @@ print(f"Seam visibility: {mosaic_qa['seam_score']:.2f}/10")
 ### Input Data Requirements
 
 | Format | Requirements |
-|--------|--------------|
+| -------- | -------------- |
 | GeoTIFF | 8-bit, 16-bit, or 32-bit |
 | JPEG2000 | Lossless preferred |
 | COG | Tiled, with overviews |
@@ -451,7 +452,7 @@ print(f"Seam visibility: {mosaic_qa['seam_score']:.2f}/10")
 ### ASPRS Positional Accuracy Standards
 
 | Class | RMSE (GSD multiples) | Applications |
-|-------|---------------------|--------------|
+| ------- | --------------------- | -------------- |
 | I | 0.5 x GSD | Engineering, cadastral |
 | II | 1.0 x GSD | Standard mapping |
 | III | 2.0 x GSD | General purposes |
@@ -459,7 +460,7 @@ print(f"Seam visibility: {mosaic_qa['seam_score']:.2f}/10")
 ### OGC Standards Compliance
 
 | Standard | Version | Compliance |
-|----------|---------|------------|
+| ---------- | --------- | ------------ |
 | ISO 19115 | 2014 | Full |
 | STAC | 1.0.0 | Full |
 | COG | 1.x | Full |

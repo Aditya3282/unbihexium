@@ -20,7 +20,7 @@ The domain comprises 6 base model architectures with 24 total variants, focusing
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 6 |
 | Total Model Variants | 24 |
 | Minimum Parameters (tiny) | 186,177 |
@@ -35,7 +35,7 @@ The domain comprises 6 base model architectures with 24 total variants, focusing
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | stereo_processor | Terrain | CNN | DSM | 4 | 186,177 - 2,956,545 |
 | tri_stereo_processor | Terrain | CNN | DSM | 4 | 186,177 - 2,956,545 |
 | pansharpening | Enhancement | CNN | RGB | 4 | 186,243 - 2,956,803 |
@@ -48,7 +48,7 @@ The domain comprises 6 base model architectures with 24 total variants, focusing
 ## Performance Metrics
 
 | Model | Metric | Tiny | Base | Large | Mega | Reference |
-|-------|--------|------|------|-------|------|-----------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ----------- |
 | stereo_processor | RMSE | 2.0m | 1.5m | 1.0m | 0.6m | Ground Truth |
 | pansharpening | PSNR | 30 dB | 33 dB | 36 dB | 39 dB | Reference |
 | pansharpening | SSIM | 0.85 | 0.90 | 0.94 | 0.97 | Reference |
@@ -128,7 +128,7 @@ Where $g_i$ is the injection gain for band $i$.
 Spectral Fidelity:
 
 $$
-\text{SAM}(\mathbf{x}, \mathbf{y}) = \arccos\left(\frac{\mathbf{x} \cdot \mathbf{y}}{||\mathbf{x}|| \cdot ||\mathbf{y}||}\right)
+\text{SAM}(\mathbf{x}, \mathbf{y}) = \arccos\left(\frac{\mathbf{x} \cdot \mathbf{y}}{|   | \mathbf{x} |   | \cdot |   | \mathbf{y} |   |}\right)
 $$
 
 Spatial Quality:
@@ -166,7 +166,7 @@ $$
 Optimal B/H for different applications:
 
 | Application | Optimal B/H | Height Precision |
-|-------------|-------------|------------------|
+| ------------- | ------------- | ------------------ |
 | Urban mapping | 0.5-0.7 | Best |
 | Forestry | 0.3-0.5 | Good |
 | Mountainous | 0.3-0.4 | Adequate |
@@ -180,6 +180,7 @@ Z = \frac{f \times B}{d}
 $$
 
 Where:
+
 - $Z$ = Depth
 - $f$ = Focal length
 - $B$ = Baseline
@@ -202,7 +203,7 @@ $$
 ### Optical Sensors
 
 | Satellite | Pan (m) | MS (m) | Swath (km) | Revisit |
-|-----------|---------|--------|------------|---------|
+| ----------- | --------- | -------- | ------------ | --------- |
 | WorldView-3 | 0.31 | 1.24 | 13.1 | 1 day |
 | WorldView-2 | 0.46 | 1.84 | 16.4 | 1.1 days |
 | Pleiades-NEO | 0.30 | 1.20 | 14 | Daily |
@@ -213,7 +214,7 @@ $$
 ### Spectral Bands
 
 | Sensor | Blue | Green | Red | NIR | SWIR1 | SWIR2 |
-|--------|------|-------|-----|-----|-------|-------|
+| -------- | ------ | ------- | ----- | ----- | ------- | ------- |
 | WorldView-3 | 450-510 | 510-580 | 630-690 | 770-895 | 1195-1225 | 2145-2185 |
 | Sentinel-2 | 458-523 | 543-578 | 650-680 | 785-900 | 1565-1655 | 2100-2280 |
 | Landsat-9 | 452-512 | 533-590 | 636-673 | 851-879 | 1566-1651 | 2107-2294 |
@@ -345,7 +346,7 @@ print(f"Coverage: {dsm.valid_percentage:.1f}%")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 16 GB | 32 GB | 64 GB |
 | GPU | None | RTX 3070 | A100 |
@@ -354,7 +355,7 @@ print(f"Coverage: {dsm.valid_percentage:.1f}%")
 ### Input Data Requirements
 
 | Data Type | Format | Requirements |
-|-----------|--------|--------------|
+| ----------- | -------- | -------------- |
 | Panchromatic | GeoTIFF | 16-bit, georeferenced |
 | Multispectral | GeoTIFF | 16-bit, aligned to Pan |
 | Stereo Pair | GeoTIFF | RPC or rigorous model |
@@ -367,7 +368,7 @@ print(f"Coverage: {dsm.valid_percentage:.1f}%")
 ### Pansharpening Quality Targets
 
 | Metric | Target | Excellent |
-|--------|--------|-----------|
+| -------- | -------- | ----------- |
 | SAM | < 0.05 | < 0.02 |
 | ERGAS | < 3.0 | < 1.5 |
 | Q-index | > 0.9 | > 0.95 |
@@ -376,7 +377,7 @@ print(f"Coverage: {dsm.valid_percentage:.1f}%")
 ### Stereo Quality Targets
 
 | Metric | Target | Excellent |
-|--------|--------|-----------|
+| -------- | -------- | ----------- |
 | RMSE | < 2.0m | < 1.0m |
 | LE90 | < 3.0m | < 1.5m |
 | Completeness | > 90% | > 95% |

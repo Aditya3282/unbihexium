@@ -38,7 +38,7 @@ jupyter notebook examples/notebooks/
 ## Notebooks Overview
 
 | Notebook | Description | Level |
-|----------|-------------|-------|
+| ---------- | ------------- | ------- |
 | 01_getting_started | Installation and basic usage | Beginner |
 | 02_model_inference | Running inference with pre-trained models | Beginner |
 | 03_pipeline_basics | Building processing pipelines | Intermediate |
@@ -49,14 +49,14 @@ jupyter notebook examples/notebooks/
 ## Scripts Overview
 
 | Script | Description |
-|--------|-------------|
+| -------- | ------------- |
 | batch_processing.py | Process multiple images in parallel |
 | model_benchmark.py | Benchmark model performance |
 
 ## Serving Overview
 
 | Example | Description |
-|---------|-------------|
+| --------- | ------------- |
 | fastapi_server.py | REST API for model inference |
 | docker-compose.yml | Containerized deployment |
 

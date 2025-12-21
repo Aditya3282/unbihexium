@@ -21,7 +21,7 @@ The domain comprises 12 base model architectures with 48 total variants, coverin
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 12 |
 | Total Model Variants | 48 |
 | Minimum Parameters (tiny) | 68,225 |
@@ -36,7 +36,7 @@ The domain comprises 12 base model architectures with 48 total variants, coverin
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | pipeline_route_planner | Regression | MLP | continuous | 4 | 68,481 - 1,060,353 |
 | energy_potential | Regression | MLP | continuous | 4 | 68,481 - 1,060,353 |
 | hydroelectric_monitor | Regression | MLP | continuous | 4 | 68,225 - 1,059,329 |
@@ -57,7 +57,7 @@ The domain comprises 12 base model architectures with 48 total variants, coverin
 ### Site Selection Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Validation |
-|-------|--------|------|------|-------|------|------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ------------ |
 | solar_site_selector | R-squared | 0.78 | 0.85 | 0.90 | 0.94 | Solar-Sites |
 | wind_site_selector | R-squared | 0.75 | 0.82 | 0.88 | 0.92 | Wind-Atlas |
 | hydroelectric_monitor | R-squared | 0.72 | 0.79 | 0.85 | 0.90 | Hydro-DB |
@@ -65,7 +65,7 @@ The domain comprises 12 base model architectures with 48 total variants, coverin
 ### Infrastructure Change Detection
 
 | Model | Metric | Tiny | Base | Large | Mega | Validation |
-|-------|--------|------|------|-------|------|------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ------------ |
 | corridor_monitor | F1 | 0.70 | 0.79 | 0.86 | 0.91 | Corridors |
 | infrastructure_monitor | F1 | 0.72 | 0.80 | 0.87 | 0.92 | Infra-Change |
 | asset_condition_change | F1 | 0.68 | 0.77 | 0.84 | 0.90 | Asset-DB |
@@ -83,6 +83,7 @@ $$
 $$
 
 Where:
+
 - DNI = Direct Normal Irradiance (W/m^2)
 - DHI = Diffuse Horizontal Irradiance (W/m^2)
 - $\theta_z$ = Solar zenith angle
@@ -94,6 +95,7 @@ $$
 $$
 
 Where:
+
 - $\phi$ = Latitude
 - $\delta$ = Solar declination
 - $\omega$ = Hour angle
@@ -113,6 +115,7 @@ E_{annual} = A \times \eta \times \text{GHI}_{annual} \times PR
 $$
 
 Where:
+
 - $A$ = Panel area (m^2)
 - $\eta$ = Panel efficiency (0.15-0.22)
 - $\text{GHI}_{annual}$ = Annual irradiation (kWh/m^2)
@@ -135,6 +138,7 @@ P_d = \frac{1}{2} \rho v^3 \quad [\text{W/m}^2]
 $$
 
 Where:
+
 - $\rho$ = Air density (kg/m^3)
 - $v$ = Wind speed (m/s)
 
@@ -145,6 +149,7 @@ f(v) = \frac{k}{A}\left(\frac{v}{A}\right)^{k-1} \exp\left(-\left(\frac{v}{A}\ri
 $$
 
 Where:
+
 - $k$ = Shape parameter (typically 2)
 - $A$ = Scale parameter
 
@@ -178,6 +183,7 @@ P = \eta \times \rho \times g \times Q \times H
 $$
 
 Where:
+
 - $\eta$ = Turbine efficiency
 - $\rho$ = Water density (1000 kg/m^3)
 - $g$ = Gravitational acceleration (9.81 m/s^2)
@@ -333,7 +339,7 @@ print(f"Modified infrastructure: {stats['modified_area_km2']:.2f} km^2")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 32 GB |
 | GPU | None | RTX 3060 | A100 |
@@ -342,7 +348,7 @@ print(f"Modified infrastructure: {stats['modified_area_km2']:.2f} km^2")
 ### Input Data Requirements
 
 | Data Type | Source | Resolution | Application |
-|-----------|--------|------------|-------------|
+| ----------- | -------- | ------------ | ------------- |
 | Solar Irradiance | NASA POWER, PVGIS | 0.5° | Solar siting |
 | Wind Data | Global Wind Atlas | 250m | Wind siting |
 | DEM | SRTM, ALOS | 30m | Terrain analysis |
@@ -356,7 +362,7 @@ print(f"Modified infrastructure: {stats['modified_area_km2']:.2f} km^2")
 ### Validation Datasets
 
 | Dataset | Source | Coverage | Use |
-|---------|--------|----------|-----|
+| --------- | -------- | ---------- | ----- |
 | Global Wind Atlas | DTU | Global | Wind validation |
 | PVGIS | JRC | Europe/Africa | Solar validation |
 | NASA POWER | NASA | Global | Irradiance data |
@@ -373,6 +379,7 @@ P_{max} = \frac{V^2}{X} \sin(\delta)
 $$
 
 Where:
+
 - $V$ = Voltage magnitude
 - $X$ = Transmission line reactance
 - $\delta$ = Power angle
@@ -381,12 +388,12 @@ Where:
 
 Active power:
 $$
-P_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
+P_i = \sum_{j=1}^{n} | V_i |   | V_j |(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
 $$
 
 Reactive power:
 $$
-Q_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
+Q_i = \sum_{j=1}^{n} | V_i |   | V_j |(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
 $$
 
 ### Hosting Capacity
@@ -406,6 +413,7 @@ C_{battery} = \frac{E_{daily} \times DoD}{V_{system} \times \eta}
 $$
 
 Where:
+
 - $E_{daily}$ = Daily energy requirement (Wh)
 - $DoD$ = Depth of discharge
 - $V_{system}$ = System voltage
@@ -430,7 +438,7 @@ $$
 ### Route Scoring Factors
 
 | Factor | Weight | Description |
-|--------|--------|-------------|
+| -------- | -------- | ------------- |
 | Slope | 0.25 | Terrain difficulty |
 | Land Use | 0.20 | Acquisition cost |
 | Environmental | 0.20 | Protected areas |
@@ -450,8 +458,8 @@ graph TB
     B --> C[Background Temperature]
     C --> D[Anomaly Detection]
     D --> E{T > Threshold?}
-    E -->|Yes| F[Flag as Potential Leak]
-    E -->|No| G[Normal Operation]
+    E -->| Yes | F[Flag as Potential Leak]
+    E -->| No | G[Normal Operation]
     F --> H[Spatial Clustering]
     H --> I[Generate Alert]
 ```
@@ -484,7 +492,7 @@ $$
 ### Condition-Based Maintenance
 
 $$
-P(failure|condition) = \frac{P(condition|failure) \times P(failure)}{P(condition)}
+P(failure| condition) = \frac{P(condition |failure) \times P(failure)}{P(condition)}
 $$
 
 ---
@@ -533,7 +541,7 @@ wind_suitability.save("wind_suitability.tif")
 ### Site Assessment Report
 
 | Section | Content |
-|---------|---------|
+| --------- | --------- |
 | Executive Summary | Key findings, recommended sites |
 | Methodology | Data sources, models, criteria |
 | Resource Assessment | Solar/wind resource maps |
@@ -545,7 +553,7 @@ wind_suitability.save("wind_suitability.tif")
 ### Visualization Outputs
 
 | Product | Format | Description |
-|---------|--------|-------------|
+| --------- | -------- | ------------- |
 | Suitability Map | GeoTIFF | 0-1 score raster |
 | Exclusion Zones | Vector | Prohibited areas |
 | Resource Map | GeoTIFF | GHI/wind speed |
@@ -563,6 +571,7 @@ $$
 $$
 
 Where:
+
 - $I_0$ = Initial investment
 - $C_t$ = Annual costs
 - $E_t$ = Annual energy production
@@ -588,7 +597,7 @@ $$
 ### Environmental Impact Assessment
 
 | Category | Requirement | Data Source |
-|----------|-------------|-------------|
+| ---------- | ------------- | ------------- |
 | Protected Areas | Exclusion buffer | WDPA |
 | Bird Migration | Seasonal restriction | eBird |
 | Visual Impact | Viewshed analysis | DEM |
@@ -598,7 +607,7 @@ $$
 ### Permits and Approvals
 
 | Permit Type | Authority | Timeline |
-|-------------|-----------|----------|
+| ------------- | ----------- | ---------- |
 | Environmental | EPA | 6-12 months |
 | Land Use | Local | 3-6 months |
 | Grid Connection | Utility | 3-12 months |
@@ -624,6 +633,7 @@ P_{max} = \frac{V^2}{X} \sin(\delta)
 $$
 
 Where:
+
 - $V$ = Voltage magnitude
 - $X$ = Transmission line reactance
 - $\delta$ = Power angle
@@ -632,12 +642,12 @@ Where:
 
 Active power:
 $$
-P_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
+P_i = \sum_{j=1}^{n} | V_i |   | V_j |(G_{ij}\cos\theta_{ij} + B_{ij}\sin\theta_{ij})
 $$
 
 Reactive power:
 $$
-Q_i = \sum_{j=1}^{n} |V_i||V_j|(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
+Q_i = \sum_{j=1}^{n} | V_i |   | V_j |(G_{ij}\sin\theta_{ij} - B_{ij}\cos\theta_{ij})
 $$
 
 ### Hosting Capacity
@@ -657,6 +667,7 @@ C_{battery} = \frac{E_{daily} \times DoD}{V_{system} \times \eta}
 $$
 
 Where:
+
 - $E_{daily}$ = Daily energy requirement (Wh)
 - $DoD$ = Depth of discharge
 - $V_{system}$ = System voltage
@@ -681,7 +692,7 @@ $$
 ### Route Scoring Factors
 
 | Factor | Weight | Description |
-|--------|--------|-------------|
+| -------- | -------- | ------------- |
 | Slope | 0.25 | Terrain difficulty |
 | Land Use | 0.20 | Acquisition cost |
 | Environmental | 0.20 | Protected areas |
@@ -701,8 +712,8 @@ graph TB
     B --> C[Background Temperature]
     C --> D[Anomaly Detection]
     D --> E{T > Threshold?}
-    E -->|Yes| F[Flag as Potential Leak]
-    E -->|No| G[Normal Operation]
+    E -->| Yes | F[Flag as Potential Leak]
+    E -->| No | G[Normal Operation]
     F --> H[Spatial Clustering]
     H --> I[Generate Alert]
 ```
@@ -735,7 +746,7 @@ $$
 ### Condition-Based Maintenance
 
 $$
-P(failure|condition) = \frac{P(condition|failure) \times P(failure)}{P(condition)}
+P(failure| condition) = \frac{P(condition |failure) \times P(failure)}{P(condition)}
 $$
 
 ---
@@ -784,7 +795,7 @@ wind_suitability.save("wind_suitability.tif")
 ### Site Assessment Report
 
 | Section | Content |
-|---------|---------|
+| --------- | --------- |
 | Executive Summary | Key findings, recommended sites |
 | Methodology | Data sources, models, criteria |
 | Resource Assessment | Solar/wind resource maps |
@@ -796,7 +807,7 @@ wind_suitability.save("wind_suitability.tif")
 ### Visualization Outputs
 
 | Product | Format | Description |
-|---------|--------|-------------|
+| --------- | -------- | ------------- |
 | Suitability Map | GeoTIFF | 0-1 score raster |
 | Exclusion Zones | Vector | Prohibited areas |
 | Resource Map | GeoTIFF | GHI/wind speed |
@@ -814,6 +825,7 @@ $$
 $$
 
 Where:
+
 - $I_0$ = Initial investment
 - $C_t$ = Annual costs
 - $E_t$ = Annual energy production
@@ -839,7 +851,7 @@ $$
 ### Environmental Impact Assessment
 
 | Category | Requirement | Data Source |
-|----------|-------------|-------------|
+| ---------- | ------------- | ------------- |
 | Protected Areas | Exclusion buffer | WDPA |
 | Bird Migration | Seasonal restriction | eBird |
 | Visual Impact | Viewshed analysis | DEM |
@@ -849,7 +861,7 @@ $$
 ### Permits and Approvals
 
 | Permit Type | Authority | Timeline |
-|-------------|-----------|----------|
+| ------------- | ----------- | ---------- |
 | Environmental | EPA | 6-12 months |
 | Land Use | Local | 3-6 months |
 | Grid Connection | Utility | 3-12 months |

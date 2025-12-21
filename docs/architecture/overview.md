@@ -78,7 +78,7 @@ $$
 Central registry of 130 base models across 12 domains:
 
 | Attribute | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | capability_id | Unique identifier |
 | domain | Capability domain (01-12) |
 | task | Task type (detection, segmentation, etc.) |
@@ -90,7 +90,7 @@ Central registry of 130 base models across 12 domains:
 Manages 520 model artifacts:
 
 | Function | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | list() | Enumerate available models |
 | get() | Load model by ID |
 | download() | Fetch from remote |
@@ -138,7 +138,7 @@ M_{total} = M_{base} + M_{model} + N_{tiles} \times M_{tile}
 $$
 
 | Component | Tiny | Base | Large | Mega |
-|-----------|------|------|-------|------|
+| ----------- | ------ | ------ | ------- | ------ |
 | Model | 2 MB | 10 MB | 30 MB | 100 MB |
 | Per Tile | 1 MB | 4 MB | 16 MB | 64 MB |
 | Overhead | 50 MB | 100 MB | 200 MB | 500 MB |

@@ -9,7 +9,7 @@ The Unbihexium Model Zoo contains **520 production-ready models** for geospatial
 ## Quick Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Total Models | 520 |
 | Base Architectures | 130 |
 | Variants | 4 (tiny, base, large, mega) |
@@ -41,7 +41,7 @@ model_zoo/
 ## Variant Specifications
 
 | Variant | Resolution | Channels | Params Range | Use Case |
-|---------|------------|----------|--------------|----------|
+| --------- | ------------ | ---------- | -------------- | ---------- |
 | tiny | 64x64 | 32 | 50K-259K | Edge, real-time |
 | base | 128x128 | 64 | 191K-1M | Standard production |
 | large | 256x256 | 96 | 425K-2.3M | High accuracy |
@@ -82,7 +82,7 @@ predictions = model.predict(image)
 ## Model Categories
 
 | Category | Models | Task |
-|----------|--------|------|
+| ---------- | -------- | ------ |
 | Detection | 19 | Object localization |
 | Segmentation | 32 | Pixel classification |
 | Regression | 47 | Value prediction |

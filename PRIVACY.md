@@ -7,6 +7,7 @@ This document describes data handling practices for Unbihexium.
 ## Scope
 
 Covers data processed by:
+
 - Library runtime
 - CLI tools
 - Model inference
@@ -30,7 +31,7 @@ $$
 $$
 
 | Data Type | Collected | Stored | Shared |
-|-----------|-----------|--------|--------|
+| ----------- | ----------- | -------- | -------- |
 | Input imagery | No | No | No |
 | Results | No | No | No |
 | Usage stats | Opt-in | Aggregated | Anonymized |
@@ -51,7 +52,7 @@ $$
 
 ## Contact
 
-Privacy inquiries: privacy@unbihexium.dev
+Privacy inquiries: <privacy@unbihexium.dev>
 
 ## Updates
 

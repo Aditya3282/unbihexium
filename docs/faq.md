@@ -23,7 +23,7 @@ $$
 ## Quick Reference
 
 | Category | Questions |
-|----------|-----------|
+| ---------- | ----------- |
 | Installation | 5 |
 | Usage | 7 |
 | Models | 5 |
@@ -40,10 +40,12 @@ A: Python 3.10, 3.11, 3.12, and 3.13.
 ### Q: How do I install GPU support?
 
 A: Install PyTorch with CUDA first, then install Unbihexium:
+
 ```bash
 pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install unbihexium
 ```
+
 
 ### Q: Can I use conda?
 
@@ -56,9 +58,11 @@ A: Yes: `conda install -c conda-forge unbihexium`
 ### Q: How do I run inference?
 
 A: Use the CLI or Python API:
+
 ```bash
 unbihexium infer ship_detector_tiny -i input.tif -o output.tif
 ```
+
 
 ### Q: What input formats are supported?
 
@@ -75,6 +79,7 @@ A: `unbihexium zoo list`
 ### Q: What is the difference between tiny, base, and large?
 
 A: Variants differ in capacity and resolution:
+
 - tiny: 32x32, fastest
 - base: 64x64, balanced
 - large: 128x128, highest accuracy

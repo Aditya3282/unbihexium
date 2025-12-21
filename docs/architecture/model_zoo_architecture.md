@@ -46,7 +46,7 @@ Example: `ship_detector_base_v1.0.0`
 ## Storage Structure
 
 | Path | Contents |
-|------|----------|
+| ------ | ---------- |
 | `model_zoo/assets/{variant}/{id}/` | Model artifacts |
 | `model_zoo/manifests/{id}.json` | Model metadata |
 | `model_zoo/cards/{id}.md` | Documentation |
@@ -55,7 +55,7 @@ Example: `ship_detector_base_v1.0.0`
 ## Model Artifacts
 
 | File | Purpose | Required |
-|------|---------|----------|
+| ------ | --------- | ---------- |
 | `model.onnx` | ONNX model weights | Yes |
 | `config.json` | Input/output spec | Yes |
 | `model.sha256` | Integrity hash | Yes |

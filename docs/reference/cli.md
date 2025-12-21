@@ -28,7 +28,7 @@ $$
 $$
 
 | Command | Description | Example |
-|---------|-------------|---------|
+| --------- | ------------- | --------- |
 | `unbihexium --version` | Show version | `unbihexium --version` |
 | `unbihexium zoo list` | List models | `unbihexium zoo list` |
 | `unbihexium zoo download` | Download model | `unbihexium zoo download ship_detector_base` |
@@ -38,7 +38,7 @@ $$
 ## Global Options
 
 | Option | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `--version` | Show version |
 | `--help` | Show help |
 | `--verbose` | Verbose output |

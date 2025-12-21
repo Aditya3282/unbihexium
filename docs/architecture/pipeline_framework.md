@@ -24,7 +24,7 @@ P = (S, R, \text{Pre}, T, I, \text{Post}, W, O)
 $$
 
 | Stage | Input | Output | Configuration |
-|-------|-------|--------|---------------|
+| ------- | ------- | -------- | --------------- |
 | Source | Path | URI | path, format |
 | Reader | URI | Array | driver, bands |
 | Preprocessor | Array | Tensor | normalize, augment |

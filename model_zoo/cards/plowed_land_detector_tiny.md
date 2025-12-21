@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | plowed_land_detector_tiny |
 | Task | Segmentation |
 | Architecture | UNET |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | IOU | 0.68 |
 | DICE | 0.76 |
 | ACCURACY | 0.85 |

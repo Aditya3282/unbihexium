@@ -32,7 +32,7 @@ The library is named after the theoretical chemical element with atomic number 1
 ### Key Differentiators
 
 | Feature | Unbihexium | Traditional GIS | Cloud AI Services |
-|---------|------------|-----------------|-------------------|
+| --------- | ------------ | ----------------- | ------------------- |
 | Offline Capable | Yes | Yes | No |
 | Model Count | 520 | 0 | 10-50 |
 | Open Source | Apache-2.0 | Varies | No |
@@ -51,14 +51,12 @@ The library is named after the theoretical chemical element with atomic number 1
 4. [Mathematical Foundations](#mathematical-foundations)
 5. [Installation](#installation)
 6. [Quick Start](#quick-start)
-7. [Advanced Usage](#advanced-usage)
-8. [Performance Metrics](#performance-metrics)
-9. [Benchmarking Results](#benchmarking-results)
-10. [Documentation](#documentation)
-11. [Security and Compliance](#security-and-compliance)
-12. [Contributing](#contributing)
-13. [Citation](#citation)
-14. [License](#license)
+7. [Performance Metrics](#performance-metrics)
+8. [Documentation](#documentation)
+9. [Security and Compliance](#security-and-compliance)
+10. [Contributing](#contributing)
+11. [Citation](#citation)
+12. [License](#license)
 
 ---
 
@@ -71,7 +69,7 @@ The Unbihexium Model Zoo represents a comprehensive collection of **520 producti
 #### Variant Specifications
 
 | Variant | Count | Resolution | Base Channels | Parameter Range | Average Parameters | Total Parameters |
-|---------|-------|------------|---------------|-----------------|-------------------|------------------|
+| --------- | ------- | ------------ | --------------- | ----------------- | ------------------- | ------------------ |
 | **tiny** | 130 | 64 x 64 px | 32 | 49,667 - 258,754 | 133,755 | 17,388,189 |
 | **base** | 130 | 128 x 128 px | 64 | 191,491 - 1,029,506 | 530,267 | 68,934,749 |
 | **large** | 130 | 256 x 256 px | 96 | 425,475 - 2,312,258 | 1,189,538 | 154,639,901 |
@@ -103,7 +101,7 @@ pie title Model Distribution by Task (520 Total)
 ### Detailed Task Statistics
 
 | Task | Models per Variant | Total Models | Min Parameters | Max Parameters | Average Parameters | Primary Metric |
-|------|-------------------|--------------|----------------|----------------|-------------------|----------------|
+| ------ | ------------------- | -------------- | ---------------- | ---------------- | ------------------- | ---------------- |
 | Regression | 47 | 188 | 67,329 | 1,065,473 | 498,942 | R-squared |
 | Segmentation | 32 | 128 | 143,266 | 4,107,010 | 1,307,290 | mIoU |
 | Detection | 19 | 76 | 143,201 | 2,269,059 | 1,064,595 | mAP@0.5 |
@@ -215,7 +213,7 @@ sequenceDiagram
 #### Model Architecture Details
 
 | Architecture | Task Types | Layer Configuration | Parameters (mega) | Receptive Field |
-|--------------|------------|---------------------|-------------------|-----------------|
+| -------------- | ------------ | --------------------- | ------------------- | ----------------- |
 | UNet | Detection, Segmentation | 3-level encoder-decoder with skip connections | 2.3M | 256 px |
 | Siamese | Change Detection | Dual-stream encoder with shared weights | 4.1M | 256 px |
 | MLP | Regression, Risk Assessment | 6-layer fully-connected with BatchNorm | 1.0M | N/A |
@@ -338,13 +336,13 @@ Where $\gamma$ is the focusing parameter (typically 2.0) and $\alpha_t$ is the c
 #### Intersection over Union (IoU)
 
 $$
-\text{IoU} = \frac{|A \cap B|}{|A \cup B|} = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
+\text{IoU} = \frac{| A \cap B | }{ | A \cup B |} = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
 $$
 
 #### Mean Average Precision (mAP)
 
 $$
-\text{mAP} = \frac{1}{|C|} \sum_{c \in C} \text{AP}(c) = \frac{1}{|C|} \sum_{c \in C} \int_0^1 P(R) \, dR
+\text{mAP} = \frac{1}{| C | } \sum_{c \in C} \text{AP}(c) = \frac{1}{ | C |} \sum_{c \in C} \int_0^1 P(R) \, dR
 $$
 
 #### Peak Signal-to-Noise Ratio (PSNR)
@@ -368,7 +366,7 @@ $$
 The library implements 12 primary capability domains with 130 individual base models:
 
 | ID | Domain | Models | Primary Tasks | Production Status |
-|----|--------|--------|---------------|-------------------|
+| ---- | -------- | -------- | --------------- | ------------------- |
 | 01 | AI Products | 13 | Super-resolution, Detection, Segmentation | Production |
 | 02 | Tourism and Data Processing | 10 | Route planning, Spatial analysis | Production |
 | 03 | Vegetation Indices and Flood/Water | 12 | NDVI, NDWI, NBR, Flood risk | Production |
@@ -399,7 +397,7 @@ xychart-beta
 ### System Requirements
 
 | Component | Minimum | Recommended | Optimal | Notes |
-|-----------|---------|-------------|---------|-------|
+| ----------- | --------- | ------------- | --------- | ------- |
 | Python | 3.10 | 3.12 | 3.12 | 3.13 supported |
 | RAM | 8 GB | 16 GB | 32 GB | Per concurrent pipeline |
 | Disk | 5 GB | 50 GB | 200 GB | Model cache space |
@@ -609,7 +607,7 @@ M_{total} = M_{base} + M_{model} + N_{batch} \times M_{tile}
 $$
 
 | Variant | Model Size | Runtime Memory | Batch Size 1 | Batch Size 8 | Batch Size 16 |
-|---------|------------|----------------|--------------|--------------|---------------|
+| --------- | ------------ | ---------------- | -------------- | -------------- | --------------- |
 | tiny | 500 KB | 50 MB | 100 MB | 200 MB | 350 MB |
 | base | 2 MB | 100 MB | 200 MB | 500 MB | 900 MB |
 | large | 5 MB | 200 MB | 500 MB | 1.5 GB | 2.8 GB |
@@ -618,7 +616,7 @@ $$
 ### Latency Analysis
 
 | Operation | tiny | base | large | mega |
-|-----------|------|------|-------|------|
+| ----------- | ------ | ------ | ------- | ------ |
 | Model Load (cold) | 50 ms | 100 ms | 200 ms | 500 ms |
 | Model Load (warm) | 5 ms | 10 ms | 20 ms | 50 ms |
 | Single Tile (CPU) | 10 ms | 40 ms | 160 ms | 500 ms |
@@ -630,7 +628,7 @@ $$
 ## Documentation
 
 | Section | Description | Link |
-|---------|-------------|------|
+| --------- | ------------- | ------ |
 | Getting Started | Installation, quickstart, configuration | [docs/getting_started/](docs/getting_started/) |
 | Tutorials | Step-by-step guides and examples | [docs/tutorials/](docs/tutorials/) |
 | API Reference | Complete Python API documentation | [docs/reference/api.md](docs/reference/api.md) |
@@ -648,7 +646,7 @@ $$
 ### Security Controls
 
 | Control | Implementation | Status | Verification |
-|---------|---------------|--------|--------------|
+| --------- | --------------- | -------- | -------------- |
 | Dependency Scanning | Dependabot, Safety, pip-audit | Active | Daily |
 | Static Analysis | CodeQL, Bandit, Semgrep | Active | Every PR |
 | Model Integrity | SHA256 checksums | Active | On download |
@@ -659,7 +657,7 @@ $$
 ### Compliance Certifications
 
 | Standard | Status | Scope |
-|----------|--------|-------|
+| ---------- | -------- | ------- |
 | Apache-2.0 License | Compliant | Full codebase |
 | GDPR | Compliant | No PII collection |
 | CCPA | Compliant | No PII collection |
@@ -713,7 +711,7 @@ Copyright 2025 Unbihexium OSS Foundation
 
 Licensed under the Apache License, Version 2.0. See [LICENSE.txt](LICENSE.txt) for the full license text.
 
-```
+```text
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -729,4 +727,4 @@ limitations under the License.
 
 ---
 
-*Unbihexium - Element 126 - Bridging Earth Observation and Artificial Intelligence*
+Unbihexium - Element 126 - Bridging Earth Observation and Artificial Intelligence

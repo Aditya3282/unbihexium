@@ -8,14 +8,14 @@ Unbihexium follows [Semantic Versioning 2.0.0](https://semver.org/) (SemVer) for
 
 ## Version Format
 
-```
+```text
 MAJOR.MINOR.PATCH
 ```
 
 ### Version Components
 
 | Component | Description | Example Change |
-|-----------|-------------|----------------|
+| ----------- | ------------- | ---------------- |
 | MAJOR | Breaking API changes | Remove deprecated function |
 | MINOR | New features, backward compatible | Add new model |
 | PATCH | Bug fixes, backward compatible | Fix inference bug |
@@ -25,7 +25,7 @@ MAJOR.MINOR.PATCH
 ## Release Schedule
 
 | Type | Frequency | Branch |
-|------|-----------|--------|
+| ------ | ----------- | -------- |
 | Major | Yearly | `main` |
 | Minor | Quarterly | `main` |
 | Patch | As needed | `main` |
@@ -38,7 +38,7 @@ MAJOR.MINOR.PATCH
 Pre-release versions use the following suffixes:
 
 | Suffix | Stage | Example |
-|--------|-------|---------|
+| -------- | ------- | --------- |
 | `-alpha.N` | Early development | `2.0.0-alpha.1` |
 | `-beta.N` | Feature complete | `2.0.0-beta.1` |
 | `-rc.N` | Release candidate | `2.0.0-rc.1` |
@@ -49,12 +49,12 @@ Pre-release versions use the following suffixes:
 
 Model weights are versioned separately from the library:
 
-```
+```text
 model_name_variant_vX.Y.Z
 ```
 
 | Component | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | model_name | Capability identifier |
 | variant | tiny, base, large, mega |
 | vX.Y.Z | Model version |
@@ -72,12 +72,14 @@ model_name_variant_vX.Y.Z
 ## Backward Compatibility
 
 ### Guaranteed Stable
+
 - Public API functions
 - Configuration file format
 - CLI commands and options
 - Model inference output format
 
 ### May Change
+
 - Internal implementation details
 - Performance characteristics
 - Logging format

@@ -38,7 +38,7 @@ $$
 $$
 
 | Threat | Likelihood | Impact | Mitigation |
-|--------|------------|--------|------------|
+| -------- | ------------ | -------- | ------------ |
 | Model tampering | Medium | High | SHA256 verification |
 | Dependency exploit | Medium | High | Pinned deps, scanning |
 | Input injection | Low | Medium | Validation |
@@ -47,7 +47,7 @@ $$
 ## Security Controls
 
 | Control | Implementation | Status |
-|---------|---------------|--------|
+| --------- | --------------- | -------- |
 | Input validation | pydantic models | Active |
 | Dependency scanning | Dependabot, Safety | Active |
 | Static analysis | CodeQL, Bandit | Active |

@@ -22,7 +22,7 @@ $$
 $$
 
 | Model | License | Training Data | Origin |
-|-------|---------|---------------|--------|
+| ------- | --------- | --------------- | -------- |
 | All models | Apache-2.0 | Synthetic | Unbihexium |
 
 ## License Terms

@@ -21,7 +21,7 @@ The domain comprises 18 base model architectures with 72 total variants, represe
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 18 |
 | Total Model Variants | 72 |
 | Minimum Parameters (tiny) | 67,969 |
@@ -36,7 +36,7 @@ The domain comprises 18 base model architectures with 72 total variants, represe
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | urban_planner | Segmentation | UNet | 4 classes | 4 | 143,780 - 2,269,316 |
 | urban_growth_assessor | Segmentation | Siamese | 2 classes | 4 | 258,754 - 4,107,010 |
 | construction_monitor | Segmentation | Siamese | 2 classes | 4 | 258,754 - 4,107,010 |
@@ -63,7 +63,7 @@ The domain comprises 18 base model architectures with 72 total variants, represe
 ### Segmentation Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Dataset |
-|-------|--------|------|------|-------|------|---------|
+| ------- | -------- | ------ | ------ | ------- | ------ | --------- |
 | urban_planner | mIoU | 0.68 | 0.76 | 0.83 | 0.89 | Urban-Atlas |
 | crop_classifier | mIoU | 0.72 | 0.80 | 0.87 | 0.92 | CDL |
 | urban_growth_assessor | F1 | 0.70 | 0.78 | 0.85 | 0.91 | Urban-Change |
@@ -72,7 +72,7 @@ The domain comprises 18 base model architectures with 72 total variants, represe
 ### Regression Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Dataset |
-|-------|--------|------|------|-------|------|---------|
+| ------- | -------- | ------ | ------ | ------- | ------ | --------- |
 | yield_predictor | R-squared | 0.75 | 0.82 | 0.88 | 0.93 | USDA-NASS |
 | crop_health_assessor | R-squared | 0.72 | 0.79 | 0.85 | 0.90 | AgriHealth |
 | crop_growth_monitor | R-squared | 0.70 | 0.78 | 0.84 | 0.89 | PhenoCam |
@@ -88,6 +88,7 @@ Y = \beta_0 + \beta_1 \cdot \text{NDVI}_{max} + \beta_2 \cdot P + \beta_3 \cdot 
 $$
 
 Where:
+
 - $Y$ = Predicted yield (kg/ha or bu/acre)
 - $\text{NDVI}_{max}$ = Peak season NDVI
 - $P$ = Cumulative precipitation (mm)
@@ -111,6 +112,7 @@ $$
 $$
 
 Where:
+
 - $T_c$ = Canopy temperature
 - $T_a$ = Air temperature
 - $ll$ = Lower limit (well-watered)
@@ -123,6 +125,7 @@ $$
 $$
 
 Where:
+
 - $\epsilon$ = Light use efficiency (g/MJ)
 - APAR = Absorbed photosynthetically active radiation
 - $f_{APAR}$ = Fraction of absorbed PAR
@@ -142,7 +145,7 @@ Where HI is the harvest index (0.4-0.6 for cereals).
 ### Land Use Classes
 
 | Class ID | Name | Description | Color |
-|----------|------|-------------|-------|
+| ---------- | ------ | ------------- | ------- |
 | 1 | Residential | Housing areas | #FF6B6B |
 | 2 | Commercial | Business districts | #4ECDC4 |
 | 3 | Industrial | Manufacturing zones | #45B7D1 |
@@ -308,7 +311,7 @@ print(f"Expansion direction: {stats['primary_direction']}")
 ### Growing Season by Crop
 
 | Crop | Planting | Peak Growth | Harvest | GDD Required |
-|------|----------|-------------|---------|--------------|
+| ------ | ---------- | ------------- | --------- | -------------- |
 | Corn | Apr-May | Jul-Aug | Sep-Oct | 2500-3000 |
 | Soybeans | May-Jun | Jul-Aug | Sep-Oct | 2000-2500 |
 | Winter Wheat | Sep-Oct | May-Jun | Jun-Jul | 1500-2000 |
@@ -322,7 +325,7 @@ print(f"Expansion direction: {stats['primary_direction']}")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 64 GB |
 | GPU | None | RTX 3070 | A100 |
@@ -331,7 +334,7 @@ print(f"Expansion direction: {stats['primary_direction']}")
 ### Input Data Requirements
 
 | Data Type | Source | Resolution | Application |
-|-----------|--------|------------|-------------|
+| ----------- | -------- | ------------ | ------------- |
 | Sentinel-2 | ESA | 10m | Crop classification |
 | Landsat | USGS | 30m | Historical analysis |
 | Planet | Planet Labs | 3m | Field-level mapping |
@@ -345,7 +348,7 @@ print(f"Expansion direction: {stats['primary_direction']}")
 ### Validation Datasets
 
 | Dataset | Source | Coverage | Purpose |
-|---------|--------|----------|---------|
+| --------- | -------- | ---------- | --------- |
 | CDL | USDA | USA | Crop classification |
 | LUCAS | Eurostat | Europe | Land use |
 | NASS | USDA | USA | Yield validation |

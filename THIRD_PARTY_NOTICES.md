@@ -27,7 +27,7 @@ All dependencies use permissive licenses compatible with Apache-2.0.
 ## Dependency Table
 
 | Package | Version | License | Purpose |
-|---------|---------|---------|---------|
+| --------- | --------- | --------- | --------- |
 | torch | 2.0+ | BSD-3 | Model training |
 | onnxruntime | 1.15+ | MIT | Inference engine |
 | numpy | 1.24+ | BSD-3 | Array operations |

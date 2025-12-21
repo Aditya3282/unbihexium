@@ -12,8 +12,8 @@ graph LR
     B --> C[Test]
     C --> D[Build]
     D --> E{Main?}
-    E -->|Yes| F[Publish]
-    E -->|No| G[Report]
+    E -->| Yes | F[Publish]
+    E -->| No | G[Report]
 ```
 
 ## Quality Gates
@@ -23,7 +23,7 @@ $$
 $$
 
 | Gate | Tool | Threshold |
-|------|------|-----------|
+| ------ | ------ | ----------- |
 | Lint | ruff | No errors |
 | Type check | pyright | Strict |
 | Tests | pytest | All pass |
@@ -33,7 +33,7 @@ $$
 ## Workflows
 
 | Workflow | Trigger | Jobs |
-|----------|---------|------|
+| ---------- | --------- | ------ |
 | CI | Push, PR | lint, test, build |
 | Release | Tag v* | publish |
 | Docs | Push docs/ | deploy-docs |

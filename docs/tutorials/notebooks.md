@@ -59,7 +59,7 @@ graph TB
 ## Notebook Categories
 
 | Category | Count | Description |
-|----------|-------|-------------|
+| ---------- | ------- | ------------- |
 | Detection | 23 | Object detection and localization |
 | Segmentation | 12 | Pixel-wise classification |
 | Change Detection | 12 | Bi-temporal change analysis |
@@ -76,7 +76,7 @@ Each notebook takes approximately 30 minutes to complete.
 ## Quick Start Notebooks
 
 | # | Notebook | Task | Duration |
-|---|----------|------|----------|
+| --- | ---------- | ------ | ---------- |
 | 069 | [ndvi_calculator](../../examples/notebooks/069_ndvi_calculator.ipynb) | Regression | 30 min |
 | 101 | [ship_detector](../../examples/notebooks/101_ship_detector.ipynb) | Detection | 30 min |
 | 006 | [building_detector](../../examples/notebooks/006_building_detector.ipynb) | Detection | 30 min |
@@ -120,7 +120,7 @@ Each notebook includes a Colab badge for one-click cloud execution. No local set
 ## Model Variants
 
 | Variant | Resolution | Use Case |
-|---------|------------|----------|
+| --------- | ------------ | ---------- |
 | tiny | 32x32 | Edge devices, prototyping |
 | base | 64x64 | Production deployments |
 | large | 128x128 | High accuracy applications |

@@ -22,7 +22,7 @@ $$
 $$
 
 | Secret | Required For | Risk | Rotation |
-|--------|-------------|------|----------|
+| -------- | ------------- | ------ | ---------- |
 | PYPI_API_TOKEN | Package publishing | High | Quarterly |
 | CODECOV_TOKEN | Coverage upload | Low | Yearly |
 | GH_TOKEN | Releases | Medium | On demand |
@@ -33,7 +33,7 @@ $$
 ### PYPI_API_TOKEN
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Obtain from | https://pypi.org/manage/account/token/ |
 | Scope | unbihexium package only |
 | Permissions | Upload |
@@ -42,7 +42,7 @@ $$
 ### CODECOV_TOKEN
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Obtain from | https://codecov.io/github/unbihexium-oss/unbihexium |
 | Scope | Repository |
 | Permissions | Upload |
@@ -51,7 +51,7 @@ $$
 ### GH_TOKEN
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Obtain from | Auto-provided by GitHub Actions |
 | Scope | Repository |
 | Permissions | contents: write |

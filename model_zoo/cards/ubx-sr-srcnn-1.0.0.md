@@ -3,7 +3,7 @@
 ## Model Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | ubx-sr-srcnn-1.0.0 |
 | Task | Super-Resolution |
 | Architecture | SRCNN |
@@ -28,6 +28,7 @@ graph LR
 ```
 
 The network consists of three convolutional layers:
+
 1. **Patch extraction**: 9x9 kernels extract features
 2. **Non-linear mapping**: 1x1 kernels map to HR space
 3. **Reconstruction**: 5x5 kernels reconstruct the image
@@ -41,7 +42,7 @@ The network consists of three convolutional layers:
 ## Performance Metrics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | PSNR | 28.5 dB |
 | SSIM | 0.85 |
 | MSE | 0.001 |

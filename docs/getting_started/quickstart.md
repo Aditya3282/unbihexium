@@ -34,7 +34,7 @@ $$
 ## Steps Summary
 
 | Step | Command | Time |
-|------|---------|------|
+| ------ | --------- | ------ |
 | 1. Install | `pip install unbihexium` | 1 min |
 | 2. List models | `unbihexium zoo list` | 1 sec |
 | 3. Run inference | `unbihexium infer ...` | varies |

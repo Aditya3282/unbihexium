@@ -21,7 +21,7 @@ $$
 $$
 
 | Image | Size | Models |
-|-------|------|--------|
+| ------- | ------ | -------- |
 | unbihexium:slim | 500 MB | None |
 | unbihexium:tiny | 600 MB | Tiny only |
 | unbihexium:full | 1.2 GB | All |

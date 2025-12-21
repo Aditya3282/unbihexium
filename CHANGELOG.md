@@ -25,6 +25,7 @@ $$
 $$
 
 Where:
+
 - MAJOR: Incompatible API changes
 - MINOR: Backwards-compatible features
 - PATCH: Backwards-compatible fixes
@@ -32,7 +33,7 @@ Where:
 ## Releases
 
 | Version | Date | Type |
-|---------|------|------|
+| ------- | ---------- | ---------- |
 | 1.0.0 | 2025-12-19 | Production |
 | 0.5.0 | 2025-06-01 | Beta |
 | 0.1.0 | 2025-01-15 | Alpha |
@@ -41,18 +42,21 @@ Where:
 
 ## [1.0.0] - 2025-12-19
 
-### Added
-- Complete Model Zoo with 130 models and 390 variants
+### Added (1.0.0)
+
+- Complete Model Zoo with 130 models and 520 variants
 - Production-grade pipeline framework
 - CLI with inference and pipeline commands
-- Comprehensive documentation
+- Comprehensive documentation with 130 notebooks
 - SHA256 verification for all models
 
-### Changed
+### Changed (1.0.0)
+
 - Upgraded to ONNX Runtime for inference
 - Standardized model naming convention
 
-### Security
+### Security (1.0.0)
+
 - Added supply chain security measures
 - Implemented model integrity verification
 
@@ -60,7 +64,8 @@ Where:
 
 ## [0.5.0] - 2025-06-01
 
-### Added
+### Added (0.5.0)
+
 - Initial model zoo structure
 - Basic pipeline framework
 - Core capability registry
@@ -69,7 +74,8 @@ Where:
 
 ## [0.1.0] - 2025-01-15
 
-### Added
+### Added (0.1.0)
+
 - Project initialization
 - Basic architecture
 - Development tooling

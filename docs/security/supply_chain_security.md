@@ -26,7 +26,7 @@ $$
 $$
 
 | Stage | Control | Implementation |
-|-------|---------|---------------|
+| ------- | --------- | --------------- |
 | Source | Code review | Required approvals |
 | Dependencies | Pinning | requirements.txt with hashes |
 | Build | Reproducible | GitHub Actions |

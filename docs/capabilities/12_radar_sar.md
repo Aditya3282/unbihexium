@@ -20,7 +20,7 @@ The domain comprises 8 base model architectures with 32 total variants, covering
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 8 |
 | Total Model Variants | 32 |
 | Minimum Parameters (tiny) | 143,201 |
@@ -35,7 +35,7 @@ The domain comprises 8 base model architectures with 32 total variants, covering
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | sar_ship_detector | Detection | UNet | 1 class | 4 | 143,201 - 2,268,545 |
 | sar_flood_detector | Segmentation | UNet | 2 classes | 4 | 143,394 - 2,268,802 |
 | sar_oil_spill_detector | Segmentation | UNet | 2 classes | 4 | 143,394 - 2,268,802 |
@@ -50,7 +50,7 @@ The domain comprises 8 base model architectures with 32 total variants, covering
 ## Performance Metrics
 
 | Model | Metric | Tiny | Base | Large | Mega | Reference |
-|-------|--------|------|------|-------|------|-----------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ----------- |
 | sar_ship_detector | mAP@0.5 | 0.70 | 0.79 | 0.86 | 0.92 | SAR-Ship |
 | sar_flood_detector | IoU | 0.75 | 0.83 | 0.89 | 0.94 | Sen1Floods |
 | sar_oil_spill_detector | IoU | 0.72 | 0.80 | 0.87 | 0.92 | Oil-SAR |
@@ -69,6 +69,7 @@ P_r = \frac{P_t G_t G_r \lambda^2 \sigma}{(4\pi)^3 R^4 L}
 $$
 
 Where:
+
 - $P_r$ = Received power (W)
 - $P_t$ = Transmitted power (W)
 - $G_t, G_r$ = Transmit/receive antenna gains
@@ -124,7 +125,7 @@ Where $D$ is antenna length.
 ### Frequency Bands
 
 | Band | Frequency | Wavelength | Penetration | Applications |
-|------|-----------|------------|-------------|--------------|
+| ------ | ----------- | ------------ | ------------- | -------------- |
 | X | 8-12 GHz | 2.5-3.75 cm | Surface | Urban, ice monitoring |
 | C | 4-8 GHz | 3.75-7.5 cm | Shallow | Agriculture, ocean |
 | S | 2-4 GHz | 7.5-15 cm | Moderate | Soil moisture |
@@ -134,7 +135,7 @@ Where $D$ is antenna length.
 ### Polarization Modes
 
 | Mode | Notation | Applications |
-|------|----------|--------------|
+| ------ | ---------- | -------------- |
 | Single-pol | VV or HH | General mapping |
 | Dual-pol | VV+VH or HH+HV | Land cover, vegetation |
 | Quad-pol | HH+HV+VH+VV | Full characterization |
@@ -143,7 +144,7 @@ Where $D$ is antenna length.
 ### Polarimetric Signatures
 
 | Target | HH | VV | HV/VH | Pol Ratio |
-|--------|----|----|-------|-----------|
+| -------- | ---- | ---- | ------- | ----------- |
 | Calm water | Very low | Very low | Very low | ~1 |
 | Rough water | Low | Low | Low | ~1 |
 | Urban | High | High | Medium | ~1 |
@@ -170,6 +171,7 @@ $$
 $$
 
 Where:
+
 - $\phi_{flat}$ = Flat-earth phase
 - $\phi_{topo}$ = Topographic phase
 - $\phi_{defo}$ = Deformation phase
@@ -179,7 +181,7 @@ Where:
 ### Coherence
 
 $$
-\gamma = \frac{|\langle s_1 \cdot s_2^* \rangle|}{\sqrt{\langle |s_1|^2 \rangle \langle |s_2|^2 \rangle}}
+\gamma = \frac{| \langle s_1 \cdot s_2^* \rangle | }{\sqrt{\langle | s_1 | ^2 \rangle \langle | s_2 |^2 \rangle}}
 $$
 
 Where $s_1$ and $s_2$ are complex SAR images.
@@ -442,7 +444,7 @@ print(f"Max uplift rate: {velocity_map.min():.1f} mm/year")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 8 cores | 16 cores | 32+ cores |
 | RAM | 32 GB | 64 GB | 128 GB |
 | GPU | RTX 3060 | RTX 3090 | A100 |
@@ -451,7 +453,7 @@ print(f"Max uplift rate: {velocity_map.min():.1f} mm/year")
 ### Input Data Requirements
 
 | Data Type | Format | Requirements |
-|-----------|--------|--------------|
+| ----------- | -------- | -------------- |
 | SLC | TIFF/NetCDF | Complex, calibrated |
 | GRD | GeoTIFF | Detected, calibrated |
 | Interferogram | GeoTIFF | Wrapped phase |
@@ -464,7 +466,7 @@ print(f"Max uplift rate: {velocity_map.min():.1f} mm/year")
 ### Active SAR Missions
 
 | Mission | Agency | Band | Resolution | Revisit |
-|---------|--------|------|------------|---------|
+| --------- | -------- | ------ | ------------ | --------- |
 | Sentinel-1 | ESA | C | 5m | 6 days |
 | ALOS-2 | JAXA | L | 3m | 14 days |
 | RADARSAT-2 | CSA | C | 3m | 24 days |
@@ -480,7 +482,7 @@ print(f"Max uplift rate: {velocity_map.min():.1f} mm/year")
 ### Coherence Quality Levels
 
 | Coherence | Interpretation | Usability |
-|-----------|----------------|-----------|
+| ----------- | ---------------- | ----------- |
 | > 0.8 | Excellent | High precision |
 | 0.6-0.8 | Good | Standard analysis |
 | 0.4-0.6 | Moderate | Limited precision |
@@ -490,7 +492,7 @@ print(f"Max uplift rate: {velocity_map.min():.1f} mm/year")
 ### Displacement Accuracy
 
 | Method | Typical Accuracy | Best Accuracy |
-|--------|------------------|---------------|
+| -------- | ------------------ | --------------- |
 | DInSAR | 1 cm | 3 mm |
 | PSInSAR | 2 mm | 0.5 mm |
 | SBAS | 3 mm | 1 mm |

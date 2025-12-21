@@ -19,7 +19,7 @@ This directory contains **130 comprehensive notebooks** covering all model topic
 ### Detection Models
 
 | # | Notebook | Description |
-|---|----------|-------------|
+| --- | ---------- | ------------- |
 | 002 | [aircraft_detector](./002_aircraft_detector.ipynb) | Detection and classification of aircraft from satellite and aerial imagery |
 | 005 | [border_monitor](./005_border_monitor.ipynb) | Border surveillance and perimeter monitoring from satellite imagery |
 | 006 | [building_detector](./006_building_detector.ipynb) | Automatic building footprint detection and extraction |
@@ -47,7 +47,7 @@ This directory contains **130 comprehensive notebooks** covering all model topic
 ### Segmentation Models
 
 | # | Notebook | Description |
-|---|----------|-------------|
+| --- | ---------- | ------------- |
 | 007 | [builtup_detector](./007_builtup_detector.ipynb) | Urban and built-up area detection and mapping |
 | 010 | [cloud_mask](./010_cloud_mask.ipynb) | Cloud and cloud shadow detection and masking |
 | 014 | [crop_boundary_delineation](./014_crop_boundary_delineation.ipynb) | Agricultural field boundary detection and delineation |
@@ -64,7 +64,7 @@ This directory contains **130 comprehensive notebooks** covering all model topic
 ### Change Detection Models
 
 | # | Notebook | Description |
-|---|----------|-------------|
+| --- | ---------- | ------------- |
 | 003 | [asset_condition_change](./003_asset_condition_change.ipynb) | Monitoring infrastructure asset condition changes |
 | 009 | [change_detector](./009_change_detector.ipynb) | General-purpose bi-temporal change detection |
 | 011 | [construction_monitor](./011_construction_monitor.ipynb) | Construction site progress monitoring and analysis |
@@ -81,7 +81,7 @@ This directory contains **130 comprehensive notebooks** covering all model topic
 ### Classification Models
 
 | # | Notebook | Description |
-|---|----------|-------------|
+| --- | ---------- | ------------- |
 | 004 | [beekeeping_suitability](./004_beekeeping_suitability.ipynb) | Site suitability analysis for apiculture |
 | 015 | [crop_classifier](./015_crop_classifier.ipynb) | Crop type classification from multispectral imagery |
 | 018 | [crop_health_assessor](./018_crop_health_assessor.ipynb) | Crop health and stress assessment |
@@ -103,7 +103,7 @@ This directory contains **130 comprehensive notebooks** covering all model topic
 ### Regression Models
 
 | # | Notebook | Description |
-|---|----------|-------------|
+| --- | ---------- | ------------- |
 | 001 | [accessibility_analyzer](./001_accessibility_analyzer.ipynb) | Spatial accessibility and reachability analysis |
 | 008 | [business_valuation](./008_business_valuation.ipynb) | Geospatial factors for business valuation |
 | 012 | [coregistration](./012_coregistration.ipynb) | Image coregistration and alignment |
@@ -196,7 +196,7 @@ Each notebook includes a "Open in Colab" badge. Click the badge to run the noteb
 Each notebook demonstrates all four model variants:
 
 | Variant | Resolution | Use Case |
-|---------|------------|----------|
+| --------- | ------------ | ---------- |
 | tiny | 32x32 | Edge devices, prototyping |
 | base | 64x64 | Production deployments |
 | large | 128x128 | High accuracy applications |

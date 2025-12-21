@@ -25,7 +25,7 @@ $$
 $$
 
 | Change Type | Version Bump |
-|-------------|--------------|
+| ------------- | -------------- |
 | Breaking API | MAJOR |
 | New feature | MINOR |
 | Bug fix | PATCH |
@@ -55,7 +55,7 @@ git push origin v1.1.0
 ## CI Release Jobs
 
 | Job | Artifact |
-|-----|----------|
+| ----- | ---------- |
 | build | wheel, sdist |
 | publish-pypi | PyPI upload |
 | publish-docker | Container push |

@@ -6,7 +6,7 @@ This file contains legal notices and attributions for Unbihexium.
 
 ## Copyright
 
-```
+```text
 Copyright 2025 Unbihexium OSS Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +39,7 @@ $$
 $$
 
 | Category | Count | Percentage |
-|----------|-------|------------|
+| ---------- | ------- | ------------ |
 | Apache-2.0 | 45 | 45% |
 | MIT | 35 | 35% |
 | BSD | 15 | 15% |

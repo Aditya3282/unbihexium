@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | super_resolution_base |
 | Task | Super Resolution |
 | Architecture | SRCNN |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | PSNR | 28.5 |
 | SSIM | 0.85 |
 

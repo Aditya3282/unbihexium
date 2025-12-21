@@ -24,7 +24,7 @@ $$
 $$
 
 | Variant | Avg Size | Count | Total |
-|---------|----------|-------|-------|
+| --------- | ---------- | ------- | ------- |
 | tiny | 15 KB | 130 | 2 MB |
 | base | 60 KB | 130 | 8 MB |
 | large | 200 KB | 130 | 26 MB |
@@ -32,7 +32,7 @@ $$
 ## Distribution Channels
 
 | Channel | Content | Size Limit |
-|---------|---------|------------|
+| --------- | --------- | ------------ |
 | PyPI | tiny only | < 50 MB |
 | GitHub Releases | all | 2 GB/release |
 | Docker Hub | all | No limit |

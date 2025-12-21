@@ -23,7 +23,7 @@ $$
 $$
 
 | Requirement | Threshold |
-|-------------|-----------|
+| ------------- | ----------- |
 | Test coverage | 80%+ |
 | Metrics (mAP/IoU) | Domain-specific |
 | Documentation | Complete |

@@ -22,7 +22,7 @@ T_{\text{total}} \approx \sum_{t \in \text{Tutorials}} T_t \approx 4 \text{ hour
 $$
 
 | Tutorial | Duration | Difficulty |
-|----------|----------|------------|
+| ---------- | ---------- | ------------ |
 | [Detection](detection.md) | 30 min | Beginner |
 | [Indices](indices.md) | 20 min | Beginner |
 | [Geostatistics](geostat.md) | 45 min | Intermediate |
@@ -38,6 +38,7 @@ $$
 ## Tutorial Format
 
 Each tutorial includes:
+
 1. Objective statement
 2. Step-by-step instructions
 3. Code examples

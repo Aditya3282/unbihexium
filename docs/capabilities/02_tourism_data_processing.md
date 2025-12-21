@@ -27,7 +27,7 @@ The Tourism and Data Processing capability domain addresses the following primar
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 10 |
 | Total Model Variants | 40 |
 | Minimum Parameters (tiny) | 67,969 |
@@ -42,7 +42,7 @@ The Tourism and Data Processing capability domain addresses the following primar
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Input Features | Variants | Parameter Range |
-|----------|------|--------------|----------------|----------|-----------------|
+| ---------- | ------ | -------------- | ---------------- | ---------- | ----------------- |
 | route_planner | Regression | MLP | 8 | 4 | 68,225 - 1,059,329 |
 | accessibility_analyzer | Regression | MLP | 10 | 4 | 68,481 - 1,060,353 |
 | mobility_analyzer | Regression | MLP | 8 | 4 | 68,225 - 1,059,329 |
@@ -57,7 +57,7 @@ The Tourism and Data Processing capability domain addresses the following primar
 ### Variant Specifications
 
 | Variant | Hidden Dimensions | Layers | Dropout | Use Case |
-|---------|-------------------|--------|---------|----------|
+| --------- | ------------------- | -------- | --------- | ---------- |
 | tiny | 128 | 4 | 0.2 | Edge devices, real-time |
 | base | 256 | 4 | 0.2 | Standard production |
 | large | 384 | 4 | 0.2 | High accuracy |
@@ -80,7 +80,7 @@ $$
 $$
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | route_planner | R-squared | 0.75 | 0.82 | 0.88 | 0.92 | OSM-Routes |
 | accessibility_analyzer | R-squared | 0.73 | 0.80 | 0.86 | 0.90 | Urban-Access |
 | mobility_analyzer | R-squared | 0.70 | 0.78 | 0.84 | 0.89 | Taxi-GPS |
@@ -90,7 +90,7 @@ $$
 ### Change Detection Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Test Dataset |
-|-------|--------|------|------|-------|------|--------------|
+| ------- | -------- | ------ | ------ | ------- | ------ | -------------- |
 | tourist_destination_monitor | F1 | 0.68 | 0.77 | 0.84 | 0.90 | POI-Changes |
 | tourist_destination_monitor | IoU | 0.65 | 0.74 | 0.82 | 0.88 | POI-Changes |
 
@@ -107,6 +107,7 @@ A_i = \sum_{j=1}^{n} \frac{S_j}{d_{ij}^\beta}
 $$
 
 Where:
+
 - $A_i$ = Accessibility score for location $i$
 - $S_j$ = Attractiveness or size of destination $j$
 - $d_{ij}$ = Distance or travel time between $i$ and $j$
@@ -121,6 +122,7 @@ A_i = \sum_{j=1}^{n} S_j^\alpha \cdot f(d_{ij}) \cdot g(c_{ij})
 $$
 
 Where:
+
 - $\alpha$ = Attractiveness elasticity
 - $f(d_{ij})$ = Distance decay function (exponential or power)
 - $g(c_{ij})$ = Competition factor
@@ -241,7 +243,7 @@ graph LR
 #### Layer Configuration
 
 | Layer | Input Size | Output Size | Activation | Regularization |
-|-------|------------|-------------|------------|----------------|
+| ------- | ------------ | ------------- | ------------ | ---------------- |
 | FC1 | N_features | hidden | ReLU | BatchNorm, Dropout(0.2) |
 | FC2 | hidden | 2*hidden | ReLU | BatchNorm, Dropout(0.2) |
 | FC3 | 2*hidden | hidden | ReLU | BatchNorm |
@@ -474,7 +476,7 @@ print(f"30-day forecast range: {forecasts.min():.0f} - {forecasts.max():.0f}")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 4 GB | 8 GB | 16 GB |
 | GPU | None | GTX 1660 | RTX 3080 |
@@ -483,7 +485,7 @@ print(f"30-day forecast range: {forecasts.min():.0f} - {forecasts.max():.0f}")
 ### Memory Consumption
 
 | Variant | Model Size | Inference Memory | Batch 1 | Batch 64 |
-|---------|------------|------------------|---------|----------|
+| --------- | ------------ | ------------------ | --------- | ---------- |
 | tiny | 0.3 MB | 20 MB | 50 MB | 150 MB |
 | base | 1 MB | 40 MB | 100 MB | 400 MB |
 | large | 2.5 MB | 80 MB | 200 MB | 800 MB |
@@ -492,7 +494,7 @@ print(f"30-day forecast range: {forecasts.min():.0f} - {forecasts.max():.0f}")
 ### Throughput Benchmarks
 
 | Variant | CPU (samples/sec) | GPU (samples/sec) |
-|---------|-------------------|-------------------|
+| --------- | ------------------- | ------------------- |
 | tiny | 10,000 | 100,000 |
 | base | 5,000 | 50,000 |
 | large | 2,000 | 20,000 |
@@ -505,7 +507,7 @@ print(f"30-day forecast range: {forecasts.min():.0f} - {forecasts.max():.0f}")
 ### Input Requirements
 
 | Data Type | Format | Required Fields |
-|-----------|--------|-----------------|
+| ----------- | -------- | ----------------- |
 | Point Locations | CSV, GeoJSON | lat, lon, attributes |
 | Network Data | Shapefile, GeoPackage | geometry, weights |
 | Raster Data | GeoTIFF | elevation, cost surfaces |
@@ -514,7 +516,7 @@ print(f"30-day forecast range: {forecasts.min():.0f} - {forecasts.max():.0f}")
 ### Output Specifications
 
 | Product | Format | Contents |
-|---------|--------|----------|
+| --------- | -------- | ---------- |
 | Accessibility Scores | CSV, GeoJSON | location, score, components |
 | Route Paths | GeoJSON | geometry, cost, waypoints |
 | Interpolated Surfaces | GeoTIFF | continuous values |
@@ -588,7 +590,7 @@ writer.write_geodataframe(
 ### Validation Methodology
 
 | Test Type | Description | Pass Criteria |
-|-----------|-------------|---------------|
+| ----------- | ------------- | --------------- |
 | Unit Tests | Individual function testing | 100% coverage |
 | Integration Tests | End-to-end pipeline testing | All pipelines pass |
 | Accuracy Tests | Comparison with ground truth | R^2 > 0.85 |

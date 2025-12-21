@@ -3,7 +3,7 @@
 ## Model Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | ubx-flood-risk-mlp-1.0.0 |
 | Task | Risk Scoring |
 | Architecture | MLP |
@@ -29,7 +29,7 @@ graph LR
 ## Input Features
 
 | Index | Feature | Description |
-|-------|---------|-------------|
+| ------- | --------- | ------------- |
 | 0 | elevation | Terrain elevation |
 | 1 | slope | Terrain slope |
 | 2 | distance_to_water | Distance to nearest water body |
@@ -44,7 +44,7 @@ graph LR
 ## Performance Metrics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | RMSE | 0.12 |
 | R-squared | 0.85 |
 

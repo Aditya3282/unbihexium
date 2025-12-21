@@ -28,13 +28,13 @@ graph TB
 ## Term Count
 
 $$
-N_{\text{terms}} = \sum_{c \in \text{Categories}} |T_c|
+N_{\text{terms}} = \sum_{c \in \text{Categories}} | T_c |
 $$
 
 ## Core Concepts
 
 | Term | Definition |
-|------|------------|
+| ------ | ------------ |
 | Pipeline | Sequence of processing stages for data transformation |
 | Capability | Named feature or function provided by the library |
 | Registry | Central index of available capabilities and models |
@@ -43,7 +43,7 @@ $$
 ## Model Terms
 
 | Term | Definition |
-|------|------------|
+| ------ | ------------ |
 | ONNX | Open Neural Network Exchange format |
 | Variant | Model size configuration (tiny, base, large) |
 | Manifest | JSON file describing model metadata |
@@ -52,7 +52,7 @@ $$
 ## Geospatial Terms
 
 | Term | Definition |
-|------|------------|
+| ------ | ------------ |
 | GeoTIFF | Georeferenced TIFF image format |
 | CRS | Coordinate Reference System |
 | Raster | Grid-based data representation |
@@ -62,7 +62,7 @@ $$
 ## Processing Terms
 
 | Term | Definition |
-|------|------------|
+| ------ | ------------ |
 | Tiling | Dividing large images into smaller tiles |
 | Mosaicking | Combining multiple images into one |
 | Orthorectification | Correcting geometric distortions |
@@ -71,7 +71,7 @@ $$
 ## Index Terms
 
 | Term | Definition |
-|------|------------|
+| ------ | ------------ |
 | NDVI | Normalized Difference Vegetation Index |
 | NDWI | Normalized Difference Water Index |
 | NBR | Normalized Burn Ratio |

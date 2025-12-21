@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | emergency_disaster_manager_tiny |
 | Task | Regression |
 | Architecture | MLP |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | RMSE | 0.15 |
 | R2 | 0.82 |
 | MAE | 0.12 |

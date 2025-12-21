@@ -3,7 +3,7 @@
 ## Model Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | ubx-seg-multiclass-unet-1.0.0 |
 | Task | Semantic Segmentation |
 | Architecture | UNet |
@@ -38,7 +38,7 @@ graph TB
 ## Classes
 
 | ID | Class | Description |
-|----|-------|-------------|
+| ---- | ------- | ------------- |
 | 0 | Background | Unclassified |
 | 1 | Water | Water bodies |
 | 2 | Vegetation | Crops and forest |
@@ -48,7 +48,7 @@ graph TB
 ## Performance Metrics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | IoU (mean) | 0.72 |
 | Dice | 0.81 |
 | Accuracy | 0.89 |
@@ -56,7 +56,7 @@ graph TB
 ### IoU Formula
 
 $$
-\text{IoU} = \frac{|A \cap B|}{|A \cup B|} = \frac{TP}{TP + FP + FN}
+\text{IoU} = \frac{| A \cap B | }{ | A \cup B |} = \frac{TP}{TP + FP + FN}
 $$
 
 ## Intended Use

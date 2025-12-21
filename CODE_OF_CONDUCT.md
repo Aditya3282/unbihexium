@@ -7,6 +7,7 @@ This code of conduct establishes expectations for participation in the Unbihexiu
 ## Scope
 
 Applies to all project spaces including:
+
 - GitHub repositories
 - Issue trackers
 - Pull requests
@@ -37,7 +38,7 @@ $$
 $$
 
 | Behavior | Weight | Expected |
-|----------|--------|----------|
+| ------------------------ | ------ | ----------- |
 | Respectful communication | 1.0 | Required |
 | Constructive feedback | 0.9 | Expected |
 | Inclusive participation | 0.9 | Expected |
@@ -60,7 +61,7 @@ $$
 
 ## Reporting
 
-Email: conduct@unbihexium.dev
+Email: <conduct@unbihexium.dev>
 
 Reports handled confidentially within 72 hours.
 

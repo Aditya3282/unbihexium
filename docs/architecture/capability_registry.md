@@ -10,8 +10,8 @@ Central registry for capability discovery and management.
 graph TB
     A[Capability Request] --> B[Registry Lookup]
     B --> C{Found?}
-    C -->|Yes| D[Return Handler]
-    C -->|No| E[Fallback/Error]
+    C -->| Yes | D[Return Handler]
+    C -->| No | E[Fallback/Error]
     D --> F[Execute Pipeline]
 ```
 
@@ -22,6 +22,7 @@ R = \{(c_i, h_i, m_i) : c_i \in C, h_i \in H, m_i \in M\}
 $$
 
 Where:
+
 - $C$ = capability identifiers
 - $H$ = handler functions
 - $M$ = model mappings
@@ -29,7 +30,7 @@ Where:
 ## Registry Schema
 
 | Field | Type | Description |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | capability_id | string | Unique identifier |
 | name | string | Human-readable name |
 | handler | callable | Processing function |

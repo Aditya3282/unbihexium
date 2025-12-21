@@ -21,7 +21,7 @@ The domain comprises 14 base model architectures with 56 total variants, serving
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 14 |
 | Total Model Variants | 56 |
 | Minimum Parameters (tiny) | 67,329 |
@@ -36,7 +36,7 @@ The domain comprises 14 base model architectures with 56 total variants, serving
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | deforestation_detector | Segmentation | Siamese | 2 classes | 4 | 258,754 - 4,107,010 |
 | desertification_monitor | Segmentation | UNet | 2 classes | 4 | 143,394 - 2,268,802 |
 | erosion_detector | Segmentation | UNet | 2 classes | 4 | 143,394 - 2,268,802 |
@@ -59,7 +59,7 @@ The domain comprises 14 base model architectures with 56 total variants, serving
 ### Segmentation Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Dataset |
-|-------|--------|------|------|-------|------|---------|
+| ------- | -------- | ------ | ------ | ------- | ------ | --------- |
 | deforestation_detector | F1 | 0.72 | 0.81 | 0.88 | 0.93 | Global Forest Watch |
 | deforestation_detector | IoU | 0.65 | 0.74 | 0.82 | 0.88 | Global Forest Watch |
 | forest_monitor | IoU | 0.70 | 0.78 | 0.85 | 0.91 | Hansen-GFC |
@@ -69,7 +69,7 @@ The domain comprises 14 base model architectures with 56 total variants, serving
 ### Regression Performance
 
 | Model | Metric | Tiny | Base | Large | Mega | Dataset |
-|-------|--------|------|------|-------|------|---------|
+| ------- | -------- | ------ | ------ | ------- | ------ | --------- |
 | forest_density_estimator | R-squared | 0.75 | 0.82 | 0.88 | 0.93 | GEDI-L4A |
 | tree_height_estimator | RMSE | 2.5m | 1.8m | 1.2m | 0.8m | GEDI-L2A |
 | drought_monitor | R-squared | 0.70 | 0.78 | 0.84 | 0.89 | SPEI-Global |
@@ -87,6 +87,7 @@ $$
 $$
 
 Where:
+
 - $D$ = Diameter at Breast Height (cm)
 - $H$ = Tree height (m)
 - $\rho$ = Wood density (g/cm^3)
@@ -117,6 +118,7 @@ E_{deforestation} = A_{loss} \times C_{stock} \times CF_{emission}
 $$
 
 Where:
+
 - $A_{loss}$ = Area of forest loss (ha)
 - $C_{stock}$ = Carbon stock per hectare (tC/ha)
 - $CF_{emission}$ = Committed emission factor (typically 0.9)
@@ -138,6 +140,7 @@ $$
 $$
 
 Where:
+
 - $P_0$ = Above-canopy radiation
 - $P$ = Below-canopy radiation
 - $k$ = Extinction coefficient
@@ -190,7 +193,7 @@ graph TB
 ### Change Detection Formula
 
 $$
-\Delta = |f_{encoder}(I_{t_1}) - f_{encoder}(I_{t_2})|
+\Delta = | f_{encoder}(I_{t_1}) - f_{encoder}(I_{t_2}) |
 $$
 
 ### Temporal Analysis
@@ -334,7 +337,7 @@ print(f"Total carbon stock: {np.nansum(carbon)/1e6:.2f} MtC")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 8 GB | 16 GB | 64 GB |
 | GPU | None | RTX 3070 | A100 |
@@ -343,7 +346,7 @@ print(f"Total carbon stock: {np.nansum(carbon)/1e6:.2f} MtC")
 ### Input Data Requirements
 
 | Data Type | Source | Resolution | Use |
-|-----------|--------|------------|-----|
+| ----------- | -------- | ------------ | ----- |
 | Optical Imagery | Sentinel-2, Landsat | 10-30m | Change detection |
 | SAR Imagery | Sentinel-1 | 10m | Cloud-free monitoring |
 | LIDAR | GEDI, ALS | 1-25m | Height estimation |
@@ -356,7 +359,7 @@ print(f"Total carbon stock: {np.nansum(carbon)/1e6:.2f} MtC")
 ### Validation Datasets
 
 | Dataset | Source | Coverage | Period |
-|---------|--------|----------|--------|
+| --------- | -------- | ---------- | -------- |
 | Global Forest Watch | WRI | Global | 2000-present |
 | Hansen-GFC | UMD | Global | 2000-present |
 | GEDI | NASA | Tropics | 2019-present |
@@ -365,7 +368,7 @@ print(f"Total carbon stock: {np.nansum(carbon)/1e6:.2f} MtC")
 ### Accuracy Assessment
 
 | Model | Producer's Acc | User's Acc | Overall Acc |
-|-------|----------------|------------|-------------|
+| ------- | ---------------- | ------------ | ------------- |
 | deforestation_detector (mega) | 0.91 | 0.93 | 0.92 |
 | forest_monitor (mega) | 0.89 | 0.91 | 0.90 |
 | tree_height_estimator (mega) | - | - | RMSE 0.8m |
@@ -407,7 +410,7 @@ Where $a$ is patch area and $d_{ij}$ is distance between patches.
 ### Measurement, Reporting, Verification
 
 | Component | Method | Data Source |
-|-----------|--------|-------------|
+| ----------- | -------- | ------------- |
 | Activity Data | Change detection | Landsat, Sentinel-2 |
 | Emission Factors | Allometric equations | Field plots, GEDI |
 | Uncertainty | Monte Carlo | Multiple data sources |
@@ -439,7 +442,7 @@ $$
 ### Fire Weather Index Components
 
 | Index | Description | Range |
-|-------|-------------|-------|
+| ------- | ------------- | ------- |
 | FFMC | Fine Fuel Moisture Code | 0-101 |
 | DMC | Duff Moisture Code | 0-600+ |
 | DC | Drought Code | 0-800+ |
@@ -450,7 +453,7 @@ $$
 ### Burn Severity Classification
 
 | dNBR Range | Severity | Description |
-|------------|----------|-------------|
+| ------------ | ---------- | ------------- |
 | < -0.25 | High regrowth | Post-fire recovery |
 | -0.25 to 0.1 | Unburned | No change |
 | 0.1 to 0.27 | Low | Light damage |
@@ -574,7 +577,7 @@ merged.save("forest_change_mosaic.tif")
 ### Forest Inventory Report
 
 | Section | Content |
-|---------|---------|
+| --------- | --------- |
 | Executive Summary | Key findings, area, change rates |
 | Methodology | Data sources, models, validation |
 | Results | Maps, statistics, trends |
@@ -584,7 +587,7 @@ merged.save("forest_change_mosaic.tif")
 ### Carbon Stock Report
 
 | Component | Formula | Unit |
-|-----------|---------|------|
+| ----------- | --------- | ------ |
 | AGB | Allometric | tC/ha |
 | BGB | AGB × 0.26 | tC/ha |
 | Dead Wood | Field sampling | tC/ha |
@@ -598,8 +601,8 @@ merged.save("forest_change_mosaic.tif")
 
 ### Confusion Matrix
 
-| | Predicted Forest | Predicted Non-Forest |
-|---|---|---|
+|   | Predicted Forest | Predicted Non-Forest |
+| --- | --- | --- |
 | Actual Forest | TP | FN |
 | Actual Non-Forest | FP | TN |
 

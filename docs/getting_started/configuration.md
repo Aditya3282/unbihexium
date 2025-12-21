@@ -24,7 +24,7 @@ $$
 ## Configuration Options
 
 | Option | Type | Default | Description |
-|--------|------|---------|-------------|
+| -------- | ------ | --------- | ------------- |
 | `model_dir` | path | ~/.unbihexium | Model cache |
 | `device` | str | auto | cpu, cuda, auto |
 | `batch_size` | int | 1 | Inference batch |
@@ -79,7 +79,7 @@ pipeline = Pipeline.from_config("detection", config=config)
 ## Logging Configuration
 
 | Level | Use Case |
-|-------|----------|
+| ------- | ---------- |
 | DEBUG | Development |
 | INFO | Normal operation |
 | WARNING | Potential issues |

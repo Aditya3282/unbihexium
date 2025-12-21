@@ -20,7 +20,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ### Domain Statistics
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | Base Model Architectures | 4 |
 | Total Model Variants | 16 |
 | Minimum Parameters (tiny) | 186,177 |
@@ -35,7 +35,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ### Complete Model Listing
 
 | Model ID | Task | Architecture | Output | Variants | Parameter Range |
-|----------|------|--------------|--------|----------|-----------------|
+| ---------- | ------ | -------------- | -------- | ---------- | ----------------- |
 | dem_generator | Terrain | CNN | continuous | 4 | 186,177 - 2,956,545 |
 | dsm_generator | Terrain | CNN | continuous | 4 | 186,177 - 2,956,545 |
 | dtm_generator | Terrain | CNN | continuous | 4 | 186,177 - 2,956,545 |
@@ -46,7 +46,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ## Performance Metrics
 
 | Model | Metric | Tiny | Base | Large | Mega | Reference |
-|-------|--------|------|------|-------|------|-----------|
+| ------- | -------- | ------ | ------ | ------- | ------ | ----------- |
 | dem_generator | RMSE | 2.5m | 1.8m | 1.2m | 0.8m | ICESat-2 |
 | dsm_generator | RMSE | 2.0m | 1.5m | 1.0m | 0.6m | LIDAR Reference |
 | dtm_generator | RMSE | 3.0m | 2.2m | 1.5m | 1.0m | Ground Truth |
@@ -58,7 +58,7 @@ The domain comprises 4 base model architectures with 16 total variants, focusing
 ### Definitions
 
 | Product | Full Name | Description | Content |
-|---------|-----------|-------------|---------|
+| --------- | ----------- | ------------- | --------- |
 | DEM | Digital Elevation Model | Bare earth surface | Ground only |
 | DSM | Digital Surface Model | Top surface | Ground + objects |
 | DTM | Digital Terrain Model | Bare earth + breaklines | Hydrological features |
@@ -86,7 +86,7 @@ $$
 Normalized Median Absolute Deviation:
 
 $$
-\text{NMAD} = 1.4826 \times \text{median}(|z_{predicted} - z_{reference}|)
+\text{NMAD} = 1.4826 \times \text{median}(| z_{predicted} - z_{reference} |)
 $$
 
 Linear Error at 90% confidence:
@@ -120,7 +120,7 @@ $$
 Converted to compass bearing:
 
 $$
-\text{aspect}_{compass} = 180° - \arctan2(\frac{\partial z}{\partial y}, \frac{\partial z}{\partial x}) + 90° \times \frac{\frac{\partial z}{\partial x}}{|\frac{\partial z}{\partial x}|}
+\text{aspect}_{compass} = 180° - \arctan2(\frac{\partial z}{\partial y}, \frac{\partial z}{\partial x}) + 90° \times \frac{\frac{\partial z}{\partial x}}{| \frac{\partial z}{\partial x} |}
 $$
 
 ### Curvature
@@ -187,6 +187,7 @@ h = H - \frac{B \cdot f}{p}
 $$
 
 Where:
+
 - $h$ = Ground height
 - $H$ = Flight/satellite altitude
 - $B$ = Base length (stereo baseline)
@@ -210,7 +211,7 @@ Where $r_{ij}$ are elements of the rotation matrix.
 Energy function:
 
 $$
-E(D) = \sum_p C(p, D_p) + \sum_q \in N_p P_1 \cdot T[|D_p - D_q| = 1] + \sum_q \in N_p P_2 \cdot T[|D_p - D_q| > 1]
+E(D) = \sum_p C(p, D_p) + \sum_q \in N_p P_1 \cdot T[| D_p - D_q | = 1] + \sum_q \in N_p P_2 \cdot T[ | D_p - D_q | > 1]
 $$
 
 Where $C$ is the matching cost, $P_1$ and $P_2$ are penalty terms.
@@ -348,7 +349,7 @@ print(f"Max canopy height: {np.nanmax(chm):.2f} m")
 ### Hardware Requirements
 
 | Component | Minimum | Recommended | Optimal |
-|-----------|---------|-------------|---------|
+| ----------- | --------- | ------------- | --------- |
 | CPU | 4 cores | 8 cores | 16+ cores |
 | RAM | 16 GB | 32 GB | 64 GB |
 | GPU | None | RTX 3070 | A100 |
@@ -357,7 +358,7 @@ print(f"Max canopy height: {np.nanmax(chm):.2f} m")
 ### Input Data Requirements
 
 | Data Type | Source | Resolution | Stereo Ratio |
-|-----------|--------|------------|--------------|
+| ----------- | -------- | ------------ | -------------- |
 | WorldView | Maxar | 0.3-0.5m | 0.6-0.8 |
 | Pleiades | Airbus | 0.5m | 0.6-0.8 |
 | SPOT | Airbus | 1.5m | 0.6-0.8 |
@@ -370,7 +371,7 @@ print(f"Max canopy height: {np.nanmax(chm):.2f} m")
 ### Accuracy Specifications
 
 | Product | LE90 (flat) | LE90 (hilly) | LE90 (mountainous) |
-|---------|-------------|--------------|-------------------|
+| --------- | ------------- | -------------- | ------------------- |
 | DEM | 1.0m | 2.0m | 3.0m |
 | DSM | 0.8m | 1.5m | 2.5m |
 | DTM | 1.5m | 2.5m | 4.0m |

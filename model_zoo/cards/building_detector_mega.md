@@ -3,7 +3,7 @@
 ## Overview
 
 | Property | Value |
-|----------|-------|
+| ---------- | ------- |
 | Model ID | building_detector_mega |
 | Task | Detection |
 | Architecture | RESNET_FPN |
@@ -29,7 +29,7 @@ graph LR
 ## Performance
 
 | Metric | Value |
-|--------|-------|
+| -------- | ------- |
 | MAP | 0.72 |
 | PRECISION | 0.78 |
 | RECALL | 0.7 |
