@@ -52,7 +52,7 @@ Each model includes provenance in manifest:
 
 When using Unbihexium models, include:
 
-```
+```text
 Models from Unbihexium (https://github.com/unbihexium-oss/unbihexium)
 Licensed under Apache-2.0
 ```

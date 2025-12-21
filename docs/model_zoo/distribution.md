@@ -40,7 +40,7 @@ $$
 
 ## GitHub Release Structure
 
-```
+```text
 v1.0.0/
   unbihexium-models-tiny.zip
   unbihexium-models-base.zip

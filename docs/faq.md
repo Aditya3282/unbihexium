@@ -46,7 +46,6 @@ pip install torch --index-url https://download.pytorch.org/whl/cu121
 pip install unbihexium
 ```
 
-
 ### Q: Can I use conda?
 
 A: Yes: `conda install -c conda-forge unbihexium`
@@ -62,7 +61,6 @@ A: Use the CLI or Python API:
 ```bash
 unbihexium infer ship_detector_tiny -i input.tif -o output.tif
 ```
-
 
 ### Q: What input formats are supported?
 

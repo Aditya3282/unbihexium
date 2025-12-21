@@ -54,7 +54,7 @@ torch.onnx.export(
 
 ### 3. Create Artifacts
 
-```
+```text
 model_zoo/assets/{variant}/{model_id}/
   model.onnx
   config.json
