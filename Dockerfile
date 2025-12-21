@@ -43,8 +43,7 @@ LABEL license="Apache-2.0"
 
 # Install runtime dependencies only
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgdal32 \
-    gdal-bin \
+    libgdal-dev \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
