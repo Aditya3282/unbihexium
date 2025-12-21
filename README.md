@@ -21,14 +21,13 @@
 </div>
 
 
-<!-- Row 2: Model Zoo Stats -->
-[![Models](https://img.shields.io/badge/models-520-ff6b35.svg)](model_zoo/)
-[![Parameters](https://img.shields.io/badge/parameters-515M-9c27b0.svg)](model_zoo/)
-[![Architectures](https://img.shields.io/badge/architectures-130-e91e63.svg)](model_zoo/)
-[![Tiny](https://img.shields.io/badge/tiny-64px-00bcd4.svg)](model_zoo/)
-[![Base](https://img.shields.io/badge/base-128px-03a9f4.svg)](model_zoo/)
-[![Large](https://img.shields.io/badge/large-256px-2196f3.svg)](model_zoo/)
-[![Mega](https://img.shields.io/badge/mega-512px-3f51b5.svg)](model_zoo/)
+<!-- Model Zoo -->
+[![Models](https://img.shields.io/badge/models-520-ff6b35.svg?style=flat-square)](model_zoo/)
+[![Parameters](https://img.shields.io/badge/parameters-515M-9c27b0.svg?style=flat-square)](model_zoo/)
+[![Architectures](https://img.shields.io/badge/architectures-130-e91e63.svg?style=flat-square)](model_zoo/)
+[![Variants](https://img.shields.io/badge/variants-4%20tiers-00bcd4.svg?style=flat-square)](model_zoo/)
+[![ONNX Models](https://img.shields.io/badge/ONNX-520%20models-005cff.svg?style=flat-square&logo=onnx)](model_zoo/)
+[![PyTorch Models](https://img.shields.io/badge/PyTorch-520%20models-ee4c2c.svg?style=flat-square&logo=pytorch&logoColor=white)](model_zoo/)
 
 <!-- Row 3: Capabilities & Features -->
 [![Detection](https://img.shields.io/badge/detection-76%20models-ff5722.svg)](docs/capabilities/)
@@ -46,13 +45,13 @@
 [![GDAL](https://img.shields.io/badge/GDAL-compatible-2e7d32.svg)](https://gdal.org/)
 [![STAC](https://img.shields.io/badge/STAC-API-1976d2.svg)](https://stacspec.org/)
 
-<!-- Row 5: Data Formats -->
-[![GeoTIFF](https://img.shields.io/badge/GeoTIFF-native-43a047.svg)](docs/)
-[![COG](https://img.shields.io/badge/COG-cloud%20optimized-26a69a.svg)](docs/)
-[![Zarr](https://img.shields.io/badge/Zarr-supported-7b1fa2.svg)](docs/)
-[![NetCDF](https://img.shields.io/badge/NetCDF-supported-5c6bc0.svg)](docs/)
-[![Shapefile](https://img.shields.io/badge/Shapefile-vector-8d6e63.svg)](docs/)
-[![GeoJSON](https://img.shields.io/badge/GeoJSON-vector-ffb300.svg)](docs/)
+<!-- Supported Formats -->
+[![GeoTIFF](https://img.shields.io/badge/format-GeoTIFF-43a047.svg?style=flat-square)](docs/)
+[![COG](https://img.shields.io/badge/format-COG-26a69a.svg?style=flat-square)](docs/)
+[![Sentinel](https://img.shields.io/badge/satellite-Sentinel-1976d2.svg?style=flat-square)](docs/)
+[![Landsat](https://img.shields.io/badge/satellite-Landsat-0288d1.svg?style=flat-square)](docs/)
+[![WorldView](https://img.shields.io/badge/satellite-WorldView-7b1fa2.svg?style=flat-square)](docs/)
+[![Planet](https://img.shields.io/badge/satellite-Planet-00acc1.svg?style=flat-square)](docs/)
 
 <!-- Row 6: Code Quality -->
 [![Ruff](https://img.shields.io/badge/linter-ruff-261230.svg?logo=ruff&logoColor=d7ff64)](https://github.com/astral-sh/ruff)

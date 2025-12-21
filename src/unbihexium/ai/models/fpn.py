@@ -65,9 +65,7 @@ if TORCH_AVAILABLE:
             self.output_convs = nn.ModuleList()
 
             for in_ch in cfg.in_channels_list:
-                self.lateral_convs.append(
-                    nn.Conv2d(in_ch, cfg.out_channels, 1)
-                )
+                self.lateral_convs.append(nn.Conv2d(in_ch, cfg.out_channels, 1))
                 self.output_convs.append(
                     nn.Conv2d(cfg.out_channels, cfg.out_channels, 3, padding=1)
                 )
@@ -95,9 +93,7 @@ if TORCH_AVAILABLE:
             Returns:
                 List of FPN feature maps.
             """
-            laterals = [
-                conv(f) for f, conv in zip(features, self.lateral_convs)
-            ]
+            laterals = [conv(f) for f, conv in zip(features, self.lateral_convs)]
 
             for i in range(len(laterals) - 2, -1, -1):
                 upsampled = F.interpolate(
@@ -107,9 +103,7 @@ if TORCH_AVAILABLE:
                 )
                 laterals[i] = laterals[i] + upsampled
 
-            outputs = [
-                conv(lat) for lat, conv in zip(laterals, self.output_convs)
-            ]
+            outputs = [conv(lat) for lat, conv in zip(laterals, self.output_convs)]
 
             if self.extra_convs is not None:
                 last = features[-1]

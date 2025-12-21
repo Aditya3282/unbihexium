@@ -16,10 +16,10 @@ from numpy.typing import NDArray
 
 def compute_sha256(path: str | Path) -> str:
     """Compute SHA256 hash of file.
-    
+
     Args:
         path: Path to file
-        
+
     Returns:
         Hex digest of SHA256 hash
     """
@@ -36,12 +36,12 @@ def tile_image(
     overlap: int = 64,
 ) -> Generator[tuple[NDArray, int, int], None, None]:
     """Tile image into overlapping patches.
-    
+
     Args:
         image: Input image array (CHW or HW)
         tile_size: Size of each tile
         overlap: Overlap between tiles
-        
+
     Yields:
         Tuple of (tile, row, col)
     """
@@ -70,10 +70,10 @@ def tile_image(
 
 def ensure_dir(path: str | Path) -> Path:
     """Ensure directory exists.
-    
+
     Args:
         path: Directory path
-        
+
     Returns:
         Resolved path
     """
@@ -84,10 +84,10 @@ def ensure_dir(path: str | Path) -> Path:
 
 def bytes_to_human(size: int) -> str:
     """Convert bytes to human-readable string.
-    
+
     Args:
         size: Size in bytes
-        
+
     Returns:
         Human-readable string
     """
@@ -100,10 +100,10 @@ def bytes_to_human(size: int) -> str:
 
 def count_parameters(model) -> int:
     """Count trainable parameters in model.
-    
+
     Args:
         model: PyTorch model
-        
+
     Returns:
         Number of trainable parameters
     """

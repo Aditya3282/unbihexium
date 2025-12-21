@@ -17,22 +17,22 @@ def colorize_mask(
     colormap: dict[int, tuple[int, int, int]] | None = None,
 ) -> NDArray:
     """Convert class mask to RGB image.
-    
+
     Args:
         mask: Class label array
         colormap: Dictionary mapping class IDs to RGB tuples
-        
+
     Returns:
         RGB image array
     """
     if colormap is None:
         colormap = {
-            0: (0, 0, 0),       # Background
-            1: (255, 0, 0),     # Class 1
-            2: (0, 255, 0),     # Class 2
-            3: (0, 0, 255),     # Class 3
-            4: (255, 255, 0),   # Class 4
-            5: (255, 0, 255),   # Class 5
+            0: (0, 0, 0),  # Background
+            1: (255, 0, 0),  # Class 1
+            2: (0, 255, 0),  # Class 2
+            3: (0, 0, 255),  # Class 3
+            4: (255, 255, 0),  # Class 4
+            5: (255, 0, 255),  # Class 5
         }
 
     h, w = mask.shape
@@ -51,13 +51,13 @@ def overlay_mask(
     color: tuple[int, int, int] = (255, 0, 0),
 ) -> NDArray:
     """Overlay binary mask on image.
-    
+
     Args:
         image: RGB image array
         mask: Binary mask array
         alpha: Overlay transparency
         color: Mask color
-        
+
     Returns:
         Blended RGB image
     """
@@ -68,9 +68,9 @@ def overlay_mask(
     mask_rgb[..., 2] = color[2] * mask
 
     mask_bool = mask > 0
-    result[mask_bool] = (
-        (1 - alpha) * result[mask_bool] + alpha * mask_rgb[mask_bool]
-    ).astype(np.uint8)
+    result[mask_bool] = ((1 - alpha) * result[mask_bool] + alpha * mask_rgb[mask_bool]).astype(
+        np.uint8
+    )
 
     return result
 
@@ -81,12 +81,12 @@ def create_legend(
     size: tuple[int, int] = (200, 20),
 ) -> NDArray:
     """Create color legend image.
-    
+
     Args:
         labels: Class labels
         colors: Class colors
         size: Size of each legend entry
-        
+
     Returns:
         Legend image array
     """
@@ -95,7 +95,7 @@ def create_legend(
 
     for i, (label, color) in enumerate(zip(labels, colors)):
         y = i * size[1]
-        legend[y:y+size[1], :size[0]] = color
+        legend[y : y + size[1], : size[0]] = color
 
     return legend
 
@@ -105,11 +105,11 @@ def normalize_for_display(
     percentile: tuple[float, float] = (2, 98),
 ) -> NDArray:
     """Normalize image for display using percentile stretch.
-    
+
     Args:
         image: Input image array
         percentile: Low and high percentiles
-        
+
     Returns:
         Normalized uint8 image
     """

@@ -59,11 +59,13 @@ if TORCH_AVAILABLE:
             in_size = cfg.input_features
 
             for hidden_size in cfg.hidden_sizes:
-                layers.extend([
-                    nn.Linear(in_size, hidden_size),
-                    nn.ReLU(inplace=True),
-                    nn.Dropout(cfg.dropout),
-                ])
+                layers.extend(
+                    [
+                        nn.Linear(in_size, hidden_size),
+                        nn.ReLU(inplace=True),
+                        nn.Dropout(cfg.dropout),
+                    ]
+                )
                 in_size = hidden_size
 
             layers.append(nn.Linear(in_size, cfg.output_size))

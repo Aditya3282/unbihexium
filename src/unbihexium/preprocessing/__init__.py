@@ -42,6 +42,7 @@ class Resize:
 
     def __call__(self, image: NDArray) -> NDArray:
         from skimage.transform import resize
+
         return resize(image, self.size, mode="reflect", anti_aliasing=True)
 
 

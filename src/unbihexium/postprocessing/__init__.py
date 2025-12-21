@@ -10,16 +10,14 @@ import numpy as np
 from numpy.typing import NDArray
 
 
-def threshold(
-    predictions: NDArray, threshold: float = 0.5, above: bool = True
-) -> NDArray:
+def threshold(predictions: NDArray, threshold: float = 0.5, above: bool = True) -> NDArray:
     """Apply threshold to predictions.
-    
+
     Args:
         predictions: Prediction array
         threshold: Threshold value
         above: If True, values above threshold are 1
-        
+
     Returns:
         Binary array
     """
@@ -30,11 +28,11 @@ def threshold(
 
 def argmax(predictions: NDArray, axis: int = 0) -> NDArray:
     """Apply argmax for multi-class predictions.
-    
+
     Args:
         predictions: Prediction array with class probabilities
         axis: Axis along which to compute argmax
-        
+
     Returns:
         Class label array
     """
@@ -43,11 +41,11 @@ def argmax(predictions: NDArray, axis: int = 0) -> NDArray:
 
 def softmax(predictions: NDArray, axis: int = 0) -> NDArray:
     """Apply softmax to logits.
-    
+
     Args:
         predictions: Logit array
         axis: Axis along which to compute softmax
-        
+
     Returns:
         Probability array
     """
@@ -57,26 +55,24 @@ def softmax(predictions: NDArray, axis: int = 0) -> NDArray:
 
 def sigmoid(predictions: NDArray) -> NDArray:
     """Apply sigmoid to logits.
-    
+
     Args:
         predictions: Logit array
-        
+
     Returns:
         Probability array
     """
     return 1 / (1 + np.exp(-predictions))
 
 
-def morphology_clean(
-    mask: NDArray, operation: str = "open", kernel_size: int = 3
-) -> NDArray:
+def morphology_clean(mask: NDArray, operation: str = "open", kernel_size: int = 3) -> NDArray:
     """Apply morphological operations to clean mask.
-    
+
     Args:
         mask: Binary mask array
         operation: 'open', 'close', 'erode', 'dilate'
         kernel_size: Size of structuring element
-        
+
     Returns:
         Cleaned mask array
     """
@@ -95,11 +91,11 @@ def morphology_clean(
 
 def remove_small_objects(mask: NDArray, min_size: int = 100) -> NDArray:
     """Remove small connected components from mask.
-    
+
     Args:
         mask: Binary mask array
         min_size: Minimum object size in pixels
-        
+
     Returns:
         Cleaned mask array
     """
@@ -121,13 +117,13 @@ def stitch_tiles(
     overlap: int = 0,
 ) -> NDArray:
     """Stitch tiles back into full image.
-    
+
     Args:
         tiles: List of tile arrays
         positions: List of (row, col) positions
         output_shape: Shape of output array
         overlap: Overlap between tiles
-        
+
     Returns:
         Stitched array
     """
@@ -137,10 +133,10 @@ def stitch_tiles(
     for tile, (r, c) in zip(tiles, positions):
         h, w = tile.shape[-2:]
         if tile.ndim == 3:
-            output[:, r:r+h, c:c+w] += tile
+            output[:, r : r + h, c : c + w] += tile
         else:
-            output[r:r+h, c:c+w] += tile
-        weights[r:r+h, c:c+w] += 1
+            output[r : r + h, c : c + w] += tile
+        weights[r : r + h, c : c + w] += 1
 
     weights = np.maximum(weights, 1)
     if output.ndim == 3:

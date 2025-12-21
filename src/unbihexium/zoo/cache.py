@@ -138,11 +138,13 @@ def get_cache_info() -> dict[str, Any]:
         if item.is_dir():
             model_size = sum(f.stat().st_size for f in item.rglob("*") if f.is_file())
             total_size += model_size
-            models.append({
-                "model_id": item.name,
-                "size_mb": round(model_size / (1024 * 1024), 2),
-                "files": [f.name for f in item.iterdir() if f.is_file()],
-            })
+            models.append(
+                {
+                    "model_id": item.name,
+                    "size_mb": round(model_size / (1024 * 1024), 2),
+                    "files": [f.name for f in item.iterdir() if f.is_file()],
+                }
+            )
 
     return {
         "path": str(cache_dir),

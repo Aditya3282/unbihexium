@@ -12,11 +12,11 @@ from numpy.typing import NDArray
 
 def slope(dem: NDArray, resolution: float) -> NDArray:
     """Compute slope from DEM.
-    
+
     Args:
         dem: Digital Elevation Model array
         resolution: Cell size in meters
-        
+
     Returns:
         Slope array in degrees
     """
@@ -27,11 +27,11 @@ def slope(dem: NDArray, resolution: float) -> NDArray:
 
 def aspect(dem: NDArray, resolution: float) -> NDArray:
     """Compute aspect from DEM.
-    
+
     Args:
         dem: Digital Elevation Model array
         resolution: Cell size in meters
-        
+
     Returns:
         Aspect array in degrees (0-360, north=0)
     """
@@ -49,13 +49,13 @@ def hillshade(
     altitude: float = 45,
 ) -> NDArray:
     """Compute hillshade from DEM.
-    
+
     Args:
         dem: Digital Elevation Model array
         resolution: Cell size in meters
         azimuth: Sun azimuth in degrees
         altitude: Sun altitude in degrees
-        
+
     Returns:
         Hillshade array (0-255)
     """
@@ -66,9 +66,8 @@ def hillshade(
     slope_rad = np.arctan(np.sqrt(dx**2 + dy**2))
     aspect_rad = np.arctan2(-dy, dx)
 
-    hillshade = (
-        np.sin(alt_rad) * np.cos(slope_rad)
-        + np.cos(alt_rad) * np.sin(slope_rad) * np.cos(az_rad - aspect_rad)
+    hillshade = np.sin(alt_rad) * np.cos(slope_rad) + np.cos(alt_rad) * np.sin(slope_rad) * np.cos(
+        az_rad - aspect_rad
     )
 
     return np.clip(hillshade * 255, 0, 255).astype(np.uint8)
@@ -76,11 +75,11 @@ def hillshade(
 
 def curvature(dem: NDArray, resolution: float) -> tuple[NDArray, NDArray]:
     """Compute profile and plan curvature from DEM.
-    
+
     Args:
         dem: Digital Elevation Model array
         resolution: Cell size in meters
-        
+
     Returns:
         Tuple of (profile_curvature, plan_curvature)
     """
@@ -99,13 +98,13 @@ def curvature(dem: NDArray, resolution: float) -> tuple[NDArray, NDArray]:
 
 def twi(dem: NDArray, resolution: float) -> NDArray:
     """Compute Topographic Wetness Index.
-    
+
     TWI = ln(A / tan(slope))
-    
+
     Args:
         dem: Digital Elevation Model array
         resolution: Cell size in meters
-        
+
     Returns:
         TWI array
     """
@@ -120,10 +119,10 @@ def twi(dem: NDArray, resolution: float) -> NDArray:
 
 def roughness(dem: NDArray) -> NDArray:
     """Compute Terrain Ruggedness Index.
-    
+
     Args:
         dem: Digital Elevation Model array
-        
+
     Returns:
         TRI array
     """
