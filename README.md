@@ -20,14 +20,14 @@
 
 <p align="center">
   <a href="model_zoo/"><img src="https://img.shields.io/badge/Models-520-FF6B35?style=flat-square&logo=huggingface&logoColor=white" alt="Models"></a>
-  <a href="model_zoo/"><img src="https://img.shields.io/badge/Parameters-515M-9C27B0?style=flat-square&logo=databricks&logoColor=white" alt="Parameters"></a>
-  <a href="model_zoo/"><img src="https://img.shields.io/badge/Architectures-130-E91E63?style=flat-square&logo=tensorflow&logoColor=white" alt="Architectures"></a>
+  <a href="model_zoo/"><img src="https://img.shields.io/badge/Parameters-515M-9C27B0?style=flat-square" alt="Parameters"></a>
+  <a href="model_zoo/"><img src="https://img.shields.io/badge/Architectures-130-E91E63?style=flat-square" alt="Architectures"></a>
   <a href="https://onnx.ai/"><img src="https://img.shields.io/badge/ONNX-supported-005CFF?style=flat-square&logo=onnx&logoColor=white" alt="ONNX"></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-1.24+-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"></a>
-  <a href="https://rasterio.readthedocs.io/"><img src="https://img.shields.io/badge/Rasterio-GeoTIFF-228B22?style=flat-square&logo=mapbox&logoColor=white" alt="Rasterio"></a>
-  <a href="https://gdal.org/"><img src="https://img.shields.io/badge/GDAL-compatible-2E7D32?style=flat-square&logo=qgis&logoColor=white" alt="GDAL"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/Sentinel--2-supported-1976D2?style=flat-square&logo=copernicus&logoColor=white" alt="Sentinel"></a>
+  <a href="https://rasterio.readthedocs.io/"><img src="https://img.shields.io/badge/Rasterio-GeoTIFF-228B22?style=flat-square" alt="Rasterio"></a>
+  <a href="https://gdal.org/"><img src="https://img.shields.io/badge/GDAL-compatible-2E7D32?style=flat-square" alt="GDAL"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/Sentinel--2-supported-1976D2?style=flat-square" alt="Sentinel"></a>
   <a href="docs/"><img src="https://img.shields.io/badge/Landsat--8/9-supported-0288D1?style=flat-square&logo=nasa&logoColor=white" alt="Landsat"></a>
 </p>
 
@@ -49,22 +49,22 @@
   <a href="examples/notebooks/"><img src="https://img.shields.io/badge/Notebooks-130+-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Notebooks"></a>
   <a href="docs/tutorials/"><img src="https://img.shields.io/badge/Tutorials-available-FF7043?style=flat-square&logo=readthedocs&logoColor=white" alt="Tutorials"></a>
   <a href="docs/"><img src="https://img.shields.io/badge/API-reference-00897B?style=flat-square&logo=swagger&logoColor=white" alt="API"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/GeoTIFF-native-43A047?style=flat-square&logo=openstreetmap&logoColor=white" alt="GeoTIFF"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/GeoTIFF-native-43A047?style=flat-square" alt="GeoTIFF"></a>
   <a href="docs/"><img src="https://img.shields.io/badge/COG-cloud-26A69A?style=flat-square&logo=amazonaws&logoColor=white" alt="COG"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/Zarr-supported-7B1FA2?style=flat-square&logo=apache&logoColor=white" alt="Zarr"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/NetCDF-supported-5C6BC0?style=flat-square&logo=jupyter&logoColor=white" alt="NetCDF"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/Zarr-supported-7B1FA2?style=flat-square" alt="Zarr"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/NetCDF-supported-5C6BC0?style=flat-square" alt="NetCDF"></a>
   <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Covenant-2.1-4BAAAA?style=flat-square&logo=contributorcovenant&logoColor=white" alt="Covenant"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github&logoColor=white" alt="PRs"></a>
 </p>
 
 <p align="center">
-  <a href="docs/"><img src="https://img.shields.io/badge/WorldView-supported-7B1FA2?style=flat-square&logo=googlemaps&logoColor=white" alt="WorldView"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/Planet-supported-00ACC1?style=flat-square&logo=here&logoColor=white" alt="Planet"></a>
-  <a href="docs/"><img src="https://img.shields.io/badge/Shapefile-vector-8D6E63?style=flat-square&logo=qgis&logoColor=white" alt="Shapefile"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/WorldView-supported-7B1FA2?style=flat-square" alt="WorldView"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/Planet-supported-00ACC1?style=flat-square" alt="Planet"></a>
+  <a href="docs/"><img src="https://img.shields.io/badge/Shapefile-vector-8D6E63?style=flat-square" alt="Shapefile"></a>
   <a href="docs/"><img src="https://img.shields.io/badge/GeoJSON-vector-FFB300?style=flat-square&logo=json&logoColor=black" alt="GeoJSON"></a>
   <a href="https://scipy.org/"><img src="https://img.shields.io/badge/SciPy-1.11+-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"></a>
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-2.0+-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas"></a>
-  <a href="https://xarray.dev/"><img src="https://img.shields.io/badge/Xarray-supported-F37626?style=flat-square&logo=python&logoColor=white" alt="Xarray"></a>
+  <a href="https://xarray.dev/"><img src="https://img.shields.io/badge/Xarray-supported-F37626?style=flat-square" alt="Xarray"></a>
   <a href="https://dask.org/"><img src="https://img.shields.io/badge/Dask-parallel-FDA061?style=flat-square&logo=dask&logoColor=white" alt="Dask"></a>
   <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-serving-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"></a>
   <a href="https://docker.com/"><img src="https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"></a>
