@@ -1,37 +1,70 @@
 # Unbihexium
 
-<!-- Core Info -->
+<!-- Row 1: Core Project Info -->
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-3776ab.svg?logo=python&logoColor=white)](https://pypi.org/project/unbihexium/)
+[![Version](https://img.shields.io/badge/version-1.0.0-success.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+[![Status](https://img.shields.io/badge/status-production-brightgreen.svg)](README.md)
+[![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey.svg)](README.md)
 
-<!-- Model Zoo -->
+<!-- Row 2: Model Zoo Stats -->
 [![Models](https://img.shields.io/badge/models-520-ff6b35.svg)](model_zoo/)
 [![Parameters](https://img.shields.io/badge/parameters-515M-9c27b0.svg)](model_zoo/)
 [![Architectures](https://img.shields.io/badge/architectures-130-e91e63.svg)](model_zoo/)
-[![Variants](https://img.shields.io/badge/variants-tiny%20%7C%20base%20%7C%20large%20%7C%20mega-00bcd4.svg)](model_zoo/)
+[![Tiny](https://img.shields.io/badge/tiny-64px-00bcd4.svg)](model_zoo/)
+[![Base](https://img.shields.io/badge/base-128px-03a9f4.svg)](model_zoo/)
+[![Large](https://img.shields.io/badge/large-256px-2196f3.svg)](model_zoo/)
+[![Mega](https://img.shields.io/badge/mega-512px-3f51b5.svg)](model_zoo/)
 
-<!-- Capabilities -->
-[![Domains](https://img.shields.io/badge/domains-12-4caf50.svg)](docs/capabilities/)
-[![Notebooks](https://img.shields.io/badge/notebooks-130-009688.svg)](examples/notebooks/)
-[![Tasks](https://img.shields.io/badge/tasks-detection%20%7C%20segmentation%20%7C%20regression-673ab7.svg)](docs/)
+<!-- Row 3: Capabilities & Features -->
+[![Detection](https://img.shields.io/badge/detection-76%20models-ff5722.svg)](docs/capabilities/)
+[![Segmentation](https://img.shields.io/badge/segmentation-128%20models-4caf50.svg)](docs/capabilities/)
+[![Regression](https://img.shields.io/badge/regression-188%20models-673ab7.svg)](docs/capabilities/)
+[![Terrain](https://img.shields.io/badge/terrain-52%20models-795548.svg)](docs/capabilities/)
+[![Domains](https://img.shields.io/badge/domains-12-009688.svg)](docs/capabilities/)
+[![Notebooks](https://img.shields.io/badge/notebooks-130-00acc1.svg)](examples/notebooks/)
 
-<!-- Technology -->
+<!-- Row 4: Technology Stack -->
 [![ONNX](https://img.shields.io/badge/ONNX-supported-005cff.svg?logo=onnx)](https://onnx.ai/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-supported-ee4c2c.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.24+-013243.svg?logo=numpy&logoColor=white)](https://numpy.org/)
 [![Rasterio](https://img.shields.io/badge/Rasterio-GeoTIFF-228b22.svg)](https://rasterio.readthedocs.io/)
-[![NumPy](https://img.shields.io/badge/NumPy-array%20support-013243.svg?logo=numpy&logoColor=white)](https://numpy.org/)
+[![GDAL](https://img.shields.io/badge/GDAL-compatible-2e7d32.svg)](https://gdal.org/)
+[![STAC](https://img.shields.io/badge/STAC-API-1976d2.svg)](https://stacspec.org/)
 
-<!-- Quality -->
-[![Code Style](https://img.shields.io/badge/code%20style-ruff-261230.svg?logo=ruff&logoColor=d7ff64)](https://github.com/astral-sh/ruff)
-[![Type Checked](https://img.shields.io/badge/types-pyright-blue.svg)](https://github.com/microsoft/pyright)
-[![Security](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-[![Tested](https://img.shields.io/badge/tested-pytest-0a9edc.svg?logo=pytest&logoColor=white)](https://pytest.org/)
+<!-- Row 5: Data Formats -->
+[![GeoTIFF](https://img.shields.io/badge/GeoTIFF-native-43a047.svg)](docs/)
+[![COG](https://img.shields.io/badge/COG-cloud%20optimized-26a69a.svg)](docs/)
+[![Zarr](https://img.shields.io/badge/Zarr-supported-7b1fa2.svg)](docs/)
+[![NetCDF](https://img.shields.io/badge/NetCDF-supported-5c6bc0.svg)](docs/)
+[![Shapefile](https://img.shields.io/badge/Shapefile-vector-8d6e63.svg)](docs/)
+[![GeoJSON](https://img.shields.io/badge/GeoJSON-vector-ffb300.svg)](docs/)
 
-<!-- Community -->
+<!-- Row 6: Code Quality -->
+[![Ruff](https://img.shields.io/badge/linter-ruff-261230.svg?logo=ruff&logoColor=d7ff64)](https://github.com/astral-sh/ruff)
+[![Pyright](https://img.shields.io/badge/types-pyright-blue.svg)](https://github.com/microsoft/pyright)
+[![Bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![Pytest](https://img.shields.io/badge/tests-pytest-0a9edc.svg?logo=pytest&logoColor=white)](https://pytest.org/)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen.svg?logo=pre-commit)](https://pre-commit.com/)
+[![Conventional Commits](https://img.shields.io/badge/commits-conventional-fe5196.svg?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
+<!-- Row 7: Documentation & Community -->
+[![Docs](https://img.shields.io/badge/docs-mkdocs-526cfe.svg)](https://unbihexium-oss.github.io/unbihexium/)
+[![API](https://img.shields.io/badge/API-reference-00897b.svg)](docs/)
+[![Tutorials](https://img.shields.io/badge/tutorials-available-ff7043.svg)](docs/tutorials/)
+[![Examples](https://img.shields.io/badge/examples-130+-8bc34a.svg)](examples/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Open Source](https://img.shields.io/badge/open%20source-%E2%9D%A4-red.svg)](https://github.com/unbihexium-oss/unbihexium)
+
+<!-- Row 8: Open Source Love -->
+[![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red.svg)](https://github.com/unbihexium-oss/unbihexium)
+[![Open Source](https://img.shields.io/badge/open%20source-100%25-success.svg)](https://github.com/unbihexium-oss/unbihexium)
+[![GitHub Stars](https://img.shields.io/badge/stars-⭐-yellow.svg)](https://github.com/unbihexium-oss/unbihexium)
+[![GitHub Forks](https://img.shields.io/badge/forks-🍴-blue.svg)](https://github.com/unbihexium-oss/unbihexium/fork)
+[![Maintained](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/unbihexium-oss/unbihexium)
+[![Active](https://img.shields.io/badge/development-active-brightgreen.svg)](https://github.com/unbihexium-oss/unbihexium)
+[![Issues](https://img.shields.io/badge/issues-welcome-blue.svg)](https://github.com/unbihexium-oss/unbihexium/issues)
+[![Discussions](https://img.shields.io/badge/discussions-open-purple.svg)](https://github.com/unbihexium-oss/unbihexium/discussions)
 
 ---
 
