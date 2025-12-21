@@ -80,16 +80,15 @@ def morphology_clean(
     Returns:
         Cleaned mask array
     """
-    from scipy.ndimage import binary_opening, binary_closing
-    from scipy.ndimage import binary_erosion, binary_dilation
-    
+    from scipy.ndimage import binary_closing, binary_dilation, binary_erosion, binary_opening
+
     ops = {
         "open": binary_opening,
         "close": binary_closing,
         "erode": binary_erosion,
         "dilate": binary_dilation,
     }
-    
+
     structure = np.ones((kernel_size, kernel_size))
     return ops[operation](mask, structure=structure).astype(mask.dtype)
 
@@ -105,13 +104,13 @@ def remove_small_objects(mask: NDArray, min_size: int = 100) -> NDArray:
         Cleaned mask array
     """
     from scipy.ndimage import label
-    
+
     labeled, num_features = label(mask)
     sizes = np.bincount(labeled.ravel())
-    
+
     mask_sizes = sizes > min_size
     mask_sizes[0] = False  # Background
-    
+
     return mask_sizes[labeled].astype(mask.dtype)
 
 
@@ -134,7 +133,7 @@ def stitch_tiles(
     """
     output = np.zeros(output_shape, dtype=tiles[0].dtype)
     weights = np.zeros(output_shape[:2], dtype=np.float32)
-    
+
     for tile, (r, c) in zip(tiles, positions):
         h, w = tile.shape[-2:]
         if tile.ndim == 3:
@@ -142,7 +141,7 @@ def stitch_tiles(
         else:
             output[r:r+h, c:c+w] += tile
         weights[r:r+h, c:c+w] += 1
-    
+
     weights = np.maximum(weights, 1)
     if output.ndim == 3:
         return output / weights[np.newaxis, ...]

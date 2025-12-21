@@ -49,9 +49,9 @@ def tile_image(
         _, h, w = image.shape
     else:
         h, w = image.shape
-    
+
     stride = tile_size - overlap
-    
+
     for i in range(0, h - overlap, stride):
         for j in range(0, w - overlap, stride):
             # Handle edge cases
@@ -59,12 +59,12 @@ def tile_image(
             end_j = min(j + tile_size, w)
             start_i = max(0, end_i - tile_size)
             start_j = max(0, end_j - tile_size)
-            
+
             if image.ndim == 3:
                 tile = image[:, start_i:end_i, start_j:end_j]
             else:
                 tile = image[start_i:end_i, start_j:end_j]
-            
+
             yield tile, start_i, start_j
 
 

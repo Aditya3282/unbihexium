@@ -14,7 +14,6 @@ from typing import Any
 from fastapi import HTTPException, Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
-
 # Maximum request payload size (10 MB)
 MAX_PAYLOAD_SIZE = 10 * 1024 * 1024
 

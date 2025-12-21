@@ -34,13 +34,13 @@ def colorize_mask(
             4: (255, 255, 0),   # Class 4
             5: (255, 0, 255),   # Class 5
         }
-    
+
     h, w = mask.shape
     rgb = np.zeros((h, w, 3), dtype=np.uint8)
-    
+
     for class_id, color in colormap.items():
         rgb[mask == class_id] = color
-    
+
     return rgb
 
 
@@ -66,12 +66,12 @@ def overlay_mask(
     mask_rgb[..., 0] = color[0] * mask
     mask_rgb[..., 1] = color[1] * mask
     mask_rgb[..., 2] = color[2] * mask
-    
+
     mask_bool = mask > 0
     result[mask_bool] = (
         (1 - alpha) * result[mask_bool] + alpha * mask_rgb[mask_bool]
     ).astype(np.uint8)
-    
+
     return result
 
 
@@ -92,11 +92,11 @@ def create_legend(
     """
     n = len(labels)
     legend = np.ones((n * size[1], size[0] + 100, 3), dtype=np.uint8) * 255
-    
+
     for i, (label, color) in enumerate(zip(labels, colors)):
         y = i * size[1]
         legend[y:y+size[1], :size[0]] = color
-    
+
     return legend
 
 
@@ -115,10 +115,10 @@ def normalize_for_display(
     """
     low = np.percentile(image, percentile[0])
     high = np.percentile(image, percentile[1])
-    
+
     stretched = (image - low) / (high - low + 1e-8)
     stretched = np.clip(stretched, 0, 1)
-    
+
     return (stretched * 255).astype(np.uint8)
 
 

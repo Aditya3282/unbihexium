@@ -16,7 +16,7 @@ import yaml
 @dataclass
 class ModelConfig:
     """Model configuration."""
-    
+
     variant: str = "large"
     device: str = "cuda:0"
     batch_size: int = 8
@@ -26,7 +26,7 @@ class ModelConfig:
 @dataclass
 class ProcessingConfig:
     """Processing configuration."""
-    
+
     tile_size: int = 512
     overlap: int = 64
     output_format: str = "GTiff"
@@ -36,21 +36,21 @@ class ProcessingConfig:
 @dataclass
 class Config:
     """Main configuration class."""
-    
+
     model: ModelConfig = field(default_factory=ModelConfig)
     processing: ProcessingConfig = field(default_factory=ProcessingConfig)
-    
+
     @classmethod
-    def from_yaml(cls, path: str | Path) -> "Config":
+    def from_yaml(cls, path: str | Path) -> Config:
         """Load configuration from YAML file."""
         with open(path) as f:
             data = yaml.safe_load(f)
-        
+
         return cls(
             model=ModelConfig(**data.get("model", {})),
             processing=ProcessingConfig(**data.get("processing", {})),
         )
-    
+
     def to_yaml(self, path: str | Path) -> None:
         """Save configuration to YAML file."""
         data = {
@@ -59,8 +59,8 @@ class Config:
         }
         with open(path, "w") as f:
             yaml.dump(data, f, default_flow_style=False)
-    
-    def update(self, **kwargs: Any) -> "Config":
+
+    def update(self, **kwargs: Any) -> Config:
         """Update configuration with keyword arguments."""
         for key, value in kwargs.items():
             if hasattr(self.model, key):

@@ -7,7 +7,7 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
-from unbihexium.ai.detection import ShipDetector, BuildingDetector
+from unbihexium.ai.detection import BuildingDetector, ShipDetector
 from unbihexium.ai.segmentation import WaterDetector
 from unbihexium.core.raster import Raster
 from unbihexium.zoo import list_models

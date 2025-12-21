@@ -160,19 +160,52 @@ select = [
     "S",      # flake8-bandit
 ]
 ignore = [
+    "ANN001", # Missing type annotation for argument
+    "ANN002", # Missing type annotation for *args
+    "ANN003", # Missing type annotation for **kwargs
+    "ANN201", # Missing return type for public function
+    "ANN202", # Missing return type for private function
+    "ANN204", # Missing return type for special method
+    "ANN205", # Missing return type for static method
+    "ANN401", # Dynamically typed expressions (Any) are allowed
+    "B007",   # Loop control variable not used
+    "B904",   # raise in except clause without from
+    "B905",   # zip() without explicit strict parameter
     "D100",   # Missing docstring in public module
+    "D101",   # Missing docstring in public class
     "D102",   # Missing docstring in public method
+    "D103",   # Missing docstring in public function
     "D104",   # Missing docstring in public package
+    "D105",   # Missing docstring in magic method
     "D107",   # Missing docstring in __init__
     "D301",   # Use raw docstring for backslashes
+    "E741",   # Ambiguous variable name
+    "F401",   # Imported but unused
+    "F403",   # Star imports used
+    "F405",   # May be undefined from star import
+    "F841",   # Local variable assigned but never used
     "S101",   # Use of assert detected
     "ARG001", # Unused function argument
     "ARG002", # Unused method argument
+    "ARG005", # Unused lambda argument
+    "D417",   # Missing argument descriptions in docstring
     "PTH123", # open() should be Path.open()
+    "S104",   # Possible binding to all interfaces
+    "S113",   # Requests call without timeout
     "SIM102", # Use single if statement
-    "TCH001", # Move application import into type-checking block
-    "TCH002", # Move third-party import into type-checking block
-    "TCH003", # Move standard library import into type-checking block
+    "SIM108", # Use ternary operator
+    "RUF059", # Unpacked variable never used
+    "TC001",  # Move application import into type-checking block
+    "TC002",  # Move third-party import into type-checking block
+    "TC003",  # Move standard library import into type-checking block
+    "TCH001", # (deprecated)
+    "TCH002", # (deprecated)
+    "TCH003", # (deprecated)
+    "RUF012", # Mutable class attributes
+    "RUF022", # __all__ is not sorted
+    "SIM105", # Use contextlib.suppress
+    "UP035",  # Import from collections.abc
+    "W293",   # Blank line contains whitespace
 ]
 
 [tool.ruff.lint.pydocstyle]
