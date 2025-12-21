@@ -95,10 +95,10 @@ Performance benchmarks for Unbihexium models and pipelines.
 
 | Library | Inference (ms) | Memory (MB) | Models | Ease of Use |
 |---------|---------------|-------------|--------|-------------|
-| **Unbihexium** | 5.3 | 512 | 520 | ⭐⭐⭐⭐⭐ |
-| TorchGeo | 8.2 | 780 | 45 | ⭐⭐⭐⭐ |
-| Raster Vision | 12.1 | 1024 | 12 | ⭐⭐⭐ |
-| SITS | 15.4 | 640 | 8 | ⭐⭐⭐ |
+| **Unbihexium** | 5.3 | 512 | 520 | Excellent |
+| TorchGeo | 8.2 | 780 | 45 | Very Good |
+| Raster Vision | 12.1 | 1024 | 12 | Good |
+| SITS | 15.4 | 640 | 8 | Good |
 
 ---
 
