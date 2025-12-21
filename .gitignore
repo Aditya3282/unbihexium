@@ -143,13 +143,12 @@ cython_debug/
 # PyCharm
 .idea/
 
-# Model weights (except model zoo assets)
-*.pt
-*.pth
-*.onnx
-*.safetensors
-!model_zoo/assets/**/*.pt
-!model_zoo/assets/**/*.onnx
+# Model weights - allow model_zoo assets
+# Large model files are tracked via Git LFS
+# *.pt
+# *.pth
+# *.onnx
+# *.safetensors
 
 # Large data files
 *.tif
