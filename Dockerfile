@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy project files
-COPY pyproject.toml README.md LICENSE ./
+COPY pyproject.toml README.md LICENSE.txt ./
 COPY src/ ./src/
 
 # Create virtual environment and install
