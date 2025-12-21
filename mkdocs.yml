@@ -53,6 +53,9 @@ nav:
     - Overview: architecture/overview.md
   - Model Zoo:
     - Catalog: model_zoo/catalog.md
+    - Model Cards: model_zoo/MODEL_CARDS.md
+  - Benchmarks:
+    - Performance: benchmarks/BENCHMARKS.md
   - Security:
     - Responsible Use: security/responsible_use.md
 

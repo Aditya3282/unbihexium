@@ -9,12 +9,12 @@
   <a href="https://pypi.org/project/unbihexium/"><img src="https://img.shields.io/pypi/dm/unbihexium?style=flat-square&logo=pypi&logoColor=white&label=Downloads" alt="Downloads"></a>
   <a href="https://pypi.org/project/unbihexium/"><img src="https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
   <a href="LICENSE.txt"><img src="https://img.shields.io/github/license/unbihexium-oss/unbihexium?style=flat-square&logo=open-source-initiative&logoColor=white" alt="License"></a>
+  <a href="https://codecov.io/gh/unbihexium-oss/unbihexium"><img src="https://img.shields.io/codecov/c/github/unbihexium-oss/unbihexium?style=flat-square&logo=codecov&logoColor=white" alt="Coverage"></a>
   <a href="https://github.com/unbihexium-oss/unbihexium/stargazers"><img src="https://img.shields.io/github/stars/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Stars"></a>
   <a href="https://github.com/unbihexium-oss/unbihexium/fork"><img src="https://img.shields.io/github/forks/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Forks"></a>
   <a href="https://github.com/unbihexium-oss/unbihexium/watchers"><img src="https://img.shields.io/github/watchers/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Watchers"></a>
   <a href="https://github.com/unbihexium-oss/unbihexium/issues"><img src="https://img.shields.io/github/issues/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Issues"></a>
   <a href="https://github.com/unbihexium-oss/unbihexium/commits/main"><img src="https://img.shields.io/github/last-commit/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Last Commit"></a>
-  <a href="https://github.com/unbihexium-oss/unbihexium"><img src="https://img.shields.io/github/repo-size/unbihexium-oss/unbihexium?style=flat-square&logo=github" alt="Repo Size"></a>
 </p>
 
 <p align="center">
