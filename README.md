@@ -1,25 +1,12 @@
 # Unbihexium
 
-[![CI](https://github.com/unbihexium-oss/unbihexium/workflows/CI/badge.svg)](https://github.com/unbihexium-oss/unbihexium/actions/workflows/ci.yml)
-[![Release](https://github.com/unbihexium-oss/unbihexium/workflows/Release/badge.svg)](https://github.com/unbihexium-oss/unbihexium/actions/workflows/release.yml)
-[![CodeQL](https://github.com/unbihexium-oss/unbihexium/workflows/CodeQL/badge.svg)](https://github.com/unbihexium-oss/unbihexium/actions/workflows/codeql.yml)
-[![Docs](https://github.com/unbihexium-oss/unbihexium/workflows/Docs/badge.svg)](https://github.com/unbihexium-oss/unbihexium/actions/workflows/docs.yml)
-[![PyPI](https://img.shields.io/pypi/v/unbihexium.svg)](https://pypi.org/project/unbihexium/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/unbihexium.svg)](https://pypi.org/project/unbihexium/)
-[![Python Version](https://img.shields.io/pypi/pyversions/unbihexium.svg)](https://pypi.org/project/unbihexium/)
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://pypi.org/project/unbihexium/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE.txt)
 [![Models](https://img.shields.io/badge/models-520-orange.svg)](model_zoo/)
 [![Parameters](https://img.shields.io/badge/parameters-515M-purple.svg)](model_zoo/)
-[![Domains](https://img.shields.io/badge/domains-12-green.svg)](docs/capabilities/)
-[![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen.svg)](https://codecov.io/gh/unbihexium-oss/unbihexium)
+[![Notebooks](https://img.shields.io/badge/notebooks-130-teal.svg)](examples/notebooks/)
 [![Code Style](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Type Checked](https://img.shields.io/badge/type%20checked-pyright-blue.svg)](https://github.com/microsoft/pyright)
-[![Security](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-[![SBOM](https://img.shields.io/badge/SBOM-CycloneDX-lightgrey.svg)](https://cyclonedx.org/)
-[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/unbihexium-oss/unbihexium.svg)](https://securityscorecards.dev/viewer/?uri=github.com/unbihexium-oss/unbihexium)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.0000000-blue.svg)](https://zenodo.org/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
 
