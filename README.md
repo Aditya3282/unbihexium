@@ -491,6 +491,13 @@ conda install -c conda-forge unbihexium cudatoolkit=11.8
 git clone https://github.com/unbihexium-oss/unbihexium.git
 cd unbihexium
 
+# IMPORTANT: Install Git LFS and pull model files
+git lfs install
+git lfs pull  # Downloads all 520 ONNX models (~4 GB)
+
+# OR pull specific models only
+git lfs pull --include "model_zoo/assets/tiny/*"  # ~500 MB
+
 # Create virtual environment
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
@@ -502,6 +509,8 @@ pip install -e ".[dev,test,docs]"
 # Run tests
 pytest tests/
 ```
+
+**Note:** Without `git lfs pull`, model files will be LFS pointers (131 bytes) instead of actual model weights. Models require Git LFS to function correctly.
 
 #### Docker Installation
 

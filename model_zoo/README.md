@@ -4,6 +4,19 @@
 
 The Unbihexium Model Zoo contains **520 production-ready models** for geospatial AI and Earth observation applications. All models are available in ONNX and PyTorch formats with SHA256 checksums for integrity verification.
 
+**Important:** Models are stored using Git LFS. After cloning, run `git lfs pull` to download actual model files.
+
+```bash
+# Clone and download models
+git clone https://github.com/unbihexium-oss/unbihexium.git
+cd unbihexium
+git lfs install
+git lfs pull  # Downloads all models (~4 GB)
+
+# OR download specific variant only
+git lfs pull --include "model_zoo/assets/tiny/*"
+```
+
 ---
 
 ## Quick Statistics
